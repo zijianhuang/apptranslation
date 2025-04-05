@@ -1,0 +1,15 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="zh-hans" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3241357959735682038" datatype="html">
+        <source>Confirm Password</source>
+        <target state="translated">确认密码</target>
+        <note priority="1" from="description">user need to input the same password again to confirm</note>
+      </trans-unit>
+      <trans-unit id="3758512395888121252" datatype="html">
+        <source>File type of selected file <x id="PH" equiv-text="this.file.name"/> is unrecognized. If you upload it then it may not be displayed in the future. Do you want to upload it?</source>
+        <target state="new"> <x id="PH" equiv-text="this.file.name"/>选定文件的文件类型无法识别。如果您上传它，那么以后它可能不会显示。您要上传它吗？</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

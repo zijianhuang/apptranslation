@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ngi18n" original="ng.template">
+    <unit id="1591923728775655116">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:95</note>
+      </notes>
+      <segment>
+        <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+      </segment>
+    </unit>
+    <unit id="1604795977599078115">
+      <notes>
+        <note category="location">src/app/shared/chronicleBase.directive.ts:93</note>
+      </notes>
+      <segment>
+        <source>Keywords</source>
+      </segment>
+    </unit>
+    <unit id="935187492052582731">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textInput.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Submit</source>
+      </segment>
+    </unit>
+    <unit id="969162659595657718">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services_lazy/dataComponentPrintDialog.component.ts:64</note>
+      </notes>
+      <segment>
+        <source>Copied to clipboard</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

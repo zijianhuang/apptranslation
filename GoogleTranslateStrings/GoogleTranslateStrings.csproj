@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>net9.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Fonlow.Cli" Version="1.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.3" />
+	</ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Fonlow.GoogleTranslateV3\Fonlow.GoogleTranslateV3.csproj" />
+	<ProjectReference Include="..\Fonlow.GoogleTranslate\Fonlow.GoogleTranslateV2.csproj" />
+	<ProjectReference Include="..\Fonlow.StringsTranslation\Fonlow.StringsTranslate.csproj" />
+  </ItemGroup>
+
+</Project>

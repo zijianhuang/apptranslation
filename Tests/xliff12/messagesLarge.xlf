@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5190092630197064800" datatype="html">
+        <source>Invalid string for Date</source>
+      </trans-unit>
+      <trans-unit id="4180340141420826523" datatype="html">
+        <source>Invalid number for Date</source>
+      </trans-unit>
+      <trans-unit id="349480122875358760" datatype="html">
+        <source>Expect Date, string or number</source>
+      </trans-unit>
+      <trans-unit id="7482395107104484666" datatype="html">
+        <source>Valid input should be greater than or equal to 0 and less than 1440.</source>
+      </trans-unit>
+      <trans-unit id="5403684285319082289" datatype="html">
+        <source>Month</source>
+      </trans-unit>
+      <trans-unit id="1464072562214937907" datatype="html">
+        <source>Year</source>
+      </trans-unit>
+      <trans-unit id="41150179304162218" datatype="html">
+        <source> The page your are trying to visit can&apos;t be found. </source>
+      </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+      </trans-unit>
+      <trans-unit id="8890553633144307762" datatype="html">
+        <source>Back</source>
+      </trans-unit>
+      <trans-unit id="5073308731342027963" datatype="html">
+        <source> Work in progress </source>
+      </trans-unit>
+      <trans-unit id="3318968477864966943" datatype="html">
+        <source> We are still working on this page. Keep an eye on our newsletters to stay up to date with the latest news and information regarding future developments. </source>
+      </trans-unit>
+      <trans-unit id="3604386807230411192" datatype="html">
+        <source>Start Date</source>
+      </trans-unit>
+      <trans-unit id="3284697869924237097" datatype="html">
+        <source>Hour</source>
+      </trans-unit>
+      <trans-unit id="4730804625942085752" datatype="html">
+        <source>Minute</source>
+      </trans-unit>
+      <trans-unit id="7379726829888309084" datatype="html">
+        <source>End Date</source>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+      </trans-unit>
+      <trans-unit id="935187492052582731" datatype="html">
+        <source>Submit</source>
+      </trans-unit>
+      <trans-unit id="8700121026680200191" datatype="html">
+        <source>Clear</source>
+      </trans-unit>
+      <trans-unit id="5143548108329331679" datatype="html">
+        <source>No response from backend <x id="PH" equiv-text="host"/>. Connection is unavailable.</source>
+      </trans-unit>
+      <trans-unit id="6800308101673162937" datatype="html">
+        <source>No response from backend. Connection is unavailable.</source>
+      </trans-unit>
+      <trans-unit id="6789040151215296839" datatype="html">
+        <source>The derived concrete class had not called super(DerivedClassName) properly.</source>
+      </trans-unit>
+      <trans-unit id="4390435099342067853" datatype="html">
+        <source>[<x id="PH" equiv-text="type.name"/>]: trying to create multiple instances, but this service should be a singleton.</source>
+      </trans-unit>
+      <trans-unit id="2807800733729323332" datatype="html">
+        <source>Yes</source>
+      </trans-unit>
+      <trans-unit id="3542042671420335679" datatype="html">
+        <source>No</source>
+      </trans-unit>
+      <trans-unit id="9178182467454450952" datatype="html">
+        <source>Confirm</source>
+      </trans-unit>
+      <trans-unit id="7515883357904500238" datatype="html">
+        <source>Are you sure?</source>
+      </trans-unit>
+      <trans-unit id="7819314041543176992" datatype="html">
+        <source>Close</source>
+      </trans-unit>
+      <trans-unit id="6483680626836794824" datatype="html">
+        <source>Date Range</source>
+      </trans-unit>
+      <trans-unit id="5371894085388750329" datatype="html">
+        <source>Original resolution or scale to fit width</source>
+      </trans-unit>
+      <trans-unit id="786281080071228614" datatype="html">
+        <source>Scale to fit width</source>
+      </trans-unit>
+      <trans-unit id="6112642683465360445" datatype="html">
+        <source><x id="PH" equiv-text="this.noteLabel"/> saved to Local Storage</source>
+      </trans-unit>
+      <trans-unit id="6219288588962415681" datatype="html">
+        <source>Clear notifications</source>
+      </trans-unit>
+      <trans-unit id="6945988051184690124" datatype="html">
+        <source>Remove item</source>
+      </trans-unit>
+      <trans-unit id="6941659493626287408" datatype="html">
+        <source>For actionable items, please save current works before action</source>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+      </trans-unit>
+      <trans-unit id="3241357959735682038" datatype="html">
+        <source>Confirm Password</source>
+        <note priority="1" from="description">user need to input the same password again to confirm</note>
+      </trans-unit>
+      <trans-unit id="1230154438678955604" datatype="html">
+        <source>Change</source>
+      </trans-unit>
+      <trans-unit id="4194876199597412112" datatype="html">
+        <source>Undo changes</source>
+      </trans-unit>
+      <trans-unit id="7000649363168371045" datatype="html">
+        <source>Save changes</source>
+      </trans-unit>
+      <trans-unit id="8592282545368203219" datatype="html">
+        <source>Not allow to save empty document.</source>
+      </trans-unit>
+      <trans-unit id="969162659595657718" datatype="html">
+        <source>Copied to clipboard</source>
+      </trans-unit>
+      <trans-unit id="7816570869614983442" datatype="html">
+        <source>Something wrong</source>
+      </trans-unit>
+      <trans-unit id="7114071321253816795" datatype="html">
+        <source>this.htmlContentElement does not exist.</source>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="1431960639791499746" datatype="html">
+        <source>Drop file here, or click to select from file system</source>
+      </trans-unit>
+      <trans-unit id="6759205696902713848" datatype="html">
+        <source>Warning</source>
+      </trans-unit>
+      <trans-unit id="3758512395888121252" datatype="html">
+        <source>File type of selected file <x id="PH" equiv-text="this.file.name"/> is unrecognized. If you upload it then it may not be displayed in the future. Do you want to upload it?</source>
+      </trans-unit>
+      <trans-unit id="7591969168552496643" datatype="html">
+        <source>File size is <x id="PH" equiv-text="ByteFormatPipe.formatBytes(this.file.size)"/>, and it is currently too large to be uploaded.</source>
+      </trans-unit>
+      <trans-unit id="1591923728775655116" datatype="html">
+        <source>File size is <x id="PH" equiv-text="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+      </trans-unit>
+      <trans-unit id="2155383357398305042" datatype="html">
+        <source>Confirm Upload</source>
+      </trans-unit>
+      <trans-unit id="1444355011926312749" datatype="html">
+        <source>Select a file to upload.</source>
+      </trans-unit>
+      <trans-unit id="2370781826635592334" datatype="html">
+        <source>Radar</source>
+      </trans-unit>
+      <trans-unit id="2592368582911584624" datatype="html">
+        <source>Temperature</source>
+      </trans-unit>
+      <trans-unit id="2048578940358999237" datatype="html">
+        <source>Moisture</source>
+      </trans-unit>
+      <trans-unit id="5087678602655068553" datatype="html">
+        <source>Camera</source>
+      </trans-unit>
+      <trans-unit id="2049622683630515266" datatype="html">
+        <source>Thermal</source>
+        <note priority="1" from="description">about thermal camera image</note>
+      </trans-unit>
+      <trans-unit id="474250312112545331" datatype="html">
+        <source>New FE version detected</source>
+      </trans-unit>
+      <trans-unit id="3001257907468381703" datatype="html">
+        <source>New version of TT Web Portal available to replace current <x id="PH" equiv-text="APP_DI_CONFIG.version"/> / <x id="PH_1" equiv-text="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</source>
+      </trans-unit>
+      <trans-unit id="4538653289713686611" datatype="html">
+        <source>Cannot logout befor upgrading. You may open a new browser tab or relaunch the app to upgrade.</source>
+      </trans-unit>
+      <trans-unit id="8371496833003029397" datatype="html">
+        <source>No update this time</source>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+      </trans-unit>
+      <trans-unit id="8890737872855329105" datatype="html">
+        <source>Register new user</source>
+      </trans-unit>
+      <trans-unit id="2397816345463091163" datatype="html">
+        <source>Old Password</source>
+      </trans-unit>
+      <trans-unit id="1221596867309460035" datatype="html">
+        <source>New Password</source>
+      </trans-unit>
+      <trans-unit id="2252637182801679175" datatype="html">
+        <source>Min. length: 6, require digit, non-letter or digit, lowercase, and uppercase</source>
+      </trans-unit>
+      <trans-unit id="182229724883786365" datatype="html">
+        <source>Change and logout, so you should login with new password</source>
+      </trans-unit>
+      <trans-unit id="5830314630242453415" datatype="html">
+        <source> Change </source>
+      </trans-unit>
+      <trans-unit id="6978032254056134711" datatype="html">
+        <source>Password changed. Please login with the new password.</source>
+      </trans-unit>
+      <trans-unit id="5248717555542428023" datatype="html">
+        <source>Username</source>
+      </trans-unit>
+      <trans-unit id="1195096389679771302" datatype="html">
+        <source>Alphanumeric; minimum length: 2</source>
+      </trans-unit>
+      <trans-unit id="803639390975802529" datatype="html">
+        <source>Min. length: 6; digit, symbol, lowercase and uppercase</source>
+      </trans-unit>
+      <trans-unit id="6959497441009812685" datatype="html">
+        <source>Full Name</source>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+      </trans-unit>
+      <trans-unit id="663305273583362025" datatype="html">
+        <source>Check to assign roles to current user.</source>
+      </trans-unit>
+      <trans-unit id="4883775796561488339" datatype="html">
+        <source>Registration successful for <x id="PH" equiv-text="this.model.userName"/></source>
+      </trans-unit>
+      <trans-unit id="6953621579784584089" datatype="html">
+        <source>Registration successful for <x id="PH" equiv-text="this.model.userName"/>. And a confirmation Email will be sent to the account holder to confirm the Email address.</source>
+      </trans-unit>
+      <trans-unit id="6208528704186410935" datatype="html">
+        <source>Roles:</source>
+      </trans-unit>
+      <trans-unit id="2753283190244215055" datatype="html">
+        <source>Only admin can assign or unassign admin.</source>
+      </trans-unit>
+      <trans-unit id="4694384552373223859" datatype="html">
+        <source>Role <x id="PH" equiv-text="roleName"/> added.</source>
+      </trans-unit>
+      <trans-unit id="1141104693112392503" datatype="html">
+        <source>Role <x id="PH" equiv-text="roleName"/> removed.</source>
+      </trans-unit>
+      <trans-unit id="2392488717875840729" datatype="html">
+        <source>User</source>
+      </trans-unit>
+      <trans-unit id="3768927257183755959" datatype="html">
+        <source>Save</source>
+      </trans-unit>
+      <trans-unit id="6582573664846559511" datatype="html">
+        <source>Change Password</source>
+      </trans-unit>
+      <trans-unit id="7022070615528435141" datatype="html">
+        <source>Delete</source>
+      </trans-unit>
+      <trans-unit id="8759216655713256177" datatype="html">
+        <source>Update successful for <x id="PH" equiv-text="this.model!.userName"/></source>
+      </trans-unit>
+      <trans-unit id="5474871040937410306" datatype="html">
+        <source>Nothing to save.</source>
+      </trans-unit>
+      <trans-unit id="6355143260734571596" datatype="html">
+        <source>user <x id="PH" equiv-text="this.model!.userName"/> deleted.</source>
+      </trans-unit>
+      <trans-unit id="1653508049612270075" datatype="html">
+        <source>Nothing to deelte.</source>
+      </trans-unit>
+      <trans-unit id="1017066204420437090" datatype="html">
+        <source>Set New Password</source>
+      </trans-unit>
+      <trans-unit id="7239750919884229270" datatype="html">
+        <source>Updated</source>
+      </trans-unit>
+      <trans-unit id="3683640687452526553" datatype="html">
+        <source>Search users</source>
+      </trans-unit>
+      <trans-unit id="4580988005648117665" datatype="html">
+        <source>Search</source>
+      </trans-unit>
+      <trans-unit id="795890916060309463" datatype="html">
+        <source>Roles</source>
+      </trans-unit>
+      <trans-unit id="6678680596750589109" datatype="html">
+        <source>Search successful returning <x id="PH" equiv-text="data.length"/>.</source>
+      </trans-unit>
+      <trans-unit id="5031343019627316230" datatype="html">
+        <source>Are you sure to delete?</source>
+      </trans-unit>
+      <trans-unit id="6381490568322624964" datatype="html">
+        <source>Deleted</source>
+      </trans-unit>
+      <trans-unit id="2825093609304249365" datatype="html">
+        <source>Uploaded</source>
+      </trans-unit>
+      <trans-unit id="6108435102004383383" datatype="html">
+        <source>Serial</source>
+      </trans-unit>
+      <trans-unit id="1895957424873987405" datatype="html">
+        <source>Job</source>
+      </trans-unit>
+      <trans-unit id="6304432362546770951" datatype="html">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="3012906865384504293" datatype="html">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="9107130843108815233" datatype="html">
+        <source>No scan yet.</source>
+      </trans-unit>
+      <trans-unit id="3098300133540044023" datatype="html">
+        <source>Recently Uploaded Scans of Total <x id="INTERPOLATION" equiv-text="{{dashboardSummary?.scanTotal}}"/> : </source>
+      </trans-unit>
+      <trans-unit id="5210060593529421439" datatype="html">
+        <source>Signed in now</source>
+      </trans-unit>
+      <trans-unit id="6442026279214106519" datatype="html">
+        <source>Not signed in or the sign in process is not clean. Please sign out and sign in again.</source>
+      </trans-unit>
+      <trans-unit id="7036356409669276255" datatype="html">
+        <source> Signin </source>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+      </trans-unit>
+      <trans-unit id="8264044238565501678" datatype="html">
+        <source>Forgot password</source>
+      </trans-unit>
+      <trans-unit id="1112871062555970736" datatype="html">
+        <source><x id="PH" equiv-text="this.currentUser.fullName"/> (logged in as <x id="PH_1" equiv-text="this.currentUser.userName"/>)</source>
+      </trans-unit>
+      <trans-unit id="5442784446394125550" datatype="html">
+        <source>The username or password may be incorrect.</source>
+      </trans-unit>
+      <trans-unit id="5251501335559831424" datatype="html">
+        <source>Forgot your password? So enter your Email address uniquely associated with your account</source>
+      </trans-unit>
+      <trans-unit id="4879517228803151475" datatype="html">
+        <source>Email Address</source>
+      </trans-unit>
+      <trans-unit id="2878127854807315713" datatype="html">
+        <source>Email sent to <x id="PH" equiv-text="s"/>. Please check your email to reset the password. Remarks: The reset message may end up in your spam box if you cannot find it in the inbox.</source>
+      </trans-unit>
+      <trans-unit id="1803738535663203931" datatype="html">
+        <source>You are attempting to use invalid username to get into an account not belonging to you. And you will not see the info you don&apos;t deserve.</source>
+      </trans-unit>
+      <trans-unit id="531889672239033465" datatype="html">
+        <source>User associated with <x id="PH" equiv-text="d.companyname"/></source>
+      </trans-unit>
+      <trans-unit id="9074327260054432941" datatype="html">
+        <source>Units</source>
+      </trans-unit>
+      <trans-unit id="3229595422546554334" datatype="html">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="4273460998206847730" datatype="html">
+        <source>Reporting</source>
+      </trans-unit>
+      <trans-unit id="1102717806459547726" datatype="html">
+        <source>Refresh</source>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{loginButtonTooltip}}"/>
+        </source>
+      </trans-unit>
+      <trans-unit id="9210102562219158603" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>group<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Users<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+      </trans-unit>
+      <trans-unit id="1726363342938046830" datatype="html">
+        <source>About</source>
+      </trans-unit>
+      <trans-unit id="2476059868893693687" datatype="html">
+        <source>Termatrac Portal</source>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+      </trans-unit>
+      <trans-unit id="6972105223770675605" datatype="html">
+        <source>Reset Password</source>
+      </trans-unit>
+      <trans-unit id="5175858405248366529" datatype="html">
+        <source>Minimum length: 6, require digit, symbol like *, lowercase and uppercase.</source>
+      </trans-unit>
+      <trans-unit id="1703897897663083753" datatype="html">
+        <source>Reset and then signin.</source>
+      </trans-unit>
+      <trans-unit id="7808756054397155068" datatype="html">
+        <source>Reset</source>
+      </trans-unit>
+      <trans-unit id="8446392745767074046" datatype="html">
+        <source>The password and confirmation password do not match.</source>
+      </trans-unit>
+      <trans-unit id="7899349938705380684" datatype="html">
+        <source>Password reset. Please login with the new password.</source>
+      </trans-unit>
+      <trans-unit id="4359771487706439313" datatype="html">
+        <source>Failed to reset. Likely the reset link has already been used.</source>
+      </trans-unit>
+      <trans-unit id="8651099070028825397" datatype="html">
+        <source>Please signin.</source>
+      </trans-unit>
+      <trans-unit id="7585826646011739428" datatype="html">
+        <source>Edit</source>
+      </trans-unit>
+      <trans-unit id="580661128859942800" datatype="html">
+        <source>Create Report</source>
+      </trans-unit>
+      <trans-unit id="3439206654202015723" datatype="html">
+        <source>Show Scans</source>
+      </trans-unit>
+      <trans-unit id="3797570084942068182" datatype="html">
+        <source>Select</source>
+      </trans-unit>
+      <trans-unit id="318562166799030886" datatype="html">
+        <source>No job yet</source>
+      </trans-unit>
+      <trans-unit id="3094313854647981557" datatype="html">
+        <source>Select Job</source>
+      </trans-unit>
+      <trans-unit id="5454421052310807486" datatype="html">
+        <source>View selected report</source>
+      </trans-unit>
+      <trans-unit id="56628907969675228" datatype="html">
+        <source>Edit selected report</source>
+      </trans-unit>
+      <trans-unit id="5200845948959658093" datatype="html">
+        <source>Email selected reports</source>
+      </trans-unit>
+      <trans-unit id="6424093225497674915" datatype="html">
+        <source>Delete selected reports</source>
+      </trans-unit>
+      <trans-unit id="2892412979837680989" datatype="html">
+        <source>Config</source>
+      </trans-unit>
+      <trans-unit id="1970408312305598797" datatype="html">
+        <source>Job Date</source>
+      </trans-unit>
+      <trans-unit id="1179184907489210406" datatype="html">
+        <source>Operator</source>
+      </trans-unit>
+      <trans-unit id="1642972066115158058" datatype="html">
+        <source>Customer</source>
+      </trans-unit>
+      <trans-unit id="397098723873502323" datatype="html">
+        <source>Done</source>
+      </trans-unit>
+      <trans-unit id="9130248947027913003" datatype="html">
+        <source>Operator:</source>
+      </trans-unit>
+      <trans-unit id="1586041026343999059" datatype="html">
+        <source>Job Date:</source>
+      </trans-unit>
+      <trans-unit id="1477340047591615347" datatype="html">
+        <source>Report Num:</source>
+      </trans-unit>
+      <trans-unit id="5025457187887640726" datatype="html">
+        <source>Address:</source>
+      </trans-unit>
+      <trans-unit id="7981947158999932110" datatype="html">
+        <source>Requested by:</source>
+      </trans-unit>
+      <trans-unit id="8803702192913740957" datatype="html">
+        <source>Time: </source>
+      </trans-unit>
+      <trans-unit id="4510013877734913501" datatype="html">
+        <source>Location:</source>
+      </trans-unit>
+      <trans-unit id="3475006855266220560" datatype="html">
+        <source>Compass:</source>
+      </trans-unit>
+      <trans-unit id="2002557988985086661" datatype="html">
+        <source>Device Position:</source>
+      </trans-unit>
+      <trans-unit id="5815562551301438126" datatype="html">
+        <source>How Used:</source>
+      </trans-unit>
+      <trans-unit id="2633027744259332973" datatype="html">
+        <source>Damage Visible:</source>
+      </trans-unit>
+      <trans-unit id="8421971980013015956" datatype="html">
+        <source>Notes:</source>
+      </trans-unit>
+      <trans-unit id="8282351409169996553" datatype="html">
+        <source>Job Report</source>
+      </trans-unit>
+      <trans-unit id="2126732869913023293" datatype="html">
+        <source>Scans and Images</source>
+      </trans-unit>
+      <trans-unit id="6317126528752584322" datatype="html">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="6781617070710024146" datatype="html">
+        <source>Subheading</source>
+      </trans-unit>
+      <trans-unit id="2171894153326157864" datatype="html">
+        <source>Introduction</source>
+      </trans-unit>
+      <trans-unit id="2598703394778941061" datatype="html">
+        <source>Disclaimer</source>
+      </trans-unit>
+      <trans-unit id="8411076568689359908" datatype="html">
+        <source>Header Image</source>
+      </trans-unit>
+      <trans-unit id="2501989539336327542" datatype="html">
+        <source>Upload image</source>
+      </trans-unit>
+      <trans-unit id="2383955281208663059" datatype="html">
+        <source>Display image</source>
+      </trans-unit>
+      <trans-unit id="241692172539866910" datatype="html">
+        <source>Remove image and update record</source>
+      </trans-unit>
+      <trans-unit id="3223385967308847479" datatype="html">
+        <source>Footer Image</source>
+      </trans-unit>
+      <trans-unit id="3249513483374643425" datatype="html">
+        <source>Add</source>
+      </trans-unit>
+      <trans-unit id="231679111972850796" datatype="html">
+        <source>Added</source>
+      </trans-unit>
+      <trans-unit id="6595008830732269870" datatype="html">
+        <source>Not found</source>
+      </trans-unit>
+      <trans-unit id="6932865105766151309" datatype="html">
+        <source>Upload</source>
+      </trans-unit>
+      <trans-unit id="9061257599906709984" datatype="html">
+        <source>Select image</source>
+      </trans-unit>
+      <trans-unit id="2534281595522965058" datatype="html">
+        <source>This will remove the image and update the record. Are you sure to proceed?</source>
+      </trans-unit>
+      <trans-unit id="3957525923593650417" datatype="html">
+        <source>Report Name</source>
+      </trans-unit>
+      <trans-unit id="1386972322011131865" datatype="html">
+        <source>Location/Job/Date: </source>
+      </trans-unit>
+      <trans-unit id="2861405851078104992" datatype="html">
+        <source>Select existing job and location</source>
+      </trans-unit>
+      <trans-unit id="4286871668120833703" datatype="html">
+        <source>Report #</source>
+      </trans-unit>
+      <trans-unit id="5575743992457228713" datatype="html">
+        <source>Edit Report</source>
+      </trans-unit>
+      <trans-unit id="7008415906122997535" datatype="html">
+        <source>Report created. Now add scans to the first section.</source>
+      </trans-unit>
+      <trans-unit id="4552149108758243737" datatype="html">
+        <source>Having modified the report, do you want to quit without saving?</source>
+      </trans-unit>
+      <trans-unit id="1949800506879332767" datatype="html">
+        <source>Section Name</source>
+      </trans-unit>
+      <trans-unit id="7830698000424037895" datatype="html">
+        <source>Conclusive</source>
+      </trans-unit>
+      <trans-unit id="3914105696999311875" datatype="html">
+        <source>Insect Type</source>
+      </trans-unit>
+      <trans-unit id="6252070156626006029" datatype="html">
+        <source>None</source>
+      </trans-unit>
+      <trans-unit id="5755419540803869116" datatype="html">
+        <source>Subterranean Termite</source>
+      </trans-unit>
+      <trans-unit id="4488887922727860140" datatype="html">
+        <source>Dry Wood Termite</source>
+      </trans-unit>
+      <trans-unit id="8693603235657020323" datatype="html">
+        <source>Other</source>
+      </trans-unit>
+      <trans-unit id="5687291913832854087" datatype="html">
+        <source>More info about insect type &quot;other&quot;</source>
+      </trans-unit>
+      <trans-unit id="5761459192049635981" datatype="html">
+        <source>Private Note</source>
+      </trans-unit>
+      <trans-unit id="8446562991209210243" datatype="html">
+        <source>Add Scans</source>
+      </trans-unit>
+      <trans-unit id="2944780080344190707" datatype="html">
+        <source>Change the sequence of scan being printed. Smaller numbers on the top, and largger number on the bottom.</source>
+      </trans-unit>
+      <trans-unit id="3071361935587815300" datatype="html">
+        <source>Sequence</source>
+      </trans-unit>
+      <trans-unit id="5559551493291265778" datatype="html">
+        <source>Remove scan from report</source>
+      </trans-unit>
+      <trans-unit id="5193500442794853844" datatype="html">
+        <source>Are you sure to remove scan from report?</source>
+      </trans-unit>
+      <trans-unit id="8640257554156088424" datatype="html">
+        <source>save</source>
+      </trans-unit>
+      <trans-unit id="7755594825236456695" datatype="html">
+        <source>For mananaging devices and reporting.</source>
+      </trans-unit>
+      <trans-unit id="29832309535656200" datatype="html">
+        <source>System</source>
+      </trans-unit>
+      <trans-unit id="2724055831234181057" datatype="html">
+        <source>Version</source>
+      </trans-unit>
+      <trans-unit id="6924245241744002654" datatype="html">
+        <source>Build</source>
+      </trans-unit>
+      <trans-unit id="8942351587754185907" datatype="html">
+        <source>API</source>
+      </trans-unit>
+      <trans-unit id="6329450020825493007" datatype="html">
+        <source>API Version</source>
+      </trans-unit>
+      <trans-unit id="6299803518261935782" datatype="html">
+        <source>Check for Updates</source>
+      </trans-unit>
+      <trans-unit id="8047428930754881904" datatype="html">
+        <source>Usage Mode</source>
+      </trans-unit>
+      <trans-unit id="1310142166909985309" datatype="html">
+        <source>Assigned To</source>
+      </trans-unit>
+      <trans-unit id="7219995307803611185" datatype="html">
+        <source>Calibration Due</source>
+      </trans-unit>
+      <trans-unit id="9216117865911519658" datatype="html">
+        <source>Action</source>
+      </trans-unit>
+      <trans-unit id="1199579445089677007" datatype="html">
+        <source>TT Admin</source>
+      </trans-unit>
+      <trans-unit id="1284155681953684053" datatype="html">
+        <source>Next Calibration</source>
+      </trans-unit>
+      <trans-unit id="1297378048018815896" datatype="html">
+        <source>iTraker Name</source>
+      </trans-unit>
+      <trans-unit id="2423439821718538261" datatype="html">
+        <source>Having modified the config, do you want to quit without saving?</source>
+      </trans-unit>
+      <trans-unit id="271930937086395024" datatype="html">
+        <source>Leased</source>
+      </trans-unit>
+      <trans-unit id="3715596725146409911" datatype="html">
+        <source>Owner</source>
+      </trans-unit>
+      <trans-unit id="3716756963792199964" datatype="html">
+        <source>Temperature Probe</source>
+      </trans-unit>
+      <trans-unit id="424789592431434506" datatype="html">
+        <source>Thermal Camera</source>
+      </trans-unit>
+      <trans-unit id="5151211277544409076" datatype="html">
+        <source>Purchased</source>
+      </trans-unit>
+      <trans-unit id="5670141462038010045" datatype="html">
+        <source>Create T5 Config</source>
+      </trans-unit>
+      <trans-unit id="6275946219477500385" datatype="html">
+        <source>Edit T5 Config</source>
+      </trans-unit>
+      <trans-unit id="6385988329464431667" datatype="html">
+        <source>Stolen</source>
+      </trans-unit>
+      <trans-unit id="7283607483788152294" datatype="html">
+        <source>Show Reports</source>
+      </trans-unit>
+      <trans-unit id="7914673063263158043" datatype="html">
+        <source>Expiry</source>
+      </trans-unit>
+      <trans-unit id="8108629543591644042" datatype="html">
+        <source>Distributor: </source>
+      </trans-unit>
+      <trans-unit id="8204176479746810612" datatype="html">
+        <source>Active</source>
+      </trans-unit>
+      <trans-unit id="838629372118573616" datatype="html">
+        <source>Distributor</source>
+      </trans-unit>
+      <trans-unit id="8547153724791757236" datatype="html">
+        <source>Overdue</source>
+      </trans-unit>
+      <trans-unit id="9070028246701747685" datatype="html">
+        <source>Change owner?</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

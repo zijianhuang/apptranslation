@@ -1,0 +1,14 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="zh-hans" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4937523942964397361" datatype="html">
+        <source>Are you sure to delete <x id="PH" equiv-text="this.currentAlbum.title"/>?</source>
+        <target state="translated">Are you sure to delete <x id="PH" equiv-text="this.currentAlbum.title"/>?</target>
+      </trans-unit>
+      <trans-unit id="462051546739716571" datatype="html">
+        <source>There are some registered numbered annotations not existing in poem anymore: <x id="PH" equiv-text="numberList"/>. Do you want to remove them?</source>
+        <target state="new">There are some registered numbered annotations not existing in poem anymore: <x id="PH" equiv-text="numberList"/>. Do you want to remove them?</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

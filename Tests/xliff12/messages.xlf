@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7591969168552496643" datatype="html">
+        <source>File size is <x id="PH" equiv-text="ByteFormatPipe.formatBytes(this.file.size)"/>, and it is currently too large to be uploaded.</source>
+      </trans-unit>
+      <trans-unit id="1591923728775655116" datatype="html">
+        <source>File size is <x id="PH" equiv-text="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+      </trans-unit>
+       <trans-unit id="8547153724791757236" datatype="html">
+        <source>Overdue</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GoogleTranslateStrings": {
+      "commandName": "Project",
+      "commandLineArgs": "/AK=sdafsadfsfasfsadf /F=c:/temp/strings.xml /TF=c:/temp/strings.zh-hans.xml"
+    }
+  }
+}

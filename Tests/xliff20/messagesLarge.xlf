@@ -1,0 +1,2578 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ngi18n" original="ng.template">
+    <unit id="1006238067617309744">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:409</note>
+      </notes>
+      <segment>
+        <source>Select JSON file</source>
+      </segment>
+    </unit>
+    <unit id="1017066204420437090">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:105</note>
+      </notes>
+      <segment>
+        <source>Set New Password</source>
+      </segment>
+    </unit>
+    <unit id="1071721880474488785">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:409</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:456</note>
+      </notes>
+      <segment>
+        <source>Import</source>
+      </segment>
+    </unit>
+    <unit id="1112871062555970736">
+      <notes>
+        <note category="location">src/app/home/login.component.ts:61</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="PH" disp="this.currentUser.fullName"/> (logged in as <ph id="1" equiv="PH_1" disp="this.currentUser.userName"/>)</source>
+      </segment>
+    </unit>
+    <unit id="1141104693112392503">
+      <notes>
+        <note category="location">src/app/account/roles.component.ts:103</note>
+      </notes>
+      <segment>
+        <source>Role <ph id="0" equiv="PH" disp="roleName"/> removed.</source>
+      </segment>
+    </unit>
+    <unit id="1158196584444204374">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="description">email blind carbon copy</note>
+      </notes>
+      <segment>
+        <source>BCC</source>
+      </segment>
+    </unit>
+    <unit id="1195096389679771302">
+      <notes>
+        <note category="location">src/app/account/register.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Alphanumeric; minimum length: 2</source>
+      </segment>
+    </unit>
+    <unit id="1230154438678955604">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/passwordsInput.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Change</source>
+      </segment>
+    </unit>
+    <unit id="1292421052057946792">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:22,23</note>
+      </notes>
+      <segment>
+        <source>Insert Sup</source>
+      </segment>
+    </unit>
+    <unit id="1300195398498022429">
+      <notes>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:37</note>
+      </notes>
+      <segment>
+        <source>Unselect Album</source>
+      </segment>
+    </unit>
+    <unit id="131761163657552131">
+      <notes>
+        <note category="location">src/app/shared/main-buttons.component.ts:213</note>
+      </notes>
+      <segment>
+        <source>Not signed in</source>
+      </segment>
+    </unit>
+    <unit id="1400004660661958122">
+      <notes>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.html:73,74</note>
+        <note category="location">src/app/reader-view/chronicle-for-reader.component.html:78,79</note>
+      </notes>
+      <segment>
+        <source> Tags </source>
+      </segment>
+    </unit>
+    <unit id="1431416938026210429">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/passwordsInput.component.html:1</note>
+        <note category="location">src/app/account/register.component.html:10</note>
+        <note category="location">src/app/home/login.component.html:13</note>
+      </notes>
+      <segment>
+        <source>Password</source>
+      </segment>
+    </unit>
+    <unit id="1431960639791499746">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:41</note>
+      </notes>
+      <segment>
+        <source>Drop file here, or click to select from file system</source>
+      </segment>
+    </unit>
+    <unit id="1444355011926312749">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>Select a file to upload.</source>
+      </segment>
+    </unit>
+    <unit id="1462663838579426820">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:456</note>
+      </notes>
+      <segment>
+        <source>Select Zip file</source>
+      </segment>
+    </unit>
+    <unit id="1463842674940139059">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Annotations Management</source>
+      </segment>
+    </unit>
+    <unit id="1464072562214937907">
+      <notes>
+        <note category="location">projects/nmce/src/_components/monthYearExpiry.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Year</source>
+      </segment>
+    </unit>
+    <unit id="1503325454658064959">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:169</note>
+      </notes>
+      <segment>
+        <source>Nothing to change.</source>
+      </segment>
+    </unit>
+    <unit id="1591923728775655116">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:95</note>
+      </notes>
+      <segment>
+        <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+      </segment>
+    </unit>
+    <unit id="1599694184551644431">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:117,118</note>
+      </notes>
+      <segment>
+        <source>Quit composing album</source>
+      </segment>
+    </unit>
+    <unit id="1604795977599078115">
+      <notes>
+        <note category="location">src/app/shared/chronicleBase.directive.ts:93</note>
+      </notes>
+      <segment>
+        <source>Keywords</source>
+      </segment>
+    </unit>
+    <unit id="1640609344969975994">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="description">To for Email recipient</note>
+      </notes>
+      <segment>
+        <source>To</source>
+      </segment>
+    </unit>
+    <unit id="1653508049612270075">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:100</note>
+      </notes>
+      <segment>
+        <source>Nothing to deelte.</source>
+      </segment>
+    </unit>
+    <unit id="1701082640400300340">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:79,80</note>
+      </notes>
+      <segment>
+        <source> Export All Published </source>
+      </segment>
+    </unit>
+    <unit id="1705530081146495310">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1637</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1665</note>
+      </notes>
+      <segment>
+        <source>Poem already formated</source>
+      </segment>
+    </unit>
+    <unit id="1819757983879983696">
+      <notes>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.html:34</note>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.html:30</note>
+      </notes>
+      <segment>
+        <source>Reference URL</source>
+      </segment>
+    </unit>
+    <unit id="1839186591621749773">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.html:63</note>
+      </notes>
+      <segment>
+        <source>Publish Date</source>
+      </segment>
+    </unit>
+    <unit id="196885210100834957">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:103,104</note>
+      </notes>
+      <segment>
+        <source> Import Zip File </source>
+      </segment>
+    </unit>
+    <unit id="1980781482796206480">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:171</note>
+      </notes>
+      <segment>
+        <source>A few places out of sync: </source>
+      </segment>
+    </unit>
+    <unit id="2012099916766149803">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:22</note>
+        <note category="location">src/app/shared/view-settings.component.html:36</note>
+        <note category="location">src/app/shared/view-settings.component.html:52</note>
+        <note category="location">src/app/shared/view-settings.component.html:66</note>
+      </notes>
+      <segment>
+        <source>Show Annotations By Default</source>
+      </segment>
+    </unit>
+    <unit id="2027233441155862427">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:307</note>
+      </notes>
+      <segment>
+        <source>Associate with album</source>
+      </segment>
+    </unit>
+    <unit id="2042289800427954014">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:27</note>
+      </notes>
+      <segment>
+        <source>Upload new image and insert to this poem</source>
+      </segment>
+    </unit>
+    <unit id="2060870905126612119">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:31</note>
+      </notes>
+      <segment>
+        <source>Transform absolute URL of local src URL to relative URL</source>
+      </segment>
+    </unit>
+    <unit id="2130665114008257891">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:27</note>
+        <note category="location">src/app/shared/view-settings.component.html:57</note>
+      </notes>
+      <segment>
+        <source>Hide Sidebar After Selecting</source>
+      </segment>
+    </unit>
+    <unit id="2155383357398305042">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>Confirm Upload</source>
+      </segment>
+    </unit>
+    <unit id="2159130950882492111">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/itemListDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/passwordsInput.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textInput.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/progress.component.html:1</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:128</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:120</note>
+      </notes>
+      <segment>
+        <source>Cancel</source>
+      </segment>
+    </unit>
+    <unit id="2217344567089649055">
+      <notes>
+        <note category="location">src/app/editor-view/albums-for-editor.component.html:60,61</note>
+        <note category="location">src/app/reader-view/albums-for-reader.component.html:44,45</note>
+      </notes>
+      <segment>
+        <source>Copy album to clipboard</source>
+      </segment>
+    </unit>
+    <unit id="2275180247206848144">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Written Language</source>
+      </segment>
+    </unit>
+    <unit id="230540430359200939">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1032</note>
+      </notes>
+      <segment>
+        <source>Already associated with <ph id="0" equiv="PH" disp="annotationName"/></source>
+      </segment>
+    </unit>
+    <unit id="231679111972850796">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:175</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:119</note>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:204</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:421</note>
+      </notes>
+      <segment>
+        <source>Added</source>
+      </segment>
+    </unit>
+    <unit id="2363225830335981857">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:212</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:250</note>
+      </notes>
+      <segment>
+        <source>Ryhmes</source>
+      </segment>
+    </unit>
+    <unit id="2392488717875840729">
+      <notes>
+        <note category="location">src/app/account/user.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>User</source>
+      </segment>
+    </unit>
+    <unit id="2454050363478003966">
+      <notes>
+        <note category="location">src/app/home/login.component.html:23,24</note>
+      </notes>
+      <segment>
+        <source>Login</source>
+      </segment>
+    </unit>
+    <unit id="2458491732173507103">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:4</note>
+      </notes>
+      <segment>
+        <source>Use Ryhmes</source>
+      </segment>
+    </unit>
+    <unit id="2509141182388535183">
+      <notes>
+        <note category="location">src/app/editor-view/settings-index.component.html:25</note>
+      </notes>
+      <segment>
+        <source>View</source>
+      </segment>
+    </unit>
+    <unit id="2587240527868724590">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="description">Email carbon copy</note>
+      </notes>
+      <segment>
+        <source>CC</source>
+      </segment>
+    </unit>
+    <unit id="2596606773413897052">
+      <notes>
+        <note category="location">src/app/editor-view/htmlEditorMenu.component.html:11,12</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:40,41</note>
+      </notes>
+      <segment>
+        <source>Replace Double Linebreaks with One</source>
+      </segment>
+    </unit>
+    <unit id="2682778892888491392">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:17,18</note>
+      </notes>
+      <segment>
+        <source>What action to take when clicking annotation chip</source>
+      </segment>
+    </unit>
+    <unit id="2724055831234181057">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:50</note>
+      </notes>
+      <segment>
+        <source>Version</source>
+      </segment>
+    </unit>
+    <unit id="2729072238245600107">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:32,33</note>
+      </notes>
+      <segment>
+        <source>Spoken Languages</source>
+      </segment>
+    </unit>
+    <unit id="2737042244376895134">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:92,93</note>
+      </notes>
+      <segment>
+        <source>Download all images in zip</source>
+      </segment>
+    </unit>
+    <unit id="2753283190244215055">
+      <notes>
+        <note category="location">src/app/account/roles.component.ts:83</note>
+      </notes>
+      <segment>
+        <source>Only admin can assign or unassign admin.</source>
+      </segment>
+    </unit>
+    <unit id="2802066009289302272">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.ts:406</note>
+      </notes>
+      <segment>
+        <source>Copied HTML tags to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="2807800733729323332">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/confirm.component.ts:22</note>
+        <note category="location">projects/nmce/src/_ui_services/confirm.service.ts:26</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:469</note>
+      </notes>
+      <segment>
+        <source>Yes</source>
+      </segment>
+    </unit>
+    <unit id="2821179408673282599">
+      <notes>
+        <note category="location">projects/nmce/src/_components/notFound.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Home</source>
+      </segment>
+    </unit>
+    <unit id="2863287236123687430">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:183</note>
+      </notes>
+      <segment>
+        <source>Please give the album a title</source>
+      </segment>
+    </unit>
+    <unit id="2879238889365227980">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:167</note>
+      </notes>
+      <segment>
+        <source>Export All in Traditional Chinese</source>
+      </segment>
+    </unit>
+    <unit id="2925460164655384903">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:216</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:501</note>
+      </notes>
+      <segment>
+        <source>Stay</source>
+      </segment>
+    </unit>
+    <unit id="2977636378219052362">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:42,43</note>
+      </notes>
+      <segment>
+        <source>Pictures</source>
+      </segment>
+    </unit>
+    <unit id="29832309535656200">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:41,42</note>
+      </notes>
+      <segment>
+        <source>System</source>
+      </segment>
+    </unit>
+    <unit id="3060315295834338869">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:187</note>
+      </notes>
+      <segment>
+        <source>Things look fine.</source>
+      </segment>
+    </unit>
+    <unit id="3141301060598402455">
+      <notes>
+        <note category="location">src/app/editor-view/albums-for-editor.component.ts:60</note>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>Deleting</source>
+      </segment>
+    </unit>
+    <unit id="3157444394185647751">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:46,47</note>
+      </notes>
+      <segment>
+        <source>External Pictures</source>
+      </segment>
+    </unit>
+    <unit id="316156393438847870">
+      <notes>
+        <note category="location">src/app/home/login.component.ts:113</note>
+      </notes>
+      <segment>
+        <source>Forgot your password? So enter your Email address associated with your account</source>
+      </segment>
+    </unit>
+    <unit id="3197038148298931325">
+      <notes>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:127</note>
+      </notes>
+      <segment>
+        <source>Please give the annotation a name</source>
+      </segment>
+    </unit>
+    <unit id="321068193845348224">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:837</note>
+      </notes>
+      <segment>
+        <source>New tag <ph id="0" equiv="PH" disp="tagName"/> is added and associated</source>
+      </segment>
+    </unit>
+    <unit id="3228856859648045185">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:223</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:261</note>
+      </notes>
+      <segment>
+        <source>Stanza</source>
+      </segment>
+    </unit>
+    <unit id="3241357959735682038">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/passwordsInput.component.html:1,5</note>
+        <note category="description">user need to input the same password again to confirm</note>
+      </notes>
+      <segment>
+        <source>Confirm Password</source>
+      </segment>
+    </unit>
+    <unit id="3249513483374643425">
+      <notes>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:82</note>
+      </notes>
+      <segment>
+        <source>Add</source>
+      </segment>
+    </unit>
+    <unit id="3284697869924237097">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Hour</source>
+      </segment>
+    </unit>
+    <unit id="3301897328443037253">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:9</note>
+      </notes>
+      <segment>
+        <source>Use Albums</source>
+      </segment>
+    </unit>
+    <unit id="3307480708918604567">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:99,100</note>
+      </notes>
+      <segment>
+        <source> Import JSON File </source>
+      </segment>
+    </unit>
+    <unit id="3309973566259313398">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:87,88</note>
+      </notes>
+      <segment>
+        <source>Audit</source>
+      </segment>
+    </unit>
+    <unit id="3318968477864966943">
+      <notes>
+        <note category="location">projects/nmce/src/_components/wip.component.html:1,5</note>
+      </notes>
+      <segment>
+        <source> We are still working on this page. Keep an eye on our newsletters to stay up to date with the latest news and information regarding future developments. </source>
+      </segment>
+    </unit>
+    <unit id="3394203516176896601">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:91</note>
+      </notes>
+      <segment>
+        <source>No orphaned tag.</source>
+      </segment>
+    </unit>
+    <unit id="349480122875358760">
+      <notes>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:34</note>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:69</note>
+      </notes>
+      <segment>
+        <source>Expect Date, string or number</source>
+      </segment>
+    </unit>
+    <unit id="3501330334273122135">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:98,99</note>
+      </notes>
+      <segment>
+        <source>Import JSON file</source>
+      </segment>
+    </unit>
+    <unit id="3510800883044827407">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:216</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:501</note>
+      </notes>
+      <segment>
+        <source>The record is altered. Are you sure to quit without saving?</source>
+      </segment>
+    </unit>
+    <unit id="3542042671420335679">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/confirm.component.ts:23</note>
+        <note category="location">projects/nmce/src/_ui_services/confirm.service.ts:26</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:469</note>
+      </notes>
+      <segment>
+        <source>No</source>
+      </segment>
+    </unit>
+    <unit id="3549253426715751267">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:10</note>
+      </notes>
+      <segment>
+        <source>Use Number of Stanza</source>
+      </segment>
+    </unit>
+    <unit id="3549928351794613534">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1119</note>
+      </notes>
+      <segment>
+        <source>Matched Annotations</source>
+      </segment>
+    </unit>
+    <unit id="3604386807230411192">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Start Date</source>
+      </segment>
+    </unit>
+    <unit id="3683640687452526553">
+      <notes>
+        <note category="location">src/app/account/users.component.html:7</note>
+      </notes>
+      <segment>
+        <source>Search users</source>
+      </segment>
+    </unit>
+    <unit id="3699318688376557127">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:19,20</note>
+      </notes>
+      <segment>
+        <source> Audit All </source>
+      </segment>
+    </unit>
+    <unit id="3758512395888121252">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:64</note>
+      </notes>
+      <segment>
+        <source>File type of selected file <ph id="0" equiv="PH" disp="this.file.name"/> is unrecognized. If you upload it then it may not be displayed in the future. Do you want to upload it?</source>
+      </segment>
+    </unit>
+    <unit id="3768927257183755959">
+      <notes>
+        <note category="location">src/app/account/user.component.html:31,32</note>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.html:9</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.html:9</note>
+        <note category="location">src/app/editor-view/imgMeta.component.html:19,20</note>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.html:9</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:9</note>
+      </notes>
+      <segment>
+        <source>Save</source>
+      </segment>
+    </unit>
+    <unit id="3777502924017376887">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:99</note>
+      </notes>
+      <segment>
+        <source>No orphaned annotation.</source>
+      </segment>
+    </unit>
+    <unit id="3802243436181273529">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:216</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:501</note>
+      </notes>
+      <segment>
+        <source>Quit Editing</source>
+      </segment>
+    </unit>
+    <unit id="3866379305463138723">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1297</note>
+      </notes>
+      <segment>
+        <source>No numbered annotation found.</source>
+      </segment>
+    </unit>
+    <unit id="3929691265143988149">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:107,108</note>
+      </notes>
+      <segment>
+        <source> Clear Database </source>
+      </segment>
+    </unit>
+    <unit id="397098723873502323">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:366</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:444</note>
+        <note category="location">src/app/editor-view/settings-not-local-images.component.ts:85</note>
+      </notes>
+      <segment>
+        <source>Done</source>
+      </segment>
+    </unit>
+    <unit id="3979398357870223534">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:16</note>
+      </notes>
+      <segment>
+        <source>Click-Chip Action</source>
+      </segment>
+    </unit>
+    <unit id="3984992010767496791">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:176,177</note>
+      </notes>
+      <segment>
+        <source>Suggest tags based on all existing tags matching phases of poems</source>
+      </segment>
+    </unit>
+    <unit id="3990005410946685587">
+      <notes>
+        <note category="location">src/app/editor-view/imgMeta.component.html:2,4</note>
+      </notes>
+      <segment>
+        <source> Update Meta </source>
+      </segment>
+    </unit>
+    <unit id="4054391517117890721">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:88,89</note>
+      </notes>
+      <segment>
+        <source>Save All Poem Data into JSON except images</source>
+      </segment>
+    </unit>
+    <unit id="4058575476871566236">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:231</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:267</note>
+      </notes>
+      <segment>
+        <source>Published</source>
+      </segment>
+    </unit>
+    <unit id="407526736892299928">
+      <notes>
+        <note category="location">src/app/editor-view/settings-not-local-images.component.html:16,17</note>
+      </notes>
+      <segment>
+        <source> No external images in poems </source>
+      </segment>
+    </unit>
+    <unit id="41150179304162218">
+      <notes>
+        <note category="location">projects/nmce/src/_components/notFound.component.html:1,2</note>
+      </notes>
+      <segment>
+        <source> The page your are trying to visit can&apos;t be found. </source>
+      </segment>
+    </unit>
+    <unit id="4126217956371508539">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:338</note>
+      </notes>
+      <segment>
+        <source>No collection return probably due to invalid config.</source>
+      </segment>
+    </unit>
+    <unit id="4151314716971157704">
+      <notes>
+        <note category="location">src/app/editor-view/htmlEditorMenu.component.ts:41</note>
+        <note category="location">src/app/editor-view/htmlEditorMenu.component.ts:49</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1701</note>
+      </notes>
+      <segment>
+        <source>Nothing altered</source>
+      </segment>
+    </unit>
+    <unit id="4163272119298020373">
+      <notes>
+        <note category="location">src/app/reader-view/chronicle-for-reader.component.html:9,10</note>
+      </notes>
+      <segment>
+        <source>Filters</source>
+      </segment>
+    </unit>
+    <unit id="4169017539818090840">
+      <notes>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:37</note>
+      </notes>
+      <segment>
+        <source>Select Album</source>
+      </segment>
+    </unit>
+    <unit id="4180340141420826523">
+      <notes>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:28</note>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:59</note>
+      </notes>
+      <segment>
+        <source>Invalid number for Date</source>
+      </segment>
+    </unit>
+    <unit id="4194876199597412112">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textEditorDialogBase.component.html:1</note>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.html:12,13</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.html:12,13</note>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.html:12,13</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:11,12</note>
+      </notes>
+      <segment>
+        <source>Undo changes</source>
+      </segment>
+    </unit>
+    <unit id="4235671847487610290">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:243,245</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:279,281</note>
+      </notes>
+      <segment>
+        <source>Modified: <ph id="0" equiv="INTERPOLATION" disp="{{poem.modified | date:&apos;shortDate&apos;}}"/></source>
+      </segment>
+    </unit>
+    <unit id="4245488660379936089">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.html:57</note>
+      </notes>
+      <segment>
+        <source>First published URL</source>
+      </segment>
+    </unit>
+    <unit id="4282937425531287242">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:143</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>Record might had been deleted.</source>
+      </segment>
+    </unit>
+    <unit id="4288887368676845936">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.ts:262</note>
+        <note category="location">src/app/shared/poemViewer.component.ts:299</note>
+      </notes>
+      <segment>
+        <source>Not found.</source>
+      </segment>
+    </unit>
+    <unit id="43679560859374265">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.ts:112</note>
+      </notes>
+      <segment>
+        <source>Empty Text</source>
+      </segment>
+    </unit>
+    <unit id="4390435099342067853">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/baseTypes.ts:17</note>
+      </notes>
+      <segment>
+        <source>[<ph id="0" equiv="PH" disp="type.name"/>]: trying to create multiple instances, but this service should be a singleton.</source>
+      </segment>
+    </unit>
+    <unit id="4403765849981198548">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:25</note>
+        <note category="location">src/app/shared/view-settings.component.html:55</note>
+      </notes>
+      <segment>
+        <source>Show Title</source>
+      </segment>
+    </unit>
+    <unit id="4407909483493290627">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1345</note>
+      </notes>
+      <segment>
+        <source>Reordering is supported only when the number of superscripts equals to the number of numbered annotations.</source>
+      </segment>
+    </unit>
+    <unit id="4410823553054993155">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:279</note>
+      </notes>
+      <segment>
+        <source>Found: </source>
+      </segment>
+    </unit>
+    <unit id="447691448242286570">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:168</note>
+      </notes>
+      <segment>
+        <source>Album with the same title exists.</source>
+      </segment>
+    </unit>
+    <unit id="4499903069830338567">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Local Pictures Management</source>
+      </segment>
+    </unit>
+    <unit id="4538653289713686611">
+      <notes>
+        <note category="location">src/app/_services/updateApp.service.ts:54</note>
+      </notes>
+      <segment>
+        <source>Cannot logout befor upgrading. You may open a new browser tab or relaunch the app to upgrade.</source>
+      </segment>
+    </unit>
+    <unit id="4555457172864212828">
+      <notes>
+        <note category="location">src/app/account/account-index.component.html:5,6</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:57,58</note>
+      </notes>
+      <segment>
+        <source>Users</source>
+      </segment>
+    </unit>
+    <unit id="4580988005648117665">
+      <notes>
+        <note category="location">src/app/account/users.component.html:13,14</note>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.html:21</note>
+        <note category="location">src/app/reader-view/chronicle-for-reader.component.html:22</note>
+      </notes>
+      <segment>
+        <source>Search</source>
+      </segment>
+    </unit>
+    <unit id="458822511919317576">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:102,103</note>
+      </notes>
+      <segment>
+        <source>Import Zip file with exported images</source>
+      </segment>
+    </unit>
+    <unit id="462051546739716571">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1271</note>
+      </notes>
+      <segment>
+        <source>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</source>
+      </segment>
+    </unit>
+    <unit id="4659630090024510760">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:213</note>
+      </notes>
+      <segment>
+        <source>Total: <ph id="0" equiv="PH" disp="c"/></source>
+      </segment>
+    </unit>
+    <unit id="4694384552373223859">
+      <notes>
+        <note category="location">src/app/account/roles.component.ts:91</note>
+      </notes>
+      <segment>
+        <source>Role <ph id="0" equiv="PH" disp="roleName"/> added.</source>
+      </segment>
+    </unit>
+    <unit id="4717581030065879789">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:144</note>
+      </notes>
+      <segment>
+        <source>Image actually in these poems</source>
+      </segment>
+    </unit>
+    <unit id="4729106993966961090">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:165</note>
+      </notes>
+      <segment>
+        <source>Export All Published in Traditional Chinese</source>
+      </segment>
+    </unit>
+    <unit id="4730804625942085752">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Minute</source>
+      </segment>
+    </unit>
+    <unit id="474250312112545331">
+      <notes>
+        <note category="location">src/app/_services/updateApp.service.ts:30</note>
+      </notes>
+      <segment>
+        <source>New FE version detected</source>
+      </segment>
+    </unit>
+    <unit id="4743646303582399236">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:12,14</note>
+      </notes>
+      <segment>
+        <source>Total Count of Stanza: <ph id="0" equiv="INTERPOLATION" disp="{{totalCountOfStanza}}"/></source>
+      </segment>
+    </unit>
+    <unit id="4750285454095461539">
+      <notes>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:114</note>
+      </notes>
+      <segment>
+        <source>Annotation with the same name exists.</source>
+      </segment>
+    </unit>
+    <unit id="4768749765465246664">
+      <notes>
+        <note category="location">src/app/account/register.component.html:23</note>
+        <note category="location">src/app/account/user.component.html:25</note>
+      </notes>
+      <segment>
+        <source>Email</source>
+      </segment>
+    </unit>
+    <unit id="47711193671827927">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:103</note>
+      </notes>
+      <segment>
+        <source>Orphaned Annotations to Delete</source>
+      </segment>
+    </unit>
+    <unit id="4778277115538483652">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:50,51</note>
+      </notes>
+      <segment>
+        <source>Select album and then select poems to add to album</source>
+      </segment>
+    </unit>
+    <unit id="4883775796561488339">
+      <notes>
+        <note category="location">src/app/account/register.component.ts:39</note>
+        <note category="location">src/app/account/register.component.ts:46</note>
+      </notes>
+      <segment>
+        <source>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/></source>
+      </segment>
+    </unit>
+    <unit id="4902817035128594900">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.html:25</note>
+        <note category="location">src/app/editor-view/imgMeta.component.html:12</note>
+        <note category="location">src/app/editor-view/not-local-image.component.html:17</note>
+      </notes>
+      <segment>
+        <source>Description</source>
+      </segment>
+    </unit>
+    <unit id="4930506384627295710">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:25,26</note>
+        <note category="location">src/app/editor-view/settings-index.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Settings</source>
+      </segment>
+    </unit>
+    <unit id="4937523942964397361">
+      <notes>
+        <note category="location">src/app/editor-view/albums-for-editor.component.ts:60</note>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?</source>
+      </segment>
+    </unit>
+    <unit id="4954960129848989361">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1464</note>
+      </notes>
+      <segment>
+        <source>This app is designed to have both frontend and backend sitting in the same host, when locally hosted images or other binary files are used in content. But this deployment uses 2 hosts.</source>
+      </segment>
+    </unit>
+    <unit id="4989667530106152847">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:110</note>
+      </notes>
+      <segment>
+        <source>Something wrong when deleting.</source>
+      </segment>
+    </unit>
+    <unit id="5031343019627316230">
+      <notes>
+        <note category="location">src/app/account/users.component.ts:76</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:128</note>
+      </notes>
+      <segment>
+        <source>Are you sure to delete?</source>
+      </segment>
+    </unit>
+    <unit id="5033103874664134622">
+      <notes>
+        <note category="location">src/app/_services/updateApp.service.ts:33</note>
+      </notes>
+      <segment>
+        <source>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now?</source>
+      </segment>
+    </unit>
+    <unit id="5043933900720743682">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:297</note>
+      </notes>
+      <segment>
+        <source>Albums</source>
+      </segment>
+    </unit>
+    <unit id="5073308731342027963">
+      <notes>
+        <note category="location">projects/nmce/src/_components/wip.component.html:1,2</note>
+      </notes>
+      <segment>
+        <source> Work in progress </source>
+      </segment>
+    </unit>
+    <unit id="5091699007423776468">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:281</note>
+      </notes>
+      <segment>
+        <source>No poem with this annotation.</source>
+      </segment>
+    </unit>
+    <unit id="5096329211267302309">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1294</note>
+      </notes>
+      <segment>
+        <source>No orphaned annotations found.</source>
+      </segment>
+    </unit>
+    <unit id="5143548108329331679">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/alert.service.ts:143</note>
+        <note category="location">projects/nmce/src/_ui_services/htmlDialog.component.ts:94</note>
+        <note category="location">projects/nmce/src/_ui_services/htmlFrameDialog.component.ts:107</note>
+        <note category="location">projects/nmce/src/_ui_services/localAlert.service.ts:55</note>
+        <note category="location">projects/nmce/src/_ui_services/textDialog.component.ts:90</note>
+      </notes>
+      <segment>
+        <source>No response from backend <ph id="0" equiv="PH" disp="host"/>. Connection is unavailable.</source>
+      </segment>
+    </unit>
+    <unit id="5169283565007101947">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:13,14</note>
+      </notes>
+      <segment>
+        <source> Pick </source>
+      </segment>
+    </unit>
+    <unit id="5188885544278736399">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:24,25</note>
+      </notes>
+      <segment>
+        <source>Find out if some images are not associated with any poem then reconcile</source>
+      </segment>
+    </unit>
+    <unit id="5190092630197064800">
+      <notes>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:19</note>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:50</note>
+      </notes>
+      <segment>
+        <source>Invalid string for Date</source>
+      </segment>
+    </unit>
+    <unit id="5206272431542421762">
+      <notes>
+        <note category="location">src/app/shared/chronicleBase.directive.ts:93</note>
+      </notes>
+      <segment>
+        <source>Keyword</source>
+      </segment>
+    </unit>
+    <unit id="5210060593529421439">
+      <notes>
+        <note category="location">src/app/shared/main-buttons.component.ts:210</note>
+      </notes>
+      <segment>
+        <source>Signed in now</source>
+      </segment>
+    </unit>
+    <unit id="5238239920705150217">
+      <notes>
+        <note category="location">src/app/shared/albumsBase.directive.ts:197</note>
+      </notes>
+      <segment>
+        <source>Album copied to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="5248717555542428023">
+      <notes>
+        <note category="location">src/app/account/register.component.html:4</note>
+        <note category="location">src/app/account/user.component.html:13</note>
+        <note category="location">src/app/account/users.component.html:31,32</note>
+        <note category="location">src/app/home/login.component.html:8</note>
+      </notes>
+      <segment>
+        <source>Username</source>
+      </segment>
+    </unit>
+    <unit id="5341799568859645592">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:110</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:102</note>
+      </notes>
+      <segment>
+        <source>Records deleted: <ph id="0" equiv="PH" disp="c"/></source>
+      </segment>
+    </unit>
+    <unit id="5371894085388750329">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/htmlImgDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlImgPrintDialog.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Original resolution or scale to fit width</source>
+      </segment>
+    </unit>
+    <unit id="5382438169954471318">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Add poem</source>
+      </segment>
+    </unit>
+    <unit id="5403684285319082289">
+      <notes>
+        <note category="location">projects/nmce/src/_components/monthYearExpiry.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Month</source>
+      </segment>
+    </unit>
+    <unit id="5406093358072761930">
+      <notes>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:217</note>
+      </notes>
+      <segment>
+        <source>Removed</source>
+      </segment>
+    </unit>
+    <unit id="5406243142350488424">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Use First Publish URL</source>
+      </segment>
+    </unit>
+    <unit id="5416914249602934450">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:78,79</note>
+      </notes>
+      <segment>
+        <source>Save Poem Data published into JSON except images</source>
+      </segment>
+    </unit>
+    <unit id="5432743843538183725">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:66,67</note>
+      </notes>
+      <segment>
+        <source>Import for DB Update</source>
+      </segment>
+    </unit>
+    <unit id="5442784446394125550">
+      <notes>
+        <note category="location">src/app/home/login.component.ts:93</note>
+      </notes>
+      <segment>
+        <source>The username or password may be incorrect.</source>
+      </segment>
+    </unit>
+    <unit id="5444896369632404988">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:19</note>
+      </notes>
+      <segment>
+        <source>List Poems</source>
+      </segment>
+    </unit>
+    <unit id="5465594999403114125">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:31,32</note>
+      </notes>
+      <segment>
+        <source>Src URL of Local to Relative</source>
+      </segment>
+    </unit>
+    <unit id="5474871040937410306">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:84</note>
+      </notes>
+      <segment>
+        <source>Nothing to save.</source>
+      </segment>
+    </unit>
+    <unit id="5587711142989070221">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:156,157</note>
+      </notes>
+      <segment>
+        <source>Remove numbered annotations not in superscripts.</source>
+      </segment>
+    </unit>
+    <unit id="5624894758050177523">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:20,21</note>
+        <note category="location">src/app/shared/view-settings.component.html:50,51</note>
+      </notes>
+      <segment>
+        <source>Poem View</source>
+      </segment>
+    </unit>
+    <unit id="5701618810648052610">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.html:33</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:62</note>
+      </notes>
+      <segment>
+        <source>Title</source>
+      </segment>
+    </unit>
+    <unit id="5741506539034814971">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.html:26,27</note>
+      </notes>
+      <segment>
+        <source> Audit and Reconcile </source>
+      </segment>
+    </unit>
+    <unit id="5742240279451365303">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:868</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1129</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1177</note>
+      </notes>
+      <segment>
+        <source>Nothing to suggest.</source>
+      </segment>
+    </unit>
+    <unit id="5774750542557032268">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:19</note>
+      </notes>
+      <segment>
+        <source>Default Spoken Language Code</source>
+      </segment>
+    </unit>
+    <unit id="5787235141743387480">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:144,145</note>
+      </notes>
+      <segment>
+        <source>Suggest numbered annotations based on all sups</source>
+      </segment>
+    </unit>
+    <unit id="5799967586583571004">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:156</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="PH" disp="newName"/> exists.</source>
+      </segment>
+    </unit>
+    <unit id="5810846753649528516">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:167</note>
+      </notes>
+      <segment>
+        <source>Export All in Simplified Chinese</source>
+      </segment>
+    </unit>
+    <unit id="5972151348158706531">
+      <notes>
+        <note category="location">src/app/shared/main-buttons.component.ts:120</note>
+      </notes>
+      <segment>
+        <source>Switch to Albums View</source>
+      </segment>
+    </unit>
+    <unit id="6036933763277199472">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:117,118</note>
+      </notes>
+      <segment>
+        <source>Type new annotation or associate with existing, and click chip to edit details.</source>
+      </segment>
+    </unit>
+    <unit id="6080142916541583092">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1372</note>
+      </notes>
+      <segment>
+        <source>Superscript with <ph id="0" equiv="PH" disp="sup.innerText"/> is not matching any numbered annotations. Please Suggest Numbered Annotations and Remove Orphaned Annotations.</source>
+      </segment>
+    </unit>
+    <unit id="6112642683465360445">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/localDocHtmlEditorDialog.component.ts:64</note>
+        <note category="location">projects/nmce/src/_ui_services/localTextEditorDialog.component.ts:57</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="PH" disp="this.noteLabel"/> saved to Local Storage</source>
+      </segment>
+    </unit>
+    <unit id="6142410908685888030">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:8</note>
+      </notes>
+      <segment>
+        <source>Use Tags</source>
+      </segment>
+    </unit>
+    <unit id="6186040623165741480">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:95</note>
+      </notes>
+      <segment>
+        <source>Orphaned Tags to Delete</source>
+      </segment>
+    </unit>
+    <unit id="6187071393626035283">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1096</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1248</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:185</note>
+      </notes>
+      <segment>
+        <source>Not found. Things may be out of sync.</source>
+      </segment>
+    </unit>
+    <unit id="6208528704186410935">
+      <notes>
+        <note category="location">src/app/account/roles.component.html:3,4</note>
+      </notes>
+      <segment>
+        <source>Roles:</source>
+      </segment>
+    </unit>
+    <unit id="6219288588962415681">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/notifications.component.html:1,2</note>
+      </notes>
+      <segment>
+        <source>Clear notifications</source>
+      </segment>
+    </unit>
+    <unit id="6299803518261935782">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:65,66</note>
+      </notes>
+      <segment>
+        <source>Check for Updates</source>
+      </segment>
+    </unit>
+    <unit id="63036171602683260">
+      <notes>
+        <note category="location">src/app/editor-view/not-local-image.component.html:22,23</note>
+      </notes>
+      <segment>
+        <source>Remote to Local</source>
+      </segment>
+    </unit>
+    <unit id="6329450020825493007">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:55</note>
+      </notes>
+      <segment>
+        <source>API Version</source>
+      </segment>
+    </unit>
+    <unit id="6333335057236774263">
+      <notes>
+        <note category="location">src/app/editor-view/imgMeta.component.ts:42</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1243</note>
+        <note category="location">src/app/editor-view/settings-author.component.ts:59</note>
+        <note category="location">src/app/editor-view/settings-edit.component.ts:145</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.ts:93</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.ts:106</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.ts:119</note>
+      </notes>
+      <segment>
+        <source>Saved</source>
+      </segment>
+    </unit>
+    <unit id="6355143260734571596">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:94</note>
+      </notes>
+      <segment>
+        <source>user <ph id="0" equiv="PH" disp="this.model!.userName"/> deleted.</source>
+      </segment>
+    </unit>
+    <unit id="6381490568322624964">
+      <notes>
+        <note category="location">src/app/account/users.component.ts:88</note>
+        <note category="location">src/app/editor-view/settings-files.component.ts:108</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:134</note>
+      </notes>
+      <segment>
+        <source>Deleted</source>
+      </segment>
+    </unit>
+    <unit id="6416184296479508661">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:17</note>
+      </notes>
+      <segment>
+        <source>Pick Year First in Published Date</source>
+      </segment>
+    </unit>
+    <unit id="6440735633799552936">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:8,9</note>
+      </notes>
+      <segment>
+        <source>View Settings</source>
+      </segment>
+    </unit>
+    <unit id="6451610243341248668">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:48</note>
+      </notes>
+      <segment>
+        <source>Spoken Language Code</source>
+      </segment>
+    </unit>
+    <unit id="6483680626836794824">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.ts:21</note>
+      </notes>
+      <segment>
+        <source>Date Range</source>
+      </segment>
+    </unit>
+    <unit id="6490688569532630280">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="description">Email send</note>
+      </notes>
+      <segment>
+        <source>Send</source>
+      </segment>
+    </unit>
+    <unit id="6557411325739932275">
+      <notes>
+        <note category="location">src/app/editor-view/settings-not-local-images.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>External Pictures Management</source>
+      </segment>
+    </unit>
+    <unit id="6576839422711246802">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:173</note>
+      </notes>
+      <segment>
+        <source>Things look in sync.</source>
+      </segment>
+    </unit>
+    <unit id="6582573664846559511">
+      <notes>
+        <note category="location">src/app/account/user.component.html:32,33</note>
+      </notes>
+      <segment>
+        <source>Change Password</source>
+      </segment>
+    </unit>
+    <unit id="6595008830732269870">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:201</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:143</note>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:145</note>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.ts:133</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:480</note>
+      </notes>
+      <segment>
+        <source>Not found</source>
+      </segment>
+    </unit>
+    <unit id="6601618897298769017">
+      <notes>
+        <note category="location">src/app/reader-view/chronicle-for-reader.component.html:30,31</note>
+      </notes>
+      <segment>
+        <source>Clear keywords and tags</source>
+      </segment>
+    </unit>
+    <unit id="6627715938539500962">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:102,103</note>
+      </notes>
+      <segment>
+        <source>Suggest annotations based on all existing annotations matching phases of poem</source>
+      </segment>
+    </unit>
+    <unit id="663305273583362025">
+      <notes>
+        <note category="location">src/app/account/register.component.html:38,39</note>
+      </notes>
+      <segment>
+        <source>Check to assign roles to current user.</source>
+      </segment>
+    </unit>
+    <unit id="6678680596750589109">
+      <notes>
+        <note category="location">src/app/account/users.component.ts:50</note>
+      </notes>
+      <segment>
+        <source>Search successful returning <ph id="0" equiv="PH" disp="data.length"/>.</source>
+      </segment>
+    </unit>
+    <unit id="6688585661689878047">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:141</note>
+      </notes>
+      <segment>
+        <source>Deleted.</source>
+      </segment>
+    </unit>
+    <unit id="6757914293372334985">
+      <notes>
+        <note category="location">src/app/shared/albumsBase.directive.ts:231</note>
+      </notes>
+      <segment>
+        <source>Album HTML tags copied to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="6759205696902713848">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:64</note>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:468</note>
+      </notes>
+      <segment>
+        <source>Warning</source>
+      </segment>
+    </unit>
+    <unit id="6769219112239702582">
+      <notes>
+        <note category="location">src/app/editor-view/settings-author.component.html:18</note>
+        <note category="location">src/app/shared/about.component.html:33</note>
+      </notes>
+      <segment>
+        <source>Bio</source>
+      </segment>
+    </unit>
+    <unit id="6789040151215296839">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/baseTypes.ts:11</note>
+      </notes>
+      <segment>
+        <source>The derived concrete class had not called super(DerivedClassName) properly.</source>
+      </segment>
+    </unit>
+    <unit id="6800308101673162937">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/alert.service.ts:145</note>
+        <note category="location">projects/nmce/src/_ui_services/htmlDialog.component.ts:96</note>
+        <note category="location">projects/nmce/src/_ui_services/htmlFrameDialog.component.ts:109</note>
+        <note category="location">projects/nmce/src/_ui_services/localAlert.service.ts:57</note>
+        <note category="location">projects/nmce/src/_ui_services/textDialog.component.ts:92</note>
+      </notes>
+      <segment>
+        <source>No response from backend. Connection is unavailable.</source>
+      </segment>
+    </unit>
+    <unit id="6812930637022637485">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:9</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:23</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.html:52</note>
+      </notes>
+      <segment>
+        <source>Display</source>
+      </segment>
+    </unit>
+    <unit id="6911688962324623193">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Tags Management</source>
+      </segment>
+    </unit>
+    <unit id="6924245241744002654">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:51</note>
+      </notes>
+      <segment>
+        <source>Build</source>
+      </segment>
+    </unit>
+    <unit id="6932865105766151309">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1411</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1474</note>
+      </notes>
+      <segment>
+        <source>Upload</source>
+      </segment>
+    </unit>
+    <unit id="6937522124939673585">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:23</note>
+        <note category="location">src/app/shared/view-settings.component.html:37</note>
+        <note category="location">src/app/shared/view-settings.component.html:53</note>
+        <note category="location">src/app/shared/view-settings.component.html:67</note>
+      </notes>
+      <segment>
+        <source>Show Tags</source>
+      </segment>
+    </unit>
+    <unit id="6941659493626287408">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/notifications.component.ts:50</note>
+      </notes>
+      <segment>
+        <source>For actionable items, please save current works before action</source>
+      </segment>
+    </unit>
+    <unit id="6945988051184690124">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/notifications.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/notifications.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Remove item</source>
+      </segment>
+    </unit>
+    <unit id="6953621579784584089">
+      <notes>
+        <note category="location">src/app/account/register.component.ts:44</note>
+      </notes>
+      <segment>
+        <source>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/>. And a confirmation Email will be sent to the account holder to confirm the Email address.</source>
+      </segment>
+    </unit>
+    <unit id="6959497441009812685">
+      <notes>
+        <note category="location">src/app/account/register.component.html:19</note>
+        <note category="location">src/app/account/user.component.html:19</note>
+      </notes>
+      <segment>
+        <source>Full Name</source>
+      </segment>
+    </unit>
+    <unit id="6985575385025891464">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:468</note>
+      </notes>
+      <segment>
+        <source>This will clear all contents and settings, and the app will logout after the clearing. Do you want to clear all?</source>
+      </segment>
+    </unit>
+    <unit id="6992551490395604932">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.ts:161</note>
+      </notes>
+      <segment>
+        <source>Not allow to print empty document.</source>
+      </segment>
+    </unit>
+    <unit id="7000649363168371045">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textEditorDialogBase.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Save changes</source>
+      </segment>
+    </unit>
+    <unit id="7022070615528435141">
+      <notes>
+        <note category="location">src/app/account/user.component.html:33,34</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:128</note>
+        <note category="location">src/app/editor-view/settings-files.component.html:85,86</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:120</note>
+      </notes>
+      <segment>
+        <source>Delete</source>
+      </segment>
+    </unit>
+    <unit id="7071470734400948493">
+      <notes>
+        <note category="location">src/app/editor-view/settings-author.component.html:4</note>
+        <note category="location">src/app/editor-view/settings-index.component.html:9,10</note>
+        <note category="location">src/app/shared/about.component.html:12,13</note>
+        <note category="location">src/app/shared/about.component.html:22</note>
+        <note category="location">src/app/shared/about.component.html:25</note>
+      </notes>
+      <segment>
+        <source>Author</source>
+      </segment>
+    </unit>
+    <unit id="7084833103108984341">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:93,94</note>
+      </notes>
+      <segment>
+        <source> Export All Images </source>
+      </segment>
+    </unit>
+    <unit id="7114071321253816795">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlPrintDialog.component.ts:36</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlPrintDialog.component.ts:69</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlPrintDialog.component.ts:93</note>
+      </notes>
+      <segment>
+        <source>this.htmlContentElement does not exist.</source>
+      </segment>
+    </unit>
+    <unit id="721250237025924127">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:34,35</note>
+        <note category="location">src/app/shared/view-settings.component.html:64,65</note>
+      </notes>
+      <segment>
+        <source>Poem View in Album</source>
+      </segment>
+    </unit>
+    <unit id="7239750919884229270">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:110</note>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:158</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:104</note>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.ts:114</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:432</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:164</note>
+      </notes>
+      <segment>
+        <source>Updated</source>
+      </segment>
+    </unit>
+    <unit id="7338090140151968267">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:7</note>
+      </notes>
+      <segment>
+        <source>Use Numeric Citation</source>
+      </segment>
+    </unit>
+    <unit id="7379726829888309084">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>End Date</source>
+      </segment>
+    </unit>
+    <unit id="73969950736278297">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.ts:398</note>
+      </notes>
+      <segment>
+        <source>Copied plain text to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="7462301153729425254">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:62,63</note>
+      </notes>
+      <segment>
+        <source>Export</source>
+      </segment>
+    </unit>
+    <unit id="7482395107104484666">
+      <notes>
+        <note category="location">projects/nmce-func/src/_func/dateFunc.ts:377</note>
+      </notes>
+      <segment>
+        <source>Valid input should be greater than or equal to 0 and less than 1440.</source>
+      </segment>
+    </unit>
+    <unit id="7515883357904500238">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/confirm.service.ts:48</note>
+      </notes>
+      <segment>
+        <source>Are you sure?</source>
+      </segment>
+    </unit>
+    <unit id="7545995543999812448">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:618</note>
+      </notes>
+      <segment>
+        <source>No supporting new album here.</source>
+      </segment>
+    </unit>
+    <unit id="7565155156017938502">
+      <notes>
+        <note category="location">src/app/editor-view/numberedAnnotationHtmlEditor.component.ts:80</note>
+      </notes>
+      <segment>
+        <source>Edit </source>
+      </segment>
+    </unit>
+    <unit id="7571864690777833285">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:660</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="PH" disp="value"/> already in albums</source>
+      </segment>
+    </unit>
+    <unit id="7585826646011739428">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:111</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.ts:82</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:18</note>
+        <note category="location">src/app/editor-view/settings-index.component.html:20</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:150</note>
+      </notes>
+      <segment>
+        <source>Edit</source>
+      </segment>
+    </unit>
+    <unit id="7591969168552496643">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.ts:93</note>
+      </notes>
+      <segment>
+        <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it is currently too large to be uploaded.</source>
+      </segment>
+    </unit>
+    <unit id="7654474747726460441">
+      <notes>
+        <note category="location">src/app/_services/updateApp.service.ts:34</note>
+      </notes>
+      <segment>
+        <source>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</source>
+      </segment>
+    </unit>
+    <unit id="7655422381923268369">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:287</note>
+      </notes>
+      <segment>
+        <source>First publish URL</source>
+      </segment>
+    </unit>
+    <unit id="7708270344948043036">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:84,86</note>
+      </notes>
+      <segment>
+        <source>
+          <ph id="0" equiv="INTERPOLATION" disp="{{menuTextOfExport2nd}}"/>
+        </source>
+      </segment>
+    </unit>
+    <unit id="7753871022659048744">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:146</note>
+      </notes>
+      <segment>
+        <source>This image is orphaned.</source>
+      </segment>
+    </unit>
+    <unit id="7763234826319747019">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:24</note>
+        <note category="location">src/app/shared/view-settings.component.html:38</note>
+        <note category="location">src/app/shared/view-settings.component.html:54</note>
+        <note category="location">src/app/shared/view-settings.component.html:68</note>
+      </notes>
+      <segment>
+        <source>Show Publish Date</source>
+      </segment>
+    </unit>
+    <unit id="7816570869614983442">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services_lazy/dataComponentPrintDialog.component.ts:67</note>
+      </notes>
+      <segment>
+        <source>Something wrong</source>
+      </segment>
+    </unit>
+    <unit id="7819314041543176992">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/logDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/dataComponentPrintDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlPrintDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlPrintDialog.component.html:1</note>
+        <note category="location">src/app/editor-view/imgMeta.component.html:18,19</note>
+        <note category="location">src/app/home/login.component.html:22,23</note>
+      </notes>
+      <segment>
+        <source>Close</source>
+      </segment>
+    </unit>
+    <unit id="786281080071228614">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/htmlImgDialog.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services_lazy/htmlImgPrintDialog.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Scale to fit width</source>
+      </segment>
+    </unit>
+    <unit id="7886570921510760899">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:37,38</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:174</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:858</note>
+        <note category="location">src/app/editor-view/settings-tags.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Tags</source>
+      </segment>
+    </unit>
+    <unit id="7889443424988593083">
+      <notes>
+        <note category="location">src/app/reader-view/chronicle-for-reader.component.html:41,42</note>
+      </notes>
+      <segment>
+        <source>Chronology</source>
+      </segment>
+    </unit>
+    <unit id="7907159475755152743">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1396</note>
+      </notes>
+      <segment>
+        <source>Total number of changes: <ph id="0" equiv="PH" disp="idAndOrderList.length"/>.</source>
+      </segment>
+    </unit>
+    <unit id="795890916060309463">
+      <notes>
+        <note category="location">src/app/account/users.component.html:32,33</note>
+      </notes>
+      <segment>
+        <source>Roles</source>
+      </segment>
+    </unit>
+    <unit id="803639390975802529">
+      <notes>
+        <note category="location">src/app/account/register.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Min. length: 6; digit, symbol, lowercase and uppercase</source>
+      </segment>
+    </unit>
+    <unit id="8066608938393600549">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Message</source>
+      </segment>
+    </unit>
+    <unit id="8074407516359817175">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:600</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="PH" disp="albumTitle"/> already includes <ph id="1" equiv="PH_1" disp="this.poem.title"/>.</source>
+      </segment>
+    </unit>
+    <unit id="8102724827579829353">
+      <notes>
+        <note category="location">src/app/editor-view/settings-author.component.html:19,20</note>
+      </notes>
+      <segment>
+        <source>Short bio about the author...</source>
+      </segment>
+    </unit>
+    <unit id="8138153834429494858">
+      <notes>
+        <note category="location">src/app/shared/albumsBase.directive.ts:214</note>
+      </notes>
+      <segment>
+        <source>Album plain text copied to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="8147539225613565632">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Use Annotations</source>
+      </segment>
+    </unit>
+    <unit id="8213322219114858422">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:142</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1168</note>
+      </notes>
+      <segment>
+        <source>Numbered Annotations</source>
+      </segment>
+    </unit>
+    <unit id="8234152665413959325">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:89,90</note>
+      </notes>
+      <segment>
+        <source> Export All </source>
+      </segment>
+    </unit>
+    <unit id="8238950619343912972">
+      <notes>
+        <note category="location">src/app/shared/view-settings.component.html:26</note>
+        <note category="location">src/app/shared/view-settings.component.html:56</note>
+      </notes>
+      <segment>
+        <source>Show Albums</source>
+      </segment>
+    </unit>
+    <unit id="8264044238565501678">
+      <notes>
+        <note category="location">src/app/home/login.component.html:25,26</note>
+      </notes>
+      <segment>
+        <source>Forgot password</source>
+      </segment>
+    </unit>
+    <unit id="8284448604312495823">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.ts:388</note>
+      </notes>
+      <segment>
+        <source>Copied to Clipboard</source>
+      </segment>
+    </unit>
+    <unit id="8286804311024638809">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:30,32</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:100</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:25</note>
+      </notes>
+      <segment>
+        <source>Annotations</source>
+      </segment>
+    </unit>
+    <unit id="8346025183485597795">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.ts:259</note>
+        <note category="location">src/app/shared/poemViewer.component.ts:296</note>
+      </notes>
+      <segment>
+        <source>No content in annotation.</source>
+      </segment>
+    </unit>
+    <unit id="8371496833003029397">
+      <notes>
+        <note category="location">src/app/_services/updateApp.service.ts:69</note>
+      </notes>
+      <segment>
+        <source>No update this time</source>
+      </segment>
+    </unit>
+    <unit id="8411110402997120108">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:33,34</note>
+      </notes>
+      <segment>
+        <source> Pick Images and Insert </source>
+      </segment>
+    </unit>
+    <unit id="8446162208830000966">
+      <notes>
+        <note category="location">src/app/editor-view/albumHtmlEditor.component.ts:216</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:501</note>
+      </notes>
+      <segment>
+        <source>Quit</source>
+      </segment>
+    </unit>
+    <unit id="8475452905131493427">
+      <notes>
+        <note category="location">src/app/editor-view/settings-author.component.html:11</note>
+      </notes>
+      <segment>
+        <source>Pen Name</source>
+      </segment>
+    </unit>
+    <unit id="853025520958537363">
+      <notes>
+        <note category="location">src/app/editor-view/settings-poetry.component.ts:132</note>
+      </notes>
+      <segment>
+        <source>Are you sure to remove?</source>
+      </segment>
+    </unit>
+    <unit id="8534917615989822419">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1401</note>
+      </notes>
+      <segment>
+        <source>No need to reorder.</source>
+      </segment>
+    </unit>
+    <unit id="853614527195270837">
+      <notes>
+        <note category="location">src/app/shared/main-buttons.component.ts:118</note>
+      </notes>
+      <segment>
+        <source>Switch to Chronicle View</source>
+      </segment>
+    </unit>
+    <unit id="8573908851048050800">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:120</note>
+      </notes>
+      <segment>
+        <source>Are you sure to delete tag <ph id="0" equiv="PH" disp="a.name"/>?</source>
+      </segment>
+    </unit>
+    <unit id="8592282545368203219">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.ts:117</note>
+        <note category="location">projects/nmce/src/_ui_services/textEditorDialogBase.component.ts:76</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:354</note>
+      </notes>
+      <segment>
+        <source>Not allow to save empty document.</source>
+      </segment>
+    </unit>
+    <unit id="8629691518131604290">
+      <notes>
+        <note category="location">src/app/editor-view/settings-edit.component.html:3</note>
+      </notes>
+      <segment>
+        <source>Use Published Date</source>
+      </segment>
+    </unit>
+    <unit id="863652905467081099">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:418</note>
+      </notes>
+      <segment>
+        <source>Done. Please logout later to reload.</source>
+      </segment>
+    </unit>
+    <unit id="8700121026680200191">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Clear</source>
+      </segment>
+    </unit>
+    <unit id="8701471234447355405">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:676</note>
+      </notes>
+      <segment>
+        <source>You can select from only existing albums.</source>
+      </segment>
+    </unit>
+    <unit id="8702366755951262117">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:769</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:810</note>
+      </notes>
+      <segment>
+        <source>Already tagged with <ph id="0" equiv="PH" disp="tagName"/></source>
+      </segment>
+    </unit>
+    <unit id="8710511815807367067">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:28,29</note>
+      </notes>
+      <segment>
+        <source> Upload Image and Insert </source>
+      </segment>
+    </unit>
+    <unit id="8714549240672191801">
+      <notes>
+        <note category="location">src/app/editor-view/settings-files.component.ts:184</note>
+      </notes>
+      <segment>
+        <source>Reconciled with changes: <ph id="0" equiv="PH" disp="count"/></source>
+      </segment>
+    </unit>
+    <unit id="8738732372986673558">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.html:30,31</note>
+      </notes>
+      <segment>
+        <source>Copy to clipboard</source>
+      </segment>
+    </unit>
+    <unit id="8759216655713256177">
+      <notes>
+        <note category="location">src/app/account/user.component.ts:73</note>
+      </notes>
+      <segment>
+        <source>Update successful for <ph id="0" equiv="PH" disp="this.model!.userName"/></source>
+      </segment>
+    </unit>
+    <unit id="8833873795626485171">
+      <notes>
+        <note category="location">src/app/shared/poemViewer.component.html:93,94</note>
+      </notes>
+      <segment>
+        <source>Go to first published URL</source>
+      </segment>
+    </unit>
+    <unit id="8850247088873647746">
+      <notes>
+        <note category="location">src/app/editor-view/settings-index.component.html:14,15</note>
+      </notes>
+      <segment>
+        <source>Poetry</source>
+      </segment>
+    </unit>
+    <unit id="8858222294863995927">
+      <notes>
+        <note category="location">src/app/editor-view/settings-annotations.component.html:10,11</note>
+      </notes>
+      <segment>
+        <source>Find Orphaned Annotations and Delete</source>
+      </segment>
+    </unit>
+    <unit id="8882532756124831205">
+      <notes>
+        <note category="location">src/app/editor-view/chronicle-for-editor.component.ts:159</note>
+      </notes>
+      <segment>
+        <source>Select album for a collection of poems</source>
+      </segment>
+    </unit>
+    <unit id="8890553633144307762">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/htmlDocEditorDialogBase.directive.html:1</note>
+        <note category="location">projects/nmce/src/_components/wip.component.html:1,2</note>
+        <note category="location">projects/nmce/src/_ui_services/textEditorDialogBase.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Back</source>
+      </segment>
+    </unit>
+    <unit id="8896419690537662392">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1069</note>
+      </notes>
+      <segment>
+        <source>New annotation <ph id="0" equiv="PH" disp="newAnnotation.name"/> is added and associated</source>
+      </segment>
+    </unit>
+    <unit id="8913859248416128666">
+      <notes>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:150</note>
+      </notes>
+      <segment>
+        <source>New Tag Name</source>
+      </segment>
+    </unit>
+    <unit id="8932082043262569198">
+      <notes>
+        <note category="location">src/app/editor-view/htmlEditorMenu.component.html:7,8</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:38,39</note>
+      </notes>
+      <segment>
+        <source>Paste as Plain Text</source>
+      </segment>
+    </unit>
+    <unit id="8942351587754185907">
+      <notes>
+        <note category="location">src/app/shared/about.component.html:54</note>
+      </notes>
+      <segment>
+        <source>API</source>
+      </segment>
+    </unit>
+    <unit id="8953033926734869941">
+      <notes>
+        <note category="location">src/app/_services/confirmUpload.component.html:21</note>
+        <note category="location">src/app/editor-view/annotationHtmlEditor.component.html:23</note>
+        <note category="location">src/app/editor-view/imgMeta.component.html:8</note>
+      </notes>
+      <segment>
+        <source>Name</source>
+      </segment>
+    </unit>
+    <unit id="899587498867882115">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.ts:165</note>
+      </notes>
+      <segment>
+        <source>Export All Published in Simplified Chinese</source>
+      </segment>
+    </unit>
+    <unit id="9061257599906709984">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1474</note>
+      </notes>
+      <segment>
+        <source>Select image</source>
+      </segment>
+    </unit>
+    <unit id="9127604588498960753">
+      <notes>
+        <note category="location">projects/nmce-html-editor/src/lib/emailConfirm.component.html:1</note>
+        <note category="description">email subject</note>
+      </notes>
+      <segment>
+        <source>Subject</source>
+      </segment>
+    </unit>
+    <unit id="9129573176471756707">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1411</note>
+      </notes>
+      <segment>
+        <source>Select image, video or audio</source>
+      </segment>
+    </unit>
+    <unit id="9142482877319241807">
+      <notes>
+        <note category="location">src/app/home/login.component.ts:124</note>
+      </notes>
+      <segment>
+        <source>Email sent. Please check your email to reset your password.</source>
+      </segment>
+    </unit>
+    <unit id="9150344180705083024">
+      <notes>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.html:162,163</note>
+      </notes>
+      <segment>
+        <source>Sync registered annotations with sups and reorder superscripts</source>
+      </segment>
+    </unit>
+    <unit id="9166276512260628858">
+      <notes>
+        <note category="location">src/app/editor-view/main-for-editor.component.html:106,107</note>
+      </notes>
+      <segment>
+        <source>Clear all contents and settings</source>
+      </segment>
+    </unit>
+    <unit id="9178182467454450952">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/confirm.service.ts:48</note>
+        <note category="location">src/app/account/users.component.ts:76</note>
+        <note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1271</note>
+        <note category="location">src/app/editor-view/settings-annotations.component.ts:128</note>
+        <note category="location">src/app/editor-view/settings-files.component.ts:208</note>
+        <note category="location">src/app/editor-view/settings-poetry.component.ts:132</note>
+        <note category="location">src/app/editor-view/settings-tags.component.ts:120</note>
+      </notes>
+      <segment>
+        <source>Confirm</source>
+      </segment>
+    </unit>
+    <unit id="935187492052582731">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/textInput.component.html:1</note>
+        <note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+      </notes>
+      <segment>
+        <source>Submit</source>
+      </segment>
+    </unit>
+    <unit id="969162659595657718">
+      <notes>
+        <note category="location">projects/nmce/src/_ui_services_lazy/dataComponentPrintDialog.component.ts:64</note>
+      </notes>
+      <segment>
+        <source>Copied to clipboard</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

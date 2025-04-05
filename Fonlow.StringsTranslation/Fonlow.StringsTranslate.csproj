@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fonlow.AndroidStrings\Fonlow.AndroidStrings.csproj" />
+    <ProjectReference Include="..\Fonlow.Translate.Abstract\Fonlow.Translate.Abstract.csproj" />
+  </ItemGroup>
+
+</Project>

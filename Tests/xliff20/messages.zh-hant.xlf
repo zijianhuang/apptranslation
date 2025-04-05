@@ -1,0 +1,16 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="zh-hant">
+  <file id="ngi18n" original="ng.template">
+    <unit id="7654474747726460441">
+      <segment state="initial">
+        <source>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</source>
+        <target>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</target>
+      </segment>
+    </unit>
+    <unit id="6959497441009812685">
+      <segment state="initial">
+        <source>Full Name</source>
+        <target>Full Name</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

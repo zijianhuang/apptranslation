@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+	<file id="ngi18n" original="ng.template">
+		<unit id="4937523942964397361">
+			<notes>
+				<note category="location">src/app/editor-view/albums-for-editor.component.ts:60</note>
+				<note category="location">src/app/editor-view/chronicle-for-editor.component.ts:136</note>
+			</notes>
+			<segment>
+				<source>
+					Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?
+				</source>
+			</segment>
+		</unit>
+		<unit id="462051546739716571">
+			<notes>
+				<note category="location">src/app/editor-view/poemHtmlEditor.component.ts:1271</note>
+			</notes>
+			<segment>
+				<source>
+					There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?
+				</source>
+			</segment>
+		</unit>
+		<unit id="935187492052582731">
+			<notes>
+				<note category="location">projects/nmce/src/_ui_services/DateHourRangePicker.component.html:1</note>
+				<note category="location">projects/nmce/src/_ui_services/dateRangePicker.component.html:1</note>
+				<note category="location">projects/nmce/src/_ui_services/textInput.component.html:1</note>
+				<note category="location">projects/nmce/src/_ui_services/timePicker.component.html:1</note>
+			</notes>
+			<segment>
+				<source>Submit</source>
+			</segment>
+		</unit>
+		<unit id="969162659595657718">
+			<notes>
+				<note category="location">projects/nmce/src/_ui_services_lazy/dataComponentPrintDialog.component.ts:64</note>
+			</notes>
+			<segment>
+				<source>Copied to clipboard</source>
+			</segment>
+		</unit>
+	</file>
+</xliff>

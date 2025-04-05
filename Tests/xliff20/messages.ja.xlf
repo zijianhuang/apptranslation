@@ -1,0 +1,16 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="ja">
+  <file id="ngi18n" original="ng.template">
+    <unit id="5143548108329331679">
+      <segment state="initial">
+        <source>No response from backend <ph id="0" equiv="PH" disp="host"/>. Connection is unavailable.</source>
+        <target>No response from backend <ph id="0" equiv="PH" disp="host"/>. Connection is unavailable.</target>
+      </segment>
+    </unit>
+    <unit id="2807800733729323332">
+      <segment state="initial">
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+   </file>
+</xliff>

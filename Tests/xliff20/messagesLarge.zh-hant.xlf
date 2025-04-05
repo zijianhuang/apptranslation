@@ -1,0 +1,1820 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="zh-hant">
+  <file id="ngi18n" original="ng.template">
+    <unit id="5190092630197064800">
+      <segment state="initial">
+        <source>Invalid string for Date</source>
+        <target>Invalid string for Date</target>
+      </segment>
+    </unit>
+    <unit id="4180340141420826523">
+      <segment state="initial">
+        <source>Invalid number for Date</source>
+        <target>Invalid number for Date</target>
+      </segment>
+    </unit>
+    <unit id="349480122875358760">
+      <segment state="initial">
+        <source>Expect Date, string or number</source>
+        <target>Expect Date, string or number</target>
+      </segment>
+    </unit>
+    <unit id="7482395107104484666">
+      <segment state="initial">
+        <source>Valid input should be greater than or equal to 0 and less than 1440.</source>
+        <target>Valid input should be greater than or equal to 0 and less than 1440.</target>
+      </segment>
+    </unit>
+    <unit id="1640609344969975994">
+      <notes>
+        <note category="description">To for Email recipient</note>
+      </notes>
+      <segment state="initial">
+        <source>To</source>
+        <target>To</target>
+      </segment>
+    </unit>
+    <unit id="9127604588498960753">
+      <notes>
+        <note category="description">email subject</note>
+      </notes>
+      <segment state="initial">
+        <source>Subject</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="2159130950882492111">
+      <segment state="initial">
+        <source>Cancel</source>
+        <target>Cancel</target>
+      </segment>
+    </unit>
+    <unit id="6490688569532630280">
+      <notes>
+        <note category="description">Email send</note>
+      </notes>
+      <segment state="initial">
+        <source>Send</source>
+        <target>Send</target>
+      </segment>
+    </unit>
+    <unit id="2587240527868724590">
+      <notes>
+        <note category="description">Email carbon copy</note>
+      </notes>
+      <segment state="initial">
+        <source>CC</source>
+        <target>CC</target>
+      </segment>
+    </unit>
+    <unit id="1158196584444204374">
+      <notes>
+        <note category="description">email blind carbon copy</note>
+      </notes>
+      <segment state="initial">
+        <source>BCC</source>
+        <target>BCC</target>
+      </segment>
+    </unit>
+    <unit id="8066608938393600549">
+      <segment state="initial">
+        <source>Message</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="8890553633144307762">
+      <segment state="initial">
+        <source>Back</source>
+        <target>Back</target>
+      </segment>
+    </unit>
+    <unit id="7000649363168371045">
+      <segment state="initial">
+        <source>Save changes</source>
+        <target>Save changes</target>
+      </segment>
+    </unit>
+    <unit id="4194876199597412112">
+      <segment state="initial">
+        <source>Undo changes</source>
+        <target>Undo changes</target>
+      </segment>
+    </unit>
+    <unit id="43679560859374265">
+      <segment state="initial">
+        <source>Empty Text</source>
+        <target>Empty Text</target>
+      </segment>
+    </unit>
+    <unit id="8592282545368203219">
+      <segment state="initial">
+        <source>Not allow to save empty document.</source>
+        <target>Not allow to save empty document.</target>
+      </segment>
+    </unit>
+    <unit id="6992551490395604932">
+      <segment state="initial">
+        <source>Not allow to print empty document.</source>
+        <target>Not allow to print empty document.</target>
+      </segment>
+    </unit>
+    <unit id="6112642683465360445">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="this.noteLabel"/> saved to Local Storage</source>
+        <target><ph id="0" equiv="PH" disp="this.noteLabel"/> saved to Local Storage</target>
+      </segment>
+    </unit>
+    <unit id="5403684285319082289">
+      <segment state="initial">
+        <source>Month</source>
+        <target>Month</target>
+      </segment>
+    </unit>
+    <unit id="1464072562214937907">
+      <segment state="initial">
+        <source>Year</source>
+        <target>Year</target>
+      </segment>
+    </unit>
+    <unit id="41150179304162218">
+      <segment state="initial">
+        <source> The page your are trying to visit can&apos;t be found. </source>
+        <target> The page your are trying to visit can&apos;t be found. </target>
+      </segment>
+    </unit>
+    <unit id="2821179408673282599">
+      <segment state="initial">
+        <source>Home</source>
+        <target>Home</target>
+      </segment>
+    </unit>
+    <unit id="5073308731342027963">
+      <segment state="initial">
+        <source> Work in progress </source>
+        <target> Work in progress </target>
+      </segment>
+    </unit>
+    <unit id="3318968477864966943">
+      <segment state="initial">
+        <source> We are still working on this page. Keep an eye on our newsletters to stay up to date with the latest news and information regarding future developments. </source>
+        <target> We are still working on this page. Keep an eye on our newsletters to stay up to date with the latest news and information regarding future developments. </target>
+      </segment>
+    </unit>
+    <unit id="3604386807230411192">
+      <segment state="initial">
+        <source>Start Date</source>
+        <target>Start Date</target>
+      </segment>
+    </unit>
+    <unit id="3284697869924237097">
+      <segment state="initial">
+        <source>Hour</source>
+        <target>Hour</target>
+      </segment>
+    </unit>
+    <unit id="4730804625942085752">
+      <segment state="initial">
+        <source>Minute</source>
+        <target>Minute</target>
+      </segment>
+    </unit>
+    <unit id="7379726829888309084">
+      <segment state="initial">
+        <source>End Date</source>
+        <target>End Date</target>
+      </segment>
+    </unit>
+    <unit id="935187492052582731">
+      <segment state="initial">
+        <source>Submit</source>
+        <target>Submit</target>
+      </segment>
+    </unit>
+    <unit id="8700121026680200191">
+      <segment state="initial">
+        <source>Clear</source>
+        <target>Clear</target>
+      </segment>
+    </unit>
+    <unit id="5143548108329331679">
+      <segment state="initial">
+        <source>No response from backend <ph id="0" equiv="PH" disp="host"/>. Connection is unavailable.</source>
+        <target>No response from backend <ph id="0" equiv="PH" disp="host"/>. Connection is unavailable.</target>
+      </segment>
+    </unit>
+    <unit id="6800308101673162937">
+      <segment state="initial">
+        <source>No response from backend. Connection is unavailable.</source>
+        <target>No response from backend. Connection is unavailable.</target>
+      </segment>
+    </unit>
+    <unit id="6789040151215296839">
+      <segment state="initial">
+        <source>The derived concrete class had not called super(DerivedClassName) properly.</source>
+        <target>The derived concrete class had not called super(DerivedClassName) properly.</target>
+      </segment>
+    </unit>
+    <unit id="4390435099342067853">
+      <segment state="initial">
+        <source>[<ph id="0" equiv="PH" disp="type.name"/>]: trying to create multiple instances, but this service should be a singleton.</source>
+        <target>[<ph id="0" equiv="PH" disp="type.name"/>]: trying to create multiple instances, but this service should be a singleton.</target>
+      </segment>
+    </unit>
+    <unit id="2807800733729323332">
+      <segment state="initial">
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="3542042671420335679">
+      <segment state="initial">
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
+    <unit id="9178182467454450952">
+      <segment state="initial">
+        <source>Confirm</source>
+        <target>Confirm</target>
+      </segment>
+    </unit>
+    <unit id="7515883357904500238">
+      <segment state="initial">
+        <source>Are you sure?</source>
+        <target>Are you sure?</target>
+      </segment>
+    </unit>
+    <unit id="6483680626836794824">
+      <segment state="initial">
+        <source>Date Range</source>
+        <target>Date Range</target>
+      </segment>
+    </unit>
+    <unit id="5371894085388750329">
+      <segment state="initial">
+        <source>Original resolution or scale to fit width</source>
+        <target>Original resolution or scale to fit width</target>
+      </segment>
+    </unit>
+    <unit id="786281080071228614">
+      <segment state="initial">
+        <source>Scale to fit width</source>
+        <target>Scale to fit width</target>
+      </segment>
+    </unit>
+    <unit id="7819314041543176992">
+      <segment state="initial">
+        <source>Close</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="6219288588962415681">
+      <segment state="initial">
+        <source>Clear notifications</source>
+        <target>Clear notifications</target>
+      </segment>
+    </unit>
+    <unit id="6945988051184690124">
+      <segment state="initial">
+        <source>Remove item</source>
+        <target>Remove item</target>
+      </segment>
+    </unit>
+    <unit id="6941659493626287408">
+      <segment state="initial">
+        <source>For actionable items, please save current works before action</source>
+        <target>For actionable items, please save current works before action</target>
+      </segment>
+    </unit>
+    <unit id="1431416938026210429">
+      <segment state="initial">
+        <source>Password</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="3241357959735682038">
+      <notes>
+        <note category="description">user need to input the same password again to confirm</note>
+      </notes>
+      <segment state="initial">
+        <source>Confirm Password</source>
+        <target>Confirm Password</target>
+      </segment>
+    </unit>
+    <unit id="1230154438678955604">
+      <segment state="initial">
+        <source>Change</source>
+        <target>Change</target>
+      </segment>
+    </unit>
+    <unit id="969162659595657718">
+      <segment state="initial">
+        <source>Copied to clipboard</source>
+        <target>Copied to clipboard</target>
+      </segment>
+    </unit>
+    <unit id="7816570869614983442">
+      <segment state="initial">
+        <source>Something wrong</source>
+        <target>Something wrong</target>
+      </segment>
+    </unit>
+    <unit id="7114071321253816795">
+      <segment state="initial">
+        <source>this.htmlContentElement does not exist.</source>
+        <target>this.htmlContentElement does not exist.</target>
+      </segment>
+    </unit>
+    <unit id="8953033926734869941">
+      <segment state="initial">
+        <source>Name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="4902817035128594900">
+      <segment state="initial">
+        <source>Description</source>
+        <target>Description</target>
+      </segment>
+    </unit>
+    <unit id="1431960639791499746">
+      <segment state="initial">
+        <source>Drop file here, or click to select from file system</source>
+        <target>Drop file here, or click to select from file system</target>
+      </segment>
+    </unit>
+    <unit id="6759205696902713848">
+      <segment state="initial">
+        <source>Warning</source>
+        <target>Warning</target>
+      </segment>
+    </unit>
+    <unit id="3758512395888121252">
+      <segment state="initial">
+        <source>File type of selected file <ph id="0" equiv="PH" disp="this.file.name"/> is unrecognized. If you upload it then it may not be displayed in the future. Do you want to upload it?</source>
+        <target>File type of selected file <ph id="0" equiv="PH" disp="this.file.name"/> is unrecognized. If you upload it then it may not be displayed in the future. Do you want to upload it?</target>
+      </segment>
+    </unit>
+    <unit id="7591969168552496643">
+      <segment state="initial">
+        <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it is currently too large to be uploaded.</source>
+        <target>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it is currently too large to be uploaded.</target>
+      </segment>
+    </unit>
+    <unit id="1591923728775655116">
+      <segment state="initial">
+        <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+        <target>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</target>
+      </segment>
+    </unit>
+    <unit id="2155383357398305042">
+      <segment state="initial">
+        <source>Confirm Upload</source>
+        <target>Confirm Upload</target>
+      </segment>
+    </unit>
+    <unit id="1444355011926312749">
+      <segment state="initial">
+        <source>Select a file to upload.</source>
+        <target>Select a file to upload.</target>
+      </segment>
+    </unit>
+    <unit id="474250312112545331">
+      <segment state="initial">
+        <source>New FE version detected</source>
+        <target>New FE version detected</target>
+      </segment>
+    </unit>
+    <unit id="5033103874664134622">
+      <segment state="initial">
+        <source>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now?</source>
+        <target>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now?</target>
+      </segment>
+    </unit>
+    <unit id="7654474747726460441">
+      <segment state="initial">
+        <source>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</source>
+        <target>New version of Poetry App available to replace current <ph id="0" equiv="PH" disp="APP_DI_CONFIG.version"/> / <ph id="1" equiv="PH_1" disp="APP_DI_CONFIG.buildTime"/>. Load the update now? However, you may say NO before finishing current works and then upgrade.</target>
+      </segment>
+    </unit>
+    <unit id="4538653289713686611">
+      <segment state="initial">
+        <source>Cannot logout befor upgrading. You may open a new browser tab or relaunch the app to upgrade.</source>
+        <target>Cannot logout befor upgrading. You may open a new browser tab or relaunch the app to upgrade.</target>
+      </segment>
+    </unit>
+    <unit id="8371496833003029397">
+      <segment state="initial">
+        <source>No update this time</source>
+        <target>No update this time</target>
+      </segment>
+    </unit>
+    <unit id="4555457172864212828">
+      <segment state="initial">
+        <source>Users</source>
+        <target>Users</target>
+      </segment>
+    </unit>
+    <unit id="5248717555542428023">
+      <segment state="initial">
+        <source>Username</source>
+        <target>Username</target>
+      </segment>
+    </unit>
+    <unit id="1195096389679771302">
+      <segment state="initial">
+        <source>Alphanumeric; minimum length: 2</source>
+        <target>Alphanumeric; minimum length: 2</target>
+      </segment>
+    </unit>
+    <unit id="803639390975802529">
+      <segment state="initial">
+        <source>Min. length: 6; digit, symbol, lowercase and uppercase</source>
+        <target>Min. length: 6; digit, symbol, lowercase and uppercase</target>
+      </segment>
+    </unit>
+    <unit id="6959497441009812685">
+      <segment state="initial">
+        <source>Full Name</source>
+        <target>Full Name</target>
+      </segment>
+    </unit>
+    <unit id="4768749765465246664">
+      <segment state="initial">
+        <source>Email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="663305273583362025">
+      <segment state="initial">
+        <source>Check to assign roles to current user.</source>
+        <target>Check to assign roles to current user.</target>
+      </segment>
+    </unit>
+    <unit id="4883775796561488339">
+      <segment state="initial">
+        <source>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/></source>
+        <target>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/></target>
+      </segment>
+    </unit>
+    <unit id="6953621579784584089">
+      <segment state="initial">
+        <source>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/>. And a confirmation Email will be sent to the account holder to confirm the Email address.</source>
+        <target>Registration successful for <ph id="0" equiv="PH" disp="this.model.userName"/>. And a confirmation Email will be sent to the account holder to confirm the Email address.</target>
+      </segment>
+    </unit>
+    <unit id="6208528704186410935">
+      <segment state="initial">
+        <source>Roles:</source>
+        <target>Roles:</target>
+      </segment>
+    </unit>
+    <unit id="2753283190244215055">
+      <segment state="initial">
+        <source>Only admin can assign or unassign admin.</source>
+        <target>Only admin can assign or unassign admin.</target>
+      </segment>
+    </unit>
+    <unit id="4694384552373223859">
+      <segment state="initial">
+        <source>Role <ph id="0" equiv="PH" disp="roleName"/> added.</source>
+        <target>Role <ph id="0" equiv="PH" disp="roleName"/> added.</target>
+      </segment>
+    </unit>
+    <unit id="1141104693112392503">
+      <segment state="initial">
+        <source>Role <ph id="0" equiv="PH" disp="roleName"/> removed.</source>
+        <target>Role <ph id="0" equiv="PH" disp="roleName"/> removed.</target>
+      </segment>
+    </unit>
+    <unit id="2392488717875840729">
+      <segment state="initial">
+        <source>User</source>
+        <target>User</target>
+      </segment>
+    </unit>
+    <unit id="3768927257183755959">
+      <segment state="initial">
+        <source>Save</source>
+        <target>Save</target>
+      </segment>
+    </unit>
+    <unit id="6582573664846559511">
+      <segment state="initial">
+        <source>Change Password</source>
+        <target>Change Password</target>
+      </segment>
+    </unit>
+    <unit id="7022070615528435141">
+      <segment state="initial">
+        <source>Delete</source>
+        <target>Delete</target>
+      </segment>
+    </unit>
+    <unit id="8759216655713256177">
+      <segment state="initial">
+        <source>Update successful for <ph id="0" equiv="PH" disp="this.model!.userName"/></source>
+        <target>Update successful for <ph id="0" equiv="PH" disp="this.model!.userName"/></target>
+      </segment>
+    </unit>
+    <unit id="5474871040937410306">
+      <segment state="initial">
+        <source>Nothing to save.</source>
+        <target>Nothing to save.</target>
+      </segment>
+    </unit>
+    <unit id="6355143260734571596">
+      <segment state="initial">
+        <source>user <ph id="0" equiv="PH" disp="this.model!.userName"/> deleted.</source>
+        <target>user <ph id="0" equiv="PH" disp="this.model!.userName"/> deleted.</target>
+      </segment>
+    </unit>
+    <unit id="1653508049612270075">
+      <segment state="initial">
+        <source>Nothing to deelte.</source>
+        <target>Nothing to deelte.</target>
+      </segment>
+    </unit>
+    <unit id="1017066204420437090">
+      <segment state="initial">
+        <source>Set New Password</source>
+        <target>Set New Password</target>
+      </segment>
+    </unit>
+    <unit id="7239750919884229270">
+      <segment state="initial">
+        <source>Updated</source>
+        <target>Updated</target>
+      </segment>
+    </unit>
+    <unit id="3683640687452526553">
+      <segment state="initial">
+        <source>Search users</source>
+        <target>Search users</target>
+      </segment>
+    </unit>
+    <unit id="4580988005648117665">
+      <segment state="initial">
+        <source>Search</source>
+        <target>Search</target>
+      </segment>
+    </unit>
+    <unit id="795890916060309463">
+      <segment state="initial">
+        <source>Roles</source>
+        <target>Roles</target>
+      </segment>
+    </unit>
+    <unit id="6678680596750589109">
+      <segment state="initial">
+        <source>Search successful returning <ph id="0" equiv="PH" disp="data.length"/>.</source>
+        <target>Search successful returning <ph id="0" equiv="PH" disp="data.length"/>.</target>
+      </segment>
+    </unit>
+    <unit id="5031343019627316230">
+      <segment state="initial">
+        <source>Are you sure to delete?</source>
+        <target>Are you sure to delete?</target>
+      </segment>
+    </unit>
+    <unit id="6381490568322624964">
+      <segment state="initial">
+        <source>Deleted</source>
+        <target>Deleted</target>
+      </segment>
+    </unit>
+    <unit id="5701618810648052610">
+      <segment state="initial">
+        <source>Title</source>
+        <target>Title</target>
+      </segment>
+    </unit>
+    <unit id="4245488660379936089">
+      <segment state="initial">
+        <source>First published URL</source>
+        <target>First published URL</target>
+      </segment>
+    </unit>
+    <unit id="1839186591621749773">
+      <segment state="initial">
+        <source>Publish Date</source>
+        <target>Publish Date</target>
+      </segment>
+    </unit>
+    <unit id="7585826646011739428">
+      <segment state="initial">
+        <source>Edit</source>
+        <target>Edit</target>
+      </segment>
+    </unit>
+    <unit id="447691448242286570">
+      <segment state="initial">
+        <source>Album with the same title exists.</source>
+        <target>Album with the same title exists.</target>
+      </segment>
+    </unit>
+    <unit id="231679111972850796">
+      <segment state="initial">
+        <source>Added</source>
+        <target>Added</target>
+      </segment>
+    </unit>
+    <unit id="2863287236123687430">
+      <segment state="initial">
+        <source>Please give the album a title</source>
+        <target>Please give the album a title</target>
+      </segment>
+    </unit>
+    <unit id="6595008830732269870">
+      <segment state="initial">
+        <source>Not found</source>
+        <target>Not found</target>
+      </segment>
+    </unit>
+    <unit id="3802243436181273529">
+      <segment state="initial">
+        <source>Quit Editing</source>
+        <target>Quit Editing</target>
+      </segment>
+    </unit>
+    <unit id="3510800883044827407">
+      <segment state="initial">
+        <source>The record is altered. Are you sure to quit without saving?</source>
+        <target>The record is altered. Are you sure to quit without saving?</target>
+      </segment>
+    </unit>
+    <unit id="8446162208830000966">
+      <segment state="initial">
+        <source>Quit</source>
+        <target>Quit</target>
+      </segment>
+    </unit>
+    <unit id="2925460164655384903">
+      <segment state="initial">
+        <source>Stay</source>
+        <target>Stay</target>
+      </segment>
+    </unit>
+    <unit id="2217344567089649055">
+      <segment state="initial">
+        <source>Copy album to clipboard</source>
+        <target>Copy album to clipboard</target>
+      </segment>
+    </unit>
+    <unit id="3141301060598402455">
+      <segment state="initial">
+        <source>Deleting</source>
+        <target>Deleting</target>
+      </segment>
+    </unit>
+    <unit id="4937523942964397361">
+      <segment state="initial">
+        <source>Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?</source>
+        <target>Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?</target>
+      </segment>
+    </unit>
+    <unit id="1819757983879983696">
+      <segment state="initial">
+        <source>Reference URL</source>
+        <target>Reference URL</target>
+      </segment>
+    </unit>
+    <unit id="3249513483374643425">
+      <segment state="initial">
+        <source>Add</source>
+        <target>Add</target>
+      </segment>
+    </unit>
+    <unit id="4750285454095461539">
+      <segment state="initial">
+        <source>Annotation with the same name exists.</source>
+        <target>Annotation with the same name exists.</target>
+      </segment>
+    </unit>
+    <unit id="3197038148298931325">
+      <segment state="initial">
+        <source>Please give the annotation a name</source>
+        <target>Please give the annotation a name</target>
+      </segment>
+    </unit>
+    <unit id="1400004660661958122">
+      <segment state="initial">
+        <source> Tags </source>
+        <target> Tags </target>
+      </segment>
+    </unit>
+    <unit id="1300195398498022429">
+      <segment state="initial">
+        <source>Unselect Album</source>
+        <target>Unselect Album</target>
+      </segment>
+    </unit>
+    <unit id="4169017539818090840">
+      <segment state="initial">
+        <source>Select Album</source>
+        <target>Select Album</target>
+      </segment>
+    </unit>
+    <unit id="8882532756124831205">
+      <segment state="initial">
+        <source>Select album for a collection of poems</source>
+        <target>Select album for a collection of poems</target>
+      </segment>
+    </unit>
+    <unit id="5406093358072761930">
+      <segment state="initial">
+        <source>Removed</source>
+        <target>Removed</target>
+      </segment>
+    </unit>
+    <unit id="8932082043262569198">
+      <segment state="initial">
+        <source>Paste as Plain Text</source>
+        <target>Paste as Plain Text</target>
+      </segment>
+    </unit>
+    <unit id="2596606773413897052">
+      <segment state="initial">
+        <source>Replace Double Linebreaks with One</source>
+        <target>Replace Double Linebreaks with One</target>
+      </segment>
+    </unit>
+    <unit id="4151314716971157704">
+      <segment state="initial">
+        <source>Nothing altered</source>
+        <target>Nothing altered</target>
+      </segment>
+    </unit>
+    <unit id="3990005410946685587">
+      <segment state="initial">
+        <source> Update Meta </source>
+        <target> Update Meta </target>
+      </segment>
+    </unit>
+    <unit id="6333335057236774263">
+      <segment state="initial">
+        <source>Saved</source>
+        <target>Saved</target>
+      </segment>
+    </unit>
+    <unit id="5382438169954471318">
+      <segment state="initial">
+        <source>Add poem</source>
+        <target>Add poem</target>
+      </segment>
+    </unit>
+    <unit id="4930506384627295710">
+      <segment state="initial">
+        <source>Settings</source>
+        <target>Settings</target>
+      </segment>
+    </unit>
+    <unit id="8286804311024638809">
+      <segment state="initial">
+        <source>Annotations</source>
+        <target>Annotations</target>
+      </segment>
+    </unit>
+    <unit id="7886570921510760899">
+      <segment state="initial">
+        <source>Tags</source>
+        <target>Tags</target>
+      </segment>
+    </unit>
+    <unit id="2977636378219052362">
+      <segment state="initial">
+        <source>Pictures</source>
+        <target>Pictures</target>
+      </segment>
+    </unit>
+    <unit id="3157444394185647751">
+      <segment state="initial">
+        <source>External Pictures</source>
+        <target>External Pictures</target>
+      </segment>
+    </unit>
+    <unit id="4778277115538483652">
+      <segment state="initial">
+        <source>Select album and then select poems to add to album</source>
+        <target>Select album and then select poems to add to album</target>
+      </segment>
+    </unit>
+    <unit id="7462301153729425254">
+      <segment state="initial">
+        <source>Export</source>
+        <target>Export</target>
+      </segment>
+    </unit>
+    <unit id="5432743843538183725">
+      <segment state="initial">
+        <source>Import for DB Update</source>
+        <target>Import for DB Update</target>
+      </segment>
+    </unit>
+    <unit id="5416914249602934450">
+      <segment state="initial">
+        <source>Save Poem Data published into JSON except images</source>
+        <target>Save Poem Data published into JSON except images</target>
+      </segment>
+    </unit>
+    <unit id="1701082640400300340">
+      <segment state="initial">
+        <source> Export All Published </source>
+        <target> Export All Published </target>
+      </segment>
+    </unit>
+    <unit id="7708270344948043036">
+      <segment state="initial">
+        <source>
+          <ph id="0" equiv="INTERPOLATION" disp="{{menuTextOfExport2nd}}"/>
+        </source>
+        <target>
+          <ph id="0" equiv="INTERPOLATION" disp="{{menuTextOfExport2nd}}"/>
+        </target>
+      </segment>
+    </unit>
+    <unit id="4054391517117890721">
+      <segment state="initial">
+        <source>Save All Poem Data into JSON except images</source>
+        <target>Save All Poem Data into JSON except images</target>
+      </segment>
+    </unit>
+    <unit id="8234152665413959325">
+      <segment state="initial">
+        <source> Export All </source>
+        <target> Export All </target>
+      </segment>
+    </unit>
+    <unit id="2737042244376895134">
+      <segment state="initial">
+        <source>Download all images in zip</source>
+        <target>Download all images in zip</target>
+      </segment>
+    </unit>
+    <unit id="7084833103108984341">
+      <segment state="initial">
+        <source> Export All Images </source>
+        <target> Export All Images </target>
+      </segment>
+    </unit>
+    <unit id="3501330334273122135">
+      <segment state="initial">
+        <source>Import JSON file</source>
+        <target>Import JSON file</target>
+      </segment>
+    </unit>
+    <unit id="3307480708918604567">
+      <segment state="initial">
+        <source> Import JSON File </source>
+        <target> Import JSON File </target>
+      </segment>
+    </unit>
+    <unit id="458822511919317576">
+      <segment state="initial">
+        <source>Import Zip file with exported images</source>
+        <target>Import Zip file with exported images</target>
+      </segment>
+    </unit>
+    <unit id="196885210100834957">
+      <segment state="initial">
+        <source> Import Zip File </source>
+        <target> Import Zip File </target>
+      </segment>
+    </unit>
+    <unit id="9166276512260628858">
+      <segment state="initial">
+        <source>Clear all contents and settings</source>
+        <target>Clear all contents and settings</target>
+      </segment>
+    </unit>
+    <unit id="3929691265143988149">
+      <segment state="initial">
+        <source> Clear Database </source>
+        <target> Clear Database </target>
+      </segment>
+    </unit>
+    <unit id="1599694184551644431">
+      <segment state="initial">
+        <source>Quit composing album</source>
+        <target>Quit composing album</target>
+      </segment>
+    </unit>
+    <unit id="4729106993966961090">
+      <segment state="initial">
+        <source>Export All Published in Traditional Chinese</source>
+        <target>Export All Published in Traditional Chinese</target>
+      </segment>
+    </unit>
+    <unit id="899587498867882115">
+      <segment state="initial">
+        <source>Export All Published in Simplified Chinese</source>
+        <target>Export All Published in Simplified Chinese</target>
+      </segment>
+    </unit>
+    <unit id="2879238889365227980">
+      <segment state="initial">
+        <source>Export All in Traditional Chinese</source>
+        <target>Export All in Traditional Chinese</target>
+      </segment>
+    </unit>
+    <unit id="5810846753649528516">
+      <segment state="initial">
+        <source>Export All in Simplified Chinese</source>
+        <target>Export All in Simplified Chinese</target>
+      </segment>
+    </unit>
+    <unit id="4410823553054993155">
+      <segment state="initial">
+        <source>Found: </source>
+        <target>Found: </target>
+      </segment>
+    </unit>
+    <unit id="5091699007423776468">
+      <segment state="initial">
+        <source>No poem with this annotation.</source>
+        <target>No poem with this annotation.</target>
+      </segment>
+    </unit>
+    <unit id="4126217956371508539">
+      <segment state="initial">
+        <source>No collection return probably due to invalid config.</source>
+        <target>No collection return probably due to invalid config.</target>
+      </segment>
+    </unit>
+    <unit id="397098723873502323">
+      <segment state="initial">
+        <source>Done</source>
+        <target>Done</target>
+      </segment>
+    </unit>
+    <unit id="1071721880474488785">
+      <segment state="initial">
+        <source>Import</source>
+        <target>Import</target>
+      </segment>
+    </unit>
+    <unit id="1006238067617309744">
+      <segment state="initial">
+        <source>Select JSON file</source>
+        <target>Select JSON file</target>
+      </segment>
+    </unit>
+    <unit id="863652905467081099">
+      <segment state="initial">
+        <source>Done. Please logout later to reload.</source>
+        <target>Done. Please logout later to reload.</target>
+      </segment>
+    </unit>
+    <unit id="1462663838579426820">
+      <segment state="initial">
+        <source>Select Zip file</source>
+        <target>Select Zip file</target>
+      </segment>
+    </unit>
+    <unit id="6985575385025891464">
+      <segment state="initial">
+        <source>This will clear all contents and settings, and the app will logout after the clearing. Do you want to clear all?</source>
+        <target>This will clear all contents and settings, and the app will logout after the clearing. Do you want to clear all?</target>
+      </segment>
+    </unit>
+    <unit id="63036171602683260">
+      <segment state="initial">
+        <source>Remote to Local</source>
+        <target>Remote to Local</target>
+      </segment>
+    </unit>
+    <unit id="7565155156017938502">
+      <segment state="initial">
+        <source>Edit </source>
+        <target>Edit </target>
+      </segment>
+    </unit>
+    <unit id="1292421052057946792">
+      <segment state="initial">
+        <source>Insert Sup</source>
+        <target>Insert Sup</target>
+      </segment>
+    </unit>
+    <unit id="2042289800427954014">
+      <segment state="initial">
+        <source>Upload new image and insert to this poem</source>
+        <target>Upload new image and insert to this poem</target>
+      </segment>
+    </unit>
+    <unit id="8710511815807367067">
+      <segment state="initial">
+        <source> Upload Image and Insert </source>
+        <target> Upload Image and Insert </target>
+      </segment>
+    </unit>
+    <unit id="8411110402997120108">
+      <segment state="initial">
+        <source> Pick Images and Insert </source>
+        <target> Pick Images and Insert </target>
+      </segment>
+    </unit>
+    <unit id="6627715938539500962">
+      <segment state="initial">
+        <source>Suggest annotations based on all existing annotations matching phases of poem</source>
+        <target>Suggest annotations based on all existing annotations matching phases of poem</target>
+      </segment>
+    </unit>
+    <unit id="6036933763277199472">
+      <segment state="initial">
+        <source>Type new annotation or associate with existing, and click chip to edit details.</source>
+        <target>Type new annotation or associate with existing, and click chip to edit details.</target>
+      </segment>
+    </unit>
+    <unit id="8213322219114858422">
+      <segment state="initial">
+        <source>Numbered Annotations</source>
+        <target>Numbered Annotations</target>
+      </segment>
+    </unit>
+    <unit id="5787235141743387480">
+      <segment state="initial">
+        <source>Suggest numbered annotations based on all sups</source>
+        <target>Suggest numbered annotations based on all sups</target>
+      </segment>
+    </unit>
+    <unit id="5587711142989070221">
+      <segment state="initial">
+        <source>Remove numbered annotations not in superscripts.</source>
+        <target>Remove numbered annotations not in superscripts.</target>
+      </segment>
+    </unit>
+    <unit id="9150344180705083024">
+      <segment state="initial">
+        <source>Sync registered annotations with sups and reorder superscripts</source>
+        <target>Sync registered annotations with sups and reorder superscripts</target>
+      </segment>
+    </unit>
+    <unit id="3984992010767496791">
+      <segment state="initial">
+        <source>Suggest tags based on all existing tags matching phases of poems</source>
+        <target>Suggest tags based on all existing tags matching phases of poems</target>
+      </segment>
+    </unit>
+    <unit id="2363225830335981857">
+      <segment state="initial">
+        <source>Ryhmes</source>
+        <target>Ryhmes</target>
+      </segment>
+    </unit>
+    <unit id="3228856859648045185">
+      <segment state="initial">
+        <source>Stanza</source>
+        <target>Stanza</target>
+      </segment>
+    </unit>
+    <unit id="4058575476871566236">
+      <segment state="initial">
+        <source>Published</source>
+        <target>Published</target>
+      </segment>
+    </unit>
+    <unit id="4235671847487610290">
+      <segment state="initial">
+        <source>Modified: <ph id="0" equiv="INTERPOLATION" disp="{{poem.modified | date:&apos;shortDate&apos;}}"/></source>
+        <target>Modified: <ph id="0" equiv="INTERPOLATION" disp="{{poem.modified | date:&apos;shortDate&apos;}}"/></target>
+      </segment>
+    </unit>
+    <unit id="7655422381923268369">
+      <segment state="initial">
+        <source>First publish URL</source>
+        <target>First publish URL</target>
+      </segment>
+    </unit>
+    <unit id="5043933900720743682">
+      <segment state="initial">
+        <source>Albums</source>
+        <target>Albums</target>
+      </segment>
+    </unit>
+    <unit id="2027233441155862427">
+      <segment state="initial">
+        <source>Associate with album</source>
+        <target>Associate with album</target>
+      </segment>
+    </unit>
+    <unit id="8074407516359817175">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="albumTitle"/> already includes <ph id="1" equiv="PH_1" disp="this.poem.title"/>.</source>
+        <target><ph id="0" equiv="PH" disp="albumTitle"/> already includes <ph id="1" equiv="PH_1" disp="this.poem.title"/>.</target>
+      </segment>
+    </unit>
+    <unit id="7545995543999812448">
+      <segment state="initial">
+        <source>No supporting new album here.</source>
+        <target>No supporting new album here.</target>
+      </segment>
+    </unit>
+    <unit id="7571864690777833285">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="value"/> already in albums</source>
+        <target><ph id="0" equiv="PH" disp="value"/> already in albums</target>
+      </segment>
+    </unit>
+    <unit id="8701471234447355405">
+      <segment state="initial">
+        <source>You can select from only existing albums.</source>
+        <target>You can select from only existing albums.</target>
+      </segment>
+    </unit>
+    <unit id="8702366755951262117">
+      <segment state="initial">
+        <source>Already tagged with <ph id="0" equiv="PH" disp="tagName"/></source>
+        <target>Already tagged with <ph id="0" equiv="PH" disp="tagName"/></target>
+      </segment>
+    </unit>
+    <unit id="321068193845348224">
+      <segment state="initial">
+        <source>New tag <ph id="0" equiv="PH" disp="tagName"/> is added and associated</source>
+        <target>New tag <ph id="0" equiv="PH" disp="tagName"/> is added and associated</target>
+      </segment>
+    </unit>
+    <unit id="5742240279451365303">
+      <segment state="initial">
+        <source>Nothing to suggest.</source>
+        <target>Nothing to suggest.</target>
+      </segment>
+    </unit>
+    <unit id="230540430359200939">
+      <segment state="initial">
+        <source>Already associated with <ph id="0" equiv="PH" disp="annotationName"/></source>
+        <target>Already associated with <ph id="0" equiv="PH" disp="annotationName"/></target>
+      </segment>
+    </unit>
+    <unit id="8896419690537662392">
+      <segment state="initial">
+        <source>New annotation <ph id="0" equiv="PH" disp="newAnnotation.name"/> is added and associated</source>
+        <target>New annotation <ph id="0" equiv="PH" disp="newAnnotation.name"/> is added and associated</target>
+      </segment>
+    </unit>
+    <unit id="6187071393626035283">
+      <segment state="initial">
+        <source>Not found. Things may be out of sync.</source>
+        <target>Not found. Things may be out of sync.</target>
+      </segment>
+    </unit>
+    <unit id="3549928351794613534">
+      <segment state="initial">
+        <source>Matched Annotations</source>
+        <target>Matched Annotations</target>
+      </segment>
+    </unit>
+    <unit id="462051546739716571">
+      <segment state="initial">
+        <source>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</source>
+        <target>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</target>
+      </segment>
+    </unit>
+    <unit id="5096329211267302309">
+      <segment state="initial">
+        <source>No orphaned annotations found.</source>
+        <target>No orphaned annotations found.</target>
+      </segment>
+    </unit>
+    <unit id="3866379305463138723">
+      <segment state="initial">
+        <source>No numbered annotation found.</source>
+        <target>No numbered annotation found.</target>
+      </segment>
+    </unit>
+    <unit id="4407909483493290627">
+      <segment state="initial">
+        <source>Reordering is supported only when the number of superscripts equals to the number of numbered annotations.</source>
+        <target>Reordering is supported only when the number of superscripts equals to the number of numbered annotations.</target>
+      </segment>
+    </unit>
+    <unit id="6080142916541583092">
+      <segment state="initial">
+        <source>Superscript with <ph id="0" equiv="PH" disp="sup.innerText"/> is not matching any numbered annotations. Please Suggest Numbered Annotations and Remove Orphaned Annotations.</source>
+        <target>Superscript with <ph id="0" equiv="PH" disp="sup.innerText"/> is not matching any numbered annotations. Please Suggest Numbered Annotations and Remove Orphaned Annotations.</target>
+      </segment>
+    </unit>
+    <unit id="7907159475755152743">
+      <segment state="initial">
+        <source>Total number of changes: <ph id="0" equiv="PH" disp="idAndOrderList.length"/>.</source>
+        <target>Total number of changes: <ph id="0" equiv="PH" disp="idAndOrderList.length"/>.</target>
+      </segment>
+    </unit>
+    <unit id="8534917615989822419">
+      <segment state="initial">
+        <source>No need to reorder.</source>
+        <target>No need to reorder.</target>
+      </segment>
+    </unit>
+    <unit id="6932865105766151309">
+      <segment state="initial">
+        <source>Upload</source>
+        <target>Upload</target>
+      </segment>
+    </unit>
+    <unit id="9129573176471756707">
+      <segment state="initial">
+        <source>Select image, video or audio</source>
+        <target>Select image, video or audio</target>
+      </segment>
+    </unit>
+    <unit id="4954960129848989361">
+      <segment state="initial">
+        <source>This app is designed to have both frontend and backend sitting in the same host, when locally hosted images or other binary files are used in content. But this deployment uses 2 hosts.</source>
+        <target>This app is designed to have both frontend and backend sitting in the same host, when locally hosted images or other binary files are used in content. But this deployment uses 2 hosts.</target>
+      </segment>
+    </unit>
+    <unit id="9061257599906709984">
+      <segment state="initial">
+        <source>Select image</source>
+        <target>Select image</target>
+      </segment>
+    </unit>
+    <unit id="1705530081146495310">
+      <segment state="initial">
+        <source>Poem already formated</source>
+        <target>Poem already formated</target>
+      </segment>
+    </unit>
+    <unit id="1463842674940139059">
+      <segment state="initial">
+        <source>Annotations Management</source>
+        <target>Annotations Management</target>
+      </segment>
+    </unit>
+    <unit id="8858222294863995927">
+      <segment state="initial">
+        <source>Find Orphaned Annotations and Delete</source>
+        <target>Find Orphaned Annotations and Delete</target>
+      </segment>
+    </unit>
+    <unit id="3979398357870223534">
+      <segment state="initial">
+        <source>Click-Chip Action</source>
+        <target>Click-Chip Action</target>
+      </segment>
+    </unit>
+    <unit id="2682778892888491392">
+      <segment state="initial">
+        <source>What action to take when clicking annotation chip</source>
+        <target>What action to take when clicking annotation chip</target>
+      </segment>
+    </unit>
+    <unit id="5444896369632404988">
+      <segment state="initial">
+        <source>List Poems</source>
+        <target>List Poems</target>
+      </segment>
+    </unit>
+    <unit id="3777502924017376887">
+      <segment state="initial">
+        <source>No orphaned annotation.</source>
+        <target>No orphaned annotation.</target>
+      </segment>
+    </unit>
+    <unit id="47711193671827927">
+      <segment state="initial">
+        <source>Orphaned Annotations to Delete</source>
+        <target>Orphaned Annotations to Delete</target>
+      </segment>
+    </unit>
+    <unit id="5341799568859645592">
+      <segment state="initial">
+        <source>Records deleted: <ph id="0" equiv="PH" disp="c"/></source>
+        <target>Records deleted: <ph id="0" equiv="PH" disp="c"/></target>
+      </segment>
+    </unit>
+    <unit id="6688585661689878047">
+      <segment state="initial">
+        <source>Deleted.</source>
+        <target>Deleted.</target>
+      </segment>
+    </unit>
+    <unit id="4282937425531287242">
+      <segment state="initial">
+        <source>Record might had been deleted.</source>
+        <target>Record might had been deleted.</target>
+      </segment>
+    </unit>
+    <unit id="7071470734400948493">
+      <segment state="initial">
+        <source>Author</source>
+        <target>Author</target>
+      </segment>
+    </unit>
+    <unit id="8475452905131493427">
+      <segment state="initial">
+        <source>Pen Name</source>
+        <target>Pen Name</target>
+      </segment>
+    </unit>
+    <unit id="6769219112239702582">
+      <segment state="initial">
+        <source>Bio</source>
+        <target>Bio</target>
+      </segment>
+    </unit>
+    <unit id="8102724827579829353">
+      <segment state="initial">
+        <source>Short bio about the author...</source>
+        <target>Short bio about the author...</target>
+      </segment>
+    </unit>
+    <unit id="8629691518131604290">
+      <segment state="initial">
+        <source>Use Published Date</source>
+        <target>Use Published Date</target>
+      </segment>
+    </unit>
+    <unit id="2458491732173507103">
+      <segment state="initial">
+        <source>Use Ryhmes</source>
+        <target>Use Ryhmes</target>
+      </segment>
+    </unit>
+    <unit id="5406243142350488424">
+      <segment state="initial">
+        <source>Use First Publish URL</source>
+        <target>Use First Publish URL</target>
+      </segment>
+    </unit>
+    <unit id="8147539225613565632">
+      <segment state="initial">
+        <source>Use Annotations</source>
+        <target>Use Annotations</target>
+      </segment>
+    </unit>
+    <unit id="7338090140151968267">
+      <segment state="initial">
+        <source>Use Numeric Citation</source>
+        <target>Use Numeric Citation</target>
+      </segment>
+    </unit>
+    <unit id="6142410908685888030">
+      <segment state="initial">
+        <source>Use Tags</source>
+        <target>Use Tags</target>
+      </segment>
+    </unit>
+    <unit id="3301897328443037253">
+      <segment state="initial">
+        <source>Use Albums</source>
+        <target>Use Albums</target>
+      </segment>
+    </unit>
+    <unit id="3549253426715751267">
+      <segment state="initial">
+        <source>Use Number of Stanza</source>
+        <target>Use Number of Stanza</target>
+      </segment>
+    </unit>
+    <unit id="4743646303582399236">
+      <segment state="initial">
+        <source>Total Count of Stanza: <ph id="0" equiv="INTERPOLATION" disp="{{totalCountOfStanza}}"/></source>
+        <target>Total Count of Stanza: <ph id="0" equiv="INTERPOLATION" disp="{{totalCountOfStanza}}"/></target>
+      </segment>
+    </unit>
+    <unit id="6416184296479508661">
+      <segment state="initial">
+        <source>Pick Year First in Published Date</source>
+        <target>Pick Year First in Published Date</target>
+      </segment>
+    </unit>
+    <unit id="4499903069830338567">
+      <segment state="initial">
+        <source>Local Pictures Management</source>
+        <target>Local Pictures Management</target>
+      </segment>
+    </unit>
+    <unit id="5169283565007101947">
+      <segment state="initial">
+        <source> Pick </source>
+        <target> Pick </target>
+      </segment>
+    </unit>
+    <unit id="3699318688376557127">
+      <segment state="initial">
+        <source> Audit All </source>
+        <target> Audit All </target>
+      </segment>
+    </unit>
+    <unit id="5188885544278736399">
+      <segment state="initial">
+        <source>Find out if some images are not associated with any poem then reconcile</source>
+        <target>Find out if some images are not associated with any poem then reconcile</target>
+      </segment>
+    </unit>
+    <unit id="5741506539034814971">
+      <segment state="initial">
+        <source> Audit and Reconcile </source>
+        <target> Audit and Reconcile </target>
+      </segment>
+    </unit>
+    <unit id="2060870905126612119">
+      <segment state="initial">
+        <source>Transform absolute URL of local src URL to relative URL</source>
+        <target>Transform absolute URL of local src URL to relative URL</target>
+      </segment>
+    </unit>
+    <unit id="5465594999403114125">
+      <segment state="initial">
+        <source>Src URL of Local to Relative</source>
+        <target>Src URL of Local to Relative</target>
+      </segment>
+    </unit>
+    <unit id="3309973566259313398">
+      <segment state="initial">
+        <source>Audit</source>
+        <target>Audit</target>
+      </segment>
+    </unit>
+    <unit id="4989667530106152847">
+      <segment state="initial">
+        <source>Something wrong when deleting.</source>
+        <target>Something wrong when deleting.</target>
+      </segment>
+    </unit>
+    <unit id="4717581030065879789">
+      <segment state="initial">
+        <source>Image actually in these poems</source>
+        <target>Image actually in these poems</target>
+      </segment>
+    </unit>
+    <unit id="7753871022659048744">
+      <segment state="initial">
+        <source>This image is orphaned.</source>
+        <target>This image is orphaned.</target>
+      </segment>
+    </unit>
+    <unit id="1980781482796206480">
+      <segment state="initial">
+        <source>A few places out of sync: </source>
+        <target>A few places out of sync: </target>
+      </segment>
+    </unit>
+    <unit id="6576839422711246802">
+      <segment state="initial">
+        <source>Things look in sync.</source>
+        <target>Things look in sync.</target>
+      </segment>
+    </unit>
+    <unit id="8714549240672191801">
+      <segment state="initial">
+        <source>Reconciled with changes: <ph id="0" equiv="PH" disp="count"/></source>
+        <target>Reconciled with changes: <ph id="0" equiv="PH" disp="count"/></target>
+      </segment>
+    </unit>
+    <unit id="3060315295834338869">
+      <segment state="initial">
+        <source>Things look fine.</source>
+        <target>Things look fine.</target>
+      </segment>
+    </unit>
+    <unit id="4659630090024510760">
+      <segment state="initial">
+        <source>Total: <ph id="0" equiv="PH" disp="c"/></source>
+        <target>Total: <ph id="0" equiv="PH" disp="c"/></target>
+      </segment>
+    </unit>
+    <unit id="8850247088873647746">
+      <segment state="initial">
+        <source>Poetry</source>
+        <target>Poetry</target>
+      </segment>
+    </unit>
+    <unit id="2509141182388535183">
+      <segment state="initial">
+        <source>View</source>
+        <target>View</target>
+      </segment>
+    </unit>
+    <unit id="6557411325739932275">
+      <segment state="initial">
+        <source>External Pictures Management</source>
+        <target>External Pictures Management</target>
+      </segment>
+    </unit>
+    <unit id="407526736892299928">
+      <segment state="initial">
+        <source> No external images in poems </source>
+        <target> No external images in poems </target>
+      </segment>
+    </unit>
+    <unit id="2275180247206848144">
+      <segment state="initial">
+        <source>Written Language</source>
+        <target>Written Language</target>
+      </segment>
+    </unit>
+    <unit id="6812930637022637485">
+      <segment state="initial">
+        <source>Display</source>
+        <target>Display</target>
+      </segment>
+    </unit>
+    <unit id="5774750542557032268">
+      <segment state="initial">
+        <source>Default Spoken Language Code</source>
+        <target>Default Spoken Language Code</target>
+      </segment>
+    </unit>
+    <unit id="2729072238245600107">
+      <segment state="initial">
+        <source>Spoken Languages</source>
+        <target>Spoken Languages</target>
+      </segment>
+    </unit>
+    <unit id="6451610243341248668">
+      <segment state="initial">
+        <source>Spoken Language Code</source>
+        <target>Spoken Language Code</target>
+      </segment>
+    </unit>
+    <unit id="853025520958537363">
+      <segment state="initial">
+        <source>Are you sure to remove?</source>
+        <target>Are you sure to remove?</target>
+      </segment>
+    </unit>
+    <unit id="6911688962324623193">
+      <segment state="initial">
+        <source>Tags Management</source>
+        <target>Tags Management</target>
+      </segment>
+    </unit>
+    <unit id="3394203516176896601">
+      <segment state="initial">
+        <source>No orphaned tag.</source>
+        <target>No orphaned tag.</target>
+      </segment>
+    </unit>
+    <unit id="6186040623165741480">
+      <segment state="initial">
+        <source>Orphaned Tags to Delete</source>
+        <target>Orphaned Tags to Delete</target>
+      </segment>
+    </unit>
+    <unit id="8573908851048050800">
+      <segment state="initial">
+        <source>Are you sure to delete tag <ph id="0" equiv="PH" disp="a.name"/>?</source>
+        <target>Are you sure to delete tag <ph id="0" equiv="PH" disp="a.name"/>?</target>
+      </segment>
+    </unit>
+    <unit id="8913859248416128666">
+      <segment state="initial">
+        <source>New Tag Name</source>
+        <target>New Tag Name</target>
+      </segment>
+    </unit>
+    <unit id="5799967586583571004">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="newName"/> exists.</source>
+        <target><ph id="0" equiv="PH" disp="newName"/> exists.</target>
+      </segment>
+    </unit>
+    <unit id="1503325454658064959">
+      <segment state="initial">
+        <source>Nothing to change.</source>
+        <target>Nothing to change.</target>
+      </segment>
+    </unit>
+    <unit id="2454050363478003966">
+      <segment state="initial">
+        <source>Login</source>
+        <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="8264044238565501678">
+      <segment state="initial">
+        <source>Forgot password</source>
+        <target>Forgot password</target>
+      </segment>
+    </unit>
+    <unit id="1112871062555970736">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="this.currentUser.fullName"/> (logged in as <ph id="1" equiv="PH_1" disp="this.currentUser.userName"/>)</source>
+        <target><ph id="0" equiv="PH" disp="this.currentUser.fullName"/> (logged in as <ph id="1" equiv="PH_1" disp="this.currentUser.userName"/>)</target>
+      </segment>
+    </unit>
+    <unit id="5442784446394125550">
+      <segment state="initial">
+        <source>The username or password may be incorrect.</source>
+        <target>The username or password may be incorrect.</target>
+      </segment>
+    </unit>
+    <unit id="316156393438847870">
+      <segment state="initial">
+        <source>Forgot your password? So enter your Email address associated with your account</source>
+        <target>Forgot your password? So enter your Email address associated with your account</target>
+      </segment>
+    </unit>
+    <unit id="9142482877319241807">
+      <segment state="initial">
+        <source>Email sent. Please check your email to reset your password.</source>
+        <target>Email sent. Please check your email to reset your password.</target>
+      </segment>
+    </unit>
+    <unit id="4163272119298020373">
+      <segment state="initial">
+        <source>Filters</source>
+        <target>Filters</target>
+      </segment>
+    </unit>
+    <unit id="6601618897298769017">
+      <segment state="initial">
+        <source>Clear keywords and tags</source>
+        <target>Clear keywords and tags</target>
+      </segment>
+    </unit>
+    <unit id="7889443424988593083">
+      <segment state="initial">
+        <source>Chronology</source>
+        <target>Chronology</target>
+      </segment>
+    </unit>
+    <unit id="29832309535656200">
+      <segment state="initial">
+        <source>System</source>
+        <target>System</target>
+      </segment>
+    </unit>
+    <unit id="2724055831234181057">
+      <segment state="initial">
+        <source>Version</source>
+        <target>Version</target>
+      </segment>
+    </unit>
+    <unit id="6924245241744002654">
+      <segment state="initial">
+        <source>Build</source>
+        <target>Build</target>
+      </segment>
+    </unit>
+    <unit id="8942351587754185907">
+      <segment state="initial">
+        <source>API</source>
+        <target>API</target>
+      </segment>
+    </unit>
+    <unit id="6329450020825493007">
+      <segment state="initial">
+        <source>API Version</source>
+        <target>API Version</target>
+      </segment>
+    </unit>
+    <unit id="6299803518261935782">
+      <segment state="initial">
+        <source>Check for Updates</source>
+        <target>Check for Updates</target>
+      </segment>
+    </unit>
+    <unit id="5238239920705150217">
+      <segment state="initial">
+        <source>Album copied to Clipboard</source>
+        <target>Album copied to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="8138153834429494858">
+      <segment state="initial">
+        <source>Album plain text copied to Clipboard</source>
+        <target>Album plain text copied to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="6757914293372334985">
+      <segment state="initial">
+        <source>Album HTML tags copied to Clipboard</source>
+        <target>Album HTML tags copied to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="5206272431542421762">
+      <segment state="initial">
+        <source>Keyword</source>
+        <target>Keyword</target>
+      </segment>
+    </unit>
+    <unit id="1604795977599078115">
+      <segment state="initial">
+        <source>Keywords</source>
+        <target>Keywords</target>
+      </segment>
+    </unit>
+    <unit id="853614527195270837">
+      <segment state="initial">
+        <source>Switch to Chronicle View</source>
+        <target>Switch to Chronicle View</target>
+      </segment>
+    </unit>
+    <unit id="5972151348158706531">
+      <segment state="initial">
+        <source>Switch to Albums View</source>
+        <target>Switch to Albums View</target>
+      </segment>
+    </unit>
+    <unit id="5210060593529421439">
+      <segment state="initial">
+        <source>Signed in now</source>
+        <target>Signed in now</target>
+      </segment>
+    </unit>
+    <unit id="131761163657552131">
+      <segment state="initial">
+        <source>Not signed in</source>
+        <target>Not signed in</target>
+      </segment>
+    </unit>
+    <unit id="8738732372986673558">
+      <segment state="initial">
+        <source>Copy to clipboard</source>
+        <target>Copy to clipboard</target>
+      </segment>
+    </unit>
+    <unit id="8833873795626485171">
+      <segment state="initial">
+        <source>Go to first published URL</source>
+        <target>Go to first published URL</target>
+      </segment>
+    </unit>
+    <unit id="8346025183485597795">
+      <segment state="initial">
+        <source>No content in annotation.</source>
+        <target>No content in annotation.</target>
+      </segment>
+    </unit>
+    <unit id="4288887368676845936">
+      <segment state="initial">
+        <source>Not found.</source>
+        <target>Not found.</target>
+      </segment>
+    </unit>
+    <unit id="8284448604312495823">
+      <segment state="initial">
+        <source>Copied to Clipboard</source>
+        <target>Copied to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="73969950736278297">
+      <segment state="initial">
+        <source>Copied plain text to Clipboard</source>
+        <target>Copied plain text to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="2802066009289302272">
+      <segment state="initial">
+        <source>Copied HTML tags to Clipboard</source>
+        <target>Copied HTML tags to Clipboard</target>
+      </segment>
+    </unit>
+    <unit id="6440735633799552936">
+      <segment state="initial">
+        <source>View Settings</source>
+        <target>View Settings</target>
+      </segment>
+    </unit>
+    <unit id="5624894758050177523">
+      <segment state="initial">
+        <source>Poem View</source>
+        <target>Poem View</target>
+      </segment>
+    </unit>
+    <unit id="2012099916766149803">
+      <segment state="initial">
+        <source>Show Annotations By Default</source>
+        <target>Show Annotations By Default</target>
+      </segment>
+    </unit>
+    <unit id="6937522124939673585">
+      <segment state="initial">
+        <source>Show Tags</source>
+        <target>Show Tags</target>
+      </segment>
+    </unit>
+    <unit id="7763234826319747019">
+      <segment state="initial">
+        <source>Show Publish Date</source>
+        <target>Show Publish Date</target>
+      </segment>
+    </unit>
+    <unit id="4403765849981198548">
+      <segment state="initial">
+        <source>Show Title</source>
+        <target>Show Title</target>
+      </segment>
+    </unit>
+    <unit id="8238950619343912972">
+      <segment state="initial">
+        <source>Show Albums</source>
+        <target>Show Albums</target>
+      </segment>
+    </unit>
+    <unit id="2130665114008257891">
+      <segment state="initial">
+        <source>Hide Sidebar After Selecting</source>
+        <target>Hide Sidebar After Selecting</target>
+      </segment>
+    </unit>
+    <unit id="721250237025924127">
+      <segment state="initial">
+        <source>Poem View in Album</source>
+        <target>Poem View in Album</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

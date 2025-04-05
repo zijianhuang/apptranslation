@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="About" comment="the About page of the product">About</string>
+  <string name="ChartSnellen" comment="name of Snellen Chart">Snellen</string>
+  <string name="SnellenPara" comment="{0} is the placeholder for substitution of a chart name">With {0} eyechart</string>
+</resources>
