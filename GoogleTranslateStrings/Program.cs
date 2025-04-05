@@ -106,7 +106,7 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 		}
 	}
 
-	[CliManager(ApplicationName = "Google Translate for Android String Resource", Description = "Use Google Translate v2 or v3 to translate String Resource", OptionSeparator = "/", Assignment = ":", Copyright = "Fonlow (c) 2025")]
+	[CliManager(Description = "Use Google Translate v2 or v3 to translate String Resource", OptionSeparator = "/", Assignment = ":")]
 	public class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=strings.xml")]

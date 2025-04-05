@@ -119,7 +119,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 		}
 	}
 
-	[CliManager(ApplicationName = "Google Translate for XLIFF", Description = "Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":", Copyright = "Fonlow (c) 2025", Version ="1.5")]
+	[CliManager(Description = "Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
 	public class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=myfile.zh.xliff")]

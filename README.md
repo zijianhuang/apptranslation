@@ -1,10 +1,10 @@
 # Background
-This series of translation tools is based on my quests of doing batch translations of software UIs in last 10 years, after searching and buying existing products like:
+This series of translation tools is based on my quests to batch translations of software UIs in last 10 years, after searching and buying existing products like:
 * ResX Editor & Translator
 
 As of 2020s, most tools I could find are cloud based, depending to another cloud-based translation services like Google Translate. And these tools are mostly subscription based. As I do translations only occasionally and casually, such subscription model is not appealing to me. 
 
-Additionally, I prefer batch processing. Here you are some CLI tools included in this project.
+Additionally, I prefer batch processing. Here you are some CLI tools included in this project, developed by a full-stack software developer for full-stack software developers.
 
 **Remarks:**
 * I have searched the Internet to find tools commercial, free or open source, before starting the development. Hopefully the scope and the features of these CLI tools meet your need since you are a full stack software developer.
@@ -124,3 +124,7 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:stri
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /TF:myUiMessages.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 ```
+
+## Build and Deployment
+
+This repository does not release binary builds. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI apps for Windows, MacOS or Linux.
