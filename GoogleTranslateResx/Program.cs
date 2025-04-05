@@ -107,7 +107,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 		}
 	}
 
-	[CommandLineManager(ApplicationName = "Google Translate for Microsoft ResX", Description = "Use Google Translate v2 or v3 to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":", Copyright = "Fonlow (c) 2025", Version = "1.0")]
+	[CliManager(ApplicationName = "Google Translate for Microsoft ResX", Description = "Use Google Translate v2 or v3 to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":", Copyright = "Fonlow (c) 2025")]
 	public class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=AppResources.resx")]
