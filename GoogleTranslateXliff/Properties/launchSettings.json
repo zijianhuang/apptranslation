@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "GoogleTranslateXliff": {
-      "commandName": "Project",
-      "commandLineArgs": "/AK=AIzaSyBPKNd_S9oMPcAp2Qky26xQS103dPomYT8 /F=c:/temp/xliff12/messages.zh-hans.xlf /TF=c:/temp/mymessages12.zh.xlf /UCS /AV=v3"
-    }
-  }
-}
