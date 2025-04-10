@@ -127,4 +127,4 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 
 ## Build and Deployment
 
-This repository does not release binary builds. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI apps for Windows, MacOS or Linux.
+This repository does not release binary builds. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, MacOS or Linux.

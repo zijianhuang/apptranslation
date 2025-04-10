@@ -9,8 +9,6 @@ namespace Fonlow.GoogleTranslate
 	{
 		public XWithGT2(string sourceLang, string targetLang, string apiKey)
 		{
-			ArgumentNullException.ThrowIfNullOrEmpty(sourceLang);
-			ArgumentNullException.ThrowIfNullOrEmpty(targetLang);
 			ArgumentNullException.ThrowIfNullOrEmpty(apiKey);
 
 			this.SourceLang = sourceLang;

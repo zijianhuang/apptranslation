@@ -54,7 +54,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 			}
 
 			var targetFile = string.IsNullOrEmpty(options.TargetFile) ? options.SourceFile : options.TargetFile;
-			var processor = XliffGT2Factory.CreateXliffGT2(options.SourceFile, options.Batch, (v) =>
+			var xliffProcessor = XliffProcessorFactory.CreateXliffGT2(options.SourceFile, options.Batch, (v) =>
 			{
 				if (v == "1.2")
 				{
@@ -99,7 +99,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 					return 110;
 				}
 
-				var c = await processor.TranslateXliff(options.SourceFile, targetFile, options.ForStates, options.NotChangeState, translator, logger, ShowProgress);
+				var c = await xliffProcessor.TranslateXliff(options.SourceFile, targetFile, options.ForStates, options.NotChangeState, translator, logger, ShowProgress);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}

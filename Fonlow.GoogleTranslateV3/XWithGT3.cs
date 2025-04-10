@@ -11,8 +11,6 @@ namespace Fonlow.GoogleTranslate
 	{
 		public XWithGT3(string sourceLang, string targetLang, GoogleClientSecrets clientSecrets, string projectId)
 		{
-			ArgumentNullException.ThrowIfNullOrEmpty(sourceLang);
-			ArgumentNullException.ThrowIfNullOrEmpty(targetLang);
 			ArgumentNullException.ThrowIfNullOrEmpty(projectId);
 			ArgumentNullException.ThrowIfNull(clientSecrets);
 

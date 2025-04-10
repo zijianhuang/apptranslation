@@ -16,7 +16,7 @@ namespace Fonlow.GoogleTranslate
 
 		readonly bool batchMode;
 
-		public async Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate g, ILogger logger, Action<bool, int, int, int> progressCallback)
+		public async Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -28,16 +28,16 @@ namespace Fonlow.GoogleTranslate
 			var firstFile = xliffRoot.Element(ns + "file");
 			var fileBody = firstFile.Element(ns + "body");
 
-			if (string.IsNullOrEmpty(g.SourceLang))
+			if (string.IsNullOrEmpty(translator.SourceLang))
 			{
-				g.SourceLang = firstFile.Attribute("source-language").Value; //use source file's source language
+				translator.SourceLang = firstFile.Attribute("source-language").Value; //use source file's source language
 			}
 
 			bool toCreateTargetFile = false;
-			if (string.IsNullOrEmpty(g.TargetLang))
+			if (string.IsNullOrEmpty(translator.TargetLang))
 			{
-				g.TargetLang = firstFile.Attribute("target-language")?.Value; //use source file 's target language
-				if (string.IsNullOrEmpty(g.TargetLang))
+				translator.TargetLang = firstFile.Attribute("target-language")?.Value; //use source file 's target language
+				if (string.IsNullOrEmpty(translator.TargetLang))
 				{
 					throw new ArgumentException("TargetLang must be declared in command parameters or xliff/file/target-language");
 				}
@@ -45,11 +45,11 @@ namespace Fonlow.GoogleTranslate
 
 			if (string.IsNullOrEmpty(firstFile.Attribute("target-language")?.Value))
 			{
-				firstFile.Add(new XAttribute("target-language", g.TargetLang)); //source file has no target lang declared, then use the commandline TargetLang
+				firstFile.Add(new XAttribute("target-language", translator.TargetLang)); //source file has no target lang declared, then use the commandline TargetLang
 				toCreateTargetFile = true; // The rest of the codes need to add trans-unit/target
 			}
 
-			Console.WriteLine($"Translating from {g.SourceLang} to {g.TargetLang} ...");
+			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
 			var body = firstFile.Element(ns + "body");
 			var tranUnits = body.Elements(ns + "trans-unit").ToList();
@@ -133,7 +133,7 @@ namespace Fonlow.GoogleTranslate
 								var textNode = n as XText;
 								try
 								{
-									var tr = await g.Translate(textNode.Value);
+									var tr = await translator.Translate(textNode.Value);
 									unitTarget.Add(new XText(tr));
 								}
 								catch (HttpRequestException ex)
@@ -193,7 +193,7 @@ namespace Fonlow.GoogleTranslate
 					}
 				}
 
-				var translatedStrings = await g.Translate(strings);
+				var translatedStrings = await translator.Translate(strings);
 
 				int translatedIndex = 0;
 				foreach (var unit in someUnits)

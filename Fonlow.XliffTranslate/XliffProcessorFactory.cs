@@ -2,8 +2,16 @@
 
 namespace Fonlow.GoogleTranslate
 {
-	public sealed class XliffGT2Factory
+	public sealed class XliffProcessorFactory
 	{
+		/// <summary>
+		/// Check the version of the XLIFF file and return either Xliff12Translate or Xliff20Translate
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <param name="batchMode"></param>
+		/// <param name="versionCallback"></param>
+		/// <returns>Instance of Xliff20Translate or Xliff12Translate</returns>
+		/// <exception cref="ArgumentException"></exception>
 		public static IXliffTranslation CreateXliffGT2(string filePath, bool batchMode, Action<string> versionCallback)
 		{
 			string version;
