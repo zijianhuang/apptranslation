@@ -72,7 +72,7 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
 				Assert.Equal("有一些已注册的编号注释在诗中不再存在：", (nodes[0] as XText).Value);
-				Assert.Equal("。要删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("。您要删除它们吗？", (nodes[2] as XText).Value);
 
 				xDoc.Save("XdocumentTranslated20.xlf"); // check to ensure the order of nodes not changed.
 			}
@@ -106,7 +106,7 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
 				Assert.Equal("有一些已注册的编号注释在诗中不再存在：", (nodes[0] as XText).Value);
-				Assert.Equal("。要删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("。您要删除它们吗？", (nodes[2] as XText).Value);
 
 				xDoc.Save("XdocumentTranslated20Batch.xlf"); // check to ensure the order of nodes not changed.
 			}

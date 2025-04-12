@@ -37,7 +37,6 @@ namespace Fonlow.ResxTranslate
 			return translatedCount;
 
 			async Task<int> TextByText(IList<XElement> someNodes){
-				var translatedCount = 0;
 				foreach (var node in someNodes)
 				{
 					var valueNode = node.Element("value");

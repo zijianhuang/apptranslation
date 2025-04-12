@@ -77,7 +77,7 @@ namespace Fonlow.GoogleTranslate
 
 				var ids = badUnits.Select(unit => unit.Attribute("id").Value).ToArray();
 				var csv = string.Join(", ", ids);
-				logger.LogWarning($"These units have nothing to translate: {csv}");
+				logger?.LogWarning($"These units have nothing to translate: {csv}");
 			}
 
 			var isAllNew = totalUnits == totalUnitsToTranslate;

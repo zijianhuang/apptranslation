@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fonlow.AndroidStrings\Fonlow.AndroidStrings.csproj" />
     <ProjectReference Include="..\Fonlow.Translate.Abstract\Fonlow.Translate.Abstract.csproj" />
   </ItemGroup>
 

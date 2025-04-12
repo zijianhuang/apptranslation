@@ -7,9 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="resx\AppResources.resx" />
+    <EmbeddedResource Remove="resx\AppResources.zh-hans.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="resx\AppResources.resx" />
+    <None Include="resx\AppResources.zh-hans.resx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +41,7 @@
     <ProjectReference Include="..\..\Fonlow.GoogleTranslate\Fonlow.GoogleTranslateV2.csproj" />
     <ProjectReference Include="..\..\Fonlow.ResxTranslate\Fonlow.ResxTranslate.csproj" />
     <ProjectReference Include="..\..\Fonlow.StringsTranslation\Fonlow.StringsTranslate.csproj" />
+    <ProjectReference Include="..\..\Fonlow.XliffResX\Fonlow.XliffResX.csproj" />
     <ProjectReference Include="..\..\Fonlow.XliffTranslate\Fonlow.XliffTranslate.csproj" />
   </ItemGroup>
 
