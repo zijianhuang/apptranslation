@@ -120,5 +120,57 @@ namespace Fonlow.XliffResX
 			return Tuple.Create(addedCount, removedCount);
 
 		}
+
+		/// <summary>
+		/// Copy the translated content of XLIFF to target language resX. Presumbly the XLIFF file is created from the resX or has been merged with the updated resX.
+		/// </summary>
+		/// <param name="xliffRoot"></param>
+		/// <param name="resxRoot"></param>
+		public static void MergeTranslationOfXliff12ToResX(XElement xliffRoot, XElement resxRoot)
+		{
+			var ver = xliffRoot.Attribute("version").Value;
+			if (ver != "1.2")
+			{
+				throw new ArgumentException($"Expected XLIFF 1.2 but this one is {ver}");
+			}
+
+			var ns = xliffRoot.GetDefaultNamespace();
+			var firstFile = xliffRoot.Element(ns + "file");
+			var fileBody = firstFile.Element(ns + "body");
+			var body = firstFile.Element(ns + "body");
+			var transUnits = body.Elements(ns + "trans-unit").ToList();
+
+			var dataElements = resxRoot.Elements("data").ToList();
+			if (dataElements.Count != transUnits.Count)
+			{
+				throw new ArgumentException($"Expect units of {nameof(xliffRoot)} and data of {nameof(resxRoot)} must match.");
+			}
+
+			foreach (var unit in transUnits)
+			{
+				var id = unit.Attribute("id").Value;
+				var unitTarget = unit.Element(ns + "target");
+				if (unitTarget ==null)
+				{
+					throw new ArgumentException($"unit target of {id} has no target. XLIFF is malformed.");
+				}
+
+				var found = dataElements.Find(d => d.Attribute("name").Value == id);
+				if (found == null)
+				{
+					throw new ArgumentException($"ResX does not contain a data node matching unit id {id}");
+				}
+
+				found.Element("value").Value = unitTarget.Value;				
+			}
+		}
+
+		public static void MergeTranslationOfXliff12ToResX(string xliffPath, string resxPath)
+		{
+			var xliffRoot = XDocument.Load(xliffPath).Root;
+			var resxRoot = XDocument.Load(resxPath).Root;
+			MergeTranslationOfXliff12ToResX (xliffRoot, resxRoot);
+			resxRoot.Save(resxPath);
+		}
 	}
 }

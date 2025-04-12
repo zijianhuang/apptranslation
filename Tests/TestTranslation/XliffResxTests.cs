@@ -74,6 +74,16 @@ namespace TestResx
 			xliffDoc.Save("AppResourcesNew.zh-hans.xlf");
 			var c = await TranslateXliff("AppResourcesNew.zh-hans.xlf");
 			Assert.Equal(2, c);
+		}
+
+		[Fact]
+		public async Task TestMergeResXToNewXliffAndTranslateAndMergeBackToResX()
+		{
+			var xDocLang = XElement.Load("resx/AppResourcesNew.zh-hans.resx");
+			xDocLang.Save("AppResourcesNew.zh-hans.resx"); //just a local copy for testing
+
+			await TestMergeResXToNewXliffAndTranslate();
+			XliffResXConverter.MergeTranslationOfXliff12ToResX("AppResourcesNew.zh-hans.xlf", "AppResourcesNew.zh-hans.resx");
 
 		}
 
