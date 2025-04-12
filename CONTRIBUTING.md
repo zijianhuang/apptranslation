@@ -2,7 +2,7 @@
 
 The scope is within the needs of full-stack software developers. That is, the developer coordinates translation efforts by fellow developers, staffs and external translators.
 
-* Converter between ResX and XLIFF and reconciliation
+* Converter between ResX and XLIFF and reconciliation. [Exchanging localizable resources](https://learn.microsoft.com/en-us/globalization/localization/exchanging-localizable-resources)
 * Converter between Android Resource and XLIFF and reconciliation
 * Support MS translator
 * Support [Translation Memory eXchange (TMX)](https://learn.microsoft.com/en-us/globalization/localization/translation-memories)

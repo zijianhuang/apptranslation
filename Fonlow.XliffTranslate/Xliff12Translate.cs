@@ -52,9 +52,9 @@ namespace Fonlow.GoogleTranslate
 			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
 			var body = firstFile.Element(ns + "body");
-			var tranUnits = body.Elements(ns + "trans-unit").ToList();
-			var totalUnits = tranUnits.Count;
-			var totalUnitsToTranslate = tranUnits.Count(unit =>
+			var transUnits = body.Elements(ns + "trans-unit").ToList();
+			var totalUnits = transUnits.Count;
+			var totalUnitsToTranslate = transUnits.Count(unit =>
 			{
 				var unitSource = unit.Element(ns + "source");
 				var unitTarget = unit.Element(ns + "target");
@@ -66,7 +66,7 @@ namespace Fonlow.GoogleTranslate
 
 			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
 			{
-				var badUnits = tranUnits.Where(unit =>
+				var badUnits = transUnits.Where(unit =>
 				{
 					var unitSource = unit.Element(ns + "source");
 					var unitTarget = unit.Element(ns + "target");
@@ -87,7 +87,7 @@ namespace Fonlow.GoogleTranslate
 			const int maxUnits = 100; //not likely reaching the 1024 limit of batch processing because not likely the text have over 10 interpolations each.
 			if (batchMode)
 			{
-				var chunks = tranUnits.SplitLists(maxUnits);
+				var chunks = transUnits.SplitLists(maxUnits);
 				int kc = 0;
 				foreach (var chunk in chunks)
 				{
@@ -98,7 +98,7 @@ namespace Fonlow.GoogleTranslate
 			}
 			else
 			{
-				return await TextByText(tranUnits);
+				return await TextByText(transUnits);
 			}
 
 			async Task<int> TextByText(IList<XElement> someUnits)

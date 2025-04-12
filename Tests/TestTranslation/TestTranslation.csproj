@@ -9,6 +9,8 @@
   <ItemGroup>
     <EmbeddedResource Remove="resx\AppResources.resx" />
     <EmbeddedResource Remove="resx\AppResources.zh-hans.resx" />
+    <EmbeddedResource Remove="resx\AppResourcesNew.resx" />
+    <EmbeddedResource Remove="resx\AppResourcesNew.zh-hans.resx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="resx\AppResourcesNew.zh-hans.resx">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resx\AppResourcesNew.resx">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="resx\AppResources.resx" />
     <None Include="resx\AppResources.zh-hans.resx" />
   </ItemGroup>
