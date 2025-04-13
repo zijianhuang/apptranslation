@@ -142,7 +142,5 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 			get;
 			set;
 		}
-
-
 	}
 }

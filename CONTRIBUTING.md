@@ -21,3 +21,14 @@ During the initial development, XML serialization is used for reading and writin
 Additionally, through XElement the original layout of the source document can be preserved.
 
 Please create issue before forking and PR.
+
+## Other Good Tools Used by .NET Developers
+
+These tools provide interactive ways of managing translation:
+* Visual Studio's Resource Explorer
+* [ResX Resource Manager](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager) provides some [complementary features](https://github.com/dotnet/ResXResourceManager/tree/master/Documentation), including [synchronisation between ResX and Xliff resource files](https://github.com/dotnet/ResXResourceManager/blob/master/Documentation/Topics/Xliff.md) .
+* [PO Editor](https://poeditor.com/)
+
+The tools in this open source project provide the least user interaction through CLI and scripting, and such approach may be more beneficial in some scenarios for the sake of Contineous Integration. And software developers should be able to use these CLI tools along with those interactive tools above.
+
+The scope of this project is not to replace any of the interactive tools, but to offer complementatory solutions to software developers to minimize the overal overhead of managing translations.

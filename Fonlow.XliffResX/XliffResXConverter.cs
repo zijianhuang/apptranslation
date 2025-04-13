@@ -121,11 +121,22 @@ namespace Fonlow.XliffResX
 
 		}
 
+		public static Tuple<int, int> MergeResXToXliff12(string resxSourcePath, string resxPath, string xliffPath, ILogger logger)
+		{
+			var resxSourceRoot = XDocument.Load(resxSourcePath).Root;
+			var resxRoot = XDocument.Load(resxPath).Root;
+			var xliffRoot = XDocument.Load(xliffPath).Root;
+			var r = MergeResXToXliff12(resxSourceRoot, resxRoot, xliffRoot, logger);
+			xliffRoot.Save(xliffPath);
+			return r;
+		}
+
 		/// <summary>
 		/// Copy the translated content of XLIFF to target language resX. Presumbly the XLIFF file is created from the resX or has been merged with the updated resX.
 		/// </summary>
 		/// <param name="xliffRoot"></param>
 		/// <param name="resxRoot"></param>
+		/// <exception cref="ArgumentException"></exception>
 		public static void MergeTranslationOfXliff12ToResX(XElement xliffRoot, XElement resxRoot)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
