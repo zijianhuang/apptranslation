@@ -73,6 +73,11 @@ namespace Fonlow.GoogleTranslate
 			{
 				var strings = someUnits.Where(d=>!string.IsNullOrEmpty(d.Value)).Select(d => d.Value).ToList();
 
+				if (strings.Count == 0)
+				{
+					return 0;
+				}
+
 				var translatedStrings = await g.Translate(strings);
 
 				int translatedIndex = 0;

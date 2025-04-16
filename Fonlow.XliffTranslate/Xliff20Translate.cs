@@ -50,9 +50,16 @@ namespace Fonlow.GoogleTranslate
 
 			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
-			var tranUnits = firstFile.Elements(ns + "unit").ToArray(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
-			var totalUnits = tranUnits.Length;
-			var totalUnitsToTranslate = tranUnits.Count(unit =>
+			var units = firstFile.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
+			var firstGroup = firstFile.Element(ns + "group"); //handle one group for now
+			if (firstGroup != null)
+			{
+				var groupUnits = firstGroup.Elements(ns + "unit").ToList();
+				units.AddRange(groupUnits);
+			}
+
+			var totalUnits = units.Count;
+			var totalUnitsToTranslate = units.Count(unit =>
 			{
 				var segment = unit.Element(ns + "segment");
 				var unitSource = segment.Element(ns + "source");
@@ -64,7 +71,7 @@ namespace Fonlow.GoogleTranslate
 
 			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
 			{
-				var badUnits = tranUnits.Where(unit =>
+				var badUnits = units.Where(unit =>
 				{
 					var segment = unit.Element(ns + "segment");
 					var unitSource = segment.Element(ns + "source");
@@ -86,7 +93,7 @@ namespace Fonlow.GoogleTranslate
 			if (batchMode)
 			{
 				const int maxUnits = 100;
-				var chunks = tranUnits.SplitLists(maxUnits);
+				var chunks = units.SplitLists(maxUnits);
 				int kc = 0;
 				foreach (var chunk in chunks)
 				{
@@ -97,7 +104,7 @@ namespace Fonlow.GoogleTranslate
 			}
 			else
 			{
-				return await TextByText(tranUnits);
+				return await TextByText(units);
 			}
 
 			async Task<int> TextByText(IList<XElement> someUnits)
@@ -192,6 +199,11 @@ namespace Fonlow.GoogleTranslate
 							}
 						}
 					}
+				}
+
+				if (strings.Count == 0)
+				{
+					return 0;
 				}
 
 				var translatedStrings = await translator.Translate(strings);

@@ -20,6 +20,9 @@ During the initial development, XML serialization is used for reading and writin
 
 Additionally, through XElement the original layout of the source document can be preserved.
 
+**Remarks:**
+* While there are good .NET libraries like [XLIFF2-Object-Model](https://github.com/microsoft/XLIFF2-Object-Model), it is sufficient enough to use XElement directly since the scop of this project is focused on translating from source to target only.
+
 Please create issue before forking and PR.
 
 ## Other Good Tools Used by .NET Developers

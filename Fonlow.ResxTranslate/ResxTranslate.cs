@@ -59,6 +59,11 @@ namespace Fonlow.ResxTranslate
 					return valueNode != null && !string.IsNullOrEmpty(valueNode.Value);
 				}).Select(d => d.Element("value").Value).ToList();
 
+				if (strings.Count == 0)
+				{
+					return 0;
+				}
+
 				var translatedStrings = await g.Translate(strings);
 				int translatedIndex = 0;
 				foreach (var n in someNodes)

@@ -1,0 +1,18 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="zh-hans">
+	<file id="ngi18n" original="ng.template">
+		<group id="AngularApp" datatype="html">
+			<unit id="4937523942964397361">
+				<segment state="initial">
+					<source>Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?</source>
+					<target>Are you sure to delete <ph id="0" equiv="PH" disp="this.currentAlbum.title"/>?</target>
+				</segment>
+			</unit>
+			<unit id="462051546739716571">
+				<segment state="initial">
+					<source>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</source>
+					<target>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</target>
+				</segment>
+			</unit>
+		</group>
+	</file>
+</xliff>

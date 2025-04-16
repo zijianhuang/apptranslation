@@ -111,5 +111,20 @@ namespace TestXliff
 				xDoc.Save("XdocumentTranslated20Batch.xlf"); // check to ensure the order of nodes not changed.
 			}
 		}
+
+		[Fact]
+		public async Task TestReadAndTranslateGroup()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf20/messagesGroup.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff20Translate(true);
+				var c = await wg.TranslateXliff(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				Assert.Equal(2, c);
+
+				xDoc.Save("XdocumentTranslated20Group.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
 	}
 }

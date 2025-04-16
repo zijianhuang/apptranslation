@@ -53,6 +53,13 @@ namespace Fonlow.GoogleTranslate
 
 			var body = firstFile.Element(ns + "body");
 			var transUnits = body.Elements(ns + "trans-unit").ToList();
+			var firstGroup = body.Element(ns + "group"); //handle one group for now
+			if (firstGroup != null)
+			{
+				var groupUnits = firstGroup.Elements(ns + "trans-unit").ToList();
+				transUnits.AddRange(groupUnits);
+			}
+
 			var totalUnits = transUnits.Count;
 			var totalUnitsToTranslate = transUnits.Count(unit =>
 			{
@@ -193,7 +200,12 @@ namespace Fonlow.GoogleTranslate
 					}
 				}
 
-				var translatedStrings = await translator.Translate(strings);
+				if (strings.Count == 0)
+				{
+					return 0;
+				}
+
+				var translatedStrings = await translator.Translate(strings); //batch translation
 
 				int translatedIndex = 0;
 				foreach (var unit in someUnits)
