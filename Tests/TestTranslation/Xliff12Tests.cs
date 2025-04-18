@@ -110,6 +110,21 @@ namespace TestXliff
 		}
 
 		[Fact]
+		public async Task TestReadAndTranslateWithTranslateNo()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf12/messagesTranslate.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff12Translate(false);
+				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				Assert.Equal(1, c);
+
+				xDoc.Save("XdocumentTranslatedSomeNot.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
+
+		[Fact]
 		public async Task TestReadAndTranslateWithBatchMode()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf12/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))

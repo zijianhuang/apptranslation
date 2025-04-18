@@ -52,11 +52,11 @@ namespace Fonlow.GoogleTranslate
 			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
 			var body = firstFile.Element(ns + "body");
-			var transUnits = body.Elements(ns + "trans-unit").ToList();
+			var transUnits = body.Elements(ns + "trans-unit").Where(d=> d.Attribute("translate")==null || d.Attribute("translate").Value=="yes").ToList();
 			var firstGroup = body.Element(ns + "group"); //handle one group for now
 			if (firstGroup != null)
 			{
-				var groupUnits = firstGroup.Elements(ns + "trans-unit").ToList();
+				var groupUnits = firstGroup.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
 				transUnits.AddRange(groupUnits);
 			}
 

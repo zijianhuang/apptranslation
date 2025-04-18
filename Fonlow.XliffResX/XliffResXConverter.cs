@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace Fonlow.XliffResX
@@ -58,12 +59,12 @@ namespace Fonlow.XliffResX
 		/// 
 		/// </summary>
 		/// <param name="resxSourceRoot"></param>
-		/// <param name="resxRoot"></param>
+		/// <param name="resxLangRoot"></param>
 		/// <param name="xliffRoot"></param>
 		/// <param name="logger"></param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentException"></exception>
-		public static Tuple<int, int> MergeResXToXliff12(XElement resxSourceRoot, XElement resxRoot, XElement xliffRoot, ILogger logger)
+		public static Tuple<int, int> MergeResXToXliff12(XElement resxSourceRoot, XElement resxLangRoot, XElement xliffRoot, ILogger logger)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -72,10 +73,11 @@ namespace Fonlow.XliffResX
 			}
 
 			var sourceDataElements = resxSourceRoot.Elements("data").ToList();
-			var dataElements = resxRoot.Elements("data").ToList();
-			if (dataElements.Count != sourceDataElements.Count)
+			var langDataElements = resxLangRoot.Elements("data").ToList();
+			if (langDataElements.Count > sourceDataElements.Count)
 			{
-				throw new ArgumentException($"Expect {nameof(resxSourceRoot)} and {nameof(resxRoot)} have the same amount of data.");
+				throw new ArgumentException($"Expect {nameof(resxLangRoot)} has equal or less number of data nodes than {nameof(resxSourceRoot)}.");
+				//If the lang ResX has been through translation one by one and some of them missing, the lang ResX will have less nodes than the source RexX because the ResX Editor/Manager has such behavior.
 			}
 
 			var ns = xliffRoot.GetDefaultNamespace();
@@ -88,23 +90,35 @@ namespace Fonlow.XliffResX
 			{
 				var srcNode = sourceDataElements[i];
 				var id = srcNode.Attribute("name").Value;
+				var langNode = langDataElements.Find(d => d.Attribute("name")?.Value == id);
 				var foundTransUnit = transUnits.Find(d => d.Attribute("id").Value == id);
 				if (foundTransUnit == null)
 				{
 					var newId = srcNode.Attribute("name").Value;
-					var unit = new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
+					var unit = langNode==null ? new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
 						new XElement(ns + "source", srcNode.Element("value").Value),
-						new XElement(ns + "target", new XAttribute("state", "new"), dataElements[i].Element("value").Value)
+						new XElement(ns + "target", new XAttribute("state", "new"), string.Empty)
+					)
+					: new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
+						new XElement(ns + "source", srcNode.Element("value").Value),
+						new XElement(ns + "target", new XAttribute("state", "new"), langNode.Element("value").Value)
 					);
 
 					fileBody.Add(unit);
 					addedCount++;
-					logger.LogInformation($"Added: {newId}");
+					logger.LogInformation($"Added Id: {newId}");
 				}
 			}
 
 			int removedCount = 0;
 			var transUnitsNow = fileBody.Elements(ns + "trans-unit").ToList(); // probably with some new units now
+			var firstGroup = fileBody.Element(ns + "group"); //handle one group for now
+			if (firstGroup != null)
+			{
+				var groupUnits = firstGroup.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
+				transUnits.AddRange(groupUnits);
+			}
+
 			foreach (var n in transUnitsNow) //Purge
 			{
 				var id = n.Attribute("id").Value;

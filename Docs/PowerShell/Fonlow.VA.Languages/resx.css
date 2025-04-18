@@ -1,0 +1,12 @@
+﻿td:nth-child(2) {
+	color:darkblue;
+}
+
+td:nth-child(3) { 
+	color:darkgreen;
+	font-style:italic;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: rgba(0, 0, 0, 0.05);
+}

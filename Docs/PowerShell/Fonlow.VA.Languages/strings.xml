@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="About" comment="the About page of the product">About</string>
+  <string name="ChartSnellen" comment="name of Snellen Chart">Snellen</string>
+  <string name="ChartE" comment="Tumbling E Chart without &quot;Chart&quot;">Tumbling E</string>
+  <string name="ChartLandoltC" comment="Landolt C Chart without &quot;Chart&quot;">Landolt C</string>
+  <string name="AppName">Visual Acuity Charts</string>
+  <string name="ArmReachDistanceFootLabel" comment="User may define an arbitrary distance">Custom Distance (Foot)</string>
+  <string name="ArmReachDistanceMeterLabel">Custom Distance (Meter)</string>
+  <string name="Cancel">Cancel</string>
+  <string name="DecimalLabel" comment="One of the visual acuity notations, using numbers with decimal point">Decimal</string>
+  <string name="DeviceInformation">Device Information</string>
+  <string name="Height">Height</string>
+  <string name="Help">Help</string>
+  <string name="Hint">Hint</string>
+  <string name="IntervalSecond">Interval (Second)</string>
+  <string name="Minimum">Minimum</string>
+  <string name="None" comment="Not defined">None</string>
+  <string name="OK">OK</string>
+  <string name="PlayIntervalLabel" comment="In Autoplay, the time interval between displaying current optotype and the next">Play Interval Until Next Optotype</string>
+  <string name="ProductDescription">Product Description</string>
+  <string name="Resolution" comment="Screen resolution, like 1920x1080">Resolution</string>
+  <string name="ResultFormat" comment="Visual acuity notation, like decimal, Snellen faction and logMAR">Notation</string>
+  <string name="Settings">Settings</string>
+  <string name="ShowOptotypeHeight">Show Optotype Height</string>
+  <string name="Size">Size</string>
+  <string name="SnellenFraction">Snellen Fraction</string>
+  <string name="Unit" comment="Measurement unit">Unit</string>
+  <string name="UnitOfAcuity" comment="Measurement unit of visual acuity">Notation</string>
+  <string name="UnitOfLength" comment="Measurement unit of length">Unit of Length</string>
+  <string name="VoiceHint" comment="App speaks current optotype">Voice Hint</string>
+  <string name="LogMar">LogMAR</string>
+  <string name="Meter" comment="metre, mètre, unit of length in International System of Units">Meter</string>
+  <string name="Foot" comment=" unit of length in the imperial and US customary systems of measurement">Foot</string>
+  <string name="m" comment="symbol of meter">m</string>
+  <string name="f" comment="foot">ft</string>
+  <string name="s" comment="second">s</string>
+  <string name="MiniArmReachMeter">Minimum 0.5m</string>
+  <string name="MinArmReachFoot">Minimum 1.64ft</string>
+  <string name="ResultFormat1">Decimal (0.5)</string>
+  <string name="ResultFormat2">Fraction (20/40)</string>
+  <string name="ResultFormat3">LogMAR (0.3)</string>
+  <string name="Distance">Distance</string>
+  <string name="Chart" comment="eye chart">Chart</string>
+  <string name="VisualAcuity" comment="as described at https://en.wikipedia.org/wiki/Visual_acuity">Visual Acuity</string>
+  <string name="Right" comment="left or right">Right</string>
+  <string name="BottomRight">Bottom Right</string>
+  <string name="Bottom">Bottom</string>
+  <string name="BottomLeft">Bottom Left</string>
+  <string name="Left">Left</string>
+  <string name="TopLeft">Top Left</string>
+  <string name="Top">Top</string>
+  <string name="TopRight">Top Right</string>
+  <string name="CommonPara">while the app is counting correct and wrong readings for visual acuity score. The test will start from current row and enumerate up to 5 optotypes before moving to next row with smaller optotypes. The test is finished when more than {0} are misread in the same row or the last row is done.</string>
+  <string name="SnellenPara" comment="{0} is the placeholder for substitution of a chart name">With {0} eyechart, swipe right to mark correct reading, and swipe left to mark misreading, </string>
+  <string name="EChartPara">With {0} eyechart, swipe left, up, right or down according to what the testee could recognize and respond, </string>
+  <string name="CChartPara">With {0} eyechart, swipe left, up-left, up, up-right, right, down-right, down or down-left according to what the testee could recognize and respond, </string>
+  <string name="AlmostPerfect">Almost perfect vision. {0}</string>
+  <string name="Perfect">Perfect vision. {0}</string>
+  <string name="UnableToSee">Unable to see the top row?</string>
+  <string name="Down">Down</string>
+  <string name="Up">Up</string>
+  <string name="HeightLabel" comment="{0:0.#} is a placeholder">Height: {0:0.#} mm</string>
+  <string name="Result">Result</string>
+  <string name="ProductInfo1" comment="{0} a placeholder">This app reassembles {0} through generating optotypes at exact physical sizes according to the test distance.</string>
+  <string name="ProductInfo2">This app cannot replace optometrists who would carry out professional and comprehensive tests for your eyes. Please seek help from medical professional at early signs of visual acuity problems.</string>
+  <string name="ChartEtdrs">ETDRS</string>
+  <string name="ChartHotv">HOTV</string>
+  <string name="ChartEtdrsEur">European-wide</string>
+  <string name="ChartLeaSymbols">Lea Symbols</string>
+  <string name="ChartPvNumbers">Numbers</string>
+  <string name="Device">Device</string>
+  <string name="KeepScreenOn">Keep Screen On</string>
+  <string name="HomeUrl">https://visualacuity.info</string>
+  <string name="RestartAppNeeded">The change will take effect after restarting the app.</string>
+  <string name="ResultFormat4">Fraction (5/10)</string>
+  <string name="ResultFormat5">Fraction (6/12)</string>
+  <string name="ResultFormat6">MAR (2)</string>
+  <string name="ResultFormat7">VAS (85)</string>
+  <string name="Brightness">Brightness</string>
+  <string name="AppName_E">Tumbling E Chart</string>
+  <string name="And">and</string>
+  <string name="RecordScores">Record Scores</string>
+  <string name="Name" comment="user name">Name</string>
+  <string name="Eye">Eye</string>
+  <string name="Confirm">Confirm</string>
+  <string name="ConfirmSameName">{0} exists similar to inputted {1}. Do you want to use the existing instead?</string>
+  <string name="Yes">Yes</string>
+  <string name="No">No</string>
+  <string name="ConfirmRemoveScores">Are you sure to remove all scores of {0}?</string>
+  <string name="Anonymous">Anonymous</string>
+  <string name="Scores">Scores</string>
+  <string name="VAScores" comment="a list of VAS of the same patient">Records</string>
+  <string name="Score">Score</string>
+  <string name="Close">Close</string>
+  <string name="RecordScoresEnabled">Enable saving score in test through Auto-scoring. Each testee may have a pair of scores once a day.</string>
+  <string name="VAS" comment="Visual Acuity Score, one of the visual acuity notation">VAS</string>
+  <string name="Save">Save</string>
+  <string name="BestRowScore" comment="for example, Best row Decimal:1.25 with 1 missed">Best row {0}:{1} with {2} missed.</string>
+  <string name="NoScoreYet">No score yet. Auto-scoring calculates score which may be saved.</string>
+  <string name="DontShowHintAgain">Don't show this hint again</string>
+  <string name="Menu" comment="app user menu popup with buttons">Menu</string>
+  <string name="Autoplay">Auto scoring to calculate score</string>
+  <string name="NextOptotype">Next optotype of same row</string>
+  <string name="DecreaseSize">Smaller optotypes</string>
+  <string name="IncreaseSize">Larger optotypes</string>
+  <string name="SelectChart">Select chart</string>
+  <string name="SelectDistance">Select distance</string>
+  <string name="ToggleMirror">Toggle mirror mode</string>
+  <string name="DuringPause">During pause, swipe up to increase size, or swipe down to decrease size.</string>
+  <string name="PauseReplay" comment="Pause or replay">Pause/Resume</string>
+  <string name="Stop">Stop</string>
+  <string name="PriorOptotype">Prior optotype of same row</string>
+  <string name="CustomDistance" comment="user defined arbitary distance">Custom Distance</string>
+  <string name="VoiceHintHelp">The app will speak the optotype. The “doctor” wearing an earphone knows what’s on without reading the optotype.</string>
+  <string name="NotationHelp">Common visual acuity notations.</string>
+  <string name="CustomDistanceHelp">Minimum 0.5 meter, maximum 30 meters. The distance will appear in the Distance List.</string>
+  <string name="OptotypeHeightHelp">Show the physical height of the optotype when moving to the other test row.</string>
+  <string name="KeepScreenOnHelp">When the app is running on the screen, keep the screen of the mobile device on. </string>
+  <string name="PlayIntervalHelp">During Auto-scoring, the app will display next optotype after the defined interval. The app will mark a miss and move to next optotype if the “patient” could not respond on time within the interval.</string>
+  <string name="BrightnessHelp">Brightness setting independent of the device’s brightness setting. The device’s brightness setting is generally for viewing within an arm’s reach distance, while the app is generally for viewing from a distance longer than 2 meters, thus brighter white background is reasonable.</string>
+  <string name="RecordScoresHelp">Record a score at the end of each eye test with Autoplay.</string>
+  <string name="UnitOfLengthHelp">Meter or Foot.</string>
+  <string name="OfficialWebsite">Official Website</string>
+  <string name="ReviewAndroidYes">Rate this app on Google Play</string>
+  <string name="ReviewSuggestion">If you find this app useful, please rate it.</string>
+  <string name="ReviewRemindMe">Remind me later</string>
+  <string name="ReviewNever">Don't ask me again</string>
+  <string name="ReviewIOSYes">Rate this app on App Store</string>
+  <string name="SendMessageToDev">Send message to developer</string>
+  <string name="MyEmailAddress">My Email address for reply</string>
+  <string name="MyName">My name</string>
+  <string name="MySubject" comment="Email subject">Subject</string>
+  <string name="MyMessage">Message detail</string>
+  <string name="Send" comment="send message">Send</string>
+  <string name="MessageToDev">Message to Developer</string>
+  <string name="Warning">Warning</string>
+  <string name="NetworkProblem">Network connection is having some problem.</string>
+  <string name="iOSRate">Rate this app</string>
+  <string name="ScoreHelp">Visual acuity notations of Snellen Fractions 20/20, 5/5, or 6/6, and Decimal 1.0 refer to the reference standard. Equivalent notations include MAR 1.0, LogMAR 0 and Visual Acuity Score 100. “Normal” visual acuity for healthy eyes is 1 or 2 lines better than Decimal 1.0 or Visual Acuity Score 100. Visual Acuity Score (VAS) is more intuitive since higher integer values indicate better visual acuity. VAS value lower than 100 may indicate myopia, however, only optometrists or ophthalmologists can diagnose myopia or pseudo myopia. Early diagnosis and preventive measures may prevent pseudo myopia from becoming myopia, or prevent myopia from becoming worse. Checking visual acuity weekly, fortnightly or monthly may help early detection and diagnosis.  </string>
+  <string name="RecordScoresHint">While you may record scores on paper or PMS, you may also use this app to record visual acuity scores. Please go to Settings and enable “Record Scores”.</string>
+  <string name="SecondScoreHelp">Visual acuity scores of multiple testees could be recorded. Each testee may have 1 record a day for both eyes. Repeated tests on the same date will have the last one recorded.</string>
+  <string name="KeyInName" comment="Input user name">Key-in name</string>
+  <string name="AppName_C">Landolt C Chart</string>
+  <string name="AppName_Snellen">Snellen Chart</string>
+  <string name="AppName_Etdrs">ETDRS Chart</string>
+  <string name="EShortLabel">Tumbling E With Short Middle Arm</string>
+  <string name="NotYetSupported">{0} is not yet supported. Please go to Settings and input Custom PPI according to the specification of your {1}. And please send a message to developer about this latest {1}.</string>
+  <string name="CheckWebPpi">After checking backend, PPI {0}: {1} is found</string>
+  <string name="ClearScores">Delete scores</string>
+  <string name="Copied">All scores are copied to Clipboard.</string>
+  <string name="CopiedTo">Copied to Clipboard</string>
+  <string name="CopyScores">Copy scores to clipboard</string>
+  <string name="NothingToCopy">No scores to share</string>
+  <string name="MultiOptotype">Multiple Optotypes</string>
+  <string name="MultiOptotypeHint">Display multiple optotypes. And in auto scoring, the testee should read the middle optotype.</string>
+  <string name="Shuffle">Shuffle</string>
+  <string name="StareMiddle">The testee should read the middle optotype. </string>
+  <string name="SymbolCircle">circle</string>
+  <string name="SymbolCross">cross</string>
+  <string name="SymbolHexagon">hexagon</string>
+  <string name="SymbolPetagon">pentagon</string>
+  <string name="SymbolSquare">square</string>
+  <string name="SymbolTriangle">triangle</string>
+  <string name="ChartSymbols" comment="the Symbols chart">Shapes</string>
+  <string name="ShareAllScores" comment="Share all records of scores with other apps">Share all records</string>
+  <string name="ShareSelected" comment="User press a record in Scoress, show a context menu item">Share Selected record</string>
+  <string name="ShareRecordOnPress">Press a record to share</string>
+  <string name="Share" comment="Export all records or selected record, with menu items then share">Share</string>
+  <string name="Share_Selected">Share Selected Record</string>
+  <string name="Export">Export</string>
+  <string name="ExportAndShare">Export and Share</string>
+  <string name="NoRecordSelected">No record selected. You should select a record.</string>
+  <string name="ShareAllAsHtml">Share All</string>
+  <string name="ShareAllAsJson">Share All as JSON File</string>
+  <string name="ShareAllAsText">All</string>
+  <string name="ShareAllAsCsv">Share All as CSV File</string>
+  <string name="ExportAllToHtml">Display Details</string>
+  <string name="ExportAllToLineGraphHtml">Display Trend</string>
+  <string name="ShareAllAsLineGraphHtml">Share Trend</string>
+  <string name="PrivacyPolicyLabel">Privacy Policy</string>
+  <string name="PrivacyPolicyVAC">https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</string>
+  <string name="PrivacyPolicySnellen">https://visualacuity.info/SnellenChartPrivacyPolicy</string>
+  <string name="PrivacyPolicyE">https://visualacuity.info/TumblingEChartPrivacyPolicy</string>
+  <string name="Language" comment="Select what  language to use in UI">Language</string>
+</resources>
