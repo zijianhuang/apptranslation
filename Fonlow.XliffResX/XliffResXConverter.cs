@@ -77,47 +77,69 @@ namespace Fonlow.XliffResX
 			if (langDataElements.Count > sourceDataElements.Count)
 			{
 				throw new ArgumentException($"Expect {nameof(resxLangRoot)} has equal or less number of data nodes than {nameof(resxSourceRoot)}.");
-				//If the lang ResX has been through translation one by one and some of them missing, the lang ResX will have less nodes than the source RexX because the ResX Editor/Manager has such behavior.
+				/*If the lang ResX has been through translation one by one and some of them missing, the lang ResX will have less nodes than the source RexX because the ResX Editor/Manager has such behavior.
+				 * Those missing elements in lang Resx are to be assuming the soure element data.
+				 * However, in batch processing with machine translation, it is better not to leave the data element undefined in the lang resx, but to fill  in the value in source resx.
+				 */
 			}
 
 			var ns = xliffRoot.GetDefaultNamespace();
 			var firstFile = xliffRoot.Element(ns + "file");
 			var fileBody = firstFile.Element(ns + "body");
 			var transUnits = fileBody.Elements(ns + "trans-unit").ToList();
-
-			int addedCount = 0;
-			for (int i = 0; i < sourceDataElements.Count; i++) // add new units
-			{
-				var srcNode = sourceDataElements[i];
-				var id = srcNode.Attribute("name").Value;
-				var langNode = langDataElements.Find(d => d.Attribute("name")?.Value == id);
-				var foundTransUnit = transUnits.Find(d => d.Attribute("id").Value == id);
-				if (foundTransUnit == null)
-				{
-					var newId = srcNode.Attribute("name").Value;
-					var unit = langNode==null ? new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
-						new XElement(ns + "source", srcNode.Element("value").Value),
-						new XElement(ns + "target", new XAttribute("state", "new"), string.Empty)
-					)
-					: new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
-						new XElement(ns + "source", srcNode.Element("value").Value),
-						new XElement(ns + "target", new XAttribute("state", "new"), langNode.Element("value").Value)
-					);
-
-					fileBody.Add(unit);
-					addedCount++;
-					logger.LogInformation($"Added Id: {newId}");
-				}
-			}
-
-			int removedCount = 0;
-			var transUnitsNow = fileBody.Elements(ns + "trans-unit").ToList(); // probably with some new units now
 			var firstGroup = fileBody.Element(ns + "group"); //handle one group for now
 			if (firstGroup != null)
 			{
 				var groupUnits = firstGroup.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
 				transUnits.AddRange(groupUnits);
 			}
+
+			logger.LogInformation($"Soure ResX has {sourceDataElements.Count} data elements");
+			logger.LogInformation($"Lang ResX has {langDataElements.Count} data elements");
+			logger.LogInformation($"Merge target XLIFF has {transUnits.Count} units");
+
+			int addedCount = 0;
+			for (int i = 0; i < sourceDataElements.Count; i++) // add new units
+			{
+				var sourceDataElement = sourceDataElements[i];
+				var id = sourceDataElement.Attribute("name").Value;
+				var langDataElement = langDataElements.Find(d => d.Attribute("name")?.Value == id);
+				var foundTransUnit = transUnits.Find(d => d.Attribute("id").Value == id);
+				if (foundTransUnit == null)
+				{
+					var newId = sourceDataElement.Attribute("name").Value;
+					var unit = langDataElement == null ? new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
+						new XElement(ns + "source", sourceDataElement.Element("value").Value),
+						new XElement(ns + "target", new XAttribute("state", "new"), string.Empty)
+					)
+					: new XElement(ns + "trans-unit", new XAttribute("id", newId), new XAttribute("datatype", "text"),
+						new XElement(ns + "source", sourceDataElement.Element("value").Value),
+						new XElement(ns + "target", new XAttribute("state", "new"), langDataElement.Element("value").Value)
+					);
+
+					if (firstGroup != null)
+					{
+						firstGroup.Add(unit);
+					}
+					else
+					{
+						fileBody.Add(unit);
+					}
+
+					addedCount++;
+					logger.LogInformation($"Added Id: {newId}");
+				}
+			}
+
+			int removedCount = 0;
+			var transUnitsNow = fileBody.Elements(ns + "trans-unit").ToList();
+			var firstGroupNow = fileBody.Element(ns + "group"); //handle one group for now
+			if (firstGroupNow != null)
+			{
+				var groupUnits = firstGroupNow.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
+				transUnitsNow.AddRange(groupUnits);
+			}
+
 
 			foreach (var n in transUnitsNow) //Purge
 			{
@@ -149,9 +171,9 @@ namespace Fonlow.XliffResX
 		/// Copy the translated content of XLIFF to target language resX. Presumbly the XLIFF file is created from the resX or has been merged with the updated resX.
 		/// </summary>
 		/// <param name="xliffRoot"></param>
-		/// <param name="resxRoot"></param>
+		/// <param name="resxLangRoot"></param>
 		/// <exception cref="ArgumentException"></exception>
-		public static void MergeTranslationOfXliff12ToResX(XElement xliffRoot, XElement resxRoot)
+		public static void MergeTranslationOfXliff12BackToResX(XElement xliffRoot, XElement resxLangRoot)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -164,18 +186,24 @@ namespace Fonlow.XliffResX
 			var fileBody = firstFile.Element(ns + "body");
 			var body = firstFile.Element(ns + "body");
 			var transUnits = body.Elements(ns + "trans-unit").ToList();
+			var firstGroup = fileBody.Element(ns + "group"); //handle one group for now
+			if (firstGroup != null)
+			{
+				var groupUnits = firstGroup.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
+				transUnits.AddRange(groupUnits);
+			}
 
-			var dataElements = resxRoot.Elements("data").ToList();
+			var dataElements = resxLangRoot.Elements("data").ToList();
 			if (dataElements.Count != transUnits.Count)
 			{
-				throw new ArgumentException($"Expect units of {nameof(xliffRoot)} and data of {nameof(resxRoot)} must match.");
+				throw new ArgumentException($"Expect units of {nameof(xliffRoot)} and data of {nameof(resxLangRoot)} must match.");
 			}
 
 			foreach (var unit in transUnits)
 			{
 				var id = unit.Attribute("id").Value;
 				var unitTarget = unit.Element(ns + "target");
-				if (unitTarget ==null)
+				if (unitTarget == null)
 				{
 					throw new ArgumentException($"unit target of {id} has no target. XLIFF is malformed.");
 				}
@@ -186,7 +214,7 @@ namespace Fonlow.XliffResX
 					throw new ArgumentException($"ResX does not contain a data node matching unit id {id}");
 				}
 
-				found.Element("value").Value = unitTarget.Value;				
+				found.Element("value").Value = unitTarget.Value;
 			}
 		}
 
@@ -194,7 +222,7 @@ namespace Fonlow.XliffResX
 		{
 			var xliffRoot = XDocument.Load(xliffPath).Root;
 			var resxRoot = XDocument.Load(resxPath).Root;
-			MergeTranslationOfXliff12ToResX (xliffRoot, resxRoot);
+			MergeTranslationOfXliff12BackToResX(xliffRoot, resxRoot);
 			resxRoot.Save(resxPath);
 		}
 	}

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "XliffResXConverter": {
+      "commandName": "Project",
+      "commandLineArgs": "/a=merge /rxs=AppResources.resx /rxl=AppResources.zh-Hans.resx /xf=MultilingualResources/Fonlow.VA.Languages.zh-Hans.xlf",
+      "workingDirectory": "C:\\VsProjects\\OpenSource\\Translation\\Docs\\PowerShell\\Fonlow.VA.Languages"
+    }
+  }
+}

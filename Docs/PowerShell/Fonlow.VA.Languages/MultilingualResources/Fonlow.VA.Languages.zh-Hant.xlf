@@ -3,10 +3,6 @@
   <file datatype="xml" source-language="en-US" target-language="zh-Hant" original="FONLOW.VA.LANGUAGES/APPRESOURCES.RESX">
     <body>
       <group id="FONLOW.VA.LANGUAGES/APPRESOURCES.RESX" datatype="resx">
-        <trans-unit id="About" translate="yes" xml:space="preserve">
-          <source>About</source>
-          <target state="translated">關於</target>
-          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
         <trans-unit id="AlmostPerfect" translate="yes" xml:space="preserve">
           <source>Almost perfect vision. {0}</source>
           <target state="translated">相當好視力. {0}</target>
