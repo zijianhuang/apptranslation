@@ -194,9 +194,9 @@ namespace Fonlow.XliffResX
 			}
 
 			var dataElements = resxLangRoot.Elements("data").ToList();
-			if (dataElements.Count != transUnits.Count)
+			if (dataElements.Count > transUnits.Count)
 			{
-				throw new ArgumentException($"Expect units of {nameof(xliffRoot)} and data of {nameof(resxLangRoot)} must match.");
+				throw new ArgumentException($"Expect data elements of {nameof(resxLangRoot)} must equal or less than units of {nameof(xliffRoot)}.");
 			}
 
 			foreach (var unit in transUnits)
@@ -211,10 +211,14 @@ namespace Fonlow.XliffResX
 				var found = dataElements.Find(d => d.Attribute("name").Value == id);
 				if (found == null)
 				{
-					throw new ArgumentException($"ResX does not contain a data node matching unit id {id}");
+					var newDataElement = new XElement("data", new XAttribute("name", id),
+						new XElement("value", unitTarget.Value));
+					resxLangRoot.Add(newDataElement);
 				}
-
-				found.Element("value").Value = unitTarget.Value;
+				else
+				{
+					found.Element("value").Value = unitTarget.Value;
+				}
 			}
 		}
 

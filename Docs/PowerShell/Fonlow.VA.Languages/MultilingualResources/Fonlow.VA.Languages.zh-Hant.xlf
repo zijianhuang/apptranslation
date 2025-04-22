@@ -426,7 +426,7 @@
         </trans-unit>
         <trans-unit id="PrivacyPolicyE" translate="yes" xml:space="preserve">
           <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
-          <target state="translated"></target>
+          <target state="new"></target>
         </trans-unit>
         <trans-unit id="PrivacyPolicyLabel" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>
@@ -434,11 +434,11 @@
         </trans-unit>
         <trans-unit id="PrivacyPolicySnellen" translate="yes" xml:space="preserve">
           <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
-          <target state="translated"></target>
+          <target state="new"></target>
         </trans-unit>
         <trans-unit id="PrivacyPolicyVAC" translate="yes" xml:space="preserve">
           <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
-          <target state="translated"></target>
+          <target state="new"></target>
         </trans-unit>
         <trans-unit id="ProductDescription" translate="yes" xml:space="preserve">
           <source>Product Description</source>

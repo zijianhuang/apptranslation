@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="coverlet.collector" Version="6.0.4">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.9.4" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+		<PackageReference Include="xunit" Version="2.9.3" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Fonlow.GoogleTranslate\Fonlow.GoogleTranslateV2.csproj" />
+	  <ProjectReference Include="..\..\Fonlow.XliffResX\Fonlow.XliffResX.csproj" />
+	  <ProjectReference Include="..\..\Fonlow.XliffTranslate\Fonlow.XliffTranslate.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+	</ItemGroup>
+
+</Project>
