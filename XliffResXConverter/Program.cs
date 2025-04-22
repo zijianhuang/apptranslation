@@ -62,7 +62,7 @@ XliffResXConverter.exe /A=MergeBack /RXL=AppResources.zh-hant.resx /XF=c:/Transl
 			}
 			else if (options.Action.Equals("mergeback", StringComparison.CurrentCultureIgnoreCase))
 			{
-				XliffResXConverter.MergeTranslationOfXliff12ToResX(options.XliffFile, options.LangResX);
+				XliffResXConverter.MergeTranslationOfXliff12BackToResX(options.XliffFile, options.LangResX);
 				Console.WriteLine($"Merge back to {options.LangResX}");
 			}
 			else

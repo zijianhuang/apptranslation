@@ -16,7 +16,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Fonlow.Cli" Version="1.3.2" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>

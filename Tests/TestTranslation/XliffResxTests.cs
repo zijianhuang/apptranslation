@@ -83,7 +83,7 @@ namespace TestResx
 			xDocLang.Save("AppResourcesNew.zh-hans.resx"); //just a local copy for testing
 
 			await TestMergeResXToNewXliffAndTranslate();
-			XliffResXConverter.MergeTranslationOfXliff12ToResX("AppResourcesNew.zh-hans.xlf", "AppResourcesNew.zh-hans.resx");
+			XliffResXConverter.MergeTranslationOfXliff12BackToResX("AppResourcesNew.zh-hans.xlf", "AppResourcesNew.zh-hans.resx");
 
 		}
 

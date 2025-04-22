@@ -218,7 +218,7 @@ namespace Fonlow.XliffResX
 			}
 		}
 
-		public static void MergeTranslationOfXliff12ToResX(string xliffPath, string resxPath)
+		public static void MergeTranslationOfXliff12BackToResX(string xliffPath, string resxPath)
 		{
 			var xliffRoot = XDocument.Load(xliffPath).Root;
 			var resxRoot = XDocument.Load(resxPath).Root;
