@@ -4,6 +4,7 @@ using Fonlow.GoogleTranslateV3;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.Extensions.Logging;
 using Plossum.CommandLine;
+using System.Runtime.CompilerServices;
 
 namespace GoogleTranslateXliff
 {
@@ -79,11 +80,43 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 				ITranslate translator;
 				if (options.ApiVersion.Equals("V2", StringComparison.CurrentCultureIgnoreCase))
 				{
-					translator = new XWithGT2(options.SourceLang, options.TargetLang, options.ApiKey);
+					var goodCombination = string.IsNullOrEmpty(options.ApiKey) ^ string.IsNullOrEmpty(options.ApiKeyFile);
+					if (goodCombination)
+					{
+						if (!string.IsNullOrEmpty(options.ApiKey))
+						{
+							translator = new XWithGT2(options.SourceLang, options.TargetLang, options.ApiKey);
+						}
+						else
+						{
+							if (!File.Exists(options.ApiKeyFile))
+							{
+								logger.LogWarning($"ApiKeyFile {options.ApiKeyFile} does not exist.");
+								return 129;
+							}
+
+							var apiKey = File.ReadAllLines(options.ApiKeyFile).FirstOrDefault();
+							if (!string.IsNullOrEmpty(apiKey))
+							{
+								translator = new XWithGT2(options.SourceLang, options.TargetLang, apiKey);
+							}
+							else
+							{
+								logger.LogWarning($"ApiKeyFile {options.ApiKeyFile} has no valid content. The first line must be the API key.");
+								return 130;
+							}
+						}
+					}
+					else
+					{
+						logger.LogWarning("Either ApiKey or ApiKeyFile is needed.");
+						return 100;
+					}
 				}
 				else if (options.ApiVersion.Equals("V3", StringComparison.CurrentCultureIgnoreCase))
 				{
-					if (string.IsNullOrEmpty(options.ClientSecretFile)){
+					if (string.IsNullOrEmpty(options.ClientSecretFile))
+					{
 						logger.LogWarning("Expect ClientSecretFile for V3.");
 						return 120;
 					}
@@ -136,6 +169,9 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 
 		[CommandLineOption(Aliases = "AK", Description = "Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki")]
 		public string ApiKey { get; set; }
+
+		[CommandLineOption(Aliases = "AKF", Description = "Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt")]
+		public string ApiKeyFile { get; set; }
 
 		[CommandLineOption(Aliases = "SS", Description = "For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS=\"initial\" \"translated\"")]
 		public string[] ForStates { get; set; } = [];
