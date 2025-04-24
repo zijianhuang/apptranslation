@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>जान पहचान</value>
+    <value>के बारे में</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>स्नेलेन</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>टंबलिंग ई</value>
+    <value>टम्बलिंग ई</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
     <value>लैंडोल्ट सी</value>
@@ -133,13 +133,13 @@
     <value>नेत्र चार्ट</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>कस्टम दूरी (फूट)</value>
+    <value>कस्टम दूरी (फुट)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
     <value>कस्टम दूरी (मीटर)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>रद्द करें</value>
+    <value>रद्द करना</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
     <value>दशमलव</value>
@@ -148,25 +148,25 @@
     <value>डिवाइस जानकारी</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>HTML फ़ाइल के लिए सभी</value>
+    <value>सभी शेयर करें</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>JSON  फ़ाइल के लिए सभी</value>
+    <value>सभी को JSON फ़ाइल के रूप में साझा करें</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>सभी</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>CSV फ़ाइल के लिए सभी</value>
+    <value>सभी को CSV फ़ाइल के रूप में साझा करें</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>विवरण प्रदर्शित करें</value>
+    <value>प्रदर्शन विवरण</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>प्रदर्शन रुझान</value>
+    <value>प्रदर्शन प्रवृत्ति</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>रुझान साझा करें</value>
+    <value>शेयर ट्रेंड</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>गोपनीयता नीति</value>
@@ -176,12 +176,12 @@
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
 </root>

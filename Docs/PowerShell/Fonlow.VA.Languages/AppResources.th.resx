@@ -121,22 +121,22 @@
     <value>เกี่ยวกับ</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>Snellen</value>
+    <value>สเนลเลน</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Tumbling E</value>
+    <value>ล้มคว่ำ อี</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>Landolt C</value>
+    <value>แลนโดลต์ ซี</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>แผนภูมิสายตา</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>ระยะห่างกำหนดเอง (ฟุต)</value>
+    <value>ระยะทางที่กำหนดเอง (ฟุต)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>ระยะห่างกำหนดเอง (เมตร)</value>
+    <value>ระยะทางที่กำหนดเอง (เมตร)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
@@ -148,25 +148,25 @@
     <value>ข้อมูลอุปกรณ์</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>ทั้งหมดเป็นไฟล์ HTML</value>
+    <value>แบ่งปันทั้งหมด</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>ทั้งหมดเป็นไฟล์ JSON</value>
+    <value>แชร์ทั้งหมดเป็นไฟล์ JSON</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>ทั้งหมด</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>ทั้งหมดเป็นไฟล์ CSV</value>
+    <value>แชร์ทั้งหมดเป็นไฟล์ CSV</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
     <value>แสดงรายละเอียด</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>แนวโน้มการแสดงผล</value>
+    <value>แสดงแนวโน้ม</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>แบ่งปันเทรนด์</value>
+    <value>แบ่งปันแนวโน้ม</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>นโยบายความเป็นส่วนตัว</value>
@@ -176,12 +176,12 @@
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
 </root>

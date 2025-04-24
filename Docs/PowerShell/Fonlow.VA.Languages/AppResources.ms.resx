@@ -122,11 +122,11 @@
     <comment>the About page of the product</comment>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>Tergesa</value>
+    <value>Snellen</value>
     <comment>name of Snellen Chart</comment>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Jatuh E</value>
+    <value>Terguling E</value>
     <comment>Tumbling E Chart without "Chart"</comment>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Landolt C Chart without "Chart"</comment>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Carta Ketajaman Visual</value>
+    <value>Carta Mata</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
     <value>Jarak Tersuai (Kaki)</value>
@@ -147,7 +147,7 @@
     <value>Batal</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>Perpuluhan</value>
+    <value>perpuluhan</value>
     <comment>One of the visual acuity notations, using numbers with decimal point</comment>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
@@ -166,10 +166,10 @@
     <value>Kongsi Semua sebagai Fail CSV</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Butiran paparan</value>
+    <value>Paparan Butiran</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>Paparan Trend</value>
+    <value>Trend Paparan</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
     <value>Kongsi Trend</value>

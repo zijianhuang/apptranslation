@@ -118,46 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>史奈侖氏表</value>
+    <value>斯內倫</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>E字表</value>
+    <value>翻滾E</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>藍道爾氏Ｃ字表</value>
+    <value>蘭多爾特</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>醒目視力表</value>
+    <value>視力表</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>自定義距離 (呎)</value>
+    <value>自訂距離（英尺）</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>自定義距離 (米)</value>
+    <value>自訂距離（米）</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>小數</value>
+    <value>十進位</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>設備信息</value>
+    <value>設備資訊</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>全部轉為 HTML 文件</value>
+    <value>全部分享</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>全部轉為 JSON 文件</value>
+    <value>全部以 JSON 檔案形式共享</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>全部</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>全部轉為 CSV 文件</value>
+    <value>全部共享為 CSV 文件</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>顯示詳情</value>
+    <value>顯示詳細信息</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
     <value>顯示趨勢</value>
@@ -166,7 +166,7 @@
     <value>分享趨勢</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>隱私政策</value>
+    <value>隱私權政策</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>語言</value>

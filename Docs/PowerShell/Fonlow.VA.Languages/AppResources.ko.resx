@@ -118,25 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>정보</value>
+    <value>에 대한</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>스넬렌</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>E 차트</value>
+    <value>텀블링 E</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>란돌트 고리</value>
+    <value>란돌트 C</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>근시 감지</value>
+    <value>시력 검사표</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>거리 설정하기(피트)</value>
+    <value>사용자 지정 거리(피트)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>거리 설정하기(미터)</value>
+    <value>사용자 지정 거리(미터)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>취소</value>
@@ -145,43 +145,43 @@
     <value>소수</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>기기 정보</value>
+    <value>장치 정보</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>모두 HTML 파일로</value>
+    <value>모두 공유하기</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>모두 JSON 파일로</value>
+    <value>모두 JSON 파일로 공유</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>모두</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>모두 CSV 파일로</value>
+    <value>모두 CSV 파일로 공유</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>표시 세부정보</value>
+    <value>디스플레이 세부 정보</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
     <value>디스플레이 트렌드</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>공유 동향</value>
+    <value>공유 추세</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>개인 정보 정책</value>
+    <value>개인정보 보호정책</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>언어</value>
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
 </root>

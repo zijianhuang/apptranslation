@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>説明</value>
+    <value>について</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>スネレン</value>
@@ -127,10 +127,10 @@
     <value>タンブリングE</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>ランドルト環</value>
+    <value>ランドルトC</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>視力表</value>
+    <value>視力検査表</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
     <value>カスタム距離（フィート）</value>
@@ -142,28 +142,28 @@
     <value>キャンセル</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>小数</value>
+    <value>小数点</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
     <value>デバイス情報</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>すべてHTMLファイルへ</value>
+    <value>すべてを共有</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>すべてJSONファイルへ</value>
+    <value>すべてをJSONファイルとして共有</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>全て</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>すべてCSVファイルへ</value>
+    <value>すべてをCSVファイルとして共有</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>詳細表示</value>
+    <value>詳細を表示</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>表示トレンド</value>
+    <value>ディスプレイトレンド</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
     <value>シェアトレンド</value>
@@ -179,9 +179,9 @@
     <value>https://visualacuity.info/TumbleEChartプライバシーポリシー</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartプライバシーポリシー</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsプライバシーポリシー</value>
   </data>
 </root>

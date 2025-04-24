@@ -126,15 +126,15 @@
     <comment>name of Snellen Chart</comment>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Armaignac</value>
+    <value>Tumbling E</value>
     <comment>Tumbling E Chart without "Chart"</comment>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>Échelle Landolt</value>
+    <value>Landolt C</value>
     <comment>Landolt C Chart without "Chart"</comment>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Tableaux d'acuité visuelle</value>
+    <value>Cartes d'acuité visuelle</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
     <value>Distance personnalisée (pieds)</value>
@@ -157,13 +157,13 @@
     <value>Partager tout</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>Partager tout en tant que fichier JSON</value>
+    <value>Partager tout sous forme de fichier JSON</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>Tous</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>Partager tout en tant que fichier CSV</value>
+    <value>Partager tout sous forme de fichier CSV</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
     <value>Afficher les détails</value>
@@ -172,7 +172,7 @@
     <value>Tendance d'affichage</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>Tendance des parts</value>
+    <value>Tendance des actions</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>politique de confidentialité</value>

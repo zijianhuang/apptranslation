@@ -26,7 +26,7 @@ $exeXliffTranslate = "C:/Green/GoogleTranslateXliff/GoogleTranslateXliff.exe"
 foreach ($lang in $langList) {
     $langXliff = "MultilingualResources/Fonlow.VA.Languages.$lang.xlf"
     if (Test-Path $langXliff) {
-        $cmdTranslate = "$exeXliffTranslate /AKF=C:/Users/Public/DevApps/GtApiKey.txt /F=$langXliff"
+        $cmdTranslate = "$exeXliffTranslate /AKF=C:/Users/Public/DevApps/GtApiKey.txt /B /F=$langXliff"
         Invoke-Expression $ExecutionContext.InvokeCommand.ExpandString($cmdTranslate)
     }
     else {

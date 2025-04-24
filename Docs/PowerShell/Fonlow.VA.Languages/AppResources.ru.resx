@@ -118,52 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>О приложении</value>
+    <value>О</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>Снеллен</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>знаком Е</value>
+    <value>Падающий E</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>Кольца Ландольта</value>
+    <value>Ландольт С.</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Таблицы для проверки зрения</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>Специальное расстояние (Футы)</value>
+    <value>Пользовательское расстояние (фут)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>Специальное расстояние (Метры)</value>
+    <value>Пользовательское расстояние (метр)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>Десятичное число</value>
+    <value>Десятичная дробь</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>Данные об устройстве</value>
+    <value>Информация об устройстве</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>Все в HTML-файл</value>
+    <value>Поделиться всем</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>Все в JSON-файл</value>
+    <value>Поделиться всем как файлом JSON</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>Все</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>Все в CSV-файл</value>
+    <value>Поделиться всем как CSV-файлом</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Отображение деталей</value>
+    <value>Показать детали</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>Отображение тренда</value>
+    <value>Тенденция отображения</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
     <value>Поделиться трендом</value>
@@ -176,12 +176,12 @@
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
 </root>

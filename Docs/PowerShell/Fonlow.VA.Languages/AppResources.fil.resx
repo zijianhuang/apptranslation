@@ -122,20 +122,20 @@
     <comment>the About page of the product</comment>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Visual Acuity</value>
+    <value>Mga Tsart ng Mata</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>Pasadyang Distansya (Paa)</value>
+    <value>Custom na Distansya (Paa)</value>
     <comment>User may define an arbitrary distance</comment>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>Pasadyang Distansya (Meter)</value>
+    <value>Custom na Distansya (Metro)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Kanselahin</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Tumbling E</value>
+    <value>Tumibok E</value>
     <comment>Tumbling E Chart without "Chart"</comment>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
@@ -150,22 +150,22 @@
     <value>Decimal</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>Impormasyon sa Device</value>
+    <value>Impormasyon ng Device</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Mga Detalye ng Display</value>
+    <value>Ipakita ang mga Detalye</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>Display Trend</value>
+    <value>Trend ng Display</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>wika</value>
+    <value>Wika</value>
   </data>
   <data name="PrivacyPolicyE" xml:space="preserve">
     <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>Patakaran sa Pagkapribado</value>
+    <value>Patakaran sa Privacy</value>
   </data>
   <data name="PrivacyPolicySnellen" xml:space="preserve">
     <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
@@ -177,7 +177,7 @@
     <value>Ibahagi ang Lahat bilang CSV File</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>Ibahagi ang Lahat</value>
+    <value>Ibahagi Lahat</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
     <value>Ibahagi ang Lahat bilang JSON File</value>
@@ -186,6 +186,6 @@
     <value>Ibahagi ang Trend</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
-    <value>Lahat ng</value>
+    <value>Lahat</value>
   </data>
 </root>

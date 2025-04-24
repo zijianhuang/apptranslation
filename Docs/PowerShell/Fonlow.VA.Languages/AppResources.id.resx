@@ -121,16 +121,16 @@
     <value>Tentang</value>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>Snellen</value>
+    <value>Bahasa Snellen</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Tumbling E</value>
+    <value>Jatuh E</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>Landolt C</value>
+    <value>Bahasa Indonesia: Landolt C</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>grafik mata</value>
+    <value>Bagan Mata</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
     <value>Jarak Kustom (Kaki)</value>
@@ -139,7 +139,7 @@
     <value>Jarak Kustom (Meter)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Batal</value>
+    <value>Membatalkan</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
     <value>Desimal</value>
@@ -148,19 +148,19 @@
     <value>Informasi Perangkat</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>Semua ke file HTML</value>
+    <value>Bagikan Semua</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>Semua ke file JSON</value>
+    <value>Bagikan Semua sebagai File JSON</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>Semua</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>Semua ke file CSV</value>
+    <value>Bagikan Semua sebagai File CSV</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Detail Tampilan</value>
+    <value>Tampilkan Detail</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
     <value>Tren Tampilan</value>
@@ -169,19 +169,19 @@
     <value>Bagikan Tren</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>Kebijakan pribadi</value>
+    <value>Kebijakan Privasi</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Bahasa</value>
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingECartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartKebijakan Privasi</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsKebijakan Privasi</value>
   </data>
 </root>

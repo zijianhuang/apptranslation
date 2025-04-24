@@ -124,19 +124,19 @@
     <value>Snellen</value>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Prueba E</value>
+    <value>Tumbling E</value>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
-    <value>Test de Landolt</value>
+    <value>Landolt C</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Tablas optométricas</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>Distancia personalizada (pie)</value>
+    <value>Distancia personalizada (pies)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>Distancia personalizada (metro)</value>
+    <value>Distancia personalizada (metros)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -148,25 +148,25 @@
     <value>Información del dispositivo</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>Todo a un archivo HTML</value>
+    <value>Compartir todo</value>
   </data>
   <data name="ShareAllAsJson" xml:space="preserve">
-    <value>Todo a un archivo JSON</value>
+    <value>Compartir todo como archivo JSON</value>
   </data>
   <data name="ShareAllAsText" xml:space="preserve">
     <value>Todo</value>
   </data>
   <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>Todo a un archivo CSV</value>
+    <value>Compartir todo como archivo CSV</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
     <value>Mostrar detalles</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>Mostrar tendencia</value>
+    <value>Tendencia de visualización</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>Compartir tendencia</value>
+    <value>Tendencia de acciones</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>política de privacidad</value>
@@ -176,12 +176,12 @@
     <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
-    <value></value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicySnellen">
-    <value></value>
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyVAC">
-    <value></value>
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
 </root>

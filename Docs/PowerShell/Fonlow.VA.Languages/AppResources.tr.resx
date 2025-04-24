@@ -122,11 +122,11 @@
     <comment>the About page of the product</comment>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>Acele etmek</value>
+    <value>Snellen</value>
     <comment>name of Snellen Chart</comment>
   </data>
   <data name="ChartE" xml:space="preserve">
-    <value>Yuvarlanan E</value>
+    <value>Düşen E</value>
     <comment>Tumbling E Chart without "Chart"</comment>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
@@ -144,14 +144,14 @@
     <value>Özel Mesafe (Metre)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>İptal</value>
+    <value>İptal etmek</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>On -da -lık</value>
+    <value>Ondalık</value>
     <comment>One of the visual acuity notations, using numbers with decimal point</comment>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>Cihaz Bilgisi</value>
+    <value>Cihaz Bilgileri</value>
   </data>
   <data name="ShareAllAsHtml" xml:space="preserve">
     <value>Tümünü Paylaş</value>
@@ -166,13 +166,13 @@
     <value>Tümünü CSV Dosyası Olarak Paylaş</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Detayları Görüntüle</value>
+    <value>Ayrıntıları Görüntüle</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
     <value>Ekran Trendi</value>
   </data>
   <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>Hisse Trendi</value>
+    <value>Paylaşım Trendi</value>
   </data>
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>Gizlilik Politikası</value>
@@ -184,7 +184,7 @@
     <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyE" xml:space="preserve">
-    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
+    <value>https://visualacuity.info/TumblingECartPrivacyPolicy</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Dil</value>

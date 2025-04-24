@@ -122,7 +122,7 @@
     <comment>the About page of the product</comment>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
-    <value>Schnellen</value>
+    <value>Snellen</value>
     <comment>name of Snellen Chart</comment>
   </data>
   <data name="ChartE" xml:space="preserve">

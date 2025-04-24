@@ -1,98 +1,95 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="id" original="FONLOW.VA.LANGUAGES/APPRESOURCES.RESX">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="id" datatype="plaintext" original="resx">
     <body>
-      <group id="FONLOW.VA.LANGUAGES/APPRESOURCES.RESX" datatype="resx">
-        <trans-unit id="About" translate="yes" xml:space="preserve">
-          <source>About</source>
-          <target state="translated">Tentang</target>
-          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
-        <trans-unit id="AppName" translate="yes" xml:space="preserve">
-          <source>Eye Charts</source>
-          <target state="translated">grafik mata</target>
-        </trans-unit>
-        <trans-unit id="ArmReachDistanceFootLabel" translate="yes" xml:space="preserve">
-          <source>Custom Distance (Foot)</source>
-          <target state="translated">Jarak Kustom (Kaki)</target>
-          <note from="MultilingualBuild">User may define an arbitrary distance</note></trans-unit>
-        <trans-unit id="ArmReachDistanceMeterLabel" translate="yes" xml:space="preserve">
-          <source>Custom Distance (Meter)</source>
-          <target state="translated">Jarak Kustom (Meter)</target>
-        </trans-unit>
-        <trans-unit id="Cancel" translate="yes" xml:space="preserve">
-          <source>Cancel</source>
-          <target state="translated">Batal</target>
-        </trans-unit>
-        <trans-unit id="ChartE" translate="yes" xml:space="preserve">
-          <source>Tumbling E</source>
-          <target state="translated">Tumbling E</target>
-          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note></trans-unit>
-        <trans-unit id="ChartLandoltC" translate="yes" xml:space="preserve">
-          <source>Landolt C</source>
-          <target state="translated">Landolt C</target>
-          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note></trans-unit>
-        <trans-unit id="ChartSnellen" translate="yes" xml:space="preserve">
-          <source>Snellen</source>
-          <target state="translated">Snellen</target>
-          <note from="MultilingualBuild">name of Snellen Chart</note></trans-unit>
-        <trans-unit id="DecimalLabel" translate="yes" xml:space="preserve">
-          <source>Decimal</source>
-          <target state="translated">Desimal</target>
-          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note></trans-unit>
-        <trans-unit id="DeviceInformation" translate="yes" xml:space="preserve">
-          <source>Device Information</source>
-          <target state="translated">Informasi Perangkat</target>
-        </trans-unit>
-        <trans-unit id="ExportAllToHtml" translate="yes" xml:space="preserve">
-          <source>Display Details</source>
-          <target state="translated">Detail Tampilan</target>
-        </trans-unit>
-        <trans-unit id="ExportAllToLineGraphHtml" translate="yes" xml:space="preserve">
-          <source>Display Trend</source>
-          <target state="translated">Tren Tampilan</target>
-        </trans-unit>
-        <trans-unit id="Language" translate="yes" xml:space="preserve">
-          <source>Language</source>
-          <target state="translated">Bahasa</target>
-          <note from="resx">Select what  language to use in UI</note>
-          <note from="MultilingualBuild">Select what  language to use in UI</note></trans-unit>
-        <trans-unit id="PrivacyPolicyE" translate="yes" xml:space="preserve">
-          <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
-          <target state="translated"></target>
-        </trans-unit>
-        <trans-unit id="PrivacyPolicyLabel" translate="yes" xml:space="preserve">
-          <source>Privacy Policy</source>
-          <target state="translated">Kebijakan pribadi</target>
-        </trans-unit>
-        <trans-unit id="PrivacyPolicySnellen" translate="yes" xml:space="preserve">
-          <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
-          <target state="translated"></target>
-        </trans-unit>
-        <trans-unit id="PrivacyPolicyVAC" translate="yes" xml:space="preserve">
-          <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
-          <target state="translated"></target>
-        </trans-unit>
-        <trans-unit id="ShareAllAsCsv" translate="yes" xml:space="preserve">
-          <source>Share All as CSV File</source>
-          <target state="translated">Semua ke file CSV</target>
-        </trans-unit>
-        <trans-unit id="ShareAllAsHtml" translate="yes" xml:space="preserve">
-          <source>Share All</source>
-          <target state="translated">Semua ke file HTML</target>
-        </trans-unit>
-        <trans-unit id="ShareAllAsJson" translate="yes" xml:space="preserve">
-          <source>Share All as JSON File</source>
-          <target state="translated">Semua ke file JSON</target>
-        </trans-unit>
-        <trans-unit id="ShareAllAsLineGraphHtml" translate="yes" xml:space="preserve">
-          <source>Share Trend</source>
-          <target state="translated">Bagikan Tren</target>
-        </trans-unit>
-        <trans-unit id="ShareAllAsText" translate="yes" xml:space="preserve">
-          <source>All</source>
-          <target state="translated">Semua</target>
-        </trans-unit>
-      </group>
+      <trans-unit id="About" datatype="text">
+        <source>About</source>
+        <target state="translated">Tentang</target>
+      </trans-unit>
+      <trans-unit id="ChartSnellen" datatype="text">
+        <source>Snellen</source>
+        <target state="translated">Bahasa Snellen</target>
+      </trans-unit>
+      <trans-unit id="ChartE" datatype="text">
+        <source>Tumbling E</source>
+        <target state="translated">Jatuh E</target>
+      </trans-unit>
+      <trans-unit id="ChartLandoltC" datatype="text">
+        <source>Landolt C</source>
+        <target state="translated">Bahasa Indonesia: Landolt C</target>
+      </trans-unit>
+      <trans-unit id="AppName" datatype="text">
+        <source>Eye Charts</source>
+        <target state="translated">Bagan Mata</target>
+      </trans-unit>
+      <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
+        <source>Custom Distance (Foot)</source>
+        <target state="translated">Jarak Kustom (Kaki)</target>
+      </trans-unit>
+      <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
+        <source>Custom Distance (Meter)</source>
+        <target state="translated">Jarak Kustom (Meter)</target>
+      </trans-unit>
+      <trans-unit id="Cancel" datatype="text">
+        <source>Cancel</source>
+        <target state="translated">Membatalkan</target>
+      </trans-unit>
+      <trans-unit id="DecimalLabel" datatype="text">
+        <source>Decimal</source>
+        <target state="translated">Desimal</target>
+      </trans-unit>
+      <trans-unit id="DeviceInformation" datatype="text">
+        <source>Device Information</source>
+        <target state="translated">Informasi Perangkat</target>
+      </trans-unit>
+      <trans-unit id="ShareAllAsHtml" datatype="text">
+        <source>Share All</source>
+        <target state="translated">Bagikan Semua</target>
+      </trans-unit>
+      <trans-unit id="ShareAllAsJson" datatype="text">
+        <source>Share All as JSON File</source>
+        <target state="translated">Bagikan Semua sebagai File JSON</target>
+      </trans-unit>
+      <trans-unit id="ShareAllAsText" datatype="text">
+        <source>All</source>
+        <target state="translated">Semua</target>
+      </trans-unit>
+      <trans-unit id="ShareAllAsCsv" datatype="text">
+        <source>Share All as CSV File</source>
+        <target state="translated">Bagikan Semua sebagai File CSV</target>
+      </trans-unit>
+      <trans-unit id="ExportAllToHtml" datatype="text">
+        <source>Display Details</source>
+        <target state="translated">Tampilkan Detail</target>
+      </trans-unit>
+      <trans-unit id="ExportAllToLineGraphHtml" datatype="text">
+        <source>Display Trend</source>
+        <target state="translated">Tren Tampilan</target>
+      </trans-unit>
+      <trans-unit id="ShareAllAsLineGraphHtml" datatype="text">
+        <source>Share Trend</source>
+        <target state="translated">Bagikan Tren</target>
+      </trans-unit>
+      <trans-unit id="PrivacyPolicyLabel" datatype="text">
+        <source>Privacy Policy</source>
+        <target state="translated">Kebijakan Privasi</target>
+      </trans-unit>
+      <trans-unit id="PrivacyPolicyVAC" datatype="text">
+        <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
+        <target state="translated">https://visualacuity.info/VisualAcuityChartsKebijakan Privasi</target>
+      </trans-unit>
+      <trans-unit id="PrivacyPolicySnellen" datatype="text">
+        <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
+        <target state="translated">https://visualacuity.info/SnellenChartKebijakan Privasi</target>
+      </trans-unit>
+      <trans-unit id="PrivacyPolicyE" datatype="text">
+        <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
+        <target state="translated">https://visualacuity.info/TumblingECartPrivacyPolicy</target>
+      </trans-unit>
+      <trans-unit id="Language" datatype="text">
+        <source>Language</source>
+        <target state="translated">Bahasa</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
