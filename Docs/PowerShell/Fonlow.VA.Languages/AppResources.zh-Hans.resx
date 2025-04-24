@@ -173,7 +173,6 @@
   </data>
   <data name="Language" xml:space="preserve">
     <value>语言</value>
-    <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyVAC">
     <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>

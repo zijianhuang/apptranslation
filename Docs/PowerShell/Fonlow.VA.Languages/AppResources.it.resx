@@ -173,7 +173,6 @@
   </data>
   <data name="Language" xml:space="preserve">
     <value>Lingua</value>
-    <comment>Select what  language to use in UI</comment>
   </data>
   <data name="PrivacyPolicyE">
     <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>

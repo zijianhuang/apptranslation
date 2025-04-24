@@ -51,7 +51,7 @@ XliffResXConverter.exe /A=MergeBack /RXL=AppResources.zh-hant.resx /XF=c:/Transl
 
 			if (options.Action.Equals("new", StringComparison.CurrentCultureIgnoreCase))
 			{
-				XliffResXConverter.ConvertResXToXliff12(options.SourceResX, options.LangResX, options.SourceLang, options.TargetLang, options.XliffFile);
+				XliffResXConverter.ConvertResXToXliff12(options.SourceResX, options.LangResX, options.SourceLang, options.TargetLang, options.XliffFile, options.GroupId);
 				Console.WriteLine($"Created {options.XliffFile}");
 			}
 			else if (options.Action.Equals("merge", StringComparison.CurrentCultureIgnoreCase))
@@ -96,6 +96,9 @@ XliffResXConverter.exe /A=MergeBack /RXL=AppResources.zh-hant.resx /XF=c:/Transl
 
 		[CommandLineOption(Aliases = "TL", Description = "Target language. e.g., /TL=ja")]
 		public string TargetLang { get; set; }
+
+		[CommandLineOption(Aliases = "GID", Description = "XLIFF Group, optional to be compatible with ResX Resource Manager. e.g., /GID=APPRESOURCES.RESX")]
+		public string GroupId { get; set; }
 
 		[CommandLineOption(Aliases = "h ?", Name = "Help", Description = "Shows this help text")]
 		public bool Help

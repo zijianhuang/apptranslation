@@ -119,26 +119,21 @@
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Hakkında</value>
-    <comment>the About page of the product</comment>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>Snellen</value>
-    <comment>name of Snellen Chart</comment>
   </data>
   <data name="ChartE" xml:space="preserve">
     <value>Düşen E</value>
-    <comment>Tumbling E Chart without "Chart"</comment>
   </data>
   <data name="ChartLandoltC" xml:space="preserve">
     <value>Landolt C</value>
-    <comment>Landolt C Chart without "Chart"</comment>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Göz Grafikleri</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
     <value>Özel Mesafe (Ayak)</value>
-    <comment>User may define an arbitrary distance</comment>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
     <value>Özel Mesafe (Metre)</value>
@@ -148,7 +143,6 @@
   </data>
   <data name="DecimalLabel" xml:space="preserve">
     <value>Ondalık</value>
-    <comment>One of the visual acuity notations, using numbers with decimal point</comment>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
     <value>Cihaz Bilgileri</value>
@@ -184,10 +178,9 @@
     <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
   <data name="PrivacyPolicyE" xml:space="preserve">
-    <value>https://visualacuity.info/TumblingECartPrivacyPolicy</value>
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Dil</value>
-    <comment>Select what  language to use in UI</comment>
   </data>
 </root>

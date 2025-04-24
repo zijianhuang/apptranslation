@@ -1,95 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="zh-Hant" datatype="plaintext" original="resx">
+  <file source-language="en" target-language="zh-Hant" datatype="plaintext" original="APPRESOURCES.RESX">
     <body>
-      <trans-unit id="About" datatype="text">
-        <source>About</source>
-        <target state="translated">關於</target>
-      </trans-unit>
-      <trans-unit id="ChartSnellen" datatype="text">
-        <source>Snellen</source>
-        <target state="translated">斯內倫</target>
-      </trans-unit>
-      <trans-unit id="ChartE" datatype="text">
-        <source>Tumbling E</source>
-        <target state="translated">翻滾E</target>
-      </trans-unit>
-      <trans-unit id="ChartLandoltC" datatype="text">
-        <source>Landolt C</source>
-        <target state="translated">蘭多爾特</target>
-      </trans-unit>
-      <trans-unit id="AppName" datatype="text">
-        <source>Eye Charts</source>
-        <target state="translated">視力表</target>
-      </trans-unit>
-      <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
-        <source>Custom Distance (Foot)</source>
-        <target state="translated">自訂距離（英尺）</target>
-      </trans-unit>
-      <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
-        <source>Custom Distance (Meter)</source>
-        <target state="translated">自訂距離（米）</target>
-      </trans-unit>
-      <trans-unit id="Cancel" datatype="text">
-        <source>Cancel</source>
-        <target state="translated">取消</target>
-      </trans-unit>
-      <trans-unit id="DecimalLabel" datatype="text">
-        <source>Decimal</source>
-        <target state="translated">十進位</target>
-      </trans-unit>
-      <trans-unit id="DeviceInformation" datatype="text">
-        <source>Device Information</source>
-        <target state="translated">設備資訊</target>
-      </trans-unit>
-      <trans-unit id="ShareAllAsHtml" datatype="text">
-        <source>Share All</source>
-        <target state="translated">全部分享</target>
-      </trans-unit>
-      <trans-unit id="ShareAllAsJson" datatype="text">
-        <source>Share All as JSON File</source>
-        <target state="translated">全部以 JSON 檔案形式共享</target>
-      </trans-unit>
-      <trans-unit id="ShareAllAsText" datatype="text">
-        <source>All</source>
-        <target state="translated">全部</target>
-      </trans-unit>
-      <trans-unit id="ShareAllAsCsv" datatype="text">
-        <source>Share All as CSV File</source>
-        <target state="translated">全部共享為 CSV 文件</target>
-      </trans-unit>
-      <trans-unit id="ExportAllToHtml" datatype="text">
-        <source>Display Details</source>
-        <target state="translated">顯示詳細信息</target>
-      </trans-unit>
-      <trans-unit id="ExportAllToLineGraphHtml" datatype="text">
-        <source>Display Trend</source>
-        <target state="translated">顯示趨勢</target>
-      </trans-unit>
-      <trans-unit id="ShareAllAsLineGraphHtml" datatype="text">
-        <source>Share Trend</source>
-        <target state="translated">分享趨勢</target>
-      </trans-unit>
-      <trans-unit id="PrivacyPolicyLabel" datatype="text">
-        <source>Privacy Policy</source>
-        <target state="translated">隱私權政策</target>
-      </trans-unit>
-      <trans-unit id="PrivacyPolicyVAC" datatype="text">
-        <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
-        <target state="translated">https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</target>
-      </trans-unit>
-      <trans-unit id="PrivacyPolicySnellen" datatype="text">
-        <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
-        <target state="translated">https://visualacuity.info/SnellenChartPrivacyPolicy</target>
-      </trans-unit>
-      <trans-unit id="PrivacyPolicyE" datatype="text">
-        <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
-        <target state="translated">https://visualacuity.info/TumblingEChartPrivacyPolicy</target>
-      </trans-unit>
-      <trans-unit id="Language" datatype="text">
-        <source>Language</source>
-        <target state="translated">語言</target>
-      </trans-unit>
+      <group id="APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="About" datatype="text">
+          <source>About</source>
+          <target state="translated">關於</target>
+          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
+        <trans-unit id="ChartSnellen" datatype="text">
+          <source>Snellen</source>
+          <target state="translated">斯內倫</target>
+          <note from="MultilingualBuild">name of Snellen Chart</note></trans-unit>
+        <trans-unit id="ChartE" datatype="text">
+          <source>Tumbling E</source>
+          <target state="translated">翻滾E</target>
+          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note></trans-unit>
+        <trans-unit id="ChartLandoltC" datatype="text">
+          <source>Landolt C</source>
+          <target state="translated">蘭多爾特</target>
+          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note></trans-unit>
+        <trans-unit id="AppName" datatype="text">
+          <source>Eye Charts</source>
+          <target state="translated">視力表</target>
+        </trans-unit>
+        <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
+          <source>Custom Distance (Foot)</source>
+          <target state="translated">自訂距離（英尺）</target>
+          <note from="MultilingualBuild">User may define an arbitrary distance</note></trans-unit>
+        <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
+          <source>Custom Distance (Meter)</source>
+          <target state="translated">自訂距離（米）</target>
+        </trans-unit>
+        <trans-unit id="Cancel" datatype="text">
+          <source>Cancel</source>
+          <target state="translated">取消</target>
+        </trans-unit>
+        <trans-unit id="DecimalLabel" datatype="text">
+          <source>Decimal</source>
+          <target state="translated">十進位</target>
+          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note></trans-unit>
+        <trans-unit id="DeviceInformation" datatype="text">
+          <source>Device Information</source>
+          <target state="translated">設備資訊</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsHtml" datatype="text">
+          <source>Share All</source>
+          <target state="translated">全部分享</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsJson" datatype="text">
+          <source>Share All as JSON File</source>
+          <target state="translated">全部以 JSON 檔案形式共享</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsText" datatype="text">
+          <source>All</source>
+          <target state="translated">全部</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsCsv" datatype="text">
+          <source>Share All as CSV File</source>
+          <target state="translated">全部共享為 CSV 文件</target>
+        </trans-unit>
+        <trans-unit id="ExportAllToHtml" datatype="text">
+          <source>Display Details</source>
+          <target state="translated">顯示詳細信息</target>
+        </trans-unit>
+        <trans-unit id="ExportAllToLineGraphHtml" datatype="text">
+          <source>Display Trend</source>
+          <target state="translated">顯示趨勢</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsLineGraphHtml" datatype="text">
+          <source>Share Trend</source>
+          <target state="translated">分享趨勢</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicyLabel" datatype="text">
+          <source>Privacy Policy</source>
+          <target state="translated">隱私權政策</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicyVAC" datatype="text">
+          <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicySnellen" datatype="text">
+          <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/SnellenChartPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicyE" datatype="text">
+          <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/TumblingEChartPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="Language" datatype="text">
+          <source>Language</source>
+          <target state="translated">語言</target>
+          <note from="MultilingualBuild">Select what  language to use in UI</note></trans-unit>
+      </group>
     </body>
   </file>
 </xliff>

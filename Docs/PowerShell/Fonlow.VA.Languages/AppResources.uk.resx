@@ -117,70 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChartSnellen" xml:space="preserve">
-    <value>斯內倫</value>
+  <data name="About">
+    <value>про</value>
   </data>
-  <data name="ChartE" xml:space="preserve">
-    <value>翻滾E</value>
+  <data name="ChartSnellen">
+    <value>Снеллен</value>
   </data>
-  <data name="ChartLandoltC" xml:space="preserve">
-    <value>蘭多爾特</value>
+  <data name="ChartE">
+    <value>Тумблінг Е</value>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>視力表</value>
+  <data name="ChartLandoltC">
+    <value>Ландольт К</value>
   </data>
-  <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>自訂距離（英尺）</value>
+  <data name="AppName">
+    <value>Очні діаграми</value>
   </data>
-  <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>自訂距離（米）</value>
+  <data name="ArmReachDistanceFootLabel">
+    <value>Спеціальна відстань (фут)</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>取消</value>
+  <data name="ArmReachDistanceMeterLabel">
+    <value>Спеціальна відстань (метр)</value>
   </data>
-  <data name="DecimalLabel" xml:space="preserve">
-    <value>十進位</value>
+  <data name="Cancel">
+    <value>Скасувати</value>
   </data>
-  <data name="DeviceInformation" xml:space="preserve">
-    <value>設備資訊</value>
+  <data name="DecimalLabel">
+    <value>Десятковий</value>
   </data>
-  <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>全部分享</value>
+  <data name="DeviceInformation">
+    <value>Інформація про пристрій</value>
   </data>
-  <data name="ShareAllAsJson" xml:space="preserve">
-    <value>全部以 JSON 檔案形式共享</value>
+  <data name="ShareAllAsHtml">
+    <value>Поділитися всім</value>
   </data>
-  <data name="ShareAllAsText" xml:space="preserve">
-    <value>全部</value>
+  <data name="ShareAllAsJson">
+    <value>Поділитися всім як файлом JSON</value>
   </data>
-  <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>全部共享為 CSV 文件</value>
+  <data name="ShareAllAsText">
+    <value>всі</value>
   </data>
-  <data name="ExportAllToHtml" xml:space="preserve">
-    <value>顯示詳細信息</value>
+  <data name="ShareAllAsCsv">
+    <value>Поділитися всім як файлом CSV</value>
   </data>
-  <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>顯示趨勢</value>
+  <data name="ExportAllToHtml">
+    <value>Деталі дисплея</value>
   </data>
-  <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>分享趨勢</value>
+  <data name="ExportAllToLineGraphHtml">
+    <value>Тенденція відображення</value>
   </data>
-  <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>隱私權政策</value>
+  <data name="ShareAllAsLineGraphHtml">
+    <value>Поділитися Trend</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>語言</value>
-  </data>
-  <data name="PrivacyPolicyE">
-    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
-  </data>
-  <data name="PrivacyPolicySnellen">
-    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
+  <data name="PrivacyPolicyLabel">
+    <value>Політика конфіденційності</value>
   </data>
   <data name="PrivacyPolicyVAC">
     <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
-  <data name="About">
-    <value>關於</value>
+  <data name="PrivacyPolicySnellen">
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
+  </data>
+  <data name="PrivacyPolicyE">
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
+  </data>
+  <data name="Language">
+    <value>Мова</value>
   </data>
 </root>

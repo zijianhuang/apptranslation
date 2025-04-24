@@ -1,85 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="APPRESOURCES.RESX">
+  <file source-language="en" target-language="uk" datatype="plaintext" original="APPRESOURCES.RESX">
     <body>
       <group id="APPRESOURCES.RESX" datatype="resx">
         <trans-unit id="About" datatype="text">
           <source>About</source>
-          <target state="translated">에 대한</target>
-          <note from="MultilingualBuild">the About page of the product</note>
+          <target state="translated">про</target>
         </trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>
-          <target state="translated">스넬렌</target>
-          <note from="MultilingualBuild">name of Snellen Chart</note>
+          <target state="translated">Снеллен</target>
         </trans-unit>
         <trans-unit id="ChartE" datatype="text">
           <source>Tumbling E</source>
-          <target state="translated">텀블링 E</target>
-          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note>
+          <target state="translated">Тумблінг Е</target>
         </trans-unit>
         <trans-unit id="ChartLandoltC" datatype="text">
           <source>Landolt C</source>
-          <target state="translated">란돌트 C</target>
-          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note>
+          <target state="translated">Ландольт К</target>
         </trans-unit>
         <trans-unit id="AppName" datatype="text">
           <source>Eye Charts</source>
-          <target state="translated">시력 검사표</target>
+          <target state="translated">Очні діаграми</target>
         </trans-unit>
         <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
           <source>Custom Distance (Foot)</source>
-          <target state="translated">사용자 지정 거리(피트)</target>
-          <note from="MultilingualBuild">User may define an arbitrary distance</note>
+          <target state="translated">Спеціальна відстань (фут)</target>
         </trans-unit>
         <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
           <source>Custom Distance (Meter)</source>
-          <target state="translated">사용자 지정 거리(미터)</target>
+          <target state="translated">Спеціальна відстань (метр)</target>
         </trans-unit>
         <trans-unit id="Cancel" datatype="text">
           <source>Cancel</source>
-          <target state="translated">취소</target>
+          <target state="translated">Скасувати</target>
         </trans-unit>
         <trans-unit id="DecimalLabel" datatype="text">
           <source>Decimal</source>
-          <target state="translated">소수</target>
-          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note>
+          <target state="translated">Десятковий</target>
         </trans-unit>
         <trans-unit id="DeviceInformation" datatype="text">
           <source>Device Information</source>
-          <target state="translated">장치 정보</target>
+          <target state="translated">Інформація про пристрій</target>
         </trans-unit>
         <trans-unit id="ShareAllAsHtml" datatype="text">
           <source>Share All</source>
-          <target state="translated">모두 공유하기</target>
+          <target state="translated">Поділитися всім</target>
         </trans-unit>
         <trans-unit id="ShareAllAsJson" datatype="text">
           <source>Share All as JSON File</source>
-          <target state="translated">모두 JSON 파일로 공유</target>
+          <target state="translated">Поділитися всім як файлом JSON</target>
         </trans-unit>
         <trans-unit id="ShareAllAsText" datatype="text">
           <source>All</source>
-          <target state="translated">모두</target>
+          <target state="translated">всі</target>
         </trans-unit>
         <trans-unit id="ShareAllAsCsv" datatype="text">
           <source>Share All as CSV File</source>
-          <target state="translated">모두 CSV 파일로 공유</target>
+          <target state="translated">Поділитися всім як файлом CSV</target>
         </trans-unit>
         <trans-unit id="ExportAllToHtml" datatype="text">
           <source>Display Details</source>
-          <target state="translated">디스플레이 세부 정보</target>
+          <target state="translated">Деталі дисплея</target>
         </trans-unit>
         <trans-unit id="ExportAllToLineGraphHtml" datatype="text">
           <source>Display Trend</source>
-          <target state="translated">디스플레이 트렌드</target>
+          <target state="translated">Тенденція відображення</target>
         </trans-unit>
         <trans-unit id="ShareAllAsLineGraphHtml" datatype="text">
           <source>Share Trend</source>
-          <target state="translated">공유 추세</target>
+          <target state="translated">Поділитися Trend</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicyLabel" datatype="text">
           <source>Privacy Policy</source>
-          <target state="translated">개인정보 보호정책</target>
+          <target state="translated">Політика конфіденційності</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicyVAC" datatype="text">
           <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
@@ -95,8 +89,7 @@
         </trans-unit>
         <trans-unit id="Language" datatype="text">
           <source>Language</source>
-          <target state="translated">언어</target>
-          <note from="MultilingualBuild">Select what  language to use in UI</note>
+          <target state="translated">Мова</target>
         </trans-unit>
       </group>
     </body>

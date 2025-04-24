@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace Fonlow.XliffResX
@@ -15,7 +14,7 @@ namespace Fonlow.XliffResX
 		/// <param name="targetLang"></param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentException">Throw when the total data nodes of the source and the lang one are not equal.</exception>
-		public static XDocument ConvertResXToXliff12(XElement resxSourceRoot, XElement resxRoot, string sourceLang, string targetLang)
+		public static XDocument ConvertResXToXliff12(XElement resxSourceRoot, XElement resxRoot, string sourceLang, string targetLang, string groupId)
 		{
 			var sourceDataElements = resxSourceRoot.Elements("data").ToList();
 			var dataElements = resxRoot.Elements("data").ToList();
@@ -26,8 +25,17 @@ namespace Fonlow.XliffResX
 
 			XNamespace ns = "urn:oasis:names:tc:xliff:document:1.2";
 			var bodyElement = new XElement(ns + "body");
-			var fileElement = new XElement(ns + "file", new XAttribute("source-language", sourceLang), new XAttribute("target-language", targetLang), new XAttribute("datatype", "plaintext"), new XAttribute("original", "resx"),
+			var original = string.IsNullOrEmpty(groupId) ? "resx" : groupId;
+			var fileElement = new XElement(ns + "file", new XAttribute("source-language", sourceLang), new XAttribute("target-language", targetLang), new XAttribute("datatype", "plaintext"), new XAttribute("original", original),
 				bodyElement);
+
+			XElement groupElement=null;
+			if (!string.IsNullOrEmpty(groupId))
+			{
+				groupElement = new XElement(ns + "group", new XAttribute("id", groupId), new XAttribute("datatype", "resx")); 
+				bodyElement.Add(groupElement);
+			}
+
 			var xliffRoot = new XElement(ns + "xliff",
 				new XAttribute("version", "1.2"),
 				fileElement);
@@ -35,25 +43,32 @@ namespace Fonlow.XliffResX
 			for (int i = 0; i < sourceDataElements.Count; i++)
 			{
 				var srcDataElement = sourceDataElements[i];
-				var langDataElement = dataElements.Find(d=>d.Attribute("name").Value==srcDataElement.Attribute("name").Value);
+				var langDataElement = dataElements.Find(d => d.Attribute("name").Value == srcDataElement.Attribute("name").Value);
 				var targetValue = langDataElement == null ? string.Empty : langDataElement.Element("value").Value;
 				var unit = new XElement(ns + "trans-unit", new XAttribute("id", srcDataElement.Attribute("name").Value), new XAttribute("datatype", "text"),
 					new XElement(ns + "source", srcDataElement.Element("value").Value),
 					new XElement(ns + "target", new XAttribute("state", "new"), targetValue)
 				);
 
-				bodyElement.Add(unit);
+				if (groupElement == null)
+				{
+					bodyElement.Add(unit);
+				}
+				else
+				{
+					groupElement.Add(unit);
+				}
 			}
 
 			var xliffDoc = new XDocument(xliffRoot);
 			return xliffDoc;
 		}
 
-		public static void ConvertResXToXliff12(string resxSourcePath, string resxPath, string sourceLang, string targetLang, string xliffPath)
+		public static void ConvertResXToXliff12(string resxSourcePath, string resxPath, string sourceLang, string targetLang, string xliffPath, string groupId)
 		{
 			var resxSourceRoot = XDocument.Load(resxSourcePath).Root;
 			var resxRoot = XDocument.Load(resxPath).Root;
-			var xliffDoc = ConvertResXToXliff12(resxSourceRoot, resxRoot, sourceLang, targetLang);
+			var xliffDoc = ConvertResXToXliff12(resxSourceRoot, resxRoot, sourceLang, targetLang, groupId);
 			xliffDoc.Save(xliffPath);
 		}
 

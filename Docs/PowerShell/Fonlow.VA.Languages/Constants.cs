@@ -11,12 +11,7 @@ namespace Fonlow.VA
 		public static readonly string[] ChartNames = new string[] {
 			AppResources.ChartSnellen,
 			AppResources.ChartE,
-			AppResources.ChartLandoltC,
-			AppResources.ChartEtdrs,
-			AppResources.ChartEtdrsEur,
-			AppResources.ChartHotv,
-			AppResources.ChartPvNumbers,
-			AppResources.ChartSymbols,
+			AppResources.ChartLandoltC
 		};
 	}
 }
