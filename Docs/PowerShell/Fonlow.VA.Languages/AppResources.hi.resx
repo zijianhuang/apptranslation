@@ -175,4 +175,13 @@
     <value>भाषा</value>
     <comment>Select what  language to use in UI</comment>
   </data>
+  <data name="PrivacyPolicyE">
+    <value></value>
+  </data>
+  <data name="PrivacyPolicySnellen">
+    <value></value>
+  </data>
+  <data name="PrivacyPolicyVAC">
+    <value></value>
+  </data>
 </root>

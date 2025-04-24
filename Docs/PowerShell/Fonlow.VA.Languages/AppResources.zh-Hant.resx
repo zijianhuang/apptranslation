@@ -172,4 +172,16 @@
     <value>語言</value>
     <comment>Select what  language to use in UI</comment>
   </data>
+  <data name="PrivacyPolicyE">
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
+  </data>
+  <data name="PrivacyPolicySnellen">
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
+  </data>
+  <data name="PrivacyPolicyVAC">
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
+  </data>
+  <data name="About">
+    <value>關於</value>
+  </data>
 </root>

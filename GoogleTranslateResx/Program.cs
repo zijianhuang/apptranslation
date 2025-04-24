@@ -60,7 +60,38 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 				ITranslate translator;
 				if (options.ApiVersion.Equals("V2", StringComparison.CurrentCultureIgnoreCase))
 				{
-					translator = new XWithGT2(options.SourceLang, options.TargetLang, options.ApiKey);
+					var goodCombination = string.IsNullOrEmpty(options.ApiKey) ^ string.IsNullOrEmpty(options.ApiKeyFile);
+					if (goodCombination)
+					{
+						if (!string.IsNullOrEmpty(options.ApiKey))
+						{
+							translator = new XWithGT2(options.SourceLang, options.TargetLang, options.ApiKey);
+						}
+						else
+						{
+							if (!File.Exists(options.ApiKeyFile))
+							{
+								logger.LogWarning($"ApiKeyFile {options.ApiKeyFile} does not exist.");
+								return 129;
+							}
+
+							var apiKey = File.ReadAllLines(options.ApiKeyFile).FirstOrDefault();
+							if (!string.IsNullOrEmpty(apiKey))
+							{
+								translator = new XWithGT2(options.SourceLang, options.TargetLang, apiKey);
+							}
+							else
+							{
+								logger.LogWarning($"ApiKeyFile {options.ApiKeyFile} has no valid content. The first line must be the API key.");
+								return 130;
+							}
+						}
+					}
+					else
+					{
+						logger.LogWarning("Either ApiKey or ApiKeyFile is needed.");
+						return 100;
+					}
 				}
 				else if (options.ApiVersion.Equals("V3", StringComparison.CurrentCultureIgnoreCase))
 				{
@@ -125,6 +156,8 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 		[CommandLineOption(Aliases = "AK", Description = "Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki")]
 		public string ApiKey { get; set; }
 
+		[CommandLineOption(Aliases = "AKF", Description = "Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt")]
+		public string ApiKeyFile { get; set; }
 
 		[CommandLineOption(Aliases = "B", Description = "Batch processing of strings to improve overall speed. V2 and V3 support.")]
 		public bool Batch { get; set; }

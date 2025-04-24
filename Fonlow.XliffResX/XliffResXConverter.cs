@@ -19,10 +19,10 @@ namespace Fonlow.XliffResX
 		{
 			var sourceDataElements = resxSourceRoot.Elements("data").ToList();
 			var dataElements = resxRoot.Elements("data").ToList();
-			if (dataElements.Count != sourceDataElements.Count)
-			{
-				throw new ArgumentException($"Expect {nameof(resxSourceRoot)} and {nameof(resxRoot)} have the same amount of data.");
-			}
+			//if (dataElements.Count > sourceDataElements.Count)
+			//{
+			//	throw new ArgumentException($"Expect {nameof(resxSourceRoot)} has  {nameof(resxRoot)} have the same amount of data.");
+			//}
 
 			XNamespace ns = "urn:oasis:names:tc:xliff:document:1.2";
 			var bodyElement = new XElement(ns + "body");
@@ -34,10 +34,12 @@ namespace Fonlow.XliffResX
 
 			for (int i = 0; i < sourceDataElements.Count; i++)
 			{
-				var srcNode = sourceDataElements[i];
-				var unit = new XElement(ns + "trans-unit", new XAttribute("id", srcNode.Attribute("name").Value), new XAttribute("datatype", "text"),
-					new XElement(ns + "source", srcNode.Element("value").Value),
-					new XElement(ns + "target", new XAttribute("state", "new"), dataElements[i].Element("value").Value)
+				var srcDataElement = sourceDataElements[i];
+				var langDataElement = dataElements.Find(d=>d.Attribute("name").Value==srcDataElement.Attribute("name").Value);
+				var targetValue = langDataElement == null ? string.Empty : langDataElement.Element("value").Value;
+				var unit = new XElement(ns + "trans-unit", new XAttribute("id", srcDataElement.Attribute("name").Value), new XAttribute("datatype", "text"),
+					new XElement(ns + "source", srcDataElement.Element("value").Value),
+					new XElement(ns + "target", new XAttribute("state", "new"), targetValue)
 				);
 
 				bodyElement.Add(unit);

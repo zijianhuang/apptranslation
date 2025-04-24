@@ -175,4 +175,13 @@
     <value>言語</value>
     <comment>Select what  language to use in UI</comment>
   </data>
+  <data name="PrivacyPolicyE" xml:space="preserve">
+    <value>https://visualacuity.info/TumbleEChartプライバシーポリシー</value>
+  </data>
+  <data name="PrivacyPolicySnellen">
+    <value></value>
+  </data>
+  <data name="PrivacyPolicyVAC">
+    <value></value>
+  </data>
 </root>
