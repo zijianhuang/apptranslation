@@ -1,14 +1,18 @@
 Set-Location $PSScriptRoot
-$langList = "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "pt", "ru", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"
+$langList = "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "pt", "ru", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant", "ab"
 
 # Merge data elements of resx to XLIFF, and create XLIFF
 $exe = "../../../XliffResXConverter/bin/Debug/net9.0/XliffResXConverter.exe"
-$exeResxTranslate="C:/Green/GoogleTranslateResX/GoogleTranslateResX.exe"
 foreach ($lang in $langList) {
     # AppResources.$lang.resx is presumed there, being created by IDE, while lang xliff file may not be there.
+    $langResx="AppResources.$lang.resx"
+    if (!(Test-Path $langResx)){
+        Write-Warning "$langResx not exist"
+        continue
+    }
     $langXliff = "MultilingualResources/Fonlow.VA.Languages.$lang.xlf"
     if (Test-Path $langXliff) {
-        $cmdMergeToXliff = "$exe /a=merge /RXS=AppResources.resx /RXL=AppResources.$lang.resx /XF=$langXliff"
+        $cmdMergeToXliff = "$exe /a=merge /RXS=AppResources.resx /RXL=$langResx /XF=$langXliff"
         Invoke-Expression $ExecutionContext.InvokeCommand.ExpandString($cmdMergeToXliff)
     }
     else {
@@ -26,7 +30,7 @@ foreach ($lang in $langList) {
         Invoke-Expression $ExecutionContext.InvokeCommand.ExpandString($cmdTranslate)
     }
     else {
-        <# Action when all if and elseif conditions are false #>
+        Write-Warning "Expect $langXliff but not found."
     }
 
 }
