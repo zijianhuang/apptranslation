@@ -43,12 +43,18 @@ namespace Fonlow.XliffResX
 			for (int i = 0; i < sourceDataElements.Count; i++)
 			{
 				var srcDataElement = sourceDataElements[i];
+				var srcDataComment = srcDataElement.Element("comment");
 				var langDataElement = dataElements.Find(d => d.Attribute("name").Value == srcDataElement.Attribute("name").Value);
 				var targetValue = langDataElement == null ? string.Empty : langDataElement.Element("value").Value;
 				var unit = new XElement(ns + "trans-unit", new XAttribute("id", srcDataElement.Attribute("name").Value), new XAttribute("datatype", "text"),
 					new XElement(ns + "source", srcDataElement.Element("value").Value),
 					new XElement(ns + "target", new XAttribute("state", "new"), targetValue)
 				);
+
+				if (srcDataComment!=null){
+					var comment = srcDataComment.Value;
+					unit.Add(new XElement(ns + "note", comment));
+				}
 
 				if (groupElement == null)
 				{

@@ -6,19 +6,23 @@
         <trans-unit id="About" datatype="text">
           <source>About</source>
           <target state="translated">關於</target>
-          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
+          <note>the About page of the product</note>
+        </trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>
           <target state="translated">斯內倫</target>
-          <note from="MultilingualBuild">name of Snellen Chart</note></trans-unit>
+          <note>name of Snellen Chart</note>
+        </trans-unit>
         <trans-unit id="ChartE" datatype="text">
           <source>Tumbling E</source>
           <target state="translated">翻滾E</target>
-          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note></trans-unit>
+          <note>Tumbling E Chart without "Chart"</note>
+        </trans-unit>
         <trans-unit id="ChartLandoltC" datatype="text">
           <source>Landolt C</source>
           <target state="translated">蘭多爾特</target>
-          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note></trans-unit>
+          <note>Landolt C Chart without "Chart"</note>
+        </trans-unit>
         <trans-unit id="AppName" datatype="text">
           <source>Eye Charts</source>
           <target state="translated">視力表</target>
@@ -26,7 +30,8 @@
         <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
           <source>Custom Distance (Foot)</source>
           <target state="translated">自訂距離（英尺）</target>
-          <note from="MultilingualBuild">User may define an arbitrary distance</note></trans-unit>
+          <note>User may define an arbitrary distance</note>
+        </trans-unit>
         <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
           <source>Custom Distance (Meter)</source>
           <target state="translated">自訂距離（米）</target>
@@ -38,7 +43,8 @@
         <trans-unit id="DecimalLabel" datatype="text">
           <source>Decimal</source>
           <target state="translated">十進位</target>
-          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note></trans-unit>
+          <note>One of the visual acuity notations, using numbers with decimal point</note>
+        </trans-unit>
         <trans-unit id="DeviceInformation" datatype="text">
           <source>Device Information</source>
           <target state="translated">設備資訊</target>
@@ -90,7 +96,8 @@
         <trans-unit id="Language" datatype="text">
           <source>Language</source>
           <target state="translated">語言</target>
-          <note from="MultilingualBuild">Select what  language to use in UI</note></trans-unit>
+          <note>Select what  language to use in UI</note>
+        </trans-unit>
       </group>
     </body>
   </file>

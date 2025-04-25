@@ -6,19 +6,19 @@
         <trans-unit id="About" datatype="text">
           <source>About</source>
           <target state="translated">Um</target>
-        </trans-unit>
+          <note from="MultilingualBuild">the About page of the product</note><note>the About page of the product</note></trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>
           <target state="translated">Snellen</target>
-        </trans-unit>
+          <note from="MultilingualBuild">name of Snellen Chart</note><note>name of Snellen Chart</note></trans-unit>
         <trans-unit id="ChartE" datatype="text">
           <source>Tumbling E</source>
           <target state="translated">Taumelndes E</target>
-        </trans-unit>
+          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note><note>Tumbling E Chart without "Chart"</note></trans-unit>
         <trans-unit id="ChartLandoltC" datatype="text">
           <source>Landolt C</source>
           <target state="translated">Landolt C</target>
-        </trans-unit>
+          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note><note>Landolt C Chart without "Chart"</note></trans-unit>
         <trans-unit id="AppName" datatype="text">
           <source>Eye Charts</source>
           <target state="translated">Sehtafeln</target>
@@ -26,7 +26,7 @@
         <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
           <source>Custom Distance (Foot)</source>
           <target state="translated">Benutzerdefinierte Entfernung (Fuß)</target>
-        </trans-unit>
+          <note from="MultilingualBuild">User may define an arbitrary distance</note><note>User may define an arbitrary distance</note></trans-unit>
         <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
           <source>Custom Distance (Meter)</source>
           <target state="translated">Benutzerdefinierte Entfernung (Meter)</target>
@@ -38,7 +38,7 @@
         <trans-unit id="DecimalLabel" datatype="text">
           <source>Decimal</source>
           <target state="translated">Dezimal</target>
-        </trans-unit>
+          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note><note>One of the visual acuity notations, using numbers with decimal point</note></trans-unit>
         <trans-unit id="DeviceInformation" datatype="text">
           <source>Device Information</source>
           <target state="translated">Geräteinformationen</target>
@@ -90,7 +90,7 @@
         <trans-unit id="Language" datatype="text">
           <source>Language</source>
           <target state="translated">Sprache</target>
-        </trans-unit>
+          <note from="MultilingualBuild">Select what  language to use in UI</note><note>Select what  language to use in UI</note></trans-unit>
       </group>
     </body>
   </file>

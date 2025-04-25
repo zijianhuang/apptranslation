@@ -3,7 +3,8 @@
 # 2. Merge changes in ResX files (original and lang) to XLIFF.
 # 3. Merge changes in XLIFF back to language ResX files.
 # This PS1 script is provided as an example and you should alters some variables for your own need.
-# Typically you could alter $langList, $exeConverter, $exeXliffTranslate, $langXliff, and ApiKey parameters.
+# Typically you could alter $langList, $exeConverter, $exeXliffTranslate, $langXliff, GroupId and ApiKey parameters.
+# To compatible with ResX Resource Manager, GroupId (GID) must be defined so XLIFF will use file/body/group to contain translation units.
 
 Set-Location $PSScriptRoot
 $langList = "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "pt", "ru", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"
@@ -11,7 +12,6 @@ $langList = "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "
 # Merge data elements of resx to XLIFF, and create XLIFF
 $exeConverter = "../../../XliffResXConverter/bin/Debug/net9.0/XliffResXConverter.exe"
 foreach ($lang in $langList) {
-    # AppResources.$lang.resx is presumed there, being created by IDE, while lang xliff file may not be there.
     $langResx="AppResources.$lang.resx"
     if (!(Test-Path $langResx)){
         Write-Warning "$langResx not exist"
