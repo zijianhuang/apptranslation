@@ -1,8 +1,12 @@
 # Background
-This series of translation tools is based on my quests to batch translations of software UIs in last 10 years, after searching and buying existing products like:
+Over years as a full-stack software developer, I have been using wide variety of tools like:
+* PO Editor
+* ResX Resource Manager
 * ResX Editor & Translator
 
-As of 2020s, most tools I could find are cloud based, depending to another cloud-based translation services like Google Translate. And these tools are mostly subscription based. As I do translations only occasionally and casually, such subscription model is not appealing to me. 
+This series of translation tools is based on my quests to batch translations of software UIs in last 10 years.
+
+As of 2020s, most tools I could find are cloud based, depending to another cloud-based translation services like Google Translate API and Microsoft Translator API. And these tools are mostly subscription based. As I do translations only occasionally and casually, such subscription model is not appealing to me. Also the operation overheads of these cloud based tools are too much for smooth SDLC or CI.
 
 Additionally, I prefer batch processing. Here you are some CLI tools included in this project, developed by a full-stack software developer for full-stack software developers.
 
@@ -128,6 +132,10 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:stri
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /TF:myUiMessages.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 ```
+
+## XliffResXConverter.exe
+
+This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Together with GoogleTranslateXliff.exe and some PowerShell scripts, you may establish seamless SDLC and Continuous Integration. Check [README](XliffResXConverter/README.md) for details.
 
 ## Build and Deployment
 

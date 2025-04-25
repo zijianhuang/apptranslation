@@ -1,5 +1,5 @@
 # Background
-While GoogleTranslateResX.exe and similar apps provide translation of ResX file using Google Translate, however, due to ResX does not have state management, thus ResX alone is not good enough for ongoing update of software programs and for the sake of Contineous Integration.
+While GoogleTranslateResX.exe and similar apps provide translation of ResX file using Google Translate, however, due to ResX does not have state management, thus ResX alone is not good enough for ongoing update of software programs and for the sake of Continuous Integration.
 
 Utilizing [Translation Memories](https://learn.microsoft.com/en-us/globalization/localization/translation-memories) is the solution. There are 3 common formats: TMX, TBX and XLIFF. XLIFF is chosen since XLIFF is apparently more popular among full-stack software developers.
 
@@ -7,7 +7,7 @@ Visual Studio's Resource Explorer has provided synchronization among source resx
 
 And [ResX Resource Manager](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager) provides some [complementary features](https://github.com/dotnet/ResXResourceManager/tree/master/Documentation), including [synchronisation between ResX and Xliff resource files](https://github.com/dotnet/ResXResourceManager/blob/master/Documentation/Topics/Xliff.md) .
 
-XliffResXConverter.exe together with GoogleTranslateXliff.exe along with some Powershell scripts could be more efficient for Contineous Integration with the least User Interaction comparing what offered by ResX Resource Manager.
+`XliffResXConverter.exe` together with `GoogleTranslateXliff.exe` along with some Powershell scripts could be more efficient for Continuous Integration with the least User Interaction, while being compatible what offered by ResX Resource Manager.
 
 
 # Overview
@@ -20,16 +20,12 @@ After creating AppResources.resx and a few AppResources.MyLang.resx files using 
 1. Translate all XLIFF files using Google Translate through GoogleTranslateXliff.exe .
 1. Copy translated content from XLIFF to ResX.
 
-
-## Contineous Integration
-
-
 ## XliffResXConverter.exe
 
 ```
 XliffResXConverter.exe
 Convert and merge between ResX and XLIFF 1.2, and utilize XLIFF as translation memory.
-ResX XLIFF converter  version 1.0.0.0
+ResX XLIFF converter  version 1.1.0.0
 Copyright c Zijian Huang 2018-2025
 
 
@@ -41,6 +37,8 @@ Copyright c Zijian Huang 2018-2025
    /XliffFile, /XF     Language XLIFF file path. e.g., /TF=c:/AppResources.ja.xlf
    /SourceLang, /SL    Source language. e.g., /SL=en
    /TargetLang, /TL    Target language. e.g., /TL=ja
+   /GroupId, /GID      XLIFF Group, optional to be compatible with ResX Resource Manager. e.g.,
+                       /GID=APPRESOURCES.RESX
    /Help, /h, /?       Shows this help text
 
 
@@ -51,4 +49,8 @@ XliffResXConverter.exe /a=merge /RXS:AppResources.resx /RXL=AppResources.zh-hant
 XliffResXConverter.exe /A=MergeBack /RXL=AppResources.zh-hant.resx /XF=c:/TranslationMemory/AppResources.zh-hant.xlf ---- After translating XLIFF, merge the translated content back to language ResX file.
 ```
 
+# Continuous Integration
 
+[This demo language resource project](../Docs/PowerShell/Fonlow.VA.Languages/) contains [PowerShell script](../Docs/PowerShell/Fonlow.VA.Languages/MergeTranslateMerge.ps1) that helps seamless Continuous Integration.
+
+The outputs of this script is compatible with the XLIFF feature of ResX Resource Manager. That is, you can use the batch processing of this script along with the interactive operation of ResX Resource Manager.
