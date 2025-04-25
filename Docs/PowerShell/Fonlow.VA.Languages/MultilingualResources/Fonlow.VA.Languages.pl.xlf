@@ -6,7 +6,7 @@
         <trans-unit id="About" datatype="text">
           <source>About</source>
           <target state="translated">O</target>
-          <note from="MultilingualBuild">the About page of the product</note>
+          <note from="MultilingualBuild">the About page of the app</note>
         </trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>

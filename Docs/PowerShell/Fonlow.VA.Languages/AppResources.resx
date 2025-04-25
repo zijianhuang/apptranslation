@@ -119,7 +119,7 @@
   </resheader>
   <data name="About" xml:space="preserve">
     <value>About</value>
-    <comment>the About page of the product</comment>
+    <comment>the About page of the app</comment>
   </data>
   <data name="ChartSnellen" xml:space="preserve">
     <value>Snellen</value>

@@ -6,7 +6,7 @@
         <trans-unit id="About" translate="yes" xml:space="preserve">
           <source>About</source>
           <target state="translated">عن</target>
-          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
+          <note from="MultilingualBuild">the About page of the app</note></trans-unit>
         <trans-unit id="AppName" translate="yes" xml:space="preserve">
           <source>Eye Charts</source>
           <target state="translated">مخططات العين</target>

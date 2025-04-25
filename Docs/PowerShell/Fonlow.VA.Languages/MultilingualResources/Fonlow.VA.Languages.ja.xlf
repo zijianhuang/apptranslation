@@ -6,7 +6,7 @@
         <trans-unit id="About" datatype="text">
           <source>About</source>
           <target state="translated">について</target>
-          <note from="MultilingualBuild">the About page of the product</note>
+          <note from="MultilingualBuild">the About page of the app</note>
         </trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>
@@ -25,7 +25,7 @@
         </trans-unit>
         <trans-unit id="AppName" datatype="text">
           <source>Eye Charts</source>
-          <target state="translated">視力検査表</target>
+          <target state="needs-review-translation">視力検査表UU</target>
         </trans-unit>
         <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
           <source>Custom Distance (Foot)</source>
