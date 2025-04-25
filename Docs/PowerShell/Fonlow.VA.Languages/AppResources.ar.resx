@@ -118,69 +118,69 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Hakkında</value>
-  </data>
-  <data name="ChartSnellen" xml:space="preserve">
-    <value>Snellen</value>
-  </data>
-  <data name="ChartE" xml:space="preserve">
-    <value>Düşen E</value>
-  </data>
-  <data name="ChartLandoltC" xml:space="preserve">
-    <value>Landolt C</value>
+    <value>عن</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Göz Grafikleri</value>
+    <value>مخططات العين</value>
   </data>
   <data name="ArmReachDistanceFootLabel" xml:space="preserve">
-    <value>Özel Mesafe (Ayak)</value>
+    <value>المسافة المخصصة (قدم)</value>
   </data>
   <data name="ArmReachDistanceMeterLabel" xml:space="preserve">
-    <value>Özel Mesafe (Metre)</value>
+    <value>المسافة المخصصة (متر)</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>İptal etmek</value>
+    <value>يلغي</value>
+  </data>
+  <data name="ChartE" xml:space="preserve">
+    <value>تدحرج E</value>
+  </data>
+  <data name="ChartLandoltC" xml:space="preserve">
+    <value>لاندولت سي</value>
+  </data>
+  <data name="ChartSnellen" xml:space="preserve">
+    <value>سنيلين</value>
   </data>
   <data name="DecimalLabel" xml:space="preserve">
-    <value>Ondalık</value>
+    <value>عشري</value>
   </data>
   <data name="DeviceInformation" xml:space="preserve">
-    <value>Cihaz Bilgileri</value>
-  </data>
-  <data name="ShareAllAsHtml" xml:space="preserve">
-    <value>Tümünü Paylaş</value>
-  </data>
-  <data name="ShareAllAsJson" xml:space="preserve">
-    <value>Tümünü JSON Dosyası Olarak Paylaş</value>
-  </data>
-  <data name="ShareAllAsText" xml:space="preserve">
-    <value>Tüm</value>
-  </data>
-  <data name="ShareAllAsCsv" xml:space="preserve">
-    <value>Tümünü CSV Dosyası Olarak Paylaş</value>
+    <value>معلومات الجهاز</value>
   </data>
   <data name="ExportAllToHtml" xml:space="preserve">
-    <value>Ayrıntıları Görüntüle</value>
+    <value>تفاصيل العرض</value>
   </data>
   <data name="ExportAllToLineGraphHtml" xml:space="preserve">
-    <value>Ekran Trendi</value>
+    <value>اتجاه العرض</value>
   </data>
-  <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
-    <value>Paylaşım Trendi</value>
-  </data>
-  <data name="PrivacyPolicyLabel" xml:space="preserve">
-    <value>Gizlilik Politikası</value>
-  </data>
-  <data name="PrivacyPolicyVAC" xml:space="preserve">
-    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
-  </data>
-  <data name="PrivacyPolicySnellen" xml:space="preserve">
-    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
+  <data name="Language" xml:space="preserve">
+    <value>لغة</value>
   </data>
   <data name="PrivacyPolicyE" xml:space="preserve">
     <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Dil</value>
+  <data name="PrivacyPolicyLabel" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="PrivacyPolicySnellen" xml:space="preserve">
+    <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
+  </data>
+  <data name="PrivacyPolicyVAC" xml:space="preserve">
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
+  </data>
+  <data name="ShareAllAsCsv" xml:space="preserve">
+    <value>مشاركة الكل كملف CSV</value>
+  </data>
+  <data name="ShareAllAsHtml" xml:space="preserve">
+    <value>شارك الكل</value>
+  </data>
+  <data name="ShareAllAsJson" xml:space="preserve">
+    <value>مشاركة الكل كملف JSON</value>
+  </data>
+  <data name="ShareAllAsLineGraphHtml" xml:space="preserve">
+    <value>اتجاه السهم</value>
+  </data>
+  <data name="ShareAllAsText" xml:space="preserve">
+    <value>الجميع</value>
   </data>
 </root>

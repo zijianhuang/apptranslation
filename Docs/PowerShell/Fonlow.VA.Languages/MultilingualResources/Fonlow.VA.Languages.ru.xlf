@@ -6,22 +6,22 @@
         <trans-unit id="About" datatype="text">
           <source>About</source>
           <target state="translated">О</target>
-          <note>the About page of the product</note>
+          <note from="MultilingualBuild">the About page of the product</note>
         </trans-unit>
         <trans-unit id="ChartSnellen" datatype="text">
           <source>Snellen</source>
           <target state="translated">Снеллен</target>
-          <note>name of Snellen Chart</note>
+          <note from="MultilingualBuild">name of Snellen Chart</note>
         </trans-unit>
         <trans-unit id="ChartE" datatype="text">
           <source>Tumbling E</source>
           <target state="translated">Падающий E</target>
-          <note>Tumbling E Chart without "Chart"</note>
+          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note>
         </trans-unit>
         <trans-unit id="ChartLandoltC" datatype="text">
           <source>Landolt C</source>
           <target state="translated">Ландольт С.</target>
-          <note>Landolt C Chart without "Chart"</note>
+          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note>
         </trans-unit>
         <trans-unit id="AppName" datatype="text">
           <source>Eye Charts</source>
@@ -30,7 +30,7 @@
         <trans-unit id="ArmReachDistanceFootLabel" datatype="text">
           <source>Custom Distance (Foot)</source>
           <target state="translated">Пользовательское расстояние (фут)</target>
-          <note>User may define an arbitrary distance</note>
+          <note from="MultilingualBuild">User may define an arbitrary distance</note>
         </trans-unit>
         <trans-unit id="ArmReachDistanceMeterLabel" datatype="text">
           <source>Custom Distance (Meter)</source>
@@ -43,7 +43,7 @@
         <trans-unit id="DecimalLabel" datatype="text">
           <source>Decimal</source>
           <target state="translated">Десятичная дробь</target>
-          <note>One of the visual acuity notations, using numbers with decimal point</note>
+          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note>
         </trans-unit>
         <trans-unit id="DeviceInformation" datatype="text">
           <source>Device Information</source>
@@ -96,7 +96,7 @@
         <trans-unit id="Language" datatype="text">
           <source>Language</source>
           <target state="translated">Язык</target>
-          <note>Select what  language to use in UI</note>
+          <note from="MultilingualBuild">Select what  language to use in UI</note>
         </trans-unit>
       </group>
     </body>

@@ -171,16 +171,16 @@
   <data name="PrivacyPolicyLabel" xml:space="preserve">
     <value>política de privacidad</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma</value>
+  <data name="PrivacyPolicyVAC" xml:space="preserve">
+    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
   </data>
-  <data name="PrivacyPolicyE">
-    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
-  </data>
-  <data name="PrivacyPolicySnellen">
+  <data name="PrivacyPolicySnellen" xml:space="preserve">
     <value>https://visualacuity.info/SnellenChartPrivacyPolicy</value>
   </data>
-  <data name="PrivacyPolicyVAC">
-    <value>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</value>
+  <data name="PrivacyPolicyE" xml:space="preserve">
+    <value>https://visualacuity.info/TumblingEChartPrivacyPolicy</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
   </data>
 </root>

@@ -29,10 +29,10 @@ namespace Fonlow.XliffResX
 			var fileElement = new XElement(ns + "file", new XAttribute("source-language", sourceLang), new XAttribute("target-language", targetLang), new XAttribute("datatype", "plaintext"), new XAttribute("original", original),
 				bodyElement);
 
-			XElement groupElement=null;
+			XElement groupElement = null;
 			if (!string.IsNullOrEmpty(groupId))
 			{
-				groupElement = new XElement(ns + "group", new XAttribute("id", groupId), new XAttribute("datatype", "resx")); 
+				groupElement = new XElement(ns + "group", new XAttribute("id", groupId), new XAttribute("datatype", "resx"));
 				bodyElement.Add(groupElement);
 			}
 
@@ -51,9 +51,17 @@ namespace Fonlow.XliffResX
 					new XElement(ns + "target", new XAttribute("state", "new"), targetValue)
 				);
 
-				if (srcDataComment!=null){
+				if (srcDataComment != null)
+				{
 					var comment = srcDataComment.Value;
-					unit.Add(new XElement(ns + "note", comment));
+					if (groupElement == null)
+					{
+						unit.Add(new XElement(ns + "note", comment));
+					}
+					else
+					{
+						unit.Add(new XElement(ns + "note", new XAttribute("from", "MultilingualBuild"), comment)); //to be compatible with ResX Resource Manager
+					}
 				}
 
 				if (groupElement == null)

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ar" original="APPRESOURCES.RESX">
+    <body>
+      <group id="APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="translated">عن</target>
+          <note from="MultilingualBuild">the About page of the product</note></trans-unit>
+        <trans-unit id="AppName" translate="yes" xml:space="preserve">
+          <source>Eye Charts</source>
+          <target state="translated">مخططات العين</target>
+        </trans-unit>
+        <trans-unit id="ArmReachDistanceFootLabel" translate="yes" xml:space="preserve">
+          <source>Custom Distance (Foot)</source>
+          <target state="translated">المسافة المخصصة (قدم)</target>
+          <note from="MultilingualBuild">User may define an arbitrary distance</note></trans-unit>
+        <trans-unit id="ArmReachDistanceMeterLabel" translate="yes" xml:space="preserve">
+          <source>Custom Distance (Meter)</source>
+          <target state="translated">المسافة المخصصة (متر)</target>
+        </trans-unit>
+        <trans-unit id="Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">يلغي</target>
+        </trans-unit>
+        <trans-unit id="ChartE" translate="yes" xml:space="preserve">
+          <source>Tumbling E</source>
+          <target state="translated">تدحرج E</target>
+          <note from="MultilingualBuild">Tumbling E Chart without "Chart"</note></trans-unit>
+        <trans-unit id="ChartLandoltC" translate="yes" xml:space="preserve">
+          <source>Landolt C</source>
+          <target state="translated">لاندولت سي</target>
+          <note from="MultilingualBuild">Landolt C Chart without "Chart"</note></trans-unit>
+        <trans-unit id="ChartSnellen" translate="yes" xml:space="preserve">
+          <source>Snellen</source>
+          <target state="translated">سنيلين</target>
+          <note from="MultilingualBuild">name of Snellen Chart</note></trans-unit>
+        <trans-unit id="DecimalLabel" translate="yes" xml:space="preserve">
+          <source>Decimal</source>
+          <target state="translated">عشري</target>
+          <note from="MultilingualBuild">One of the visual acuity notations, using numbers with decimal point</note></trans-unit>
+        <trans-unit id="DeviceInformation" translate="yes" xml:space="preserve">
+          <source>Device Information</source>
+          <target state="translated">معلومات الجهاز</target>
+        </trans-unit>
+        <trans-unit id="ExportAllToHtml" translate="yes" xml:space="preserve">
+          <source>Display Details</source>
+          <target state="translated">تفاصيل العرض</target>
+        </trans-unit>
+        <trans-unit id="ExportAllToLineGraphHtml" translate="yes" xml:space="preserve">
+          <source>Display Trend</source>
+          <target state="translated">اتجاه العرض</target>
+        </trans-unit>
+        <trans-unit id="Language" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="translated">لغة</target>
+          <note from="MultilingualBuild">Select what  language to use in UI</note></trans-unit>
+        <trans-unit id="PrivacyPolicyE" translate="yes" xml:space="preserve">
+          <source>https://visualacuity.info/TumblingEChartPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/TumblingEChartPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicyLabel" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="translated">سياسة الخصوصية</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicySnellen" translate="yes" xml:space="preserve">
+          <source>https://visualacuity.info/SnellenChartPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/SnellenChartPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="PrivacyPolicyVAC" translate="yes" xml:space="preserve">
+          <source>https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</source>
+          <target state="translated">https://visualacuity.info/VisualAcuityChartsPrivacyPolicy</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsCsv" translate="yes" xml:space="preserve">
+          <source>Share All as CSV File</source>
+          <target state="translated">مشاركة الكل كملف CSV</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsHtml" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="translated">شارك الكل</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsJson" translate="yes" xml:space="preserve">
+          <source>Share All as JSON File</source>
+          <target state="translated">مشاركة الكل كملف JSON</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsLineGraphHtml" translate="yes" xml:space="preserve">
+          <source>Share Trend</source>
+          <target state="translated">اتجاه السهم</target>
+        </trans-unit>
+        <trans-unit id="ShareAllAsText" translate="yes" xml:space="preserve">
+          <source>All</source>
+          <target state="translated">الجميع</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

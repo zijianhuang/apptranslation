@@ -7,7 +7,7 @@
 # To compatible with ResX Resource Manager, GroupId (GID) must be defined so XLIFF will use file/body/group to contain translation units.
 
 Set-Location $PSScriptRoot
-$langList = "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "pt", "ru", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"
+$langList = "ar", "de", "es", "fil", "fr", "hi", "id", "it", "ja", "ko", "ms", "pl", "pt", "ru", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"
 
 # Merge data elements of resx to XLIFF, and create XLIFF
 $exeConverter = "../../../XliffResXConverter/bin/Debug/net9.0/XliffResXConverter.exe"
