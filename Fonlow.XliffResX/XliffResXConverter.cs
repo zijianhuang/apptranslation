@@ -95,7 +95,7 @@ namespace Fonlow.XliffResX
 		/// <param name="resxLangRoot"></param>
 		/// <param name="xliffRoot"></param>
 		/// <param name="logger"></param>
-		/// <returns></returns>
+		/// <returns>Item1 is AddedCount, and Item2 is RemovedCount.</returns>
 		/// <exception cref="ArgumentException"></exception>
 		public static Tuple<int, int> MergeResXToXliff12(XElement resxSourceRoot, XElement resxLangRoot, XElement xliffRoot, ILogger logger)
 		{

@@ -32,11 +32,16 @@ namespace TestResxXliffConvert
 			XliffResXConverter.MergeTranslationOfXliff12BackToResX("ResxXliff/MultilingualResources/Fonlow.VA.Languages.zh-Hant.xlf", "ResxXliff/AppResources.zh-Hant.resx");
 		}
 
+		/// <summary>
+		/// ResxXliff/AppResources.zh-Hans.resx is empty initial
+		/// Then filled through merge back.
+		/// </summary>
+		/// <returns></returns>
 		[Fact]
 		public async Task TestMergeZhHanS()
 		{
 			var r = XliffResXConverter.MergeResXToXliff12("ResxXliff/AppResources.resx", "ResxXliff/AppResources.zh-Hans.resx", "ResxXliff/MultilingualResources/Fonlow.VA.Languages.zh-Hans.xlf", NullLogger.Instance);
-			Assert.Equal(0, r.Item1);
+			Assert.Equal(22, r.Item1);
 			Assert.Equal(0, r.Item2);
 
 			XDocument xDoc;
