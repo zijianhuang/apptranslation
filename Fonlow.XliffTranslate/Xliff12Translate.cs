@@ -98,14 +98,14 @@ namespace Fonlow.GoogleTranslate
 				int kc = 0;
 				foreach (var chunk in chunks)
 				{
-					kc = await Batch(chunk); // always countsForUnit
+					kc = await Batch(chunk).ConfigureAwait(false); // always countsForUnit
 				}
 
 				return kc;
 			}
 			else
 			{
-				return await TextByText(transUnits);
+				return await TextByText(transUnits).ConfigureAwait(false);
 			}
 
 			async Task<int> TextByText(IList<XElement> someUnits)
@@ -140,7 +140,7 @@ namespace Fonlow.GoogleTranslate
 								var textNode = n as XText;
 								try
 								{
-									var tr = await translator.Translate(textNode.Value);
+									var tr = await translator.Translate(textNode.Value).ConfigureAwait(false);
 									unitTarget.Add(new XText(tr));
 								}
 								catch (HttpRequestException ex)
@@ -205,7 +205,7 @@ namespace Fonlow.GoogleTranslate
 					return 0;
 				}
 
-				var translatedStrings = await translator.Translate(strings); //batch translation
+				var translatedStrings = await translator.Translate(strings).ConfigureAwait(false); //batch translation
 
 				int translatedIndex = 0;
 				foreach (var unit in someUnits)
@@ -274,7 +274,7 @@ namespace Fonlow.GoogleTranslate
 			}
 		}
 
-		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate g, ILogger logger, Action<bool, int, int, int> progressCallback)
+		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
 		{
 			XDocument xDoc;
 			int c;
@@ -282,7 +282,7 @@ namespace Fonlow.GoogleTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				c = await TranslateXliff(xliffRoot, forStates, unchangeState, g, logger, progressCallback);
+				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
 			}
 
 			xDoc.Save(targetFile);

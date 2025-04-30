@@ -14,8 +14,10 @@ namespace Fonlow.XliffResX
 		/// <param name="targetLang"></param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentException">Throw when the total data nodes of the source and the lang one are not equal.</exception>
-		public static XDocument ConvertResXToXliff12(XElement resxSourceRoot, XElement resxRoot, string sourceLang, string targetLang, string groupId)
+		public static XDocument ConvertResXToXliff12(XElement resxSourceRoot, XElement resxRoot, string sourceLang, string targetLang, string groupId=null)
 		{
+			ArgumentNullException.ThrowIfNull(resxSourceRoot);
+			ArgumentNullException.ThrowIfNull(resxRoot);
 			var sourceDataElements = resxSourceRoot.Elements("data").ToList();
 			var dataElements = resxRoot.Elements("data").ToList();
 			//if (dataElements.Count > sourceDataElements.Count)
@@ -78,7 +80,7 @@ namespace Fonlow.XliffResX
 			return xliffDoc;
 		}
 
-		public static void ConvertResXToXliff12(string resxSourcePath, string resxPath, string sourceLang, string targetLang, string xliffPath, string groupId)
+		public static void ConvertResXToXliff12(string resxSourcePath, string resxPath, string sourceLang, string targetLang, string xliffPath, string groupId=null)
 		{
 			var resxSourceRoot = XDocument.Load(resxSourcePath).Root;
 			var resxRoot = XDocument.Load(resxPath).Root;
@@ -97,6 +99,10 @@ namespace Fonlow.XliffResX
 		/// <exception cref="ArgumentException"></exception>
 		public static Tuple<int, int> MergeResXToXliff12(XElement resxSourceRoot, XElement resxLangRoot, XElement xliffRoot, ILogger logger)
 		{
+			ArgumentNullException.ThrowIfNull(resxSourceRoot);
+			ArgumentNullException.ThrowIfNull(resxLangRoot);
+			ArgumentNullException.ThrowIfNull(xliffRoot);
+			ArgumentNullException.ThrowIfNull(logger);
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
 			{

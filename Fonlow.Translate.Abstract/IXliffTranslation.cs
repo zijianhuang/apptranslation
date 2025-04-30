@@ -8,7 +8,7 @@ namespace Fonlow.GoogleTranslate
 	/// </summary>
 	public interface IXliffTranslation
 	{
-		Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate g, ILogger logger, Action<bool, int, int, int> progressCallback);
-		Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate g, ILogger logger, Action<bool, int, int, int> progressCallback);
+		Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback);
+		Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback);
 	}
 }

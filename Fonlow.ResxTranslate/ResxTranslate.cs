@@ -16,6 +16,12 @@ namespace Fonlow.ResxTranslate
 
 		public async Task<int> TranslateResx(XElement resxRoot, ITranslate g, ILogger logger, Action<int, int> progressCallback)
 		{
+//#pragma warning disable CA2264
+			ArgumentNullException.ThrowIfNull(resxRoot);
+			ArgumentNullException.ThrowIfNull(g);
+			ArgumentNullException.ThrowIfNull(logger);
+//#pragma warning restore CA2264
+
 			var dataNodes = resxRoot.Elements("data").ToList();
 			var total=dataNodes.Count;
 
@@ -26,12 +32,12 @@ namespace Fonlow.ResxTranslate
 				var chunks = dataNodes.SplitLists(maxUnits);
 				foreach (var chunk in chunks)
 				{
-					await Batch(chunk); // always countsForUnit
+					await Batch(chunk).ConfigureAwait(false); // always countsForUnit
 				}
 			}
 			else
 			{
-				await TextByText(dataNodes);
+				await TextByText(dataNodes).ConfigureAwait(false);
 			}
 
 			return translatedCount;
@@ -42,7 +48,7 @@ namespace Fonlow.ResxTranslate
 					var valueNode = node.Element("value");
 					if (valueNode != null)
 					{
-						valueNode.Value = await g.Translate(valueNode.Value);
+						valueNode.Value = await g.Translate(valueNode.Value).ConfigureAwait(false);
 						translatedCount++;
 						progressCallback?.Invoke(translatedCount, total);
 					}
@@ -64,7 +70,7 @@ namespace Fonlow.ResxTranslate
 					return 0;
 				}
 
-				var translatedStrings = await g.Translate(strings);
+				var translatedStrings = await g.Translate(strings).ConfigureAwait(false);
 				int translatedIndex = 0;
 				foreach (var n in someNodes)
 				{
@@ -91,7 +97,7 @@ namespace Fonlow.ResxTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var resxRoot = xDoc.Root;
-				c = await TranslateResx(resxRoot, g, logger, progressCallback);
+				c = await TranslateResx(resxRoot, g, logger, progressCallback).ConfigureAwait(false);
 			}
 
 			xDoc.Save(targetFile);

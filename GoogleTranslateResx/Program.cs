@@ -58,7 +58,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 			try
 			{
 				ITranslate translator;
-				if (options.ApiVersion.Equals("V2", StringComparison.CurrentCultureIgnoreCase))
+				if (options.ApiVersion.Equals("V2", StringComparison.OrdinalIgnoreCase))
 				{
 					var goodCombination = string.IsNullOrEmpty(options.ApiKey) ^ string.IsNullOrEmpty(options.ApiKeyFile);
 					if (goodCombination)
@@ -75,7 +75,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 								return 129;
 							}
 
-							var apiKey = File.ReadAllLines(options.ApiKeyFile).FirstOrDefault();
+							var apiKey = (await File.ReadAllLinesAsync(options.ApiKeyFile).ConfigureAwait(false)).FirstOrDefault();
 							if (!string.IsNullOrEmpty(apiKey))
 							{
 								translator = new XWithGT2(options.SourceLang, options.TargetLang, apiKey);
@@ -93,7 +93,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 						return 100;
 					}
 				}
-				else if (options.ApiVersion.Equals("V3", StringComparison.CurrentCultureIgnoreCase))
+				else if (options.ApiVersion.Equals("V3", StringComparison.OrdinalIgnoreCase))
 				{
 					if (string.IsNullOrEmpty(options.ClientSecretFile))
 					{
@@ -101,7 +101,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 						return 120;
 					}
 
-					var clientSecrets = GoogleClientSecrets.FromFile(options.ClientSecretFile);
+					var clientSecrets = await GoogleClientSecrets.FromFileAsync(options.ClientSecretFile).ConfigureAwait(false);
 					var projectId = ClientSecretReader.ReadProjectId(options.ClientSecretFile);
 					translator = new XWithGT3(options.SourceLang, options.TargetLang, clientSecrets, projectId);
 					Console.WriteLine("Using Google Cloud Translate V3 ...");
@@ -113,7 +113,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 				}
 
 				var st = new ResxTranslate(options.Batch);
-				var c = await st.TranslateResx(options.SourceFile, targetFile, translator, logger, ShowProgress);
+				var c = await st.TranslateResx(options.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}
@@ -139,7 +139,7 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 	}
 
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":")]
-	public class Options
+	internal class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=AppResources.resx")]
 		public string SourceFile { get; set; }

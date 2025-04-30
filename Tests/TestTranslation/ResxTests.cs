@@ -1,6 +1,7 @@
 ﻿using Fonlow.GoogleTranslate;
 using Fonlow.ResxTranslate;
 using Google.Cloud.Translation.V2;
+using Microsoft.Extensions.Logging.Abstractions;
 using System.Xml.Linq;
 
 namespace TestResx
@@ -30,7 +31,7 @@ namespace TestResx
 		public async Task TestGoogleTranslateFileZh()
 		{
 			var g = new ResxTranslate(false);
-			Assert.Equal(3, await g.TranslateResx("resx/AppResources.resx", "AppResources.translated.resx", new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), null, null));
+			Assert.Equal(3, await g.TranslateResx("resx/AppResources.resx", "AppResources.translated.resx", new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null));
 		}
 	}
 }

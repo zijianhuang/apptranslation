@@ -11,6 +11,7 @@
 		/// <returns>An array containing smaller arrays.</returns>
 		public static IEnumerable<IList<T>> SplitLists<T>(this IList<T> array, int size)
 		{
+			ArgumentNullException.ThrowIfNull(array);
 			for (var i = 0; i < (float)array.Count / size; i++)
 			{
 				yield return array.Skip(i * size).Take(size).ToList();
@@ -20,6 +21,7 @@
 
 		public static IEnumerable<IEnumerable<T>> Split<T>(this T[] array, int size)
 		{
+			ArgumentNullException.ThrowIfNull(array);
 			for (var i = 0; i < (float)array.Length / size; i++)
 			{
 				yield return array.Skip(i * size).Take(size);

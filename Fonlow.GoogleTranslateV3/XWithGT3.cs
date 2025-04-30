@@ -19,7 +19,7 @@ namespace Fonlow.GoogleTranslate
 			this.projectId = projectId;
 			var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
 				clientSecrets.Secrets,
-				new[] { "https://www.googleapis.com/auth/cloud-translation" }, //https://developers.google.com/identity/protocols/oauth2/scopes
+				scopes, // https://developers.google.com/identity/protocols/oauth2/scopes
 				"user",
 				CancellationToken.None).Result;
 			translationClient = new TranslationServiceClientBuilder()
@@ -33,6 +33,7 @@ namespace Fonlow.GoogleTranslate
 		public string TargetLang { get; set; }
 		readonly TranslationServiceClient translationClient;
 		readonly string projectId;
+		private static readonly string[] scopes = ["https://www.googleapis.com/auth/cloud-translation"];
 
 		public async Task<string> Translate(string text)
 		{
@@ -43,14 +44,17 @@ namespace Fonlow.GoogleTranslate
 				TargetLanguageCode = this.TargetLang,
 				Parent = new ProjectName(projectId).ToString(),
 			};
-			var response = await translationClient.TranslateTextAsync(request);
+			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
 			var translation = response.Translations[0];
 			return translation.TranslatedText;
 		}
 
 		public async Task<string[]> Translate(IList<string> strings)
 		{
-			if (strings.Count>1024){
+			ArgumentNullException.ThrowIfNull(strings);
+
+			if (strings.Count > 1024)
+			{
 				throw new ArgumentException("The API supports up to 1024. Otherwise, use batch API.");
 			}
 
@@ -60,10 +64,10 @@ namespace Fonlow.GoogleTranslate
 				SourceLanguageCode = this.SourceLang,
 				TargetLanguageCode = this.TargetLang,
 				Parent = new ProjectName(projectId).ToString(),
-				MimeType="text/plain",
+				MimeType = "text/plain",
 			};
-			var response = await translationClient.TranslateTextAsync(request);
-			var translatedStrings = response.Translations.Select(d=>d.TranslatedText).ToArray();
+			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
+			var translatedStrings = response.Translations.Select(d => d.TranslatedText).ToArray();
 			return translatedStrings;
 		}
 

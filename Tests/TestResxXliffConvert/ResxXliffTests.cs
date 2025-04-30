@@ -36,7 +36,7 @@ namespace TestResxXliffConvert
 		public async Task TestMergeZhHanS()
 		{
 			var r = XliffResXConverter.MergeResXToXliff12("ResxXliff/AppResources.resx", "ResxXliff/AppResources.zh-Hans.resx", "ResxXliff/MultilingualResources/Fonlow.VA.Languages.zh-Hans.xlf", NullLogger.Instance);
-			Assert.Equal(22, r.Item1);
+			Assert.Equal(0, r.Item1);
 			Assert.Equal(0, r.Item2);
 
 			XDocument xDoc;

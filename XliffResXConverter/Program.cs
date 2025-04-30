@@ -49,18 +49,18 @@ XliffResXConverter.exe /A=MergeBack /RXL=AppResources.zh-hant.resx /XF=c:/Transl
 				return 11;
 			}
 
-			if (options.Action.Equals("new", StringComparison.CurrentCultureIgnoreCase))
+			if (options.Action.Equals("new", StringComparison.OrdinalIgnoreCase))
 			{
 				XliffResXConverter.ConvertResXToXliff12(options.SourceResX, options.LangResX, options.SourceLang, options.TargetLang, options.XliffFile, options.GroupId);
 				Console.WriteLine($"Created {options.XliffFile}");
 			}
-			else if (options.Action.Equals("merge", StringComparison.CurrentCultureIgnoreCase))
+			else if (options.Action.Equals("merge", StringComparison.OrdinalIgnoreCase))
 			{
 				var r = XliffResXConverter.MergeResXToXliff12(options.SourceResX, options.LangResX, options.XliffFile, logger);
 				Console.WriteLine($"Added: {r.Item1}; Removed: {r.Item2} .");
 				Console.WriteLine($"Updated {options.XliffFile}");
 			}
-			else if (options.Action.Equals("mergeback", StringComparison.CurrentCultureIgnoreCase))
+			else if (options.Action.Equals("mergeback", StringComparison.OrdinalIgnoreCase))
 			{
 				XliffResXConverter.MergeTranslationOfXliff12BackToResX(options.XliffFile, options.LangResX);
 				Console.WriteLine($"Merge back to {options.LangResX}");

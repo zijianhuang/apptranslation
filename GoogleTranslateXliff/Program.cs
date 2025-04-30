@@ -77,7 +77,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 			try
 			{
 				ITranslate translator;
-				if (options.ApiVersion.Equals("V2", StringComparison.CurrentCultureIgnoreCase))
+				if (options.ApiVersion.Equals("V2", StringComparison.OrdinalIgnoreCase))
 				{
 					var goodCombination = string.IsNullOrEmpty(options.ApiKey) ^ string.IsNullOrEmpty(options.ApiKeyFile);
 					if (goodCombination)
@@ -94,7 +94,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 								return 129;
 							}
 
-							var apiKey = File.ReadAllLines(options.ApiKeyFile).FirstOrDefault();
+							var apiKey = (await File.ReadAllLinesAsync(options.ApiKeyFile).ConfigureAwait(false)).FirstOrDefault();
 							if (!string.IsNullOrEmpty(apiKey))
 							{
 								translator = new XWithGT2(options.SourceLang, options.TargetLang, apiKey);
@@ -112,7 +112,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 						return 100;
 					}
 				}
-				else if (options.ApiVersion.Equals("V3", StringComparison.CurrentCultureIgnoreCase))
+				else if (options.ApiVersion.Equals("V3", StringComparison.OrdinalIgnoreCase))
 				{
 					if (string.IsNullOrEmpty(options.ClientSecretFile))
 					{
@@ -120,7 +120,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 						return 120;
 					}
 
-					var clientSecrets = GoogleClientSecrets.FromFile(options.ClientSecretFile);
+					var clientSecrets = await GoogleClientSecrets.FromFileAsync(options.ClientSecretFile).ConfigureAwait(false);
 					var projectId = ClientSecretReader.ReadProjectId(options.ClientSecretFile);
 					translator = new XWithGT3(options.SourceLang, options.TargetLang, clientSecrets, projectId);
 					Console.WriteLine("Using Google Cloud Translate V3 ...");
@@ -131,7 +131,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 					return 110;
 				}
 
-				var c = await xliffProcessor.TranslateXliff(options.SourceFile, targetFile, options.ForStates, options.NotChangeState, translator, logger, ShowProgress);
+				var c = await xliffProcessor.TranslateXliff(options.SourceFile, targetFile, options.ForStates, options.NotChangeState, translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}
@@ -152,7 +152,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 	}
 
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
-	public class Options
+	internal class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=myfile.zh.xliff")]
 		public string SourceFile { get; set; }

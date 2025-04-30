@@ -22,19 +22,19 @@ namespace Fonlow.GoogleTranslate
 
 		public async Task<string> Translate(string text)
 		{
-			var r = await translationClient.TranslateTextAsync(text, TargetLang, SourceLang);
+			var r = await translationClient.TranslateTextAsync(text, TargetLang, SourceLang).ConfigureAwait(false);
 			return r.TranslatedText;
 		}
 
 		public async Task<string[]> Translate(IList<string> strings)
 		{
-			var r = await translationClient.TranslateTextAsync(strings, TargetLang, SourceLang);
+			var r = await translationClient.TranslateTextAsync(strings, TargetLang, SourceLang).ConfigureAwait(false);
 			return r.Select(d => d.TranslatedText).ToArray();
 		}
 
 		public async Task<string> TranslateHtml(string htmlText)
 		{
-			var r = await translationClient.TranslateHtmlAsync(htmlText, TargetLang, SourceLang);
+			var r = await translationClient.TranslateHtmlAsync(htmlText, TargetLang, SourceLang).ConfigureAwait(false);
 			return r.TranslatedText;
 		}
 

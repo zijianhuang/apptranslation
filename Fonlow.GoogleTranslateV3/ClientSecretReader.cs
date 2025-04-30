@@ -5,7 +5,7 @@ namespace Fonlow.GoogleTranslateV3
 	/// <summary>
 	/// Google API does not read the project_id from the client_secret file.
 	/// </summary>
-	public class ClientSecretReader
+	public static class ClientSecretReader
 	{
 		public static string ReadProjectId(string filePath)
 		{

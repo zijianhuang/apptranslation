@@ -12,6 +12,7 @@
 		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
+		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 
 	<ItemGroup>

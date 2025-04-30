@@ -57,11 +57,11 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 			try
 			{
 				ITranslate translator;
-				if (options.ApiVersion.Equals("V2", StringComparison.CurrentCultureIgnoreCase))
+				if (options.ApiVersion.Equals("V2", StringComparison.OrdinalIgnoreCase))
 				{
 					translator = new XWithGT2(options.SourceLang, options.TargetLang, options.ApiKey);
 				}
-				else if (options.ApiVersion.Equals("V3", StringComparison.CurrentCultureIgnoreCase))
+				else if (options.ApiVersion.Equals("V3", StringComparison.OrdinalIgnoreCase))
 				{
 					if (string.IsNullOrEmpty(options.ClientSecretFile))
 					{
@@ -69,7 +69,7 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 						return 120;
 					}
 
-					var clientSecrets = GoogleClientSecrets.FromFile(options.ClientSecretFile);
+					var clientSecrets =  await GoogleClientSecrets.FromFileAsync(options.ClientSecretFile).ConfigureAwait(false);
 					var projectId = ClientSecretReader.ReadProjectId(options.ClientSecretFile);
 					translator = new XWithGT3(options.SourceLang, options.TargetLang, clientSecrets, projectId);
 					Console.WriteLine("Using Google Cloud Translate V3 ...");
@@ -81,7 +81,7 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 				}
 
 				var st = new StringsTranslate(options.Batch);
-				var c = await st.TranslateStrings(options.SourceFile, targetFile, translator, logger, ShowProgress);
+				var c = await st.TranslateStrings(options.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}
@@ -107,7 +107,7 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 	}
 
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate String Resource", OptionSeparator = "/", Assignment = ":")]
-	public class Options
+	internal class Options
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=strings.xml")]
 		public string SourceFile { get; set; }
