@@ -47,7 +47,11 @@ namespace Fonlow.GoogleTranslate
 				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
 			}
 
-			xDoc.Save(targetFile);
+			if (c > 0)
+			{
+				xDoc.Save(targetFile);
+			}
+
 			return c;
 		}
 
@@ -98,7 +102,12 @@ namespace Fonlow.GoogleTranslate
 					&& (unitTarget == null || forStates.Contains(unitTarget.Attribute("state")?.Value) || string.IsNullOrEmpty(unitTarget.Attribute("state")?.Value));
 			});
 
-			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
+			if (totalUnitsToTranslate == 0)
+			{
+				logger.LogWarning("Nothing to translate.");
+				return 0;
+			}
+			else if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
 			{
 				var badUnits = transUnits.Where(unit =>
 				{
@@ -106,12 +115,17 @@ namespace Fonlow.GoogleTranslate
 					var unitTarget = unit.Element(ns + "target");
 
 					return unitSource != null
-					&& !unitSource.Nodes().OfType<XText>().Any();
+					&& !unitSource.Nodes().OfType<XText>().Any() //nothing to translate
+					&& (unitTarget == null || forStates.Contains(unitTarget.Attribute("state")?.Value) || string.IsNullOrEmpty(unitTarget.Attribute("state")?.Value)); //though should be translated
 				});
 
 				var ids = badUnits.Select(unit => unit.Attribute("id").Value).ToArray();
 				var csv = string.Join(", ", ids);
-				logger?.LogWarning($"These units have nothing to translate: {csv}");
+				if (csv.Length > 0)
+				{
+					logger?.LogWarning($"These units have nothing to translate: {csv}");
+				}
+
 			}
 
 			var isAllNew = totalUnits == totalUnitsToTranslate;

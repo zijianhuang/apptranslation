@@ -79,10 +79,10 @@ namespace Fonlow.GoogleTranslate
 			return c;
 		}
 
-		async Task<int> TranslateXliffFileElement(XElement firstFileElement, XNamespace ns, bool toCreateTargetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, bool toCreateTargetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
 		{
-			var units = firstFileElement.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
-			var firstGroup = firstFileElement.Element(ns + "group"); //handle one group for now
+			var units = fileElement.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
+			var firstGroup = fileElement.Element(ns + "group"); //handle one group for now
 			if (firstGroup != null)
 			{
 				var groupUnits = firstGroup.Elements(ns + "unit").ToList();
@@ -96,7 +96,7 @@ namespace Fonlow.GoogleTranslate
 				var unitSource = segment.Element(ns + "source");
 				var unitTarget = segment.Element(ns + "target");
 
-				return unitSource != null && unitSource.Nodes().OfType<XText>().Any()
+				return unitSource != null && unitSource.Nodes().OfType<XText>().Any() //somehting to translate
 					&& (unitTarget == null || forStates.Contains(segment.Attribute("state")?.Value) || string.IsNullOrEmpty(segment.Attribute("state")?.Value));
 			});
 
@@ -113,13 +113,16 @@ namespace Fonlow.GoogleTranslate
 					var unitSource = segment.Element(ns + "source");
 					var unitTarget = segment.Element(ns + "target");
 
-					return unitSource != null
-					&& !unitSource.Nodes().OfType<XText>().Any(); ;
+					return unitSource != null && !unitSource.Nodes().OfType<XText>().Any() //nothing to translate
+					&& (unitTarget == null || forStates.Contains(segment.Attribute("state")?.Value) || string.IsNullOrEmpty(segment.Attribute("state")?.Value)); //though should be translated
 				});
 
 				var ids = badUnits.Select(unit => unit.Attribute("id").Value).ToArray();
 				var csv = string.Join(", ", ids);
-				logger.LogWarning($"These units have nothing to translate: {csv}");
+				if (csv.Length > 0)
+				{
+					logger.LogWarning($"These units with appropriate states have nothing to translate: {csv}");
+				}
 			}
 
 			var isAllNew = totalUnits == totalUnitsToTranslate;

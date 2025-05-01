@@ -24,7 +24,7 @@ namespace TestResxXliffConvert
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate(true);
-				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), null, null);
+				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
 				Assert.Equal(4, c);
 			}
 
@@ -50,7 +50,7 @@ namespace TestResxXliffConvert
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate(true);
-				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), NullLogger.Instance, null);
 				Assert.Equal(22, c);
 			}
 
@@ -71,7 +71,7 @@ namespace TestResxXliffConvert
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate(true);
-				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), NullLogger.Instance, null);
 				Assert.Equal(0, c);
 			}
 
