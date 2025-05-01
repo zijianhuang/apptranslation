@@ -25,6 +25,9 @@ Additionally, I prefer batch processing. Here you are some CLI tools included in
 * Google Translate v2
 * Google Cloud Translation v3
 
+Remarks:
+* It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication.
+
 # Features
 According to [Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
 
