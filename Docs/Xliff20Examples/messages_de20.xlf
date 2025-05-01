@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xliff version="2.0" srcLang="en" trgLang="de">
+
+  <file id="example">
+
+    <unit id="welcome">
+
+      <segment state="final">
+
+        <source>Ahoy there!</source>
+
+        <target>Ahoi!</target>
+
+      </segment>
+
+    </unit>
+
+    <unit id="description">
+
+      <segment state="final">
+
+        <source>Innovation at your fingertips, shaping tomorrow today.</source>
+
+        <target>Innovation zum Greifen nah bei dir, heute schon das morgen gestalten</target>
+
+      </segment>
+
+    </unit>
+
+    <unit id="footer">
+
+      <segment state="translated">
+
+        <source>Don’t miss out, be a part of the future.</source>
+
+        <target>Verpasse es nicht, sei ein Teil der Zukunft.</target>
+
+      </segment>
+
+    </unit>
+
+    <unit id="contact">
+
+      <segment state="translated">
+
+        <source>Let’s get the ball rolling, we’re just a message away!</source>
+
+        <target>Lass uns ins Rollen kommen, wir sind nur eine Nachricht entfernt!</target>
+
+      </segment>
+
+    </unit>
+
+    <unit id="terms">
+
+      <segment state="translated">
+
+        <source>If you proceed, you accept the mysteries that lie ahead.</source>
+
+        <target>Wenn du fortfährst, akzeptierst du die Geheimnisse, die vor dir liegen.</target>
+
+      </segment>
+
+    </unit>
+
+  </file>
+
+</xliff>

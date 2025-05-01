@@ -76,7 +76,7 @@ namespace Fonlow.GoogleTranslate
 				toCreateTargetFile = true; // The rest of the codes need to add trans-unit/target
 			}
 
-			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
+			Console.WriteLine($"\nTranslating from {translator.SourceLang} to {translator.TargetLang} ...");
 
 			var body = fileElement.Element(ns + "body");
 			var transUnits = body.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
@@ -95,7 +95,7 @@ namespace Fonlow.GoogleTranslate
 
 				return unitSource != null
 				&& unitSource.Nodes().OfType<XText>().Any()
-					&& (unitTarget == null || forStates.Contains(unitTarget.Attribute("state")?.Value));
+					&& (unitTarget == null || forStates.Contains(unitTarget.Attribute("state")?.Value) || string.IsNullOrEmpty(unitTarget.Attribute("state")?.Value));
 			});
 
 			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.

@@ -47,7 +47,7 @@ namespace Fonlow.GoogleTranslate
 				toCreateTargetFile = true; // The rest of the codes need to add trans-unit/target
 			}
 
-			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
+			Console.WriteLine($"\nTranslating from {translator.SourceLang} to {translator.TargetLang} ...");
 
 			var fileElements = xliffRoot.Elements(ns + "file");
 			var total = 0;
@@ -93,7 +93,7 @@ namespace Fonlow.GoogleTranslate
 				var unitTarget = segment.Element(ns + "target");
 
 				return unitSource != null && unitSource.Nodes().OfType<XText>().Any()
-					&& (unitTarget == null || forStates.Contains(segment.Attribute("state").Value));
+					&& (unitTarget == null || forStates.Contains(segment.Attribute("state")?.Value) || string.IsNullOrEmpty(segment.Attribute("state")?.Value));
 			});
 
 			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
