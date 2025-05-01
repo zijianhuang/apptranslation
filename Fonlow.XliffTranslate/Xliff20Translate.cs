@@ -71,7 +71,11 @@ namespace Fonlow.GoogleTranslate
 				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
 			}
 
-			xDoc.Save(targetFile);
+			if (c > 0)
+			{
+				xDoc.Save(targetFile);
+			}
+
 			return c;
 		}
 
@@ -96,7 +100,12 @@ namespace Fonlow.GoogleTranslate
 					&& (unitTarget == null || forStates.Contains(segment.Attribute("state")?.Value) || string.IsNullOrEmpty(segment.Attribute("state")?.Value));
 			});
 
-			if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
+			if (totalUnitsToTranslate == 0)
+			{
+				logger.LogWarning("Nothing to translate.");
+				return 0;
+			}
+			else if (totalUnitsToTranslate < totalUnits) //some units are badly defined.
 			{
 				var badUnits = units.Where(unit =>
 				{

@@ -106,7 +106,7 @@ namespace Fonlow.GoogleTranslate
 					var unitTarget = unit.Element(ns + "target");
 
 					return unitSource != null
-					&& !unitSource.Nodes().OfType<XText>().Any(); ;
+					&& !unitSource.Nodes().OfType<XText>().Any();
 				});
 
 				var ids = badUnits.Select(unit => unit.Attribute("id").Value).ToArray();
