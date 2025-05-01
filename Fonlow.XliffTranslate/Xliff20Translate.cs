@@ -25,7 +25,6 @@ namespace Fonlow.GoogleTranslate
 			}
 
 			var ns = xliffRoot.GetDefaultNamespace();
-			var firstFile = xliffRoot.Element(ns + "file");
 
 			if (string.IsNullOrEmpty(translator.SourceLang))
 			{
@@ -50,8 +49,36 @@ namespace Fonlow.GoogleTranslate
 
 			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
-			var units = firstFile.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
-			var firstGroup = firstFile.Element(ns + "group"); //handle one group for now
+			var fileElements = xliffRoot.Elements(ns + "file");
+			var total = 0;
+			foreach (var fileElement in fileElements)
+			{
+				var c = await TranslateXliffFileElement(fileElement, ns, toCreateTargetFile, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				total += c;
+			}
+
+			return total;
+		}
+
+		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		{
+			XDocument xDoc;
+			int c;
+			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+			}
+
+			xDoc.Save(targetFile);
+			return c;
+		}
+
+		async Task<int> TranslateXliffFileElement(XElement firstFileElement, XNamespace ns, bool toCreateTargetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		{
+			var units = firstFileElement.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
+			var firstGroup = firstFileElement.Element(ns + "group"); //handle one group for now
 			if (firstGroup != null)
 			{
 				var groupUnits = firstGroup.Elements(ns + "unit").ToList();
@@ -277,20 +304,7 @@ namespace Fonlow.GoogleTranslate
 
 		}
 
-		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
-		{
-			XDocument xDoc;
-			int c;
-			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
-			{
-				xDoc = XDocument.Load(fs);
-				var xliffRoot = xDoc.Root;
-				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
-			}
 
-			xDoc.Save(targetFile);
-			return c;
-		}
 	}
 
 }

@@ -25,34 +25,61 @@ namespace Fonlow.GoogleTranslate
 			}
 
 			var ns = xliffRoot.GetDefaultNamespace();
-			var firstFile = xliffRoot.Element(ns + "file");
-			var fileBody = firstFile.Element(ns + "body");
+			var fileElements = xliffRoot.Elements(ns + "file");
+
+			var total = 0;
+			foreach (var fileElement in fileElements)
+			{
+				var c = await TranslateXliffFileElement(fileElement, ns, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				total += c;
+			}
+			return total;
+		}
+
+		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		{
+			XDocument xDoc;
+			int c;
+			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+			}
+
+			xDoc.Save(targetFile);
+			return c;
+		}
+
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		{
+			var fileBody = fileElement.Element(ns + "body");
 
 			if (string.IsNullOrEmpty(translator.SourceLang))
 			{
-				translator.SourceLang = firstFile.Attribute("source-language").Value; //use source file's source language
+				translator.SourceLang = fileElement.Attribute("source-language").Value; //use source file's source language
 			}
 
 			bool toCreateTargetFile = false;
 			if (string.IsNullOrEmpty(translator.TargetLang))
 			{
-				translator.TargetLang = firstFile.Attribute("target-language")?.Value; //use source file 's target language
+				translator.TargetLang = fileElement.Attribute("target-language")?.Value; //use source file 's target language
 				if (string.IsNullOrEmpty(translator.TargetLang))
 				{
 					throw new ArgumentException("TargetLang must be declared in command parameters or xliff/file/target-language");
 				}
 			}
 
-			if (string.IsNullOrEmpty(firstFile.Attribute("target-language")?.Value))
+			if (string.IsNullOrEmpty(fileElement.Attribute("target-language")?.Value))
 			{
-				firstFile.Add(new XAttribute("target-language", translator.TargetLang)); //source file has no target lang declared, then use the commandline TargetLang
+				fileElement.Add(new XAttribute("target-language", translator.TargetLang)); //source file has no target lang declared, then use the commandline TargetLang
 				toCreateTargetFile = true; // The rest of the codes need to add trans-unit/target
 			}
 
 			Console.WriteLine($"Translating from {translator.SourceLang} to {translator.TargetLang} ...");
 
-			var body = firstFile.Element(ns + "body");
-			var transUnits = body.Elements(ns + "trans-unit").Where(d=> d.Attribute("translate")==null || d.Attribute("translate").Value=="yes").ToList();
+			var body = fileElement.Element(ns + "body");
+			var transUnits = body.Elements(ns + "trans-unit").Where(d => d.Attribute("translate") == null || d.Attribute("translate").Value == "yes").ToList();
 			var firstGroup = body.Element(ns + "group"); //handle one group for now
 			if (firstGroup != null)
 			{
@@ -172,6 +199,7 @@ namespace Fonlow.GoogleTranslate
 				}
 
 				return countForUnit;
+
 			}
 
 			async Task<int> Batch(IList<XElement> someUnits)
@@ -274,20 +302,7 @@ namespace Fonlow.GoogleTranslate
 			}
 		}
 
-		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
-		{
-			XDocument xDoc;
-			int c;
-			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
-			{
-				xDoc = XDocument.Load(fs);
-				var xliffRoot = xDoc.Root;
-				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
-			}
 
-			xDoc.Save(targetFile);
-			return c;
-		}
 	}
 
 }
