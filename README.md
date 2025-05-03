@@ -1,17 +1,17 @@
 # Background
-Over years as a full-stack software developer, I have been using wide variety of tools like:
+For full-stack software developers, there are wide variety of tools like:
 * PO Editor
 * ResX Resource Manager
 * ResX Editor & Translator
+* ...
 
-This series of translation tools is based on my quests to batch translations of software UIs in last 10 years.
+The translation tools used by software developers:
+1. Integration with IDE like Visual Studio, XCode and Android Studio etc.
+2. Batch processing.
 
-As of 2020s, most tools I could find are cloud based, depending to another cloud-based translation services like Google Translate API and Microsoft Translator API. And these tools are mostly subscription based. As I do translations only occasionally and casually, such subscription model is not appealing to me. Also the operation overheads of these cloud based tools are too much for smooth SDLC or CI.
+As of 2020s, most tools you could find are cloud based, depending to another cloud-based translation services like Google Translate API and Microsoft Translator API. And these tools are mostly subscription based. If you do translations only occasionally and casually, such subscription model is not appealing. Also the operation overheads of these cloud based tools are too much for smooth SDLC or CI.
 
-Additionally, I prefer batch processing. Here you are some CLI tools included in this project, developed by a full-stack software developer for full-stack software developers.
-
-**Remarks:**
-* I have searched the Internet to find tools commercial, free or open source, before starting the development. Hopefully the scope and the features of these CLI tools meet your need since you are a full stack software developer.
+Additionally, if you prefer batch processing, the CLI tools included in this project, developed by a full-stack software developer for full-stack software developers, may be appealing to you.
 
 # Overview
 
@@ -25,10 +25,10 @@ Additionally, I prefer batch processing. Here you are some CLI tools included in
 * Google Translate v2
 * Google Cloud Translation v3
 
-Remarks:
+**Remarks:**
 * It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication.
 
-# Features
+# Tools
 According to [Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
 
 * You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
@@ -36,7 +36,7 @@ According to [Cloud Translation pricing](https://cloud.google.com/translate/pric
 
 Since a XLIFF translation unit may contain elements of interpolation, simply sending the content to Google Translate with `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
 
-For the detailed features, just run the CLI tool without parameters.
+For the detailed features, just run the CLI tool without parameters you will see help and examples.
 
 ## GoogleTranslateXliff.exe
 
@@ -77,6 +77,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 **Hints:**
 * By default among all [states](https://docs.oasis-open.org/xliff/v1.2/os/xliff-core.html#state) of XLIFF 1.2, this program cares about only "new" and "translated".
 * By default among all [states](https://docs.oasis-open.org/xliff/xliff-core/v2.0/xliff-core-v2.0.html#state) of XLIFF 2.0, this program cares about only "initial" and "translated".
+* If you have human translators involved in the SDLC, the translators may change the states to "reviewed" or "final" etc.
 
 
 ## GoogleTranslateResx.exe
@@ -143,6 +144,24 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 
 This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Together with GoogleTranslateXliff.exe and some PowerShell scripts, you may establish seamless SDLC and Continuous Integration. Check [README](XliffResXConverter/README.md) for details.
 
-## Build and Deployment
+# Build and Deployment
 
-This repository does not release binary builds. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, MacOS or Linux.
+**Prerequisites:**
+* .NET 9 SDK for development and build
+* .NET 9 Runtime for execution
+
+This repository does not release binary builds generally. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, [MacOS](https://learn.microsoft.com/en-us/dotnet/core/install/macos) or [Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux).
+
+![Build Scripts](Docs/Articles/Screenshots/BuildScripts.png)
+
+![MacOS run](Docs/Articles//Screenshots//MacStart.png)
+
+# Continuous Integration
+
+The [PowerShell folder](Docs/PowerShell) of this repository provides a few examples of PowerShell scripts for CI:
+* [GoogleTranslate.ps1](Docs/PowerShell/Angular/GoogleTranslate.ps1) for Angular 2+.
+* [MergeTranslateMerge.ps1](Docs/PowerShell/Fonlow.VA.Languages/MergeTranslateMerge.ps1) for [Visual Studio ResX using XLIFF as Translation Memory](XliffResXConverter/README.md).
+
+# Articles
+
+* [Batch Processing of Translation Resource for Angular Apps](/Docs//Articles/BatchProcessingAngular.md) also published on [dev.to](https://dev.to/zijianhuang/batch-processing-of-translation-resource-for-angular-apps-1il9) .
