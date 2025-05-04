@@ -16,7 +16,7 @@ namespace Fonlow.TranslationProgram.Abstract
 		[CommandLineOption(Aliases = "TL", Description = "Target language. e.g., /TL=zh")]
 		public string TargetLang { get; set; }
 
-		[CommandLineOption(Aliases = "B", Description = "Batch processing of strings to improve overall speed. V2 and V3 support.")]
+		[CommandLineOption(Aliases = "B", Description = "Batch processing of string array to improve overall speed.")]
 		public bool Batch { get; set; }
 
 		[CommandLineOption(Aliases = "h ?", Name = "Help", Description = "Shows this help text")]

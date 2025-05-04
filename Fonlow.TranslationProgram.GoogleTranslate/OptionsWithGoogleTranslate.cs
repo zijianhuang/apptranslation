@@ -1,11 +1,7 @@
 ﻿using Plossum.CommandLine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fonlow.TranslationProgram.Abstract;
 
-namespace Fonlow.TranslationProgram.Abstract
+namespace Fonlow.TranslationProgram.GoogleTranslate
 {
 	public class OptionsWithGoogleTranslate : OptionsBase
 	{

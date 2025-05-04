@@ -1,7 +1,6 @@
 ﻿using Azure;
 using Azure.AI.Translation.Text;
 using Fonlow.Translate;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Fonlow.MsTranslator
 {

@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.TranslationProgram.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.TranslationProgram.GoogleTranslate", "Fonlow.TranslationProgram.GoogleTranslate\Fonlow.TranslationProgram.GoogleTranslate.csproj", "{88D9AD19-BDF3-4201-B180-55556BE7BD6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.TranslationProgram.MsTranslator", "Fonlow.TranslationProgram.MsTranslator\Fonlow.TranslationProgram.MsTranslator.csproj", "{E6F53876-1F71-46A6-8637-649AD5375400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorResx", "MsTranslatorResx\MsTranslatorResx.csproj", "{E0148320-134D-420A-9CD2-B964FBDD144F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +129,14 @@ Global
 		{88D9AD19-BDF3-4201-B180-55556BE7BD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D9AD19-BDF3-4201-B180-55556BE7BD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D9AD19-BDF3-4201-B180-55556BE7BD6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F53876-1F71-46A6-8637-649AD5375400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F53876-1F71-46A6-8637-649AD5375400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F53876-1F71-46A6-8637-649AD5375400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F53876-1F71-46A6-8637-649AD5375400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0148320-134D-420A-9CD2-B964FBDD144F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0148320-134D-420A-9CD2-B964FBDD144F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0148320-134D-420A-9CD2-B964FBDD144F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0148320-134D-420A-9CD2-B964FBDD144F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,5 +159,7 @@ Global
 		{2B36FECC-E6F5-4405-ACA8-F3C89DAEA1DC} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
 		{C29691FA-7576-455E-BFEB-66D2FBFCF34D} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
 		{88D9AD19-BDF3-4201-B180-55556BE7BD6A} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
+		{E6F53876-1F71-46A6-8637-649AD5375400} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
+		{E0148320-134D-420A-9CD2-B964FBDD144F} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 EndGlobal
