@@ -1,8 +1,7 @@
 ﻿using Fonlow.Cli;
-using Fonlow.GoogleTranslate;
-using Fonlow.TranslationProgram.Abstract;
 using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
+using Fonlow.StringsTranslate;
 
 namespace Fonlow.TranslationProgram
 {

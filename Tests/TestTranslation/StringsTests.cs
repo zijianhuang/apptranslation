@@ -1,6 +1,7 @@
 ﻿using Fonlow.AndroidStrings;
 using Fonlow.GoogleTranslate;
 using Google.Cloud.Translation.V2;
+using Fonlow.StringsTranslate;
 
 namespace TestStrings
 {
