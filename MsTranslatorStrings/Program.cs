@@ -1,9 +1,9 @@
 ﻿using Fonlow.TranslationProgram;
 using Microsoft.Extensions.Logging;
 
-namespace GoogleTranslateStrings
+namespace MsTranslatorResx
 {
-	class Program
+	internal class Program
 	{
 		static async Task<int> Main(string[] args)
 		{
@@ -11,7 +11,7 @@ namespace GoogleTranslateStrings
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new Options();
 
-			var translationProgram = new TranslationProgramResxWithGoogleTranslate(options, logger);
+			var translationProgram = new TranslationProgramStringsWithMsTranslator(options, logger);
 			var r = await translationProgram.Execute(args).ConfigureAwait(false);
 			return r;
 		}

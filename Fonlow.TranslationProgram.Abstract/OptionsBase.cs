@@ -4,10 +4,10 @@ namespace Fonlow.TranslationProgram.Abstract
 {
 	public class OptionsBase
 	{
-		[CommandLineOption(Aliases = "F", Description = "Source file path, e.g., /F=AppResources.resx")]
+		[CommandLineOption(Aliases = "F", Description = "Source file path")]
 		public string SourceFile { get; set; }
 
-		[CommandLineOption(Aliases = "TF", Description = "Target file path. e.g., /TF=c:/AppResources.ja.resx")]
+		[CommandLineOption(Aliases = "TF", Description = "Target file path")]
 		public string TargetFile { get; set; }
 
 		[CommandLineOption(Aliases = "SL", Description = "Source language. e.g., /SL=fr")]

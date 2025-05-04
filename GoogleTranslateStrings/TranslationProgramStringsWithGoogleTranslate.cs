@@ -13,7 +13,7 @@ namespace Fonlow.TranslationProgram
 
 	internal class TranslationProgramStringsWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
-		public TranslationProgramStringsWithGoogleTranslate(OptionsWithGoogleTranslate options, ILogger logger) : base(new StringsTranslate(), options, logger)
+		public TranslationProgramStringsWithGoogleTranslate(OptionsWithGoogleTranslate options, ILogger logger) : base(new StringsTranslation(), options, logger)
 		{
 		}
 

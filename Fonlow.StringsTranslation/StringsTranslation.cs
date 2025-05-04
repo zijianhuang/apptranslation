@@ -2,11 +2,11 @@
 using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
 
-namespace Fonlow.GoogleTranslate
+namespace Fonlow.StringsTranslate
 {
-	public class StringsTranslate : IResourceTranslation
+	public class StringsTranslation : IResourceTranslation
 	{
-		public StringsTranslate()
+		public StringsTranslation()
 		{
 		}
 
