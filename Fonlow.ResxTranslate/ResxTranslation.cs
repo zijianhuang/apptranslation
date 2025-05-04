@@ -12,7 +12,7 @@ namespace Fonlow.ResxTranslate
 
 		bool batchMode;
 
-		public void setBathMode(bool bathMode)
+		public void SetBatchMode(bool bathMode)
 		{
 			this.batchMode = bathMode;
 		}

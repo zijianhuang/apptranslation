@@ -64,7 +64,7 @@ namespace Fonlow.TranslationProgram.Abstract
 					return errorCode;
 				}
 
-				resourceTranslation.setBathMode(optionsBase.Batch);
+				resourceTranslation.SetBatchMode(optionsBase.Batch);
 				var c = await resourceTranslation.Translate(optionsBase.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
@@ -74,9 +74,15 @@ namespace Fonlow.TranslationProgram.Abstract
 				logger.LogError(ex.Message);
 				return 100;
 			}
+			catch (Exception ex)
+			{
+				return HandleTranslationEngineException(ex);
+			}
 
 			return 0;
 		}
+
+		protected abstract int HandleTranslationEngineException(Exception ex);
 
 		static void ShowProgress(int current, int totalUnits)
 		{

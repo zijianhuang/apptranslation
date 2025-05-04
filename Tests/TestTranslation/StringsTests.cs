@@ -24,7 +24,7 @@ namespace TestStrings
 
 		[Fact]
 		public async Task TestGoogleTranslateFileZh(){
-			var g = new StringsTranslate(false);
+			var g = new StringsTranslate();
 			Assert.Equal(3, await g.Translate("strings/strings.xml", "strings.zh-tw.xml", new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), null, null));
 
 			var reader = new StringsRW();

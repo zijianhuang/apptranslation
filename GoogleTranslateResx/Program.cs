@@ -11,7 +11,7 @@ namespace GoogleTranslateStrings
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new Options();
 
-			var translationProgram = new TranslationProgramWithGoogleTranslate(options, logger);
+			var translationProgram = new TranslationProgramResxWithGoogleTranslate(options, logger);
 			var r = await translationProgram.Execute(args).ConfigureAwait(false);
 			return r;
 		}

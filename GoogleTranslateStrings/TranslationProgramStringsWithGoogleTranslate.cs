@@ -1,0 +1,34 @@
+﻿using Fonlow.Cli;
+using Fonlow.GoogleTranslate;
+using Fonlow.TranslationProgram.Abstract;
+using Fonlow.TranslationProgram.GoogleTranslate;
+using Microsoft.Extensions.Logging;
+
+namespace Fonlow.TranslationProgram
+{
+	[CliManager(Description = "Use Google Translate v2 or v3 to translate Android String Resource", OptionSeparator = "/", Assignment = ":")]
+	internal class Options : OptionsWithGoogleTranslate
+	{
+	}
+
+	internal class TranslationProgramStringsWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	{
+		public TranslationProgramStringsWithGoogleTranslate(OptionsWithGoogleTranslate options, ILogger logger) : base(new StringsTranslate(), options, logger)
+		{
+		}
+
+		public override void DisplayExamples()
+		{
+			Console.WriteLine(
+@"Examples:
+GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:strings.zh-hant.xml ---- For in-place translation when strings.zh-hant.xml is not yet translated
+GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:strings.xml /TF:strings.ja.xml ---- from the source locale file to a new target file in Japanese
+GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /TF:myUiMessages.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
+GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
+"
+			);
+		}
+	}
+
+
+}

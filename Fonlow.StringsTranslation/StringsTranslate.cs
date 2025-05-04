@@ -6,12 +6,16 @@ namespace Fonlow.GoogleTranslate
 {
 	public class StringsTranslate : IResourceTranslation
 	{
-		public StringsTranslate(bool batchMode)
+		public StringsTranslate()
+		{
+		}
+
+		bool batchMode;
+
+		public void SetBatchMode(bool batchMode)
 		{
 			this.batchMode = batchMode;
 		}
-
-		readonly bool batchMode;
 
 		public async Task<int> Translate(string filePath, string targetFile, ITranslate g, ILogger logger, Action<int, int> progressCallback)
 		{
@@ -70,7 +74,7 @@ namespace Fonlow.GoogleTranslate
 
 			async Task<int> Batch(IList<resourcesString> someUnits)
 			{
-				var strings = someUnits.Where(d=>!string.IsNullOrEmpty(d.Value)).Select(d => d.Value).ToList();
+				var strings = someUnits.Where(d => !string.IsNullOrEmpty(d.Value)).Select(d => d.Value).ToList();
 
 				if (strings.Count == 0)
 				{
