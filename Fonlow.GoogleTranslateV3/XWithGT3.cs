@@ -1,6 +1,7 @@
 ﻿using Google.Cloud.Translate.V3;
 using Google.Api.Gax.ResourceNames;
 using Google.Apis.Auth.OAuth2;
+using Fonlow.Translate;
 
 namespace Fonlow.GoogleTranslate
 {

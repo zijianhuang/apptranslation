@@ -1,4 +1,5 @@
 ﻿using Google.Cloud.Translation.V2;
+using Fonlow.Translate;
 
 namespace Fonlow.GoogleTranslate
 {

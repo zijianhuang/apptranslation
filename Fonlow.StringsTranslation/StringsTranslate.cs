@@ -1,11 +1,10 @@
 ﻿using Fonlow.AndroidStrings;
 using Fonlow.Translate;
-using Fonlow.Translate.Abstract;
 using Microsoft.Extensions.Logging;
 
 namespace Fonlow.GoogleTranslate
 {
-	public class StringsTranslate : IStringsTranslation
+	public class StringsTranslate : IResourceTranslation
 	{
 		public StringsTranslate(bool batchMode)
 		{
@@ -14,7 +13,7 @@ namespace Fonlow.GoogleTranslate
 
 		readonly bool batchMode;
 
-		public async Task<int> TranslateStrings(string filePath, string targetFile, ITranslate g, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> Translate(string filePath, string targetFile, ITranslate g, ILogger logger, Action<int, int> progressCallback)
 		{
 			var reader = new StringsRW();
 			reader.Load(filePath);

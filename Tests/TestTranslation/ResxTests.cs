@@ -30,8 +30,8 @@ namespace TestResx
 		[Fact]
 		public async Task TestGoogleTranslateFileZh()
 		{
-			var g = new ResxTranslate(false);
-			Assert.Equal(3, await g.TranslateResx("resx/AppResources.resx", "AppResources.translated.resx", new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null));
+			var g = new ResxTranslation(false);
+			Assert.Equal(3, await g.Translate("resx/AppResources.resx", "AppResources.translated.resx", new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null));
 		}
 	}
 }

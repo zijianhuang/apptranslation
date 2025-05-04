@@ -4,6 +4,7 @@ using Fonlow.GoogleTranslateV3;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.Extensions.Logging;
 using Plossum.CommandLine;
+using Fonlow.Translate;
 
 namespace GoogleTranslateXliff
 {

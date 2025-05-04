@@ -1,4 +1,5 @@
 ﻿using Fonlow.GoogleTranslate;
+using Fonlow.MsTranslator;
 using Google.Cloud.Translation.V2;
 using System.Xml;
 using System.Xml.Linq;
@@ -9,12 +10,33 @@ namespace TestXliff
 	public class Xliff12Tests
 	{
 		string apiKey = System.Environment.GetEnvironmentVariable("GoogleTranslateApiKey", EnvironmentVariableTarget.User);
+		string msApiKey = System.Environment.GetEnvironmentVariable("MsTranslatorApiKey", EnvironmentVariableTarget.User);
+		string msRegion = System.Environment.GetEnvironmentVariable("MsTranslatorRegion", EnvironmentVariableTarget.User);
 
 		[Fact]
-		public async Task TestGoogleTranslate(){
+		public async Task TestGoogleTranslate()
+		{
 			var g = new XWithGT2("en", "zh-hans", apiKey);
 			var t = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
 			Assert.Equal("有一些已注册的编号注释在诗中不再存在：<x id=\"PH\" equiv-text=\"numberList\"/> 。您要删除它们吗？", t);
+		}
+
+		[Fact]
+		public async Task TestMsTranslator()
+		{
+			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
+			var t = await g.Translate("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
+			Assert.Equal("诗歌中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>。是否要删除它们？", t);
+		}
+
+		[Fact]
+		public async Task TestMsTranslatorWithArray()
+		{
+			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
+			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "I want to live forever" };
+			var t = await g.Translate(ss);
+			Assert.Equal("诗歌中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>。是否要删除它们？", t[0]);
+			Assert.Equal("我想长生不老", t[1]);
 		}
 
 		[Fact]

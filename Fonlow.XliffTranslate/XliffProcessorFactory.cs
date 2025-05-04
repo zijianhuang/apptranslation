@@ -1,4 +1,5 @@
 ﻿using System.Xml.Linq;
+using Fonlow.Translate;
 
 namespace Fonlow.GoogleTranslate
 {

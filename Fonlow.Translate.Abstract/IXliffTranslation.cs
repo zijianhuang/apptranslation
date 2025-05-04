@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
 
-namespace Fonlow.GoogleTranslate
+namespace Fonlow.Translate
 {
 	/// <summary>
 	/// To combine Xliff 1.2 or 2.0 with a translation engine.

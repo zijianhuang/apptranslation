@@ -4,6 +4,7 @@ using Fonlow.GoogleTranslateV3;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.Extensions.Logging;
 using Plossum.CommandLine;
+using Fonlow.Translate;
 
 namespace GoogleTranslateStrings
 {
@@ -81,7 +82,7 @@ GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:m
 				}
 
 				var st = new StringsTranslate(options.Batch);
-				var c = await st.TranslateStrings(options.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
+				var c = await st.Translate(options.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}

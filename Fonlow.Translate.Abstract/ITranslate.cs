@@ -1,5 +1,5 @@
 ﻿
-namespace Fonlow.GoogleTranslate
+namespace Fonlow.Translate
 {
 	/// <summary>
 	/// Interface to a translation engine like Google Translate v2, v3 or MS Translator etc.

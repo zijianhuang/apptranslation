@@ -1,18 +1,21 @@
-﻿using Fonlow.GoogleTranslate;
+﻿using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
-using Fonlow.Translate;
 
 namespace Fonlow.ResxTranslate
 {
-	public class ResxTranslate : IResxTranslation
+	public class ResxTranslation : IResourceTranslation
 	{
-		public ResxTranslate(bool batchMode)
+		public ResxTranslation()
 		{
-			this.batchMode = batchMode;
 		}
 
-		readonly bool batchMode;
+		bool batchMode;
+
+		public void setBathMode(bool bathMode)
+		{
+			this.batchMode = bathMode;
+		}
 
 		public async Task<int> TranslateResx(XElement resxRoot, ITranslate g, ILogger logger, Action<int, int> progressCallback)
 		{
@@ -89,7 +92,7 @@ namespace Fonlow.ResxTranslate
 			}
 		}
 
-		public async Task<int> TranslateResx(string filePath, string targetFile, ITranslate g, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> Translate(string filePath, string targetFile, ITranslate translator, ILogger logger, Action<int, int> progressCallback)
 		{
 			XDocument xDoc;
 			int c;
@@ -97,11 +100,12 @@ namespace Fonlow.ResxTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var resxRoot = xDoc.Root;
-				c = await TranslateResx(resxRoot, g, logger, progressCallback).ConfigureAwait(false);
+				c = await TranslateResx(resxRoot, translator, logger, progressCallback).ConfigureAwait(false);
 			}
 
 			xDoc.Save(targetFile);
 			return c;
 		}
+
 	}
 }
