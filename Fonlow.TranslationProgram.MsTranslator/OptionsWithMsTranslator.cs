@@ -14,5 +14,8 @@ namespace Fonlow.TranslationProgram.MsTranslator
 		[CommandLineOption(Aliases = "RG", Description = "Region associated with the key. e.g., /AG=australiaeast")]
 		public string Region { get; set; }
 
+		[CommandLineOption(Aliases = "CA", Description = "Category ID from one of your custom translator's projects in the form of WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g., /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT")]
+		public string CategoryId { get; set; }
+
 	}
 }

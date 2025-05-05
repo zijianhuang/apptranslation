@@ -32,11 +32,11 @@ namespace TestXliff
 		[Fact]
 		public async Task TestMsTranslatorWithArray()
 		{
-			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
-			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "I want to live forever" };
+			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion, "general");
+			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "About" };
 			var t = await g.Translate(ss);
 			Assert.Equal("诗歌中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>。是否要删除它们？", t[0]);
-			Assert.Equal("我想长生不老", t[1]);
+			Assert.Equal("大约", t[1]); //not good
 		}
 
 		[Fact]

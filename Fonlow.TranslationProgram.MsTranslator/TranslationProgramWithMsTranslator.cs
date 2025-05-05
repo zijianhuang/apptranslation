@@ -23,7 +23,7 @@ namespace Fonlow.TranslationProgram.MsTranslator
 			{
 				if (!string.IsNullOrEmpty(options.ApiKey))
 				{
-					translator = new XWithMT(options.SourceLang, options.TargetLang, options.ApiKey, options.Region);
+					translator = new XWithMT(options.SourceLang, options.TargetLang, options.ApiKey, options.Region, options.CategoryId);
 				}
 				else
 				{
@@ -37,7 +37,7 @@ namespace Fonlow.TranslationProgram.MsTranslator
 					var apiKey = (File.ReadAllLines(options.ApiKeyFile)).FirstOrDefault();
 					if (!string.IsNullOrEmpty(apiKey))
 					{
-						translator = new XWithMT(options.SourceLang, options.TargetLang, apiKey, options.Region);
+						translator = new XWithMT(options.SourceLang, options.TargetLang, apiKey, options.Region, options.CategoryId);
 					}
 					else
 					{
