@@ -34,7 +34,11 @@ According to [Cloud Translation pricing](https://cloud.google.com/translate/pric
 * You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
 * Cloud Translation also charges for empty queries. If you make a request without any content, Cloud Translation charges one character for the request.
 
-Since a XLIFF translation unit may contain elements of interpolation, simply sending the content to Google Translate with `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
+XLIFF translation units may contain elements of interpolation like:
+ ```xml
+ <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+ ```
+ Simply sending the content to Google Translate with `translate` or `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
 
 For the detailed features, just run the CLI tool without parameters you will see help and examples.
 

@@ -6,11 +6,11 @@ using Fonlow.StringsTranslate;
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate Android String Resource", OptionSeparator = "/", Assignment = ":")]
-	internal class Options : OptionsWithGoogleTranslate
+	internal sealed class Options : OptionsWithGoogleTranslate
 	{
 	}
 
-	internal class TranslationProgramStringsWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	internal sealed class TranslationProgramStringsWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
 		public TranslationProgramStringsWithGoogleTranslate(OptionsWithGoogleTranslate options, ILogger logger) : base(new StringsTranslation(), options, logger)
 		{

@@ -1,19 +1,18 @@
 ﻿using Fonlow.Cli;
 using Fonlow.ResxTranslate;
-using Fonlow.TranslationProgram.Abstract;
 using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":")]
-	internal class Options : OptionsWithGoogleTranslate
+	internal class OptionsForResxWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
 	}
 
 	internal class TranslationProgramResxWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
-		public TranslationProgramResxWithGoogleTranslate(Options options, ILogger logger) : base(new ResxTranslation(), options, logger)
+		public TranslationProgramResxWithGoogleTranslate(OptionsForResxWithGoogleTranslate options, ILogger logger) : base(new ResxTranslation(), options, logger)
 		{
 		}
 

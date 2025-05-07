@@ -2,6 +2,9 @@
 
 namespace Fonlow.TranslationProgram.Abstract
 {
+	/// <summary>
+	/// Common options
+	/// </summary>
 	public class OptionsBase
 	{
 		[CommandLineOption(Aliases = "F", Description = "Source file path")]

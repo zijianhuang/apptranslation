@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace GoogleTranslateStrings
 {
-	internal class Program
+	sealed class Program
 	{
 		static async Task<int> Main(string[] args)
 		{

@@ -8,7 +8,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Fonlow.MsTranslator\Fonlow.MsTranslator.csproj" />
-		<ProjectReference Include="..\Fonlow.Translate.Abstract\Fonlow.Translate.Abstract.csproj" />
 		<ProjectReference Include="..\Fonlow.TranslationProgram.Abstract\Fonlow.TranslationProgram.Abstract.csproj" />
 
 	</ItemGroup>

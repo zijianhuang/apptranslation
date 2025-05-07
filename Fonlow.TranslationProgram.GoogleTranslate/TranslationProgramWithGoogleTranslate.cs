@@ -1,5 +1,4 @@
-﻿using Fonlow.Cli;
-using Fonlow.GoogleTranslate;
+﻿using Fonlow.GoogleTranslate;
 using Fonlow.GoogleTranslateV3;
 using Fonlow.Translate;
 using Fonlow.TranslationProgram.Abstract;
