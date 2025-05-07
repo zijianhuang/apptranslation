@@ -158,6 +158,13 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 
 		}
 
+		/// <summary>
+		/// Callback implementation to show progress
+		/// </summary>
+		/// <param name="current"></param>
+		/// <param name="totalUnits"></param>
+		/// <param name="isAllNew"></param>
+		/// <param name="totalUnitsToTranslate"></param>
 		static void ShowProgress(int current, int totalUnits, bool isAllNew, int totalUnitsToTranslate)
 		{
 			Console.CursorLeft = 10;

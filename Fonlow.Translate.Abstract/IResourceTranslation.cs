@@ -4,9 +4,14 @@ namespace Fonlow.Translate
 {
 	public interface IResourceTranslation
 	{
-		Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int> progressCallback);
+		Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay);
 		void SetBatchMode(bool batchMode);
 		void SetSourceFile(string sourceFile);
 		void SetTargetFile(string targetFile);
+	}
+
+	public interface IProgressDisplay
+	{
+		void Show(int current, int totalUnits, bool isAllNew = false, int totalUnitsToTranslate=0);
 	}
 }

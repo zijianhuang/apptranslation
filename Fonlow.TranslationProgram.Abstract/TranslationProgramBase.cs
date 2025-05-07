@@ -17,9 +17,13 @@ namespace Fonlow.TranslationProgram.Abstract
 		readonly protected ILogger logger;
 		readonly IResourceTranslation resourceTranslation;
 
+		IProgressDisplay progressDisplay;
+
 		public abstract void DisplayExamples();
 
 		public abstract ITranslate CreateTranslator(out int errorCode);
+
+		protected abstract IProgressDisplay CreateProgressDisplay();
 
 		public async Task<int> Execute(string[] args)
 		{
@@ -67,7 +71,7 @@ namespace Fonlow.TranslationProgram.Abstract
 				resourceTranslation.SetBatchMode(optionsBase.Batch);
 				resourceTranslation.SetSourceFile(optionsBase.SourceFile);
 				resourceTranslation.SetTargetFile(targetFile);
-				var c = await resourceTranslation.Translate(translator, logger, ShowProgress).ConfigureAwait(false);
+				var c = await resourceTranslation.Translate(translator, logger, CreateProgressDisplay()).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}
@@ -86,11 +90,6 @@ namespace Fonlow.TranslationProgram.Abstract
 
 		protected abstract int HandleTranslationEngineException(Exception ex);
 
-		static void ShowProgress(int current, int totalUnits)
-		{
-			Console.CursorLeft = 10;
-			Console.Write($"{current} / {totalUnits}");
-		}
 
 	}
 

@@ -2,6 +2,8 @@
 using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 using Fonlow.StringsTranslate;
+using Fonlow.Translate;
+using Fonlow.Translate.Abstract;
 
 namespace Fonlow.TranslationProgram
 {
@@ -26,6 +28,11 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 "
 			);
+		}
+
+		protected override IProgressDisplay CreateProgressDisplay()
+		{
+			return new ResourceProgressDisplay();
 		}
 	}
 

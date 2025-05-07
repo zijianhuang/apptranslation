@@ -30,7 +30,7 @@ namespace Fonlow.ResxTranslate
 		}
 
 
-		public async Task<int> TranslateResx(XElement resxRoot, ITranslate translator, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> TranslateResx(XElement resxRoot, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 //#pragma warning disable CA2264
 			ArgumentNullException.ThrowIfNull(resxRoot);
@@ -66,7 +66,7 @@ namespace Fonlow.ResxTranslate
 					{
 						valueNode.Value = await translator.Translate(valueNode.Value).ConfigureAwait(false);
 						translatedCount++;
-						progressCallback?.Invoke(translatedCount, total);
+						progressDisplay?.Show(translatedCount, total);
 					}
 				}
 
@@ -99,13 +99,13 @@ namespace Fonlow.ResxTranslate
 					}
 				}
 
-				progressCallback?.Invoke(translatedCount, total);
+				progressDisplay?.Show(translatedCount, total);
 				return translatedCount;
 
 			}
 		}
 
-		public async Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			XDocument xDoc;
 			int c;
@@ -113,7 +113,7 @@ namespace Fonlow.ResxTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var resxRoot = xDoc.Root;
-				c = await TranslateResx(resxRoot, translator, logger, progressCallback).ConfigureAwait(false);
+				c = await TranslateResx(resxRoot, translator, logger, progressDisplay).ConfigureAwait(false);
 			}
 
 			xDoc.Save(targetFile);

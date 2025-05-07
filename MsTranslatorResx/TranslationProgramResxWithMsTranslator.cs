@@ -1,5 +1,7 @@
 ﻿using Fonlow.Cli;
 using Fonlow.ResxTranslate;
+using Fonlow.Translate.Abstract;
+using Fonlow.Translate;
 using Fonlow.TranslationProgram.Abstract;
 using Fonlow.TranslationProgram.MsTranslator;
 using Microsoft.Extensions.Logging;
@@ -26,6 +28,11 @@ MsTranslatorResx.exe /AK=MsTranslatorApiKey /SL=en /TL=ja /F:strings.xml /TF:App
 MsTranslatorResx.exe /AK=MsTranslatorApiKey /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
 "
 			);
+		}
+
+		protected override IProgressDisplay CreateProgressDisplay()
+		{
+			return new ResourceProgressDisplay();
 		}
 	}
 

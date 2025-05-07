@@ -1,5 +1,7 @@
 ﻿using Fonlow.Cli;
 using Fonlow.ResxTranslate;
+using Fonlow.Translate;
+using Fonlow.Translate.Abstract;
 using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
@@ -26,6 +28,11 @@ GoogleTranslateResx.exe /AK=YourGoogleTranslateV2ApiKey /F:AppResources.resx /TF
 GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppResources.es.resx ---- Use Google Cloud Translate V3 and batch mode.
 "
 			);
+		}
+
+		protected override IProgressDisplay CreateProgressDisplay()
+		{
+			return new ResourceProgressDisplay();
 		}
 	}
 

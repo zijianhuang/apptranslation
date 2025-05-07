@@ -29,7 +29,7 @@ namespace Fonlow.StringsTranslate
 			this.targetFile = targetFile;
 		}
 
-		public async Task<int> Translate(ITranslate g, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> Translate(ITranslate g, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			var reader = new StringsRW();
 			reader.Load(sourceFile);
@@ -78,7 +78,7 @@ namespace Fonlow.StringsTranslate
 					}
 
 					translatedCount++;
-					progressCallback?.Invoke(translatedCount, totalUnits);
+					progressDisplay?.Show(translatedCount, totalUnits);
 				}
 
 				return translatedCount;
@@ -106,7 +106,7 @@ namespace Fonlow.StringsTranslate
 					}
 				}
 
-				progressCallback?.Invoke(translatedCount, totalUnits);
+				progressDisplay?.Show(translatedCount, totalUnits);
 				return translatedCount;
 			}
 
