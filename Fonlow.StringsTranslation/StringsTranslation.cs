@@ -11,16 +11,28 @@ namespace Fonlow.StringsTranslate
 		}
 
 		bool batchMode;
+		string sourceFile;
+		string targetFile;
 
 		public void SetBatchMode(bool batchMode)
 		{
 			this.batchMode = batchMode;
 		}
 
-		public async Task<int> Translate(string filePath, string targetFile, ITranslate g, ILogger logger, Action<int, int> progressCallback)
+		public void SetSourceFile(string sourceFile)
+		{
+			this.sourceFile = sourceFile;
+		}
+
+		public void SetTargetFile(string targetFile)
+		{
+			this.targetFile = targetFile;
+		}
+
+		public async Task<int> Translate(ITranslate g, ILogger logger, Action<int, int> progressCallback)
 		{
 			var reader = new StringsRW();
-			reader.Load(filePath);
+			reader.Load(sourceFile);
 
 			var tranUnits = new List<resourcesString>(reader.GetStrings());
 			var totalUnits = tranUnits.Count;

@@ -31,11 +31,11 @@ namespace Fonlow.GoogleTranslate
 
 				if (version == "1.2")
 				{
-					return new Xliff12Translate(batchMode);
+					return new Xliff12Translate();
 				}
 				else if (version == "2.0")
 				{
-					return new Xliff20Translate(batchMode);
+					return new Xliff20Translate();
 				}
 
 				throw new ArgumentException("Expect either XLIFF v1.2 or v2.0");

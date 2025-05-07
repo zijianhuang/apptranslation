@@ -16,7 +16,6 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 
 		readonly OptionsWithGoogleTranslate options;
 
-
 		public override ITranslate CreateTranslator(out int errorCode)
 		{
 			ITranslate translator = null;

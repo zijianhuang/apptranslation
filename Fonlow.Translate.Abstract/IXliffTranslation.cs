@@ -8,7 +8,14 @@ namespace Fonlow.Translate
 	/// </summary>
 	public interface IXliffTranslation
 	{
-		Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback);
-		Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback);
+		Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback);
+		Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback);
+		void SetBatchMode(bool batchMode);
+		void SetSourceFile(string sourceFile);
+		void SetTargetFile(string targetFile);
+
+		void SetForStates(string[] forStates);
+		void SetUnchangeState(bool unchangeState);
+
 	}
 }

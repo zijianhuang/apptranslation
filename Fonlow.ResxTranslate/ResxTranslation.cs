@@ -11,17 +11,30 @@ namespace Fonlow.ResxTranslate
 		}
 
 		bool batchMode;
+		string sourceFile;
+		string targetFile;
 
-		public void SetBatchMode(bool bathMode)
+		public void SetBatchMode(bool batchMode)
 		{
-			this.batchMode = bathMode;
+			this.batchMode = batchMode;
 		}
 
-		public async Task<int> TranslateResx(XElement resxRoot, ITranslate g, ILogger logger, Action<int, int> progressCallback)
+		public void SetSourceFile(string sourceFile)
+		{
+			this.sourceFile = sourceFile;
+		}
+
+		public void SetTargetFile(string targetFile)
+		{
+			this.targetFile = targetFile;
+		}
+
+
+		public async Task<int> TranslateResx(XElement resxRoot, ITranslate translator, ILogger logger, Action<int, int> progressCallback)
 		{
 //#pragma warning disable CA2264
 			ArgumentNullException.ThrowIfNull(resxRoot);
-			ArgumentNullException.ThrowIfNull(g);
+			ArgumentNullException.ThrowIfNull(translator);
 			ArgumentNullException.ThrowIfNull(logger);
 //#pragma warning restore CA2264
 
@@ -51,7 +64,7 @@ namespace Fonlow.ResxTranslate
 					var valueNode = node.Element("value");
 					if (valueNode != null)
 					{
-						valueNode.Value = await g.Translate(valueNode.Value).ConfigureAwait(false);
+						valueNode.Value = await translator.Translate(valueNode.Value).ConfigureAwait(false);
 						translatedCount++;
 						progressCallback?.Invoke(translatedCount, total);
 					}
@@ -73,7 +86,7 @@ namespace Fonlow.ResxTranslate
 					return 0;
 				}
 
-				var translatedStrings = await g.Translate(strings).ConfigureAwait(false);
+				var translatedStrings = await translator.Translate(strings).ConfigureAwait(false);
 				int translatedIndex = 0;
 				foreach (var n in someNodes)
 				{
@@ -92,11 +105,11 @@ namespace Fonlow.ResxTranslate
 			}
 		}
 
-		public async Task<int> Translate(string filePath, string targetFile, ITranslate translator, ILogger logger, Action<int, int> progressCallback)
+		public async Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int> progressCallback)
 		{
 			XDocument xDoc;
 			int c;
-			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			using (FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
 				xDoc = XDocument.Load(fs);
 				var resxRoot = xDoc.Root;
@@ -106,6 +119,5 @@ namespace Fonlow.ResxTranslate
 			xDoc.Save(targetFile);
 			return c;
 		}
-
 	}
 }

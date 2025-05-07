@@ -29,8 +29,8 @@ namespace TestResx
 		{
 			var xDoc = XDocument.Load(filePath);
 			var xliffRoot = xDoc.Root;
-			var wg = new Xliff12Translate(false);
-			var c = await wg.TranslateXliff(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+			var wg = new Xliff12Translate();
+			var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
 			xDoc.Save(filePath);
 			return c;
 		}

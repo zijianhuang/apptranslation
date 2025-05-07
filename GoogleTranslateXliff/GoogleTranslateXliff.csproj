@@ -23,6 +23,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Fonlow.GoogleTranslateV3\Fonlow.GoogleTranslateV3.csproj" />
 		<ProjectReference Include="..\Fonlow.GoogleTranslate\Fonlow.GoogleTranslateV2.csproj" />
+		<ProjectReference Include="..\Fonlow.TranslationProgram.GoogleTranslate\Fonlow.TranslationProgram.GoogleTranslate.csproj" />
 		<ProjectReference Include="..\Fonlow.XliffTranslate\Fonlow.XliffTranslate.csproj" />
 	</ItemGroup>
 

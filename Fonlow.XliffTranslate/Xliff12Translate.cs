@@ -9,14 +9,41 @@ namespace Fonlow.GoogleTranslate
 	/// </summary>
 	public class Xliff12Translate : IXliffTranslation
 	{
-		public Xliff12Translate(bool batchMode)
+		public Xliff12Translate()
+		{
+		}
+
+		bool batchMode;
+		string sourceFile;
+		string targetFile;
+		string[] forStates;
+		bool unchangeState;
+		public void SetBatchMode(bool batchMode)
 		{
 			this.batchMode = batchMode;
 		}
 
-		readonly bool batchMode;
+		public void SetSourceFile(string sourceFile)
+		{
+			this.sourceFile = sourceFile;
+		}
 
-		public async Task<int> TranslateXliff(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		public void SetTargetFile(string targetFile)
+		{
+			this.targetFile = targetFile;
+		}
+
+		public void SetForStates(string[] forStates)
+		{
+			this.forStates = forStates;
+		}
+
+		public void SetUnchangeState(bool unchangeState)
+		{
+			this.unchangeState = unchangeState;
+		}
+
+		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -36,15 +63,15 @@ namespace Fonlow.GoogleTranslate
 			return total;
 		}
 
-		public async Task<int> TranslateXliff(string filePath, string targetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		public async Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
 		{
 			XDocument xDoc;
 			int c;
-			using (FileStream fs = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			using (FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				c = await TranslateXliff(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
 			}
 
 			if (c > 0)
@@ -55,7 +82,7 @@ namespace Fonlow.GoogleTranslate
 			return c;
 		}
 
-		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<bool, int, int, int> progressCallback)
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
 		{
 			var fileBody = fileElement.Element(ns + "body");
 
@@ -208,7 +235,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(isAllNew, countForUnit, totalUnits, totalUnitsToTranslate);
+						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 					}
 				}
 
@@ -308,7 +335,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(isAllNew, countForUnit, totalUnits, totalUnitsToTranslate);
+						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 					}
 				}
 

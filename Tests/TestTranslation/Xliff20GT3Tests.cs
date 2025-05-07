@@ -18,10 +18,10 @@ namespace TestXliff
 			{
 				var xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				var wg = new Xliff20Translate(false);
+				var wg = new Xliff20Translate();
 				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
-				var c = await wg.TranslateXliff(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -54,10 +54,11 @@ namespace TestXliff
 			{
 				var xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				var wg = new Xliff20Translate(true);
+				var wg = new Xliff20Translate();
+				wg.SetBatchMode(true);
 				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
-				var c = await wg.TranslateXliff(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();

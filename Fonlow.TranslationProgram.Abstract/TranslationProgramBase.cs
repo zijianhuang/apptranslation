@@ -65,7 +65,9 @@ namespace Fonlow.TranslationProgram.Abstract
 				}
 
 				resourceTranslation.SetBatchMode(optionsBase.Batch);
-				var c = await resourceTranslation.Translate(optionsBase.SourceFile, targetFile, translator, logger, ShowProgress).ConfigureAwait(false);
+				resourceTranslation.SetSourceFile(optionsBase.SourceFile);
+				resourceTranslation.SetTargetFile(targetFile);
+				var c = await resourceTranslation.Translate(translator, logger, ShowProgress).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}
