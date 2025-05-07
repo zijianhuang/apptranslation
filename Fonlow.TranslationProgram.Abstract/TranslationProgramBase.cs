@@ -13,9 +13,9 @@ namespace Fonlow.TranslationProgram.Abstract
 			this.logger = logger;
 		}
 
-		readonly OptionsBase optionsBase;
+		protected readonly OptionsBase optionsBase;
 		readonly protected ILogger logger;
-		readonly IResourceTranslation resourceTranslation;
+		protected readonly IResourceTranslation resourceTranslation;
 
 		IProgressDisplay progressDisplay;
 
@@ -25,6 +25,13 @@ namespace Fonlow.TranslationProgram.Abstract
 
 		protected abstract IProgressDisplay CreateProgressDisplay();
 
+		protected abstract void InitializeResourceTranslation();
+
+		/// <summary>
+		/// Main execute function of console app
+		/// </summary>
+		/// <param name="args"></param>
+		/// <returns></returns>
 		public async Task<int> Execute(string[] args)
 		{
 			var parser = new CommandLineParser(optionsBase);
@@ -58,8 +65,6 @@ namespace Fonlow.TranslationProgram.Abstract
 				return 11;
 			}
 
-			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
-
 			try
 			{
 				ITranslate translator = CreateTranslator(out int errorCode);
@@ -68,9 +73,7 @@ namespace Fonlow.TranslationProgram.Abstract
 					return errorCode;
 				}
 
-				resourceTranslation.SetBatchMode(optionsBase.Batch);
-				resourceTranslation.SetSourceFile(optionsBase.SourceFile);
-				resourceTranslation.SetTargetFile(targetFile);
+				InitializeResourceTranslation();
 				var c = await resourceTranslation.Translate(translator, logger, CreateProgressDisplay()).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");

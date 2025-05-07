@@ -44,7 +44,7 @@ namespace Fonlow.GoogleTranslate
 		}
 
 
-		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "2.0")
@@ -81,14 +81,14 @@ namespace Fonlow.GoogleTranslate
 			var total = 0;
 			foreach (var fileElement in fileElements)
 			{
-				var c = await TranslateXliffFileElement(fileElement, ns, toCreateTargetFile, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				var c = await TranslateXliffFileElement(fileElement, ns, toCreateTargetFile, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
 				total += c;
 			}
 
 			return total;
 		}
 
-		public async Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			XDocument xDoc;
 			int c;
@@ -96,7 +96,7 @@ namespace Fonlow.GoogleTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
 			}
 
 			if (c > 0)
@@ -107,7 +107,7 @@ namespace Fonlow.GoogleTranslate
 			return c;
 		}
 
-		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, bool toCreateTargetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, bool toCreateTargetFile, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			var units = fileElement.Elements(ns + "unit").ToList(); //buffering may be slower and more memory usage, however, better UX, since user get count first.
 			var firstGroup = fileElement.Element(ns + "group"); //handle one group for now
@@ -233,7 +233,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
+						progressDisplay?.Show(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 
 					}
 				}
@@ -334,7 +334,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
+						progressDisplay?.Show(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 
 					}
 				}

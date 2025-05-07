@@ -1,8 +1,6 @@
 ﻿using Fonlow.Cli;
 using Fonlow.ResxTranslate;
-using Fonlow.Translate.Abstract;
 using Fonlow.Translate;
-using Fonlow.TranslationProgram.Abstract;
 using Fonlow.TranslationProgram.MsTranslator;
 using Microsoft.Extensions.Logging;
 
@@ -33,6 +31,14 @@ MsTranslatorResx.exe /AK=MsTranslatorApiKey /F:AppResources.resx /TF:AppResource
 		protected override IProgressDisplay CreateProgressDisplay()
 		{
 			return new ResourceProgressDisplay();
+		}
+
+		protected override void InitializeResourceTranslation()
+		{
+			resourceTranslation.SetBatchMode(optionsBase.Batch);
+			resourceTranslation.SetSourceFile(optionsBase.SourceFile);
+			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
+			resourceTranslation.SetTargetFile(targetFile);
 		}
 	}
 

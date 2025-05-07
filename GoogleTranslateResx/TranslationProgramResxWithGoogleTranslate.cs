@@ -1,7 +1,7 @@
 ﻿using Fonlow.Cli;
 using Fonlow.ResxTranslate;
 using Fonlow.Translate;
-using Fonlow.Translate.Abstract;
+using Fonlow.TranslationProgram.Abstract;
 using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
@@ -33,6 +33,14 @@ GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppR
 		protected override IProgressDisplay CreateProgressDisplay()
 		{
 			return new ResourceProgressDisplay();
+		}
+
+		protected override void InitializeResourceTranslation()
+		{
+			resourceTranslation.SetBatchMode(optionsBase.Batch);
+			resourceTranslation.SetSourceFile(optionsBase.SourceFile);
+			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
+			resourceTranslation.SetTargetFile(targetFile);
 		}
 	}
 

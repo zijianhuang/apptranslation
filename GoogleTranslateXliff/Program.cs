@@ -119,7 +119,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 				xliffProcessor.SetTargetFile(targetFile);
 				xliffProcessor.SetForStates(options.ForStates);
 				xliffProcessor.SetUnchangeState(options.NotChangeState);
-				var c = await xliffProcessor.Translate(translator, logger, ShowProgress).ConfigureAwait(false);
+				var c = await xliffProcessor.Translate(translator, logger, new TmProgressDisplay()).ConfigureAwait(false);
 				Console.WriteLine();
 				Console.WriteLine($"Total translated: {c}");
 			}

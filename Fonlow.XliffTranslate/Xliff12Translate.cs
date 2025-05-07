@@ -43,7 +43,7 @@ namespace Fonlow.GoogleTranslate
 			this.unchangeState = unchangeState;
 		}
 
-		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -57,13 +57,13 @@ namespace Fonlow.GoogleTranslate
 			var total = 0;
 			foreach (var fileElement in fileElements)
 			{
-				var c = await TranslateXliffFileElement(fileElement, ns, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				var c = await TranslateXliffFileElement(fileElement, ns, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
 				total += c;
 			}
 			return total;
 		}
 
-		public async Task<int> Translate(ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			XDocument xDoc;
 			int c;
@@ -71,7 +71,7 @@ namespace Fonlow.GoogleTranslate
 			{
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressCallback).ConfigureAwait(false);
+				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
 			}
 
 			if (c > 0)
@@ -82,7 +82,7 @@ namespace Fonlow.GoogleTranslate
 			return c;
 		}
 
-		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, Action<int, int, bool, int> progressCallback)
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			var fileBody = fileElement.Element(ns + "body");
 
@@ -235,7 +235,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
+						progressDisplay?.Show(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 					}
 				}
 
@@ -335,7 +335,7 @@ namespace Fonlow.GoogleTranslate
 
 						countForUnit++;
 
-						progressCallback?.Invoke(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
+						progressDisplay?.Show(countForUnit, totalUnits, isAllNew, totalUnitsToTranslate);
 					}
 				}
 
