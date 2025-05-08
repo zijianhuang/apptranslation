@@ -1,4 +1,5 @@
-﻿using Fonlow.Cli;
+﻿using Antlr4.Runtime.Misc;
+using Fonlow.Cli;
 using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
 
@@ -17,10 +18,6 @@ namespace Fonlow.TranslationProgram.Abstract
 		readonly protected ILogger logger;
 		protected readonly IResourceTranslation resourceTranslation;
 
-		IProgressDisplay progressDisplay;
-
-		public abstract void DisplayExamples();
-
 		public abstract ITranslate CreateTranslator(out int errorCode);
 
 		protected abstract IProgressDisplay CreateProgressDisplay();
@@ -32,39 +29,8 @@ namespace Fonlow.TranslationProgram.Abstract
 		/// </summary>
 		/// <param name="args"></param>
 		/// <returns></returns>
-		public async Task<int> Execute(string[] args)
+		public async Task<int> Execute()
 		{
-			var parser = new CommandLineParser(optionsBase);
-			Console.WriteLine(parser.ApplicationDescription);
-
-			parser.Parse();
-			if (args.Length == 0 || optionsBase.Help)
-			{
-				Console.WriteLine(parser.UsageInfo.ToString());
-				DisplayExamples();
-
-				return 0;
-			}
-
-			if (parser.HasErrors)
-			{
-				logger.LogWarning(parser.ErrorMessage);
-				Console.WriteLine(parser.UsageInfo.GetOptionsAsString());
-				return 1;
-			}
-
-			if (string.IsNullOrEmpty(optionsBase.SourceFile))
-			{
-				logger.LogWarning("Need SoureFile");
-				return 10;
-			}
-
-			if (!Path.Exists(optionsBase.SourceFile))
-			{
-				logger.LogWarning($"{optionsBase.SourceFile} NOT exists");
-				return 11;
-			}
-
 			try
 			{
 				ITranslate translator = CreateTranslator(out int errorCode);
@@ -94,6 +60,45 @@ namespace Fonlow.TranslationProgram.Abstract
 		protected abstract int HandleTranslationEngineException(Exception ex);
 
 
+	}
+
+	public static class CliOptionsParser
+	{
+		public static int Parse(string[] args, OptionsBase optionsBase, Action displayExamples, ILogger logger)
+		{
+			var parser = new CommandLineParser(optionsBase);
+			Console.WriteLine(parser.ApplicationDescription);
+
+			parser.Parse();
+			if (args.Length == 0 || optionsBase.Help)
+			{
+				Console.WriteLine(parser.UsageInfo.ToString());
+				displayExamples?.Invoke();
+
+				return 1;
+			}
+
+			if (parser.HasErrors)
+			{
+				logger.LogWarning(parser.ErrorMessage);
+				Console.WriteLine(parser.UsageInfo.GetOptionsAsString());
+				return 2;
+			}
+
+			if (string.IsNullOrEmpty(optionsBase.SourceFile))
+			{
+				logger.LogWarning("Need SoureFile");
+				return 10;
+			}
+
+			if (!Path.Exists(optionsBase.SourceFile))
+			{
+				logger.LogWarning($"{optionsBase.SourceFile} NOT exists");
+				return 11;
+			}
+
+			return 0;
+		}
 	}
 
 }

@@ -11,6 +11,7 @@ namespace Fonlow.Translate
 		/// <param name="logger"></param>
 		/// <param name="progressDisplay"></param>
 		/// <returns></returns>
+		//Task<int> Translate(ResourceTranslationFactory resourceTranslationFactory, ILogger logger, IProgressDisplay progressDisplay);
 		Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay);
 		void SetBatchMode(bool batchMode);
 		void SetSourceFile(string sourceFile);
@@ -19,6 +20,6 @@ namespace Fonlow.Translate
 
 	public interface IProgressDisplay
 	{
-		void Show(int current, int totalUnits, bool isAllNew = false, int totalUnitsToTranslate=0);
+		void Show(int current, int totalUnits, bool isAllNew = false, int totalUnitsToTranslate = 0);
 	}
 }
