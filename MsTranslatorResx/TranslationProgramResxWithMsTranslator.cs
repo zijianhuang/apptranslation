@@ -7,11 +7,11 @@ using Microsoft.Extensions.Logging;
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Microsoft Azure AI Translator to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":")]
-	internal class Options : OptionsWithMsTranslator
+	sealed internal class Options : OptionsWithMsTranslator
 	{
 	}
 
-	internal class TranslationProgramResxWithMsTranslator : TranslationProgramWithMsTranslator
+	sealed internal class TranslationProgramResxWithMsTranslator : TranslationProgramWithMsTranslator
 	{
 		public TranslationProgramResxWithMsTranslator(Options options, ILogger logger) : base(new ResxTranslation(), options, logger)
 		{

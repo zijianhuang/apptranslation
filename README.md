@@ -1,4 +1,36 @@
-# Background
+# Overview
+
+Batch translation of resource files through CLI tools with machine translation engines.
+
+**Supported Translation Resource Formats:**
+* XLIFF 1.2
+* XLIFF 2.0
+* Microsoft ResX
+* Android String Resource
+
+**Supported Translation Engines:**
+* Google Translate v2
+* Google Cloud Translation v3
+* Microsoft Azure AI Translator
+
+**Remarks:**
+* It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication. Or you study the documentations of respective engines.
+
+# Tools
+According to [Google Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
+
+* You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
+* Cloud Translation also charges for empty queries. If you make a request without any content, Cloud Translation charges one character for the request.
+
+XLIFF translation units may contain elements of interpolation like:
+ ```xml
+ <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+ ```
+ Simply sending the content to Google Translate with `translate` or `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
+
+For the detailed features, just run the CLI tool without parameters you will see help and examples.
+
+## Background
 For full-stack software developers, there are wide variety of tools like:
 * PO Editor
 * ResX Resource Manager
@@ -13,34 +45,6 @@ As of 2020s, most tools you could find are cloud based, depending to another clo
 
 Additionally, if you prefer batch processing, the CLI tools included in this project, developed by a full-stack software developer for full-stack software developers, may be appealing to you.
 
-# Overview
-
-**Supported Translation Resource Formats:**
-* XLIFF 1.2
-* XLIFF 2.0
-* Microsoft ResX
-* Android String Resource
-
-**Supported Translation Engines:**
-* Google Translate v2
-* Google Cloud Translation v3
-
-**Remarks:**
-* It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication.
-
-# Tools
-According to [Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
-
-* You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
-* Cloud Translation also charges for empty queries. If you make a request without any content, Cloud Translation charges one character for the request.
-
-XLIFF translation units may contain elements of interpolation like:
- ```xml
- <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
- ```
- Simply sending the content to Google Translate with `translate` or `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
-
-For the detailed features, just run the CLI tool without parameters you will see help and examples.
 
 ## GoogleTranslateXliff.exe
 
@@ -144,6 +148,97 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 ```
 
+## MsTranslatorXliff.exe
+
+```
+MsTranslatorXliff.exe
+Use Microsoft Azure AI Translator to translate XLIFF v1.2 or v2.0 file.
+MsTranslatorXliff  version 1.0.0.0
+
+
+   /ForStates, /SS     For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g.,
+                       /SS="initial" "translated"
+   /NotChangeState,    Not to change the state of translation unit to translated after translation.
+   /NCS
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of
+                       WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g.,
+                       /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F=myUiMessages.es.xlf ---- For in-place translation.
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
+```
+
+## MsTranslatorResx.exe
+
+```
+MsTranslatorResx.exe
+Use Microsoft Azure AI Translator to translate Microsoft ResX
+MsTranslatorResx  version 1.0.0.0
+
+
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of
+                       WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g.,
+                       /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.resx ---- For in-place translation when AppResources.zh-hant.resx is not yet translated
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
+```
+
+## MsTranslatorStrings.exe
+
+```
+MsTranslatorStrings.exe
+Use Microsoft Azure AI Translator to translate Android String Resource
+MsTranslatorStrings  version 1.0.0.0
+
+
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of
+                       WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g.,
+                       /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.xml ---- For in-place translation when AppResources.zh-hant.xml is not yet translated
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.xml ---- from the source locale file to a new target file in Japanese
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:AppResources.xml /TF:AppResources.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
+```
+
 ## XliffResXConverter.exe
 
 This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Together with GoogleTranslateXliff.exe and some PowerShell scripts, you may establish seamless SDLC and Continuous Integration. Check [README](XliffResXConverter/README.md) for details.
@@ -159,6 +254,10 @@ This repository does not release binary builds generally. You may check-out the 
 ![Build Scripts](Docs/Articles/Screenshots/BuildScripts.png)
 
 ![MacOS run](Docs/Articles//Screenshots//MacStart.png)
+
+## Contributing
+
+Please check [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # Continuous Integration
 

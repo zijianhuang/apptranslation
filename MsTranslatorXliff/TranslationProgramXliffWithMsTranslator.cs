@@ -8,7 +8,7 @@ using Plossum.CommandLine;
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Microsoft Azure AI Translator to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
-	internal class OptionsForXliffWithMsTranslator : OptionsWithMsTranslator
+	sealed internal class OptionsForXliffWithMsTranslator : OptionsWithMsTranslator
 	{
 		[CommandLineOption(Aliases = "SS", Description = "For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS=\"initial\" \"translated\"")]
 		public string[] ForStates { get; set; } = [];
@@ -18,7 +18,7 @@ namespace Fonlow.TranslationProgram
 
 	}
 
-	internal class TranslationProgramXliffWithMsTranslator : TranslationProgramWithMsTranslator
+	sealed internal class TranslationProgramXliffWithMsTranslator : TranslationProgramWithMsTranslator
 	{
 		public TranslationProgramXliffWithMsTranslator(OptionsForXliffWithMsTranslator options, ILogger logger) : base(CreateXliffProcessor(options), options, logger)
 		{

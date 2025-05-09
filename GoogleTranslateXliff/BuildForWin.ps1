@@ -1,7 +1,5 @@
-# after buildRelease of the sln
 Set-Location $PSScriptRoot
-$target="../Release/Win"
-$mainDir="bin/Release/net9.0/"
+$target="../Release/GoogleTranslateXliff_Win"
 
 Remove-Item -Recurse $target*
 

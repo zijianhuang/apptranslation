@@ -1,7 +1,5 @@
-# after buildRelease of the sln
 Set-Location $PSScriptRoot
-$target="../Release/WinStrings_MacSelfContained"
-$mainDir="bin/Release/net9.0/"
+$target="../Release/GoogleTranslateStrings_MacSelfContained"
 
 Remove-Item -Recurse $target*
 

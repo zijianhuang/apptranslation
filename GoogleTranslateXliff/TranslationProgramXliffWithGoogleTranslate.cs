@@ -8,7 +8,7 @@ using Plossum.CommandLine;
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
-	internal class OptionsForXliffWithGoogleTranslate : OptionsWithGoogleTranslate
+	sealed internal class OptionsForXliffWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
 		[CommandLineOption(Aliases = "SS", Description = "For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS=\"initial\" \"translated\"")]
 		public string[] ForStates { get; set; } = [];
@@ -18,7 +18,7 @@ namespace Fonlow.TranslationProgram
 
 	}
 
-	internal class TranslationProgramXliffWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	sealed internal class TranslationProgramXliffWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
 		public TranslationProgramXliffWithGoogleTranslate(OptionsForXliffWithGoogleTranslate options, ILogger logger) : base(CreateXliffProcessor(options), options, logger)
 		{

@@ -1,5 +1,5 @@
 Set-Location $PSScriptRoot
-$target="../Release/GoogleTranslateStrings_Win"
+$target="../Release/MsTranslatorStrings_Win"
 
 Remove-Item -Recurse $target*
 

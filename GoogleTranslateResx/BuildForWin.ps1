@@ -1,4 +1,3 @@
-# after buildRelease of the sln
 Set-Location $PSScriptRoot
 $target="../Release/GoogleTranslateResx_Win"
 

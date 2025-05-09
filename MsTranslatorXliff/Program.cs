@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MsTranslatorXliff
 {
-	class Program
+	sealed class Program
 	{
 		static async Task<int> Main(string[] args)
 		{

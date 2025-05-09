@@ -1,7 +1,5 @@
-# after buildRelease of the sln
 Set-Location $PSScriptRoot
-$target="../Release/Linux_SelfContained"
-$mainDir="bin/Release/net9.0/"
+$target="../Release/GoogleTranslateXliff_LinuxSelfContained"
 
 Remove-Item -Recurse $target*
 
