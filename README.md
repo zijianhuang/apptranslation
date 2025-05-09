@@ -16,20 +16,6 @@ Batch translation of resource files through CLI tools with machine translation e
 **Remarks:**
 * It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication. Or you study the documentations of respective engines.
 
-# Tools
-According to [Google Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
-
-* You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
-* Cloud Translation also charges for empty queries. If you make a request without any content, Cloud Translation charges one character for the request.
-
-XLIFF translation units may contain elements of interpolation like:
- ```xml
- <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
- ```
- Simply sending the content to Google Translate with `translate` or `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
-
-For the detailed features, just run the CLI tool without parameters you will see help and examples.
-
 ## Background
 For full-stack software developers, there are wide variety of tools like:
 * PO Editor
@@ -45,6 +31,19 @@ As of 2020s, most tools you could find are cloud based, depending to another clo
 
 Additionally, if you prefer batch processing, the CLI tools included in this project, developed by a full-stack software developer for full-stack software developers, may be appealing to you.
 
+# Tools
+According to [Google Cloud Translation pricing](https://cloud.google.com/translate/pricing#charged-characters):
+
+* You are charged for all characters that you include in a Cloud Translation request, even untranslated characters. This includes, for example, whitespace characters. If you translate `<p>こんにちは</p>` to English, it counts as 12 characters for the purposes of billing.
+* Cloud Translation also charges for empty queries. If you make a request without any content, Cloud Translation charges one character for the request.
+
+XLIFF translation units may contain elements of interpolation like:
+ ```xml
+ <source>File size is <ph id="0" equiv="PH" disp="ByteFormatPipe.formatBytes(this.file.size)"/>, and it may take sometime to upload.</source>
+ ```
+ Simply sending the content to Google Translate with `translate` or `translateHtml` may trigger unnecessary code points and charging, the core logic of these tools sends only the plain text content to save money.
+
+For the detailed features, just run the CLI tool without parameters you will see help and examples.
 
 ## GoogleTranslateXliff.exe
 
