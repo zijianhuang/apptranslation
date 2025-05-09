@@ -9,8 +9,6 @@
 		<Copyright>Copyright © Zijian Huang 2018-$([System.DateTime]::Now.Year)</Copyright>
 		<Product>XLIFF Translator with Google Translate</Product>
 		<Description>CLI to translate XLIFF v1.2 or v2.0 with Google Translate v2 or v3</Description>
-		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
 		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>

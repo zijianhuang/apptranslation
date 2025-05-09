@@ -7,11 +7,11 @@ using Microsoft.Extensions.Logging;
 namespace Fonlow.TranslationProgram
 {
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate Microsoft ResX", OptionSeparator = "/", Assignment = ":")]
-	internal class OptionsForResxWithGoogleTranslate : OptionsWithGoogleTranslate
+	internal sealed class OptionsForResxWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
 	}
 
-	internal class TranslationProgramResxWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	internal sealed class TranslationProgramResxWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
 		public TranslationProgramResxWithGoogleTranslate(OptionsForResxWithGoogleTranslate options, ILogger logger) : base(new ResxTranslation(), options, logger)
 		{

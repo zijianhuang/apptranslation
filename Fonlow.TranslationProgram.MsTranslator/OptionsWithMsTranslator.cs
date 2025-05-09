@@ -11,7 +11,7 @@ namespace Fonlow.TranslationProgram.MsTranslator
 		[CommandLineOption(Aliases = "AKF", Description = "MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt")]
 		public string ApiKeyFile { get; set; }
 
-		[CommandLineOption(Aliases = "RG", Description = "Region associated with the key. e.g., /AG=australiaeast")]
+		[CommandLineOption(Aliases = "RG", Description = "Region associated with the key. Always required. e.g., /RG=australiaeast")]
 		public string Region { get; set; }
 
 		[CommandLineOption(Aliases = "CA", Description = "Category ID from one of your custom translator's projects in the form of WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g., /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT")]

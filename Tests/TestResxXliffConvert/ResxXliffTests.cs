@@ -3,6 +3,7 @@ using Fonlow.XliffResX;
 using Google.Cloud.Translation.V2;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Xml.Linq;
+using Fonlow.XliffTranslate;
 
 namespace TestResxXliffConvert
 {

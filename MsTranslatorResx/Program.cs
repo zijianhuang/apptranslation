@@ -26,9 +26,9 @@ namespace MsTranslatorResx
 		{
 			Console.WriteLine(
 @"Examples:
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /SL=en /TL=zh-hant /F:AppResources.zh-hant.resx ---- For in-place translation when AppResources.zh-hant.resx is not yet translated
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.resx ---- For in-place translation when AppResources.zh-hant.resx is not yet translated
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
 "
 			);
 		}

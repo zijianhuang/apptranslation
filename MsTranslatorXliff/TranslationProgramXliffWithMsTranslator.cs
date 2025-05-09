@@ -1,14 +1,14 @@
 ﻿using Fonlow.Cli;
 using Fonlow.XliffTranslate;
 using Fonlow.Translate;
-using Fonlow.TranslationProgram.GoogleTranslate;
+using Fonlow.TranslationProgram.MsTranslator;
 using Microsoft.Extensions.Logging;
 using Plossum.CommandLine;
 
 namespace Fonlow.TranslationProgram
 {
-	[CliManager(Description = "Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
-	internal class OptionsForXliffWithGoogleTranslate : OptionsWithGoogleTranslate
+	[CliManager(Description = "Use Microsoft Azure AI Translator to translate XLIFF v1.2 or v2.0 file.", OptionSeparator = "/", Assignment = ":")]
+	internal class OptionsForXliffWithMsTranslator : OptionsWithMsTranslator
 	{
 		[CommandLineOption(Aliases = "SS", Description = "For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS=\"initial\" \"translated\"")]
 		public string[] ForStates { get; set; } = [];
@@ -18,16 +18,16 @@ namespace Fonlow.TranslationProgram
 
 	}
 
-	internal class TranslationProgramXliffWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	internal class TranslationProgramXliffWithMsTranslator : TranslationProgramWithMsTranslator
 	{
-		public TranslationProgramXliffWithGoogleTranslate(OptionsForXliffWithGoogleTranslate options, ILogger logger) : base(CreateXliffProcessor(options), options, logger)
+		public TranslationProgramXliffWithMsTranslator(OptionsForXliffWithMsTranslator options, ILogger logger) : base(CreateXliffProcessor(options), options, logger)
 		{
 			this.optionsForXliff= options;
 		}
 
-		readonly OptionsForXliffWithGoogleTranslate optionsForXliff;
+		readonly OptionsForXliffWithMsTranslator optionsForXliff;
 
-		static IXliffTranslation CreateXliffProcessor(OptionsForXliffWithGoogleTranslate options)
+		static IXliffTranslation CreateXliffProcessor(OptionsForXliffWithMsTranslator options)
 		{
 			var xliffProcessor = XliffProcessorFactory.CreateXliffGT2(options.SourceFile, options.Batch, (v) =>
 			{
@@ -65,8 +65,8 @@ namespace Fonlow.TranslationProgram
 			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
 			resourceTranslation.SetTargetFile(targetFile);
 
-			(resourceTranslation as IXliffTranslation).SetForStates(optionsForXliff.ForStates);
-			(resourceTranslation as IXliffTranslation).SetUnchangeState(optionsForXliff.NotChangeState);
+			(resourceTranslation as IXliffTranslation)?.SetForStates(optionsForXliff.ForStates);
+			(resourceTranslation as IXliffTranslation)?.SetUnchangeState(optionsForXliff.NotChangeState);
 
 		}
 	}

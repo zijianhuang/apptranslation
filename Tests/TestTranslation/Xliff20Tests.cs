@@ -2,6 +2,7 @@
 using Google.Cloud.Translation.V2;
 using System.Xml.Linq;
 using System.Xml;
+using Fonlow.XliffTranslate;
 
 namespace TestXliff
 {

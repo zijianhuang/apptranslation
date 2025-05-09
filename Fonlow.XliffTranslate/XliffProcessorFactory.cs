@@ -1,7 +1,7 @@
 ﻿using System.Xml.Linq;
 using Fonlow.Translate;
 
-namespace Fonlow.GoogleTranslate
+namespace Fonlow.XliffTranslate
 {
 	public sealed class XliffProcessorFactory
 	{

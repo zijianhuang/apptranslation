@@ -3,6 +3,7 @@ using Fonlow.GoogleTranslateV3;
 using Google.Apis.Auth.OAuth2;
 using System.Xml;
 using System.Xml.Linq;
+using Fonlow.XliffTranslate;
 
 namespace TestXliff
 {

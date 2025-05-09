@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
 
-namespace Fonlow.GoogleTranslate
+namespace Fonlow.XliffTranslate
 {
 	/// <summary>
 	/// XLIFF 2.0 with translation engine.

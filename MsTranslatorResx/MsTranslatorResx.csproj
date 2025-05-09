@@ -1,14 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>1.0</Version>
+		<Authors>Zijian Huang</Authors>
+		<Copyright>Copyright © Zijian Huang 2024-$([System.DateTime]::Now.Year)</Copyright>
+		<Product>Translator for ResX with MS Translator</Product>
+		<Description>CLI to translate ResX v1.2 or v2.0 with Microsoft Azure AI Translator</Description>
+		<NeutralLanguage>en</NeutralLanguage>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Fonlow.ResxTranslate\Fonlow.ResxTranslate.csproj" />
-    <ProjectReference Include="..\Fonlow.TranslationProgram.MsTranslator\Fonlow.TranslationProgram.MsTranslator.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Fonlow.ResxTranslate\Fonlow.ResxTranslate.csproj" />
+		<ProjectReference Include="..\Fonlow.TranslationProgram.MsTranslator\Fonlow.TranslationProgram.MsTranslator.csproj" />
+	</ItemGroup>
 
 </Project>

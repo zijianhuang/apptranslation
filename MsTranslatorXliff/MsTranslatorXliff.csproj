@@ -7,14 +7,15 @@
 		<Version>1.0</Version>
 		<Authors>Zijian Huang</Authors>
 		<Copyright>Copyright © Zijian Huang 2024-$([System.DateTime]::Now.Year)</Copyright>
-		<Product>Translator for Android String Resource with MS Translator</Product>
-		<Description>CLI to translate Android String Resource with Microsoft Azure AI Translator</Description>
+		<Product>Translator for XLIFF with MS Translator</Product>
+		<Description>CLI to translate XLIFF v1.2 or v2.0 with Microsoft Azure AI Translator</Description>
 		<NeutralLanguage>en</NeutralLanguage>
 		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Fonlow.StringsTranslation\Fonlow.StringsTranslate.csproj" />
 		<ProjectReference Include="..\Fonlow.TranslationProgram.MsTranslator\Fonlow.TranslationProgram.MsTranslator.csproj" />
+		<ProjectReference Include="..\Fonlow.XliffTranslate\Fonlow.XliffTranslate.csproj" />
 	</ItemGroup>
+
 </Project>

@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Version>1.2</Version>
 		<Authors>Zijian Huang</Authors>
-		<Copyright>Copyright © Zijian Huang 2018-$([System.DateTime]::Now.Year)</Copyright>
+		<Copyright>Copyright © Zijian Huang 2011-$([System.DateTime]::Now.Year)</Copyright>
 		<Product>ResX Translator with Google Translate</Product>
 		<Description>CLI to translate ResX with Google Translate v2 or v3</Description>
 		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
