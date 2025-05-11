@@ -8,10 +8,10 @@ namespace MsTranslatorStrings
 	{
 		static async Task<int> Main(string[] args)
 		{
+			Console.OutputEncoding = System.Text.Encoding.Unicode;
 			using ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new Options();
-
 			var errorCode = CliOptionsParser.Parse(args, options, DisplayExamples, logger);
 			if (errorCode == 0)
 			{
