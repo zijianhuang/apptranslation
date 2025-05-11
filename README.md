@@ -58,26 +58,25 @@ For the detailed features, just run the CLI tool without parameters you will see
 ```
 GoogleTranslateXliff.exe
 Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.
-XLIFF Translator with Google Translate  version 1.3.0.0
-Copyright c Zijian Huang 2018-2025
+XLIFF Translator with Google Translate  version 1.4.0.0
+Copyright © Zijian Huang 2018-2025
 
 
-   /SourceFile, /F     Source file path, e.g., /F=myfile.zh.xliff
-   /TargetFile, /TF    Target file path. If not defined, the source file will be overwritten, e.g.,
-                       /TF=c:/locales/myfileTT.zh.xliff
-   /SourceLang, /SL    Source language. Default to xliff/file/source-language or xliff/srcLang. e.g., /SL=fr
-   /TargetLang, /TL    Target language. Default to xliff/file/target-language or xliff/trgLang.  e.g., /TL=es
-   /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
-   /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g.,
-                       /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ForStates, /SS     For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g.,
                        /SS="initial" "translated"
    /NotChangeState,    Not to change the state of translation unit to translated after translation.
    /NCS
-   /Batch, /B          Batch processing of strings to improve overall speed.
+   /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g.,
+                       /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
    /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app
    /CSF                uses client secret JSON file you could download from your Google Cloud Service account.
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
 
 
@@ -101,7 +100,7 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 GoogleTranslateResx.exe
 Use Google Translate v2 or v3 to translate Microsoft ResX
 ResX Translator with Google Translate  version 1.2.0.0
-Copyright c Zijian Huang 2018-2025
+Copyright © Zijian Huang 2018-2025
 
 
    /SourceFile, /F     Source file path, e.g., /F=AppResources.resx
