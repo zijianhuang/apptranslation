@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorStrings", "MsTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorXliff", "MsTranslatorXliff\MsTranslatorXliff.csproj", "{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackDummy", "PackDummy\PackDummy.csproj", "{E2DA0A0F-53AA-4036-B9EC-28A52754246A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,5 +185,6 @@ Global
 		{E0148320-134D-420A-9CD2-B964FBDD144F} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{81D659CA-2757-49B1-93A0-BC12B65ACC5E} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
+		{E2DA0A0F-53AA-4036-B9EC-28A52754246A} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 EndGlobal
