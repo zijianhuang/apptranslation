@@ -13,6 +13,8 @@ Batch translation of resource files through CLI tools with machine translation e
 * Google Cloud Translation v3
 * Microsoft Azure AI Translator
 
+You should setup your own accounts and and API credentials of these engines.
+
 **Supported Conversion:
 * Between ResX and XLIFF 1.2 / 2.0
 

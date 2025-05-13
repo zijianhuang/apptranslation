@@ -27,8 +27,11 @@ Please create issue before forking and PR.
 
 ## Design
 
-Design Packages:
-![Design Packages](./Docs/Articles/Screenshots/DesignPackages.png)
+### Packages
+![Design Packages](Docs/Articles/Screenshots/DesignPackages.png)
+
+### Typical Classes in App
+![Design Classes](Docs/ClassesInApp.png)
 
 ## Other Good Tools Used by .NET Developers
 
