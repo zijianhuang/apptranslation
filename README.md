@@ -13,15 +13,18 @@ Batch translation of resource files through CLI tools with machine translation e
 * Google Cloud Translation v3
 * Microsoft Azure AI Translator
 
-You should setup your own accounts and and API credentials of these engines.
+You should setup your own accounts and API credentials of these engines.
 
-**Supported Conversion:
-* Between ResX and XLIFF 1.2 / 2.0
+**Supported Conversion:**
+* Convert and merge between ResX and XLIFF 1.2 / 2.0
+
+Through proper scripting, .NET translation resource could be using XLIFF as Translation Memory.
 
 **Remarks:**
 * It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication. Or you study the documentations of respective engines.
 
 **Supported Operating Systems:**
+
 * Windows
 * MacOS
 * Linux
@@ -37,7 +40,7 @@ The translation tools used by software developers:
 1. Integration with IDE like Visual Studio, XCode and Android Studio etc.
 2. Batch processing.
 
-As of 2020s, most tools you could find are cloud based, depending to another cloud-based translation services like Google Translate API and Microsoft Translator API. And these tools are mostly subscription based. If you do translations only occasionally and casually, such subscription model is not appealing. Also the operation overheads of these cloud based tools are too much for smooth SDLC or CI.
+As of 2020s, most tools you could find are cloud based, depending to another cloud-based translation services like Google Translate API and Microsoft Translator API. And these tools are mostly subscription based. If you do translations only occasionally and casually, such subscription model may not be appealing. Also the operation overheads of these cloud based tools are too much for smooth SDLC or CI.
 
 Additionally, if you prefer batch processing, the CLI tools included in this project, developed by a full-stack software developer for full-stack software developers, may be appealing to you.
 
@@ -262,6 +265,9 @@ This repository does not release binary builds generally. You may check-out the 
 ![Build Scripts](Docs/Articles/Screenshots/BuildScripts.png)
 
 ![MacOS run](Docs/Articles//Screenshots//MacStart.png)
+
+Hints:
+* PackDummy.csproj is a dummy project for building of the CLI apps of translation into one release, since these apps share components.
 
 ## Contributing
 

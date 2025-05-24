@@ -37,12 +37,27 @@ namespace Fonlow.TranslationProgram
 					{
 						options.ForStates = ["new"];
 					}
+					else
+					{
+						var invalid = options.ForStates.Any((v) => !XliffStateStrings.Xliff12States.Any((k) => k == v));
+						if (invalid){
+							throw new ArgumentException($"ForStates contain states not included among [{string.Join(", ", XliffStateStrings.Xliff12States)}]");
+						}
+					}
 				}
 				else if (v == "2.0")
 				{
 					if (options.ForStates.Length == 0)
 					{
 						options.ForStates = ["initial"];
+					}
+					else
+					{
+						var invalid = options.ForStates.Any((v) => !XliffStateStrings.Xliff20States.Any((k) => k == v));
+						if (invalid)
+						{
+							throw new ArgumentException($"ForStates contain states not included among [{string.Join(", ", XliffStateStrings.Xliff20States)}]");
+						}
 					}
 				}
 

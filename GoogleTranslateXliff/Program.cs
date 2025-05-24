@@ -15,9 +15,19 @@ namespace GoogleTranslateXliff
 			var errorCode = CliOptionsParser.Parse(args, options, DisplayExamples, logger);
 			if (errorCode == 0)
 			{
-				var translationProgram = new TranslationProgramXliffWithGoogleTranslate(options, logger);
-				var r = await translationProgram.Execute().ConfigureAwait(false);
-				return r;
+				try
+				{
+					var translationProgram = new TranslationProgramXliffWithGoogleTranslate(options, logger);
+					var r = await translationProgram.Execute().ConfigureAwait(false);
+					return r;
+
+				}
+				catch (ArgumentException ex)
+				{
+					//await Console.Error.WriteLineAsync(ex.Message).ConfigureAwait(false);
+					logger.LogWarning(ex.Message);
+					return 13;
+				}
 			}
 
 			return errorCode;
