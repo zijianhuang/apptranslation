@@ -41,7 +41,7 @@ namespace Fonlow.TranslationProgram
 					{
 						var invalid = options.ForStates.Any((v) => !XliffStateStrings.Xliff12States.Any((k) => k == v));
 						if (invalid){
-							throw new ArgumentException($"ForStates contain states not included among [{string.Join(", ", XliffStateStrings.Xliff12States)}]");
+							throw new ArgumentException($"ForStates contains states not included among [{string.Join(", ", XliffStateStrings.Xliff12States)}]");
 						}
 					}
 				}
@@ -56,7 +56,7 @@ namespace Fonlow.TranslationProgram
 						var invalid = options.ForStates.Any((v) => !XliffStateStrings.Xliff20States.Any((k) => k == v));
 						if (invalid)
 						{
-							throw new ArgumentException($"ForStates contain states not included among [{string.Join(", ", XliffStateStrings.Xliff20States)}]");
+							throw new ArgumentException($"ForStates contains states not included among [{string.Join(", ", XliffStateStrings.Xliff20States)}]");
 						}
 					}
 				}
