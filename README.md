@@ -266,9 +266,6 @@ This repository does not release binary builds generally. You may check-out the 
 
 ![MacOS run](Docs/Articles//Screenshots//MacStart.png)
 
-Hints:
-* PackDummy.csproj is a dummy project for building of the CLI apps of translation into one release, since these apps share components.
-
 ## Contributing
 
 Please check [CONTRIBUTING.md](CONTRIBUTING.md).

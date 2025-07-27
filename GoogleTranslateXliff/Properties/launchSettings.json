@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GoogleTranslateXliff": {
+      "commandName": "Project",
+      "commandLineArgs": "/AKF=C:/VsProjects/OpenSource/Secrets/GoogleTranslate/apikey.txt /B /F=Fonlow.VA.Languages.ja.xlf /SS=needs-review-translation"
+    }
+  }
+}

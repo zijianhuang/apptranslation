@@ -33,6 +33,10 @@ Please create issue before forking and PR.
 ### Typical Classes in App
 ![Design Classes](Docs/ClassesInApp.png)
 
+
+Hints:
+* PackDummy.csproj is a dummy project for building of the CLI apps of translation into one release, since these apps share components. There are 3 build scripts for Windows, Mac Self Contained and Linux Self Contained.
+
 ## Other Good Tools Used by .NET Developers
 
 These tools provide interactive ways of managing translation:

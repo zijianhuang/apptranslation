@@ -166,7 +166,8 @@ namespace Fonlow.XliffTranslate
 				int kc = 0;
 				foreach (var chunk in chunks)
 				{
-					kc = await Batch(chunk).ConfigureAwait(false); // always countsForUnit
+					var c = await Batch(chunk).ConfigureAwait(false); // always countsForUnit
+					kc += c;
 				}
 
 				return kc;
