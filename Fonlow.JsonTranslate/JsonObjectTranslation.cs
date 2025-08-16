@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Text.Json.Nodes;
+using System.Xml.Linq;
 
 namespace Fonlow.JsonTranslate
 {
@@ -51,26 +52,132 @@ namespace Fonlow.JsonTranslate
 			ArgumentNullException.ThrowIfNull(properties);
 			const int maxUnits = 200;
 			int translatedCount = 0;
-			var nestedPropertySegmentsList = properties.Select(d => d?.Split(['.', '/'])).ToArray();
-			foreach (var segments in nestedPropertySegmentsList)
-			{
-				if (segments==null || segments.Length == 0)
-				{
-					continue;
-				}
-				var node = FindValueNode(jsonObject, segments);
-				if (node == null)
-				{
-					continue;
-				}
+			var allNestedPropertySegmentsList = properties.Select(d => d?.Split(['.', '/'])).ToArray();
+			var total = allNestedPropertySegmentsList.Length;
 
-				var nodeText = node.GetValue<string>(); // only text node worth of translation.
-				var translatedText = await translator.Translate(nodeText).ConfigureAwait(false);
-				node.ReplaceWith(translatedText);
-				translatedCount++;
+			if (batchMode)
+			{
+				var chunks = allNestedPropertySegmentsList.SplitLists(maxUnits);
+				foreach (var chunk in chunks)
+				{
+					await Batch(chunk).ConfigureAwait(false); // always countsForUnit
+				}
+			}
+			else
+			{
+				await TextByText(allNestedPropertySegmentsList);
 			}
 
 			return translatedCount;
+
+			async Task<int> TextByText(string[][] nestedPropertySegmentsList)
+			{
+				foreach (var segments in nestedPropertySegmentsList) // each represents a node to be translated
+				{
+					if (segments == null || segments.Length == 0)
+					{
+						continue;
+					}
+
+					var jsonNode = FindValueNode(jsonObject, segments);
+					if (jsonNode == null)
+					{
+						continue;
+					}
+
+					if (jsonNode is not JsonValue){
+						continue;
+					}
+
+					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
+					if (string.IsNullOrWhiteSpace(nodeText))
+					{
+						continue;
+					}
+
+					var translatedText = await translator.Translate(nodeText).ConfigureAwait(false);
+					jsonNode.ReplaceWith(translatedText);
+					translatedCount++;
+					progressDisplay?.Show(translatedCount, total);
+				}
+
+				return translatedCount;
+			}
+
+			async Task<int> Batch(IList<string[]> nestedPropertySegmentsList)
+			{
+				var strings = nestedPropertySegmentsList.Where(segments =>
+				{
+					if (segments == null || segments.Length == 0)
+					{
+						return false;
+					}
+
+					var jsonNode = FindValueNode(jsonObject, segments);
+					if (jsonNode == null)
+					{
+						return false;
+					}
+
+					if (jsonNode is not JsonValue)
+					{
+						return false;
+					}
+
+					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
+					if (string.IsNullOrWhiteSpace(nodeText))
+					{
+						return false;
+					}
+
+					return true;
+				}).Select(segments => {
+					var jsonNode = FindValueNode(jsonObject, segments);
+					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
+					return nodeText;
+				}).ToList();
+
+				if (strings.Count == 0)
+				{
+					return 0;
+				}
+
+				var translatedStrings = await translator.Translate(strings).ConfigureAwait(false);
+				int translatedIndex = 0;
+				foreach (var segments in nestedPropertySegmentsList)
+				{
+					if (segments == null || segments.Length == 0)
+					{
+						continue;
+					}
+
+					var jsonNode = FindValueNode(jsonObject, segments);
+					if (jsonNode == null)
+					{
+						continue;
+					}
+
+					if (jsonNode is not JsonValue)
+					{
+						continue;
+					}
+
+					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
+					if (string.IsNullOrWhiteSpace(nodeText))
+					{
+						continue;
+					}
+
+					jsonNode.ReplaceWith(translatedStrings[translatedIndex]);
+					translatedIndex++;
+					translatedCount++;
+				}
+
+				progressDisplay?.Show(translatedCount, total);
+				return translatedCount;
+			}
+
+
 		}
 
 		/// <summary>

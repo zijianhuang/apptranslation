@@ -101,7 +101,6 @@ namespace Fonlow.ResxTranslate
 
 				progressDisplay?.Show(translatedCount, total);
 				return translatedCount;
-
 			}
 		}
 
