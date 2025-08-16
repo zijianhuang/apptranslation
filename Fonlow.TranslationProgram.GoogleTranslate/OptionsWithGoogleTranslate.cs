@@ -16,5 +16,9 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 
 		[CommandLineOption(Aliases = "CSF", Description = "Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could download from your Google Cloud Service account.")]
 		public string ClientSecretFile { get; set; }
+
+		[CommandLineOption(Aliases = "Reversed", Description = "Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and TargetFile must be defined.")]
+		public bool ReversedTranslation { get; set; }
+
 	}
 }

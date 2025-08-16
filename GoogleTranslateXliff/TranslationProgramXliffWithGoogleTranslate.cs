@@ -80,8 +80,10 @@ namespace Fonlow.TranslationProgram
 			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
 			resourceTranslation.SetTargetFile(targetFile);
 
-			(resourceTranslation as IXliffTranslation).SetForStates(optionsForXliff.ForStates);
-			(resourceTranslation as IXliffTranslation).SetUnchangeState(optionsForXliff.NotChangeState);
+			var xliffTranslation = resourceTranslation as IXliffTranslation;
+			xliffTranslation.SetForStates(optionsForXliff.ForStates);
+			xliffTranslation.SetUnchangeState(optionsForXliff.NotChangeState);
+			xliffTranslation.SetReversed(optionsForXliff.ReversedTranslation);
 
 		}
 	}

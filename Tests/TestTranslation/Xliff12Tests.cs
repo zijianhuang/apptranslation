@@ -105,7 +105,7 @@ namespace TestXliff
 				var xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate();
-				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(1, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -140,7 +140,7 @@ namespace TestXliff
 				var xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate();
-				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(1, c);
 
 				xDoc.Save("XdocumentTranslatedSomeNot.xlf"); // check to ensure the order of nodes not changed.
@@ -156,7 +156,7 @@ namespace TestXliff
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate();
 				wg.SetBatchMode(true);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(1, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -192,7 +192,7 @@ namespace TestXliff
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff12Translate();
 				wg.SetBatchMode(true);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(10, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();

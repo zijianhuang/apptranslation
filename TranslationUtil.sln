@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorXliff", "MsTran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackDummy", "PackDummy\PackDummy.csproj", "{E2DA0A0F-53AA-4036-B9EC-28A52754246A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.JsonTranslate", "Fonlow.JsonTranslate\Fonlow.JsonTranslate.csproj", "{BED83C55-AAD7-4F34-8802-2D8E0C81A654}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,5 +192,9 @@ Global
 		{81D659CA-2757-49B1-93A0-BC12B65ACC5E} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
+		{BED83C55-AAD7-4F34-8802-2D8E0C81A654} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {242FBB6D-F0FD-44E6-B7EF-05E31D67D7CE}
 	EndGlobalSection
 EndGlobal

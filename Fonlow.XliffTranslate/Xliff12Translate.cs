@@ -18,6 +18,8 @@ namespace Fonlow.XliffTranslate
 		string targetFile;
 		string[] forStates;
 		bool unchangeState;
+		bool reversed;
+
 		public void SetBatchMode(bool batchMode)
 		{
 			this.batchMode = batchMode;
@@ -43,7 +45,12 @@ namespace Fonlow.XliffTranslate
 			this.unchangeState = unchangeState;
 		}
 
-		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
+		public void SetReversed(bool reversed)
+		{
+			this.reversed = reversed;
+		}
+
+		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation)
 		{
 			var ver = xliffRoot.Attribute("version").Value;
 			if (ver != "1.2")
@@ -57,7 +64,7 @@ namespace Fonlow.XliffTranslate
 			var total = 0;
 			foreach (var fileElement in fileElements)
 			{
-				var c = await TranslateXliffFileElement(fileElement, ns, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
+				var c = await TranslateXliffFileElement(fileElement, ns, forStates, unchangeState, translator, logger, progressDisplay, reversedTranslation).ConfigureAwait(false);
 				total += c;
 			}
 			return total;
@@ -65,13 +72,18 @@ namespace Fonlow.XliffTranslate
 
 		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
+			return await Translate(translator, logger, progressDisplay, reversed).ConfigureAwait(false);
+		}
+
+		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation)
+		{
 			XDocument xDoc;
 			int c;
 			using (FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
 				xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
-				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressDisplay).ConfigureAwait(false);
+				c = await TranslateXliffElement(xliffRoot, forStates, unchangeState, translator, logger, progressDisplay, reversedTranslation).ConfigureAwait(false);
 			}
 
 			if (c > 0)
@@ -82,26 +94,27 @@ namespace Fonlow.XliffTranslate
 			return c;
 		}
 
-		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
+		async Task<int> TranslateXliffFileElement(XElement fileElement, XNamespace ns, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation)
 		{
 			var fileBody = fileElement.Element(ns + "body");
-
+			var unitSourceElementName = reversedTranslation ? "target" : "source";
+			var unitTargetElementName= reversedTranslation ? "source" : "target";
 			if (string.IsNullOrEmpty(translator.SourceLang))
 			{
-				translator.SourceLang = fileElement.Attribute("source-language").Value; //use source file's source language
+				translator.SourceLang = fileElement.Attribute(reversedTranslation ? "target-language" : "source-language").Value; //use source file's source language
 			}
 
 			bool toCreateTargetFile = false;
 			if (string.IsNullOrEmpty(translator.TargetLang))
 			{
-				translator.TargetLang = fileElement.Attribute("target-language")?.Value; //use source file 's target language
+				translator.TargetLang = fileElement.Attribute(reversedTranslation ? "source-language" : "target-language")?.Value; //use source file 's target language
 				if (string.IsNullOrEmpty(translator.TargetLang))
 				{
 					throw new ArgumentException("TargetLang must be declared in command parameters or xliff/file/target-language");
 				}
 			}
 
-			if (string.IsNullOrEmpty(fileElement.Attribute("target-language")?.Value))
+			if (string.IsNullOrEmpty(fileElement.Attribute("target-language")?.Value) && !reversedTranslation)
 			{
 				fileElement.Add(new XAttribute("target-language", translator.TargetLang)); //source file has no target lang declared, then use the commandline TargetLang
 				toCreateTargetFile = true; // The rest of the codes need to add trans-unit/target
@@ -121,8 +134,8 @@ namespace Fonlow.XliffTranslate
 			var totalUnits = transUnits.Count;
 			var totalUnitsToTranslate = transUnits.Count(unit =>
 			{
-				var unitSource = unit.Element(ns + "source");
-				var unitTarget = unit.Element(ns + "target");
+				var unitSource = unit.Element(ns + unitSourceElementName);
+				var unitTarget = unit.Element(ns + unitTargetElementName);
 
 				return unitSource != null
 				&& unitSource.Nodes().OfType<XText>().Any()
@@ -138,8 +151,8 @@ namespace Fonlow.XliffTranslate
 			{
 				var badUnits = transUnits.Where(unit =>
 				{
-					var unitSource = unit.Element(ns + "source");
-					var unitTarget = unit.Element(ns + "target");
+					var unitSource = unit.Element(ns + unitSourceElementName);
+					var unitTarget = unit.Element(ns + unitTargetElementName);
 
 					return unitSource != null
 					&& !unitSource.Nodes().OfType<XText>().Any() //nothing to translate
@@ -181,8 +194,8 @@ namespace Fonlow.XliffTranslate
 			{
 				foreach (var unit in someUnits)
 				{
-					var unitSource = unit.Element(ns + "source");
-					var unitTarget = unit.Element(ns + "target");
+					var unitSource = unit.Element(ns + unitSourceElementName);
+					var unitTarget = unit.Element(ns + unitTargetElementName);
 					if (unitSource != null && unitSource.Nodes().OfType<XText>().Any())
 					{
 						var state = unitTarget?.Attribute("state")?.Value;
@@ -194,7 +207,7 @@ namespace Fonlow.XliffTranslate
 
 						if (state == null && unitTarget == null)
 						{
-							unitTarget = new XElement(ns + "target");
+							unitTarget = new XElement(ns + unitTargetElementName);
 							unit.Add(unitTarget);
 						}
 						else
@@ -249,8 +262,8 @@ namespace Fonlow.XliffTranslate
 				var strings = new List<string>();
 				foreach (var unit in someUnits)
 				{
-					var unitSource = unit.Element(ns + "source");
-					var unitTarget = unit.Element(ns + "target");
+					var unitSource = unit.Element(ns + unitSourceElementName);
+					var unitTarget = unit.Element(ns + unitTargetElementName);
 					if (unitSource != null && unitSource.Nodes().OfType<XText>().Any())
 					{
 						var state = unitTarget?.Attribute("state")?.Value;
@@ -280,8 +293,8 @@ namespace Fonlow.XliffTranslate
 				int translatedIndex = 0;
 				foreach (var unit in someUnits)
 				{
-					var unitSource = unit.Element(ns + "source");
-					var unitTarget = unit.Element(ns + "target");
+					var unitSource = unit.Element(ns + unitSourceElementName);
+					var unitTarget = unit.Element(ns + unitTargetElementName);
 					if (unitSource != null && unitSource.Nodes().OfType<XText>().Any())
 					{
 						var state = unitTarget?.Attribute("state")?.Value;

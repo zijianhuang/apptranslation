@@ -53,7 +53,7 @@ namespace TestXliff
 				var xDoc = XDocument.Load(fs);
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff20Translate();
-				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -88,7 +88,7 @@ namespace TestXliff
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff20Translate();
 				wg.SetBatchMode(true);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -123,7 +123,7 @@ namespace TestXliff
 				var xliffRoot = xDoc.Root;
 				var wg = new Xliff20Translate();
 				wg.SetBatchMode(true);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
 				Assert.Equal(2, c);
 
 				xDoc.Save("XdocumentTranslated20Group.xlf"); // check to ensure the order of nodes not changed.
