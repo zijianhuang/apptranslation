@@ -29,7 +29,6 @@ namespace Fonlow.ResxTranslate
 			this.targetFile = targetFile;
 		}
 
-
 		public async Task<int> TranslateResx(XElement resxRoot, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 //#pragma warning disable CA2264

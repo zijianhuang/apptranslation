@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackDummy", "PackDummy\Pack
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.JsonTranslate", "Fonlow.JsonTranslate\Fonlow.JsonTranslate.csproj", "{BED83C55-AAD7-4F34-8802-2D8E0C81A654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslateJson", "GoogleTranslateJson\GoogleTranslateJson.csproj", "{E1B09DD9-1345-426C-811F-AC86785FBAD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,6 +199,7 @@ Global
 		{24D3A1FF-CA8D-4CEA-B6D8-AA3BE770EE41} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
+		{E1B09DD9-1345-426C-811F-AC86785FBAD0} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {242FBB6D-F0FD-44E6-B7EF-05E31D67D7CE}

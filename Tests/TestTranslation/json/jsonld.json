@@ -1,0 +1,18 @@
+{
+    "@context": "http://schema.org",
+    "@type": "MobileApplication",
+    "name": "Visual Acuity Charts",
+    "description": "Use your smartphone or tablet to check distance vision and spot early signs of myopia.",
+    "url": "https://visualacuity.info",
+    "image": "https://visualacuity.info/Media/Default/Gallery/misc/AndroidPhonePlay.jpg",
+    "screenshot": "https://visualacuity.info/Media/Default/GalleryApple/MultipleEHelp.png",
+    "applicationCategory": "Medical",
+    "operatingSystem": "Android, iOS, iPadOS",
+    "author": {
+      "@type": "Organization",
+      "name": "Fonlow",
+      "description": "Fonlow develops software solutions that improve productivity with the least stress",
+      "url": "https://fonlow.com",
+      "logo": "https://fonlow.com/favicon.ico"
+    }
+  }

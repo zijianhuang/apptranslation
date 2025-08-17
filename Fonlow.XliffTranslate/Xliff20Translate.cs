@@ -50,7 +50,6 @@ namespace Fonlow.XliffTranslate
 			this.reversed = reversed;
 		}
 
-
 		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation)
 		{
 			var ver = xliffRoot.Attribute("version").Value;

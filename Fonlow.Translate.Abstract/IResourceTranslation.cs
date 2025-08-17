@@ -16,5 +16,7 @@ namespace Fonlow.Translate
 		void SetBatchMode(bool batchMode);
 		void SetSourceFile(string sourceFile);
 		void SetTargetFile(string targetFile);
+
+		//void SetProperties(string[] properties);
 	}
 }

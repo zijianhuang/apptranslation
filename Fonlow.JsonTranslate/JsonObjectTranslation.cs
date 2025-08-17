@@ -1,6 +1,7 @@
 ﻿using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Xml.Linq;
 
@@ -16,6 +17,9 @@ namespace Fonlow.JsonTranslate
 		bool batchMode;
 		string sourceFile;
 		string targetFile;
+		string[] properties;
+
+		JsonSerializerOptions jsonSerializerOptions;
 
 		public void SetBatchMode(bool batchMode)
 		{
@@ -32,9 +36,24 @@ namespace Fonlow.JsonTranslate
 			this.targetFile = targetFile;
 		}
 
-		public Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
+		public void SetProperties(string[] properties){
+			this.properties = properties;
+		}
+
+		public void SetJsonSerializerOptions(JsonSerializerOptions jsonSerializerOptions)
 		{
-			throw new NotImplementedException();
+			this.jsonSerializerOptions = jsonSerializerOptions;
+		}
+
+		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
+		{
+			int c;
+				var jsonText = File.ReadAllText(sourceFile);
+				var jsonObject = JsonObject.Parse(jsonText);
+				c = await TranslateJsonObject(jsonObject, properties, translator, logger, progressDisplay).ConfigureAwait(false);
+
+			File.WriteAllText(targetFile, jsonObject.ToJsonString(jsonSerializerOptions));
+			return c;
 		}
 
 		/// <summary>
@@ -46,7 +65,7 @@ namespace Fonlow.JsonTranslate
 		/// <param name="logger"></param>
 		/// <param name="progressDisplay"></param>
 		/// <returns></returns>
-		public async Task<int> TranslateJsonObject(JsonObject jsonObject, string[] properties, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
+		public async Task<int> TranslateJsonObject(JsonNode jsonObject, string[] properties, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			ArgumentNullException.ThrowIfNull(jsonObject);
 			ArgumentNullException.ThrowIfNull(properties);
@@ -186,7 +205,7 @@ namespace Fonlow.JsonTranslate
 		/// <param name="jsonObject"></param>
 		/// <param name="nestedPropertySegments"></param>
 		/// <returns></returns>
-		JsonNode FindValueNode(JsonObject jsonObject, string[] nestedPropertySegments)
+		JsonNode FindValueNode(JsonNode jsonObject, string[] nestedPropertySegments)
 		{
 			Debug.Assert(nestedPropertySegments.Length > 0);
 			var n = jsonObject[nestedPropertySegments[0]];

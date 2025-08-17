@@ -1,7 +1,10 @@
 ﻿using Fonlow.GoogleTranslate;
 using Fonlow.JsonTranslate;
+using Fonlow.ResxTranslate;
 using Google.Cloud.Translation.V2;
 using Microsoft.Extensions.Logging.Abstractions;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Xml.Linq;
 
@@ -145,10 +148,24 @@ namespace TestJson
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
 			Assert.Equal("有人愛你", n2.GetValue<string>());
-
 		}
 
+		[Fact]
+		public async Task TestGoogleTranslateFileZh()
+		{
+			var options = new JsonSerializerOptions
+			{
+				WriteIndented = true,
+				Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+			};
 
+			var g = new JsonObjectTranslation();
+			g.SetJsonSerializerOptions(options);
+			g.SetSourceFile("json/jsonld.json");
+			g.SetTargetFile("jsonld.zh-hant.json");
+			g.SetProperties(["name", "description", "author.description"]);
+			Assert.Equal(3, await g.Translate(new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null));
+		}
 
 	}
 }

@@ -98,7 +98,7 @@ namespace Fonlow.XliffTranslate
 		{
 			var fileBody = fileElement.Element(ns + "body");
 			var unitSourceElementName = reversedTranslation ? "target" : "source";
-			var unitTargetElementName= reversedTranslation ? "source" : "target";
+			var unitTargetElementName = reversedTranslation ? "source" : "target";
 			if (string.IsNullOrEmpty(translator.SourceLang))
 			{
 				translator.SourceLang = fileElement.Attribute(reversedTranslation ? "target-language" : "source-language").Value; //use source file's source language
