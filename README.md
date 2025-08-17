@@ -159,6 +159,99 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 ```
 
+## GoogleTranslateJson.exe
+```
+GoogleTranslateJson.exe
+Use Google Translate v2 or v3 to translate selected string value properties of JSON object
+GoogleTranslateJson  version 1.0.0.0
+
+
+   /Properties, /PS    JSON object properties to be translated, e.g., /PS="parent.folder.name" "parent.fonlder.address"
+   /PropertiesFile,    Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt
+   /PSF
+                       0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Intented and UnsafeRelaxedJsonEscaping.
+   /SerializationConfig,                                                                                                                                                              
+   /SC
+   /Indented, /Ind     Outputted text in indented, when SerializationConfig=2.
+                       Outputted Unicode characters not escaped, when SerializationConfig=2.
+   /UnsafeRelaxedJsonEscaping,                                                                                                                                                        
+   /NUE
+   /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could download from your
+   /CSF                Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and TargetFile must be defined.
+   /ReversedTranslation,                                                                                                                                                              
+   /Reversed
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:jsonld.zh-hant.json /PS:data.user.name data.user.address ---- For in-place translation when jsonld.zh-hant.json is not yet translated
+GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:strings.xml /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
+GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
+GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:jsonld.es.json /PS:data.user.name ---- Use Google Cloud Translate V3 and batch mode.
+```
+
+### SerializationConfig
+#### JsonSerializerOptions.Default vs Web
+
+| Feature | Default | Web | 
+| ---- | ---- | ---- | 
+| Naming Policy | null (preserves original property names) | CamelCase (e.g., UserName → userName) | 
+| Encoder | JavaScriptEncoder.Default (escapes non-ASCII) | JavaScriptEncoder.Default (same) | 
+| IgnoreNullValues (obsolete) | false | true (in .NET 5 and earlier) | 
+| DefaultIgnoreCondition | Never | WhenWritingNull (in .NET 6+) | 
+| PropertyNameCaseInsensitive | false | true | 
+| ReadCommentHandling | Disallow | Disallow | 
+| AllowTrailingCommas | false | false | 
+| Indented Output | false | false | 
+
+And option "Indented" and "UnsafeRelaxedJsonEscaping" are to have an instance of JsonSerializerOptions similar to "Default" but with a little adjustment.
+
+### When to Use Which?
+Use "Default" when:
+- You want exact property names preserved
+- You need full control over null handling
+- You're serializing for internal systems or config files
+
+Use "Web" when:
+- You're building REST APIs or web services
+- You want camelCase naming and cleaner payloads
+- You want to follow JSON conventions used in JavaScript clients
+
+
+**Remarks:**
+* Since this utility is to translate some properties, it will be rare that you need what offered by "Web".
+
+### When Is It Safe to Use UnsafeRelaxedJsonEscaping?
+| Scenario | Safe? | Notes | 
+| ---- | ---- | ---- |
+| Internal apps with full UTF-8 support | ✅ | Improves readability and localization | 
+| Web APIs with proper headers | ✅ | Ensure charset=utf-8 is set | 
+| Embedded in HTML/JS | ⚠️ | Escape manually or sanitize carefully | 
+| Legacy systems or unknown consumers | ❌ | Prefer escaped Unicode for safety | 
+
+
+
+
+
+
+### Summary
+- Default is a neutral baseline—ideal for internal serialization where you want full control over naming and behavior.
+- Web is optimized for web APIs, aligning with common JSON conventions like camelCase and ignoring nulls.
+
+
+
+
+
 ## MsTranslatorXliff.exe
 
 ```
@@ -187,9 +280,9 @@ MsTranslatorXliff  version 1.0.0.0
 
 
 Examples:
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F=myUiMessages.es.xlf ---- For in-place translation.
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F=myUiMessages.es.xlf ---- For in-place translation.
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
 ```
 
 ## MsTranslatorResx.exe
@@ -216,9 +309,9 @@ MsTranslatorResx  version 1.0.0.0
 
 
 Examples:
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.resx ---- For in-place translation when AppResources.zh-hant.resx is not yet translated
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
-MsTranslatorResx.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.resx ---- For in-place translation when AppResources.zh-hant.resx is not yet translated
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
+MsTranslatorResx.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
 ```
 
 ## MsTranslatorStrings.exe
@@ -245,9 +338,9 @@ MsTranslatorStrings  version 1.0.0.0
 
 
 Examples:
-MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.xml ---- For in-place translation when AppResources.zh-hant.xml is not yet translated
-MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.xml ---- from the source locale file to a new target file in Japanese
-MsTranslatorStrings.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:AppResources.xml /TF:AppResources.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=zh-hant /F:AppResources.zh-hant.xml ---- For in-place translation when AppResources.zh-hant.xml is not yet translated
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.xml ---- from the source locale file to a new target file in Japanese
+MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:AppResources.xml /TF:AppResources.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 ```
 
 ## XliffResXConverter.exe

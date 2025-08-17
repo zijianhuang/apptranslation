@@ -1,7 +1,7 @@
 ﻿using Fonlow.Cli;
 using Fonlow.JsonTranslate;
 using Fonlow.Translate;
-using Fonlow.TranslationProgram.GoogleTranslate;
+using Fonlow.TranslationProgram.MsTranslator;
 using Microsoft.Extensions.Logging;
 using Plossum.CommandLine;
 using System.Text.Encodings.Web;
@@ -9,8 +9,8 @@ using System.Text.Json;
 
 namespace Fonlow.TranslationProgram
 {
-	[CliManager(Description = "Use Google Translate v2 or v3 to translate selected string value properties of JSON object", OptionSeparator = "/", Assignment = ":")]
-	internal sealed class OptionsForJsonWithGoogleTranslate : OptionsWithGoogleTranslate
+	[CliManager(Description = "Use Microsoft Azure AI Translator to translate JSON object", OptionSeparator = "/", Assignment = ":")]
+	sealed internal class OptionsForJsonWithMsTranslator : OptionsWithMsTranslator
 	{
 		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated, e.g., /PS=\"parent.folder.name\" \"parent.folder.address\"")]
 		public string[] Properties { get; set; } = [];
@@ -29,9 +29,9 @@ namespace Fonlow.TranslationProgram
 
 	}
 
-	internal sealed class TranslationProgramJsonWithGoogleTranslate : TranslationProgramWithGoogleTranslate
+	sealed internal class TranslationProgramJsonWithMsTranslator : TranslationProgramWithMsTranslator
 	{
-		public TranslationProgramJsonWithGoogleTranslate(OptionsForJsonWithGoogleTranslate options, ILogger logger) : base(CreateJsonProcessor(options), options, logger)
+		public TranslationProgramJsonWithMsTranslator(OptionsForJsonWithMsTranslator options, ILogger logger) : base(CreateJsonProcessor(options), options, logger)
 		{
 		}
 
@@ -48,7 +48,7 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static IResourceTranslation CreateJsonProcessor(OptionsForJsonWithGoogleTranslate options)
+		static IResourceTranslation CreateJsonProcessor(OptionsForJsonWithMsTranslator options)
 		{
 			var d = new JsonObjectTranslation();
 			if (string.IsNullOrEmpty(options.PropertiesFile))

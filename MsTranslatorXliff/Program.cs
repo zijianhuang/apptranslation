@@ -27,9 +27,9 @@ namespace MsTranslatorXliff
 		{
 			Console.WriteLine(
 @"Examples:
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F=myUiMessages.es.xlf ---- For in-place translation.
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
-MsTranslatorXliff.exe /AK=MsTranslatorApiKey /AG=australiaeast /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F=myUiMessages.es.xlf ---- For in-place translation.
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
+MsTranslatorXliff.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
 "
 			);
 

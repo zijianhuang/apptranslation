@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.JsonTranslate", "Fon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslateJson", "GoogleTranslateJson\GoogleTranslateJson.csproj", "{E1B09DD9-1345-426C-811F-AC86785FBAD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorJson", "MsTranslatorJson\MsTranslatorJson.csproj", "{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,10 @@ Global
 		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1B09DD9-1345-426C-811F-AC86785FBAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,6 +206,7 @@ Global
 		{E2DA0A0F-53AA-4036-B9EC-28A52754246A} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
 		{E1B09DD9-1345-426C-811F-AC86785FBAD0} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
+		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {242FBB6D-F0FD-44E6-B7EF-05E31D67D7CE}
