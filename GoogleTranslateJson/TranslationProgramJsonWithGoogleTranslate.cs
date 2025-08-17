@@ -9,20 +9,23 @@ using System.Text.Json;
 
 namespace Fonlow.TranslationProgram
 {
-	[CliManager(Description = "Use Google Translate v2 or v3 to translate JSON object", OptionSeparator = "/", Assignment = ":")]
+	[CliManager(Description = "Use Google Translate v2 or v3 to translate selected string value properties of JSON object", OptionSeparator = "/", Assignment = ":")]
 	internal sealed class OptionsForJsonWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
-		[CommandLineOption(Aliases = "PS", Description = "Json object properties to be translated, e.g., /SS=\"parent.folder.name\" \"parent.fonlder.address\"")]
+		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated, e.g., /PS=\"parent.folder.name\" \"parent.fonlder.address\"")]
 		public string[] Properties { get; set; } = [];
 
-		[CommandLineOption(Aliases = "Ind", Description = "Outputted text in indented")]
+		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt")]
+		public string PropertiesFile { get; set; }
+
+		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Intented and UnsafeRelaxedJsonEscaping.")]
+		public int SerializationConfig { get; set; } = 0;
+
+		[CommandLineOption(Aliases = "Ind", Description = "Outputted text in indented, when SerializationConfig=2.")]
 		public bool Indented { get; set; }
 
-		[CommandLineOption(Aliases = "NUE", Description = "Outputted Unicode characters not escaped.")]
+		[CommandLineOption(Aliases = "NUE", Description = "Outputted Unicode characters not escaped, when SerializationConfig=2.")]
 		public bool UnsafeRelaxedJsonEscaping { get; set; }
-
-		[CommandLineOption(Aliases = "Web", Description = "Use JsonSerializerOptions.Web, otherwise, Default.")]
-		public bool UseWebConfig { get; set; }
 
 	}
 
@@ -48,17 +51,39 @@ namespace Fonlow.TranslationProgram
 		static IResourceTranslation CreateJsonProcessor(OptionsForJsonWithGoogleTranslate options)
 		{
 			var d = new JsonObjectTranslation();
-			d.SetProperties(options.Properties);
-			var serializerOptions = options.UseWebConfig ? JsonSerializerOptions.Web : JsonSerializerOptions.Default;
-			//if (options.Indented)
-			//{
-			//	serializerOptions.WriteIndented = true;
-			//}
+			if (string.IsNullOrEmpty(options.PropertiesFile))
+			{
+				d.SetProperties(options.Properties);
+			}
+			else
+			{
+				d.SetProperties(File.ReadAllLines(options.PropertiesFile));
+			}
+			JsonSerializerOptions serializerOptions;
 
-			//if (options.UnsafeRelaxedJsonEscaping)
-			//{
-			//	serializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
-			//}
+			switch (options.SerializationConfig)
+			{
+				case 1:
+					serializerOptions = JsonSerializerOptions.Web;
+					break;
+				case 2:
+					serializerOptions = new JsonSerializerOptions();
+					if (options.Indented)
+					{
+						serializerOptions.WriteIndented = true;
+					}
+
+					if (options.UnsafeRelaxedJsonEscaping)
+					{
+						serializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+					}
+					break;
+				default:
+					serializerOptions = JsonSerializerOptions.Default;
+					break;
+			}
+
+			d.SetJsonSerializerOptions(serializerOptions);
 
 			return d;
 		}
