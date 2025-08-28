@@ -29,7 +29,7 @@ namespace MsTranslatorJson
 @"Examples:
 MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=zh-hant /F:jsonld.zh-hant.json /PS:data.user.name data.user.address ---- For in-place translation when jsonld.zh-hant.json is not yet translated
 MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=ja /F:jsonld.json /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
-MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
+MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /Ind /NUE /SC=2 /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
 "
 			);
 		}

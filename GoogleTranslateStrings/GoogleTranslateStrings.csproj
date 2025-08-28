@@ -9,7 +9,7 @@
 		<Copyright>Copyright © Zijian Huang 2018-$([System.DateTime]::Now.Year)</Copyright>
 		<Product>Android String Resource Translator with Google Translate</Product>
 		<Description>CLI to translate Android String Resource with Google Translate v2 or v3</Description>
-		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/zijianhuang/apptranslation</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
 		<AnalysisLevel>latest-all</AnalysisLevel>

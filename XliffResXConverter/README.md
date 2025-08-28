@@ -9,6 +9,9 @@ And [ResX Resource Manager](https://marketplace.visualstudio.com/items?itemName=
 
 `XliffResXConverter.exe` together with `GoogleTranslateXliff.exe` along with some Powershell scripts could be more efficient for Continuous Integration with the least User Interaction, while being compatible what offered by ResX Resource Manager.
 
+**Remarks:**
+1. "XliffResXConverter.exe" is compatible with the ResX Resource Manager regarding the synchronization among source resx file and language resx files. Therefore, if you are running ResX Resource Manager, you don't need to run "XliffResXConverter.exe".
+1.  ResX Resource Manager has built-in translation features utilizing major translation engines. However, if you prefer batch processing rather than GUI interaction, you may utilize one fo the translation console apps of this project.
 
 # Overview
 

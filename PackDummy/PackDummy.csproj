@@ -8,12 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GoogleTranslateJson\GoogleTranslateJson.csproj" />
     <ProjectReference Include="..\GoogleTranslateResx\GoogleTranslateResx.csproj" />
     <ProjectReference Include="..\GoogleTranslateStrings\GoogleTranslateStrings.csproj" />
     <ProjectReference Include="..\GoogleTranslateXliff\GoogleTranslateXliff.csproj" />
+    <ProjectReference Include="..\MsTranslatorJson\MsTranslatorJson.csproj" />
     <ProjectReference Include="..\MsTranslatorResx\MsTranslatorResx.csproj" />
     <ProjectReference Include="..\MsTranslatorStrings\MsTranslatorStrings.csproj" />
     <ProjectReference Include="..\MsTranslatorXliff\MsTranslatorXliff.csproj" />
+    <ProjectReference Include="..\XliffResXConverter\XliffResXConverter.csproj" />
   </ItemGroup>
 
 </Project>

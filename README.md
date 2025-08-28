@@ -7,6 +7,7 @@ Batch translation of resource files through CLI tools with machine translation e
 * XLIFF 2.0
 * Microsoft ResX
 * Android String Resource
+* JSON
 
 **Supported Translation Engines:**
 * Google Translate v2
@@ -343,6 +344,44 @@ MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=ja /
 MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:AppResources.xml /TF:AppResources.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 ```
 
+## MsTranslatorJson.exe
+
+```
+/MsTranslatorJson.exe
+Use Microsoft Azure AI Translator to translate JSON object
+MsTranslatorJson  version 1.0.0.0
+
+
+   /Properties, /PS    JSON object properties to be translated, e.g., /PS="parent.folder.name" "parent.folder.address"
+   /PropertiesFile,    Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt
+   /PSF
+                       0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Intented and
+   /SerializationConfig, UnsafeRelaxedJsonEscaping.
+   /SC
+   /Indented, /Ind     Outputted text in indented, when SerializationConfig=2.
+                       Outputted Unicode characters not escaped, when SerializationConfig=2.
+   /UnsafeRelaxedJsonEscaping,
+   /NUE
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of WorkspaceID+CategoryCode, used by Batch mode, while
+                       the default is general . e.g., /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=zh-hant /F:jsonld.zh-hant.json /PS:data.user.name data.user.address ---- For in-place translation when jsonld.zh-hant.json is not yet translated
+MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=ja /F:jsonld.json /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
+MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /Ind /NUE /SC=2 /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
+```
+
 ## XliffResXConverter.exe
 
 This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Together with GoogleTranslateXliff.exe and some PowerShell scripts, you may establish seamless SDLC and Continuous Integration. Check [README](XliffResXConverter/README.md) for details.
@@ -359,9 +398,12 @@ This repository does not release binary builds generally. You may check-out the 
 
 ![MacOS run](Docs/Articles//Screenshots//MacStart.png)
 
-## Contributing
+## Microsoft Translator
 
-Please check [CONTRIBUTING.md](CONTRIBUTING.md).
+The translator service on MS Azure keep evolving rapidly. As of August 2025, the translation API keys are managed through:
+`Azure / AI Foundry / Translator / YourTranslatorInstance / Resource Management / Keys and Endpoint`
+
+## Google Translate
 
 # Continuous Integration
 
@@ -372,3 +414,76 @@ The [PowerShell folder](Docs/PowerShell) of this repository provides a few examp
 # Articles
 
 * [Batch Processing of Translation Resource for Angular Apps](/Docs//Articles/BatchProcessingAngular.md) also published on [dev.to](https://dev.to/zijianhuang/batch-processing-of-translation-resource-for-angular-apps-1il9) .
+
+# Contributing
+
+Please check [CONTRIBUTING.md](CONTRIBUTING.md).
+
+# Artificial Intelligence 
+
+The capability of AI in recent years is amazing. When you have a bunch of data in simple meta structure, AI like Copilot could understand the structure and do the repetitive tasks for you. For example, in Google Play Console, before submitting an update, the "What's New" section presents:
+```xml
+<en-US>
+1. Most built-in help contents are refined.
+2. When the visual acuity notation is LogMAR, MAR  or VAS, the scoring of the assessment is LogMAR Scoring.
+</en-US>
+<ar>
+Enter or paste your release notes for ar here
+</ar>
+<de-DE>
+Enter or paste your release notes for de-DE here
+</de-DE>
+<es-ES>
+Enter or paste your release notes for es-ES here
+</es-ES>
+<fil>
+Enter or paste your release notes for fil here
+</fil>
+<fr-FR>
+Enter or paste your release notes for fr-FR here
+</fr-FR>
+<hi-IN>
+Enter or paste your release notes for hi-IN here
+</hi-IN>
+<id>
+Enter or paste your release notes for id here
+</id>
+...
+```
+
+I asked Copilot to translate, and it gives fairly accurate translations conforming to the meta format.
+
+```xml
+<en-US>
+1. Most built-in help contents are refined.
+2. When the visual acuity notation is LogMAR, MAR or VAS, the scoring of the assessment is LogMAR Scoring.
+</en-US>
+<ar>
+1. تم تحسين معظم محتويات المساعدة المدمجة.
+2. عند استخدام رموز حدة البصر LogMAR أو MAR أو VAS، يتم احتساب التقييم باستخدام نظام LogMAR.
+</ar>
+<de-DE>
+1. Die meisten integrierten Hilfetexte wurden überarbeitet.
+2. Bei den Sehschärfeangaben LogMAR, MAR oder VAS erfolgt die Bewertung nach dem LogMAR-System.
+</de-DE>
+<es-ES>
+1. La mayoría de los contenidos de ayuda integrados han sido refinados.
+2. Cuando la notación de agudeza visual es LogMAR, MAR o VAS, la evaluación se realiza con puntuación LogMAR.
+</es-ES>
+...
+<vi>
+1. Hầu hết nội dung trợ giúp tích hợp đã được cải tiến.
+2. Khi ký hiệu thị lực là LogMAR, MAR hoặc VAS, việc đánh giá sử dụng thang điểm LogMAR.
+</vi>
+<zh-CN>
+1. 大多数内置帮助内容已优化。
+2. 当视力表示为 LogMAR、MAR 或 VAS 时，评估采用 LogMAR 评分。
+</zh-CN>
+<zh-HK>
+1. 大部分內置說明內容已經優化。
+2. 當視力標示為 LogMAR、MAR 或 VAS 時，評估將採用 LogMAR 評分方式。
+</zh-HK>
+
+```
+
+And you may try to use Copilot or alike to see if AI could replace the tools introduced in this open source project.

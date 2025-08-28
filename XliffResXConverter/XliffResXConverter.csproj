@@ -9,7 +9,7 @@
 		<Copyright>Copyright © Zijian Huang 2018-$([System.DateTime]::Now.Year)</Copyright>
 		<Product>ResX XLIFF converter</Product>
 		<Description>Convert and merge between ResX and XLIFF 1.2</Description>
-		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/zijianhuang/apptranslation</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
 	</PropertyGroup>
