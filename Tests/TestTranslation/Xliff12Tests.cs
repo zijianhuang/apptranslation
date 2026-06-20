@@ -19,7 +19,7 @@ namespace TestXliff
 		{
 			var g = new XWithGT2("en", "zh-hans", apiKey);
 			var t = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
-			Assert.Equal("有一些已注册的编号注释在诗中不再存在：<x id=\"PH\" equiv-text=\"numberList\"/> 。您要删除它们吗？", t);
+			Assert.Equal("诗中已不再包含一些已登记编号的注释：<x id=\"PH\" equiv-text=\"numberList\"/>你想删除它们吗？", t);
 		}
 
 		[Fact]
@@ -27,7 +27,7 @@ namespace TestXliff
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
 			var t = await g.Translate("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
-			Assert.Equal("诗歌中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>。是否要删除它们？", t);
+			Assert.Equal("诗中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>你想删除它们吗？", t);
 		}
 
 		[Fact]
@@ -36,7 +36,7 @@ namespace TestXliff
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion, "general");
 			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "About" };
 			var t = await g.Translate(ss);
-			Assert.Equal("诗歌中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>。是否要删除它们？", t[0]);
+			Assert.Equal("诗中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>你想删除它们吗？", t[0]);
 			Assert.Equal("大约", t[1]); //not good
 		}
 
@@ -125,8 +125,8 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("有一些已注册的编号注释在诗中不再存在：", (nodes[0] as XText).Value);
-				Assert.Equal("。您要删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
 
 				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
 			}
@@ -176,8 +176,8 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("有一些已注册的编号注释在诗中不再存在：", (nodes[0] as XText).Value);
-				Assert.Equal("。您要删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
 
 				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
 			}
