@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Xml.Linq;
 
 namespace Fonlow.JsonTranslate
 {

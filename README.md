@@ -2,6 +2,24 @@
 
 Batch translation of resource files through CLI tools with machine translation engines.
 
+AppTranslation is a collection of developer-focused CLI tools and libraries designed to automate batch translation of application resources (UI text, localization files) using Google Translate APIs. [github.com]
+It’s essentially a local-first alternative to SaaS localization platforms, built for developers who want:
+
+* Automation inside builds or scripts (CI/CD)
+* No subscription tools
+* Fast batch processing of files
+
+# Core Value Proposition
+
+*“Translate your app’s localization files in bulk, cheaply, and scriptably.”*
+
+Key differentiators:
+
+* Fully **CLI-driven (automation-ready)**
+* Works with **industry-standard formats** (XLIFF, ResX, Android XML)
+* Avoids unnecessary API costs by sending only text (not markup)
+* Extensible architectural design for adapting new file formats and new translation engines
+
 **Supported Translation Resource Formats:**
 * XLIFF 1.2
 * XLIFF 2.0
