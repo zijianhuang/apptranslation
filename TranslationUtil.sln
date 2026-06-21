@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11903.348 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.GoogleTranslateV2", "Fonlow.GoogleTranslate\Fonlow.GoogleTranslateV2.csproj", "{CA1CB030-D0D4-4939-B1A3-5C25CD25271B}"
 EndProject
@@ -70,6 +70,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslateJson", "GoogleTranslateJson\GoogleTranslateJson.csproj", "{E1B09DD9-1345-426C-811F-AC86785FBAD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorJson", "MsTranslatorJson\MsTranslatorJson.csproj", "{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.SvgTextTranslate", "Fonlow.SvgTextTranslate\Fonlow.SvgTextTranslate.csproj", "{6205D307-1777-4DF2-A077-2EB33052E429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslateSvgText", "GoogleTranslateSvgText\GoogleTranslateSvgText.csproj", "{138C2F98-920F-4B06-AE94-527A3713BD94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +181,14 @@ Global
 		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6205D307-1777-4DF2-A077-2EB33052E429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6205D307-1777-4DF2-A077-2EB33052E429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6205D307-1777-4DF2-A077-2EB33052E429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6205D307-1777-4DF2-A077-2EB33052E429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138C2F98-920F-4B06-AE94-527A3713BD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138C2F98-920F-4B06-AE94-527A3713BD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138C2F98-920F-4B06-AE94-527A3713BD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138C2F98-920F-4B06-AE94-527A3713BD94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,6 +219,8 @@ Global
 		{BED83C55-AAD7-4F34-8802-2D8E0C81A654} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
 		{E1B09DD9-1345-426C-811F-AC86785FBAD0} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{AF2CA86F-4062-4D6D-8F4B-0A2422EA4153} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
+		{6205D307-1777-4DF2-A077-2EB33052E429} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
+		{138C2F98-920F-4B06-AE94-527A3713BD94} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {242FBB6D-F0FD-44E6-B7EF-05E31D67D7CE}

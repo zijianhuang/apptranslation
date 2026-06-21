@@ -51,6 +51,7 @@
     <ProjectReference Include="..\..\Fonlow.MsTranslator\Fonlow.MsTranslator.csproj" />
     <ProjectReference Include="..\..\Fonlow.ResxTranslate\Fonlow.ResxTranslate.csproj" />
     <ProjectReference Include="..\..\Fonlow.StringsTranslation\Fonlow.StringsTranslate.csproj" />
+    <ProjectReference Include="..\..\Fonlow.SvgTextTranslate\Fonlow.SvgTextTranslate.csproj" />
     <ProjectReference Include="..\..\Fonlow.XliffResX\Fonlow.XliffResX.csproj" />
     <ProjectReference Include="..\..\Fonlow.XliffTranslate\Fonlow.XliffTranslate.csproj" />
   </ItemGroup>

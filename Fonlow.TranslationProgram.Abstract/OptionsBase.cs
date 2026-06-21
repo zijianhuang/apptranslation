@@ -10,7 +10,7 @@ namespace Fonlow.TranslationProgram.Abstract
 		[CommandLineOption(Aliases = "F", Description = "Source file path")]
 		public string SourceFile { get; set; }
 
-		[CommandLineOption(Aliases = "TF", Description = "Target file path")]
+		[CommandLineOption(Aliases = "TF", Description = "Target file path. Without this, the source file is also the target file.")]
 		public string TargetFile { get; set; }
 
 		[CommandLineOption(Aliases = "SL", Description = "Source language. e.g., /SL=fr")]
@@ -29,6 +29,4 @@ namespace Fonlow.TranslationProgram.Abstract
 			set;
 		}
 	}
-
-
 }

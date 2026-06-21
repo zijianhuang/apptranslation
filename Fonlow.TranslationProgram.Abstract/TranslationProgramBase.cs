@@ -1,5 +1,4 @@
-﻿using Antlr4.Runtime.Misc;
-using Fonlow.Cli;
+﻿using Fonlow.Cli;
 using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
 

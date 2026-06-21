@@ -7,7 +7,11 @@ Batch translation of resource files through CLI tools with machine translation e
 * XLIFF 2.0
 * Microsoft ResX
 * Android String Resource
-* JSON
+* JSON, like `.xcstrings` of XCode 15+
+* XML (pending #14)
+
+**Supported data format for localization**
+* SVG Text
 
 **Supported Translation Engines:**
 * Google Translate v2
@@ -21,8 +25,8 @@ You should setup your own accounts and API credentials of these engines.
 
 Through proper scripting, .NET translation resource could be using XLIFF as Translation Memory.
 
-**Remarks:**
-* It is presumed that you have rich experience in using each translation engine through API regarding setup and authentication. Or you study the documentations of respective engines.
+**Prerequisites:**
+* You have rich experience in using each translation engine through API regarding setup and authentication. Or you study the documentations of respective engines.
 
 **Supported Operating Systems:**
 
@@ -486,4 +490,8 @@ I asked Copilot to translate, and it gives fairly accurate translations conformi
 
 ```
 
-And you may try to use Copilot or alike to see if AI could replace the tools introduced in this open source project.
+And you may try to use Copilot or alike to see if AI could replace the tools introduced in this open source project, especially when you have unlimited "free" tokens to use.
+
+Keep this in mind: when AI does the initial analysis, a lot tokens will be consumed before doing the translation. Also the performance of ad-hoc analysis of meta structure along with the translation will be inherently slower than dediciated tools with:
+1. Built-in dedicated parser and writer.
+2. Direct hooks on dedicated translation engines.
