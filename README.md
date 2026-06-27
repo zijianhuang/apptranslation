@@ -1,13 +1,46 @@
+- [Overview](#overview)
+- [Core Value Proposition](#core-value-proposition)
+  - [Background](#background)
+- [Tools](#tools)
+  - [GoogleTranslateXliff.exe](#googletranslatexliffexe)
+  - [GoogleTranslateResx.exe](#googletranslateresxexe)
+  - [GoogleTranslateStrings.exe](#googletranslatestringsexe)
+  - [GoogleTranslateJson.exe](#googletranslatejsonexe)
+    - [SerializationConfig](#serializationconfig)
+      - [JsonSerializerOptions.Default vs Web](#jsonserializeroptionsdefault-vs-web)
+    - [When to Use Which?](#when-to-use-which)
+    - [When Is It Safe to Use UnsafeRelaxedJsonEscaping?](#when-is-it-safe-to-use-unsaferelaxedjsonescaping)
+    - [Summary](#summary)
+  - [MsTranslatorXliff.exe](#mstranslatorxliffexe)
+  - [MsTranslatorResx.exe](#mstranslatorresxexe)
+  - [MsTranslatorStrings.exe](#mstranslatorstringsexe)
+  - [MsTranslatorJson.exe](#mstranslatorjsonexe)
+  - [XliffResXConverter.exe](#xliffresxconverterexe)
+- [Build and Deployment](#build-and-deployment)
+  - [Microsoft Translator](#microsoft-translator)
+  - [Google Translate](#google-translate)
+- [Continuous Integration](#continuous-integration)
+- [Articles](#articles)
+- [Contributing](#contributing)
+- [Artificial Intelligence](#artificial-intelligence)
+
 # Overview
 
-Batch translation of resource files through CLI tools with machine translation engines.
+Batch translation of app translation resource files through CLI tools with machine translation engines.
 
-AppTranslation is a collection of developer-focused CLI tools and libraries designed to automate batch translation of application resources (UI text, localization files) using Google Translate APIs. [github.com]
+AppTranslation is a collection of developer-focused CLI tools and libraries designed to automate batch translation of application resources (UI text, localization files) using Google Translate APIs and Microsoft Translators. 
+
 It’s essentially a local-first alternative to SaaS localization platforms, built for developers who want:
 
 * Automation inside builds or scripts (CI/CD)
 * No subscription tools
 * Fast batch processing of files
+
+**Hints:**
+* This repos has started for app translation resource files like XLIFF and RESX etc, and now it also supports arbitrary meta file like JSON and SVG Text Nodes.
+* Support for XML Text nodes are pending.
+
+AppTranslation includes a [framework through a set of interfaces and shared libraries](CONTRIBUTING.md) for extending supports for other meta formats and translation engines.
 
 # Core Value Proposition
 

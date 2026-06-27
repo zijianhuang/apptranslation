@@ -1,12 +1,10 @@
 ﻿using Fonlow.GoogleTranslate;
 using Fonlow.JsonTranslate;
-using Fonlow.ResxTranslate;
 using Google.Cloud.Translation.V2;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Xml.Linq;
 
 namespace TestJson
 {

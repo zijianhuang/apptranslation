@@ -1,6 +1,6 @@
 # Roadmap
 
-The scope is within the needs of full-stack software developers. That is, the developer coordinates translation efforts by fellow developers, staffs and external translators.
+The scope is within the needs of full-stack software developers. That is, the developer drives translation efforts by fellow developers, staffs and external translators.
 
 * Converter between ResX and XLIFF and reconciliation. [Exchanging localizable resources](https://learn.microsoft.com/en-us/globalization/localization/exchanging-localizable-resources) (Done)
 * Converter between Android Resource and XLIFF and reconciliation
@@ -11,8 +11,8 @@ The scope is within the needs of full-stack software developers. That is, the de
 
 ## Prerequisites
 
-* .NET 9 SDK
-* Visual Studio 2022
+* .NET 10 SDK
+* Visual Studio 2026
 
 ## Design Choices
 
@@ -28,7 +28,7 @@ Please create issue before forking and PR.
 ## Design
 
 ### Packages
-![Design Packages](Docs/Articles/Screenshots/DesignPackages.png)
+![Design Packages](Docs/Packages.png)
 
 ### Typical Classes in App
 ![Design Classes](Docs/ClassesInApp.png)
