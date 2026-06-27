@@ -17,5 +17,7 @@ namespace Fonlow.Translate
 		/// <param name="strings"></param>
 		/// <returns></returns>
 		Task<string[]> Translate(IList<string> strings);
+
+		Task<string> TranslateHtml(string htmlText);
 	}
 }

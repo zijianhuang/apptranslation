@@ -27,7 +27,15 @@ namespace TestXliff
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
 			var t = await g.Translate("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
-			Assert.Equal("诗中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>你想删除它们吗？", t);
+			Assert.Equal("有些已注册的编号注释已不再出现在诗中：<x id=“PH” 等文=“numberList”/>。你想把它们拆掉吗？", t);
+		}
+
+		[Fact]
+		public async Task TestMsTranslatorForHtml()
+		{
+			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
+			var t = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
+			Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 <x id=\"PH\" equiv-text=\"numberList\"/>你想把它们拆掉吗？", t); 
 		}
 
 		[Fact]
@@ -36,8 +44,8 @@ namespace TestXliff
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion, "general");
 			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "About" };
 			var t = await g.Translate(ss);
-			Assert.Equal("诗中不再存在一些已注册的编号注释：<x id=“PH” equiv-text=“numberList”/>你想删除它们吗？", t[0]);
-			Assert.Equal("大约", t[1]); //not good
+			Assert.Equal("有些已注册的编号注释已不再出现在诗中：<x id=“PH” 等文=“numberList”/>。你想把它们拆掉吗？", t[0]);
+			Assert.Equal("关于", t[1]); //not good
 		}
 
 		[Fact]

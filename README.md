@@ -32,8 +32,8 @@ Key differentiators:
 * SVG Text
 
 **Supported Translation Engines:**
-* Google Translate v2
-* Google Cloud Translation v3
+* Google Translate v2 (Cloud Translation - Basic API)
+* [Google Cloud Translation v3 (Advanced API)](https://docs.cloud.google.com/translate/docs/overview)
 * Microsoft Azure AI Translator
 
 You should setup your own accounts and API credentials of these engines.
@@ -423,9 +423,25 @@ This repository does not release binary builds generally. You may check-out the 
 ## Microsoft Translator
 
 The translator service on MS Azure keep evolving rapidly. As of August 2025, the translation API keys are managed through:
-`Azure / AI Foundry / Translator / YourTranslatorInstance / Resource Management / Keys and Endpoint`
+* https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextTranslation
+* `Azure / AI Foundry / Translator / YourTranslatorInstance / Resource Management / Keys and Endpoint`
+
+
 
 ## Google Translate
+
+The credentials are managed at:
+* https://console.cloud.google.com/apis/credentials
+* https://console.cloud.google.com/auth/clients
+
+The credential typically expires in 6 months if no activity. To recreate, here the steps:
+1. Create project
+2. Create App/Branding
+3. Create OAuth Client for Desktop app
+4. Download JSON.
+
+And make sure "Cloud Translation API" is included in Enabled APIs and services.
+
 
 # Continuous Integration
 

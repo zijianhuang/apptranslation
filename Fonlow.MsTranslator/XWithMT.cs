@@ -28,10 +28,19 @@ namespace Fonlow.MsTranslator
 			return translationTextItem.Translations?.FirstOrDefault()?.Text;
 		}
 
+		public async Task<string> TranslateHtml(string text)
+		{
+			var item = new TranslateInputItem(text, new TranslationTarget(TargetLang), SourceLang, textType: TextType.Html);
+			var response = await translationClient.TranslateAsync(item); //Azure AI Translator API not supporting category in single text.
+			var translationTextItem = response.Value;
+			return translationTextItem.Translations?.FirstOrDefault()?.Text;
+		}
+
 		public async Task<string[]> Translate(IList<string> strings)
 		{
 			string[] targetLanguanges = { TargetLang };
-			var response = await translationClient.TranslateAsync(targetLanguanges, strings, sourceLanguage: SourceLang, category: CategoryId); //something like "a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT"
+			var items = strings.Select(d => new TranslateInputItem(d, new TranslationTarget(TargetLang), SourceLang, textType: TextType.Plain));
+			var response = await translationClient.TranslateAsync(items);
 			return response.Value.Select(item => item.Translations?.FirstOrDefault()?.Text).ToArray();
 		}
 	}

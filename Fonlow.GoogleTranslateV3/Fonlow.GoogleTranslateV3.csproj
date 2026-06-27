@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Google.Cloud.Translate.V3" Version="3.9.0" />
+		<PackageReference Include="Google.Cloud.Translate.V3" Version="3.11.0" />
 	</ItemGroup>
 
 	<ItemGroup>
