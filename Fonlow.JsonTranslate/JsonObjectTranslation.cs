@@ -35,7 +35,8 @@ namespace Fonlow.JsonTranslate
 			this.targetFile = targetFile;
 		}
 
-		public void SetProperties(string[] properties){
+		public void SetProperties(string[] properties)
+		{
 			this.properties = properties;
 		}
 
@@ -47,9 +48,9 @@ namespace Fonlow.JsonTranslate
 		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			int c;
-				var jsonText = File.ReadAllText(sourceFile);
-				var jsonObject = JsonObject.Parse(jsonText);
-				c = await TranslateJsonObject(jsonObject, properties, translator, logger, progressDisplay).ConfigureAwait(false);
+			var jsonText = File.ReadAllText(sourceFile);
+			var jsonObject = JsonObject.Parse(jsonText);
+			c = await TranslateJsonObject(jsonObject, properties, translator, logger, progressDisplay).ConfigureAwait(false);
 
 			File.WriteAllText(targetFile, jsonObject.ToJsonString(jsonSerializerOptions));
 			return c;
@@ -70,7 +71,7 @@ namespace Fonlow.JsonTranslate
 			ArgumentNullException.ThrowIfNull(properties);
 			const int maxUnits = 200;
 			int translatedCount = 0;
-			var allNestedPropertySegmentsList = properties.Select(d => d?.Split(['.', '/'])).ToArray();
+			var allNestedPropertySegmentsList = properties.Select(d => d?.Split(['.', '/'])).ToArray(); // tolerate JSON Pointer
 			var total = allNestedPropertySegmentsList.Length;
 
 			if (batchMode)
@@ -103,7 +104,8 @@ namespace Fonlow.JsonTranslate
 						continue;
 					}
 
-					if (jsonNode is not JsonValue){
+					if (jsonNode is not JsonValue)
+					{
 						continue;
 					}
 
@@ -149,7 +151,8 @@ namespace Fonlow.JsonTranslate
 					}
 
 					return true;
-				}).Select(segments => {
+				}).Select(segments =>
+				{
 					var jsonNode = FindValueNode(jsonObject, segments);
 					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
 					return nodeText;

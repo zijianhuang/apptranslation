@@ -12,13 +12,13 @@ namespace Fonlow.TranslationProgram
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate selected string value properties of JSON object", OptionSeparator = "/", Assignment = ":")]
 	internal sealed class OptionsForJsonWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
-		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated, e.g., /PS=\"parent.folder.name\" \"parent.folder.address\"")]
+		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated represented by JSONPath/JMESPath, e.g., /PS=\"parent.folder.name\" \"parent.folder.address\"")]
 		public string[] Properties { get; set; } = [];
 
-		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt")]
+		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated represented by JSONPath/JMESPath and JSON Pointer is accepted, e.g., /PSF=JsonProperties.txt")]
 		public string PropertiesFile { get; set; }
 
-		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Intented and UnsafeRelaxedJsonEscaping.")]
+		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Indented and UnsafeRelaxedJsonEscaping.")]
 		public int SerializationConfig { get; set; } = 0;
 
 		[CommandLineOption(Aliases = "Ind", Description = "Outputted text in indented, when SerializationConfig=2.")]
@@ -48,7 +48,7 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static IResourceTranslation CreateJsonProcessor(OptionsForJsonWithGoogleTranslate options)
+		static JsonObjectTranslation CreateJsonProcessor(OptionsForJsonWithGoogleTranslate options)
 		{
 			var d = new JsonObjectTranslation();
 			if (string.IsNullOrEmpty(options.PropertiesFile))

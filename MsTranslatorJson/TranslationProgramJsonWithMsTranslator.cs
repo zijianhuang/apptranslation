@@ -18,7 +18,7 @@ namespace Fonlow.TranslationProgram
 		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt")]
 		public string PropertiesFile { get; set; }
 
-		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Intented and UnsafeRelaxedJsonEscaping.")]
+		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Indented and UnsafeRelaxedJsonEscaping.")]
 		public int SerializationConfig { get; set; } = 0;
 
 		[CommandLineOption(Aliases = "Ind", Description = "Outputted text in indented, when SerializationConfig=2.")]
