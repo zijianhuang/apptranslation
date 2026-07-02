@@ -1,8 +1,11 @@
 ﻿using Fonlow.GoogleTranslate;
-using Google.Cloud.Translation.V2;
 using Fonlow.SvgTextTranslate;
+using Google.Cloud.Translation.V2;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
-namespace TestStrings
+namespace TestSvgText
 {
 	[Collection("ServicesLaunch")]
 	public class SvgTextTests
@@ -34,5 +37,6 @@ namespace TestStrings
 			Assert.Equal("測量遠距離視力", first.Text);
 			Assert.Equal(7, r.Count);
 		}
+
 	}
 }

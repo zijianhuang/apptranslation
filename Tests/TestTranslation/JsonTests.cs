@@ -84,8 +84,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			var c = await translation.TranslateJsonObject(jsonObject, ["data.user.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
 			Assert.Equal("有人愛你", n2.GetValue<string>());
@@ -97,8 +96,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			var c = await translation.TranslateJsonObject(jsonObject, ["data.user.name", "data.user", "", null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name", "data.user", "", null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
 			Assert.Equal("有人愛你", n2.GetValue<string>());
@@ -110,8 +108,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			var c = await translation.TranslateJsonObject(jsonObject, ["data.something.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.something.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
 
@@ -120,8 +117,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			var c = await translation.TranslateJsonObject(jsonObject, [], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, [], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
 
@@ -130,8 +126,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			var c = await translation.TranslateJsonObject(jsonObject, [null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, [null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
 
@@ -140,9 +135,7 @@ namespace TestJson
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
 			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
-			var translation = new JsonObjectTranslation();
-			translation.SetBatchMode(true);
-			var c = await translation.TranslateJsonObject(jsonObject, ["data.user.name", "1234", "data.user"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null);
+			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name", "1234", "data.user"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, true);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
 			Assert.Equal("有人愛你", n2.GetValue<string>());
