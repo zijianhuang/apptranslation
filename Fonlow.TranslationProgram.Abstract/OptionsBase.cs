@@ -3,7 +3,7 @@
 namespace Fonlow.TranslationProgram.Abstract
 {
 	/// <summary>
-	/// Common options
+	/// Common options for derived options for different translation engines and metadata.
 	/// </summary>
 	public class OptionsBase
 	{
