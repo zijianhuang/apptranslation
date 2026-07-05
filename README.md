@@ -26,6 +26,7 @@
 - [Contributing](#contributing)
 - [Artificial Intelligence](#artificial-intelligence)
 
+
 # Overview
 
 Batch translation of app translation resource files through CLI tools with machine translation engines.
@@ -60,11 +61,11 @@ Key differentiators:
 * XLIFF 2.0
 * Microsoft ResX
 * Android String Resource
-* JSON, like `.xcstrings` of XCode 15+
-* XML (pending #14)
 
-**Supported data format for localization**
-* SVG Text
+**Supported Generic Formats:**
+* JSON, like `.xcstrings` of XCode 15+
+* XML, like SVG text, and HTML of `application/xhtml+xml`.
+* HTML, (pending #15)
 
 **Supported Translation Engines:**
 * Google Translate v2 (Cloud Translation - Basic API)
@@ -303,16 +304,16 @@ GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:json
 ### SerializationConfig
 #### JsonSerializerOptions.Default vs Web
 
-| Feature | Default | Web | 
-| ---- | ---- | ---- | 
-| Naming Policy | null (preserves original property names) | CamelCase (e.g., UserName → userName) | 
-| Encoder | JavaScriptEncoder.Default (escapes non-ASCII) | JavaScriptEncoder.Default (same) | 
-| IgnoreNullValues (obsolete) | false | true (in .NET 5 and earlier) | 
-| DefaultIgnoreCondition | Never | WhenWritingNull (in .NET 6+) | 
-| PropertyNameCaseInsensitive | false | true | 
-| ReadCommentHandling | Disallow | Disallow | 
-| AllowTrailingCommas | false | false | 
-| Indented Output | false | false | 
+| Feature                     | Default                                       | Web                                   |
+| --------------------------- | --------------------------------------------- | ------------------------------------- |
+| Naming Policy               | null (preserves original property names)      | CamelCase (e.g., UserName → userName) |
+| Encoder                     | JavaScriptEncoder.Default (escapes non-ASCII) | JavaScriptEncoder.Default (same)      |
+| IgnoreNullValues (obsolete) | false                                         | true (in .NET 5 and earlier)          |
+| DefaultIgnoreCondition      | Never                                         | WhenWritingNull (in .NET 6+)          |
+| PropertyNameCaseInsensitive | false                                         | true                                  |
+| ReadCommentHandling         | Disallow                                      | Disallow                              |
+| AllowTrailingCommas         | false                                         | false                                 |
+| Indented Output             | false                                         | false                                 |
 
 And option "Indented" and "UnsafeRelaxedJsonEscaping" are to have an instance of JsonSerializerOptions similar to "Default" but with a little adjustment.
 
@@ -332,12 +333,12 @@ Use "Web" when:
 * Since this utility is to translate some properties, it will be rare that you need what offered by "Web".
 
 ### When Is It Safe to Use UnsafeRelaxedJsonEscaping?
-| Scenario | Safe? | Notes | 
-| ---- | ---- | ---- |
-| Internal apps with full UTF-8 support | ✅ | Improves readability and localization | 
-| Web APIs with proper headers | ✅ | Ensure charset=utf-8 is set | 
-| Embedded in HTML/JS | ⚠️ | Escape manually or sanitize carefully | 
-| Legacy systems or unknown consumers | ❌ | Prefer escaped Unicode for safety | 
+| Scenario                              | Safe? | Notes                                 |
+| ------------------------------------- | ----- | ------------------------------------- |
+| Internal apps with full UTF-8 support | ✅     | Improves readability and localization |
+| Web APIs with proper headers          | ✅     | Ensure charset=utf-8 is set           |
+| Embedded in HTML/JS                   | ⚠️     | Escape manually or sanitize carefully |
+| Legacy systems or unknown consumers   | ❌     | Prefer escaped Unicode for safety     |
 
 ### Summary
 - Default is a neutral baseline—ideal for internal serialization where you want full control over naming and behavior.
