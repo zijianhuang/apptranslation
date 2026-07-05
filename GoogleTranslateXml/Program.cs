@@ -28,10 +28,8 @@ namespace GoogleTranslateXml
 		{
 			Console.WriteLine(
 @"Examples:
-GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:myart.zh-hant.svg ---- For in-place translation when myart.zh-hant.svg is not yet translated
-GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:myart.svg /TF:myart.ja.svg ---- from the source locale file to a new target file in Japanese
-GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.svg /TF:myUiMessages.es.svg /TL=es ---- From the source template file to a new target file in Spanish.
-GoogleTranslateXml.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.svg ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateXml.exe /AKF=apikey.txt /SL=en /TL=""zh-hant"" /XPaths=`//svg:text/svg:tspan` /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
+GoogleTranslateXml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL=""zh-hant"" /XPaths=`//svg:text/svg:tspan` /B /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
 "
 			);
 		}
