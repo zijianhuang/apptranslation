@@ -48,7 +48,7 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static IResourceTranslation CreateJsonProcessor(OptionsForJsonWithMsTranslator options)
+		static JsonObjectTranslation CreateJsonProcessor(OptionsForJsonWithMsTranslator options)
 		{
 			var d = new JsonObjectTranslation();
 			if (string.IsNullOrEmpty(options.PropertiesFile))

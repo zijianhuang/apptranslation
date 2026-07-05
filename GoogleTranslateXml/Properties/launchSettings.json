@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GoogleTranslateXml": {
+      "commandName": "Project",
+      "commandLineArgs": "/AKF=../../Secrets/GoogleTranslate/apikey.txt /SL=en /TL=\"zh-hant\" /XPaths=`abc/efgf` `//abc/efg`  /F=../Tests/TestTranslation/svg/template1.svg /TF=../Tests/TestTranslation/bin/template1.zh-Hant.svg"
+    }
+  }
+}

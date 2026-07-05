@@ -222,7 +222,7 @@ Use Google Translate v2 or v3 to translate selected string value properties of J
 GoogleTranslateJson  version 1.0.0.0
 
 
-   /Properties, /PS    JSON object properties to be translated, e.g., /PS="parent.folder.name" "parent.folder.address"
+   /Properties, /PS    JSON object properties to be translated represented by JSONPath, e.g., /PS="parent.folder.name" "parent.folder.address"
    /PropertiesFile,    Each line declares a JSON object property to be translated, e.g., /PSF=JsonProperties.txt
    /PSF
                        0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Indented and UnsafeRelaxedJsonEscaping.

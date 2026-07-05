@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonlow.XmlTranslate", "Fonl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslateXml", "GoogleTranslateXml\GoogleTranslateXml.csproj", "{698E0231-CC78-4E62-8DB1-7D5280C70CE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTranslatorXml", "MsTranslatorXml\MsTranslatorXml.csproj", "{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +205,10 @@ Global
 		{698E0231-CC78-4E62-8DB1-7D5280C70CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{698E0231-CC78-4E62-8DB1-7D5280C70CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{698E0231-CC78-4E62-8DB1-7D5280C70CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,6 +243,7 @@ Global
 		{138C2F98-920F-4B06-AE94-527A3713BD94} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 		{5B9D063A-1494-40D9-96D3-D485CA897CFE} = {1042A636-D5FE-4958-9043-D2B46B9DB171}
 		{698E0231-CC78-4E62-8DB1-7D5280C70CE7} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
+		{39BFEB0E-D8F3-46C3-BFA9-96AF896BD39A} = {A4B0F315-4748-4D2E-97BE-D194FF9188F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {242FBB6D-F0FD-44E6-B7EF-05E31D67D7CE}

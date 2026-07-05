@@ -89,6 +89,13 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 				return 200;
 			}
 
+			if (ex is Grpc.Core.RpcException){
+				logger.LogError("Authentication failed with Google Cloud Translate V3. Please check your ClientSecretFile.");
+				logger.LogError(ex.ToString());
+				logger.LogInformation("Program exit. status: 200");
+				return 200;
+			}
+
 			throw ex;
 		}
 	}

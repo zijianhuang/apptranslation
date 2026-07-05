@@ -153,7 +153,7 @@ namespace Fonlow.XmlTranslate
 				int translatedIndex = 0;
 				foreach (var el in elements)
 				{
-					el.Value = translatedStrings[translatedIndex++];
+					el.Value = translatedStrings[translatedIndex];
 					translatedIndex++;
 					translatedCount++;
 				}
