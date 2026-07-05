@@ -67,8 +67,7 @@ namespace Fonlow.TranslationProgram.Abstract
 		{
 			var parser = new CommandLineParser(optionsBase);
 			Console.WriteLine(parser.ApplicationDescription);
-			Console.WriteLine("Executing: " + Environment.CommandLine);
-			//parser.Parse(Environment.CommandLine, true);
+			//logger.LogDebug("Executing: " + Environment.CommandLine);
 			parser.Parse();
 			if (args.Length == 0 || optionsBase.Help)
 			{

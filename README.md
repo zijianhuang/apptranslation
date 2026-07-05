@@ -5,6 +5,7 @@
   - [GoogleTranslateXliff.exe](#googletranslatexliffexe)
   - [GoogleTranslateResx.exe](#googletranslateresxexe)
   - [GoogleTranslateStrings.exe](#googletranslatestringsexe)
+  - [GoogleTranslateXml.exe](#googletranslatexmlexe)
   - [GoogleTranslateJson.exe](#googletranslatejsonexe)
     - [SerializationConfig](#serializationconfig)
       - [JsonSerializerOptions.Default vs Web](#jsonserializeroptionsdefault-vs-web)
@@ -14,6 +15,7 @@
   - [MsTranslatorXliff.exe](#mstranslatorxliffexe)
   - [MsTranslatorResx.exe](#mstranslatorresxexe)
   - [MsTranslatorStrings.exe](#mstranslatorstringsexe)
+  - [MsTranslatorXml.exe](#mstranslatorxmlexe)
   - [MsTranslatorJson.exe](#mstranslatorjsonexe)
   - [XliffResXConverter.exe](#xliffresxconverterexe)
 - [Build and Deployment](#build-and-deployment)
@@ -215,6 +217,47 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
 ```
 
+## GoogleTranslateXml.exe
+```
+GoogleTranslateXml.exe
+Use Google Translate v2 or v3 to translate XML Text based on XPaths
+JSON Translator using Google Translate v2 or v3  version 1.1.0.0
+Copyright © Zijian Huang 2011-2026
+
+
+   /XPaths, /XPS       XML text nodes to be translated represented by Xpaths, e.g., /XPS=`//svg:text/svg:tspan`
+                       `//ns:pp/ns:span` in Windows CMD, and add --% after the command in PowerShell 5.1, and for
+                       running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
+   /XPathsFile, /XPSF  Each line declares a XPath for text nodes to be translated, e.g., /XPSF=XPaths.txt
+   /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g.,
+                       /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app
+   /CSF                uses client secret JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so
+   /ReversedTranslation, you can compare. Both SourceFile and TargetFile must be defined.                               
+   /Reversed
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:myart.zh-hant.svg ---- For in-place translation when myart.zh-hant.svg is not yet translated
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:myart.svg /TF:myart.ja.svg ---- from the source locale file to a new target file in Japanese
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.svg /TF:myUiMessages.es.svg /TL=es ---- From the source template file to a new target file in Spanish.
+GoogleTranslateXml.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.svg ---- Use Google Cloud Translate V3 and batch mode.
+```
+
+**Hints:**
+* For complex XPath queries with characters in conflicting against the syntax of CLI parameters, it may be more convenient to declare through the `XPathsFile` option like [xpaths.txt](https://github.com/zijianhuang/apptranslation/blob/master/GoogleTranslateXml/xpaths.txt).
+* To translate text nodes of SVG, here's an [example PowerShell script](https://github.com/zijianhuang/apptranslation/blob/master/GoogleTranslateXml/translateSvg.ps1). Therefore, this app can replace [GoogleTranslateSvgText.exe](https://github.com/zijianhuang/apptranslation/tree/master/GoogleTranslateSvgText) which is deprecated.
+
 ## GoogleTranslateJson.exe
 ```
 GoogleTranslateJson.exe
@@ -256,6 +299,7 @@ GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /F:jsonld.json /TF:jsonl
 GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:jsonld.es.json /PS:data.user.name ---- Use Google Cloud Translate V3 and batch mode.
 ```
 
+
 ### SerializationConfig
 #### JsonSerializerOptions.Default vs Web
 
@@ -295,17 +339,9 @@ Use "Web" when:
 | Embedded in HTML/JS | ⚠️ | Escape manually or sanitize carefully | 
 | Legacy systems or unknown consumers | ❌ | Prefer escaped Unicode for safety | 
 
-
-
-
-
-
 ### Summary
 - Default is a neutral baseline—ideal for internal serialization where you want full control over naming and behavior.
 - Web is optimized for web APIs, aligning with common JSON conventions like camelCase and ignoring nulls.
-
-
-
 
 
 ## MsTranslatorXliff.exe
@@ -399,6 +435,40 @@ MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /SL=en /TL=ja /
 MsTranslatorStrings.exe /AK=MsTranslatorApiKey /RG=australiaeast /F:AppResources.xml /TF:AppResources.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 ```
 
+## MsTranslatorXml.exe
+```
+MsTranslatorXml.exe
+Use MS Translator to translate XML Text based on XPaths
+JSON Translator using Microsoft Translator  version 1.0.0.0
+Copyright © Zijian Huang 2011-2026
+
+
+   /XPaths, /XPS       XML text nodes to be translated represented by Xpaths, e.g., /XPS=`//svg:text/svg:tspan`
+                       `//ns:pp/ns:span` in Windows CMD, and add --% after the command in PowerShell 5.1, and for
+                       running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
+   /XPathsFile, /XPSF  Each line declares a XPath for text nodes to be translated, e.g., /XPSF=XPaths.txt
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of
+                       WorkspaceID+CategoryCode, used by Batch mode, while the default is general . e.g.,
+                       /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
+   /SourceLang, /SL    Source language. e.g., /SL=fr
+   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:myart.zh-hant.svg ---- For in-place translation when myart.zh-hant.svg is not yet translated
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:myart.svg /TF:myart.ja.svg ---- from the source locale file to a new target file in Japanese
+GoogleTranslateXml.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.svg /TF:myUiMessages.es.svg /TL=es ---- From the source template file to a new target file in Spanish.
+GoogleTranslateXml.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.svg ---- Use Google Cloud Translate V3 and batch mode.
+```
+
 ## MsTranslatorJson.exe
 
 ```
@@ -444,8 +514,8 @@ This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Toge
 # Build and Deployment
 
 **Prerequisites:**
-* .NET 9 SDK for development and build
-* .NET 9 Runtime for execution
+* .NET 10 SDK for development and build
+* .NET 10 Runtime for execution
 
 This repository does not release binary builds generally. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, [MacOS](https://learn.microsoft.com/en-us/dotnet/core/install/macos) or [Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux).
 
@@ -458,8 +528,6 @@ This repository does not release binary builds generally. You may check-out the 
 The translator service on MS Azure keep evolving rapidly. As of August 2025, the translation API keys are managed through:
 * https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextTranslation
 * `Azure / AI Foundry / Translator / YourTranslatorInstance / Resource Management / Keys and Endpoint`
-
-
 
 ## Google Translate
 
