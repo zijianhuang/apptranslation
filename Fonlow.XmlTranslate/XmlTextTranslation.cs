@@ -71,6 +71,9 @@ namespace Fonlow.XmlTranslate
 		{
 			foreach (var xpath in xpaths)
 			{
+				if (string.IsNullOrWhiteSpace(xpath)) 
+					continue;
+
 				foreach (var el in root.XPathSelectElements(xpath, nsManager))
 				{
 

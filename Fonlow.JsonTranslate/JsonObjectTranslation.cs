@@ -1,8 +1,7 @@
 ﻿using Fonlow.Translate;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
 using System.Text.Json;
-using System.Text.Json.Nodes;
+using Newtonsoft.Json.Linq;
 
 namespace Fonlow.JsonTranslate
 {
@@ -40,25 +39,51 @@ namespace Fonlow.JsonTranslate
 			this.properties = properties;
 		}
 
-		public void SetJsonSerializerOptions(JsonSerializerOptions jsonSerializerOptions)
-		{
-			this.jsonSerializerOptions = jsonSerializerOptions;
-		}
+		//public void SetJsonSerializerOptions(JsonSerializerOptions jsonSerializerOptions)
+		//{
+		//	this.jsonSerializerOptions = jsonSerializerOptions;
+		//}
 
 		public async Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay)
 		{
 			int c;
 			var jsonText = File.ReadAllText(sourceFile);
-			var jsonObject = JsonObject.Parse(jsonText);
+			var jsonObject = JObject.Parse(jsonText);
 			c = await JsonObjectHandler.TranslateJsonObject(jsonObject, properties, translator, logger, progressDisplay, batchMode).ConfigureAwait(false);
 
-			File.WriteAllText(targetFile, jsonObject.ToJsonString(jsonSerializerOptions));
+			File.WriteAllText(targetFile, jsonObject.ToString(Newtonsoft.Json.Formatting.Indented));
 			return c;
 		}
 
 	}
 
-	public static class JsonObjectHandler{
+	public static class JsonObjectHandler
+	{
+		public static IEnumerable<JToken> SelectElementsByJsonPaths(JObject root, IEnumerable<string> jsonPaths)
+		{
+			foreach (var jp in jsonPaths)
+			{
+				if (string.IsNullOrWhiteSpace(jp))
+				{
+					continue;
+				}
+
+				foreach (var el in root.SelectTokens(jp))
+				{
+
+					if (IsTextLeaf(el))
+					{
+						yield return el;
+					}
+				}
+			}
+		}
+
+		static bool IsTextLeaf(JToken token)
+		{
+			return token is JValue value && value.Type == JTokenType.String;
+		}
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -68,18 +93,18 @@ namespace Fonlow.JsonTranslate
 		/// <param name="logger"></param>
 		/// <param name="progressDisplay"></param>
 		/// <returns></returns>
-		public static async Task<int> TranslateJsonObject(JsonNode jsonObject, string[] properties, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool batchMode)
+		public static async Task<int> TranslateJsonObject(JObject jRoot, string[] jsonPaths, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool batchMode)
 		{
-			ArgumentNullException.ThrowIfNull(jsonObject);
-			ArgumentNullException.ThrowIfNull(properties);
+			ArgumentNullException.ThrowIfNull(jRoot);
+			ArgumentNullException.ThrowIfNull(jsonPaths);
 			const int maxUnits = 200;
 			int translatedCount = 0;
-			var allNestedPropertySegmentsList = properties.Select(d => d?.Split(['.', '/'])).ToArray(); // tolerate JSON Pointer
-			var total = allNestedPropertySegmentsList.Length;
+			var matchedTokens = SelectElementsByJsonPaths(jRoot, jsonPaths).ToArray();
+			var total = matchedTokens.Length;
 
 			if (batchMode)
 			{
-				var chunks = allNestedPropertySegmentsList.SplitLists(maxUnits);
+				var chunks = matchedTokens.SplitLists(maxUnits);
 				foreach (var chunk in chunks)
 				{
 					await Batch(chunk).ConfigureAwait(false); // always countsForUnit
@@ -87,39 +112,18 @@ namespace Fonlow.JsonTranslate
 			}
 			else
 			{
-				await TextByText(allNestedPropertySegmentsList);
+				await TextByText(matchedTokens);
 			}
 
 			return translatedCount;
 
-			async Task<int> TextByText(string[][] nestedPropertySegmentsList)
+			async Task<int> TextByText(JToken[] tokens)
 			{
-				foreach (var segments in nestedPropertySegmentsList) // each represents a node to be translated
+
+				foreach (var jt in tokens) // each represents a node to be translated
 				{
-					if (segments == null || segments.Length == 0)
-					{
-						continue;
-					}
-
-					var jsonNode = FindValueNode(jsonObject, segments);
-					if (jsonNode == null)
-					{
-						continue;
-					}
-
-					if (jsonNode is not JsonValue)
-					{
-						continue;
-					}
-
-					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
-					if (string.IsNullOrWhiteSpace(nodeText))
-					{
-						continue;
-					}
-
-					var translatedText = await translator.Translate(nodeText).ConfigureAwait(false);
-					jsonNode.ReplaceWith(translatedText);
+					var translatedText = await translator.Translate((jt as JValue).Value<string>()).ConfigureAwait(false);
+					(jt as JValue).Value = translatedText;
 					translatedCount++;
 					progressDisplay?.Show(translatedCount, total);
 				}
@@ -127,72 +131,20 @@ namespace Fonlow.JsonTranslate
 				return translatedCount;
 			}
 
-			async Task<int> Batch(IList<string[]> nestedPropertySegmentsList)
+			async Task<int> Batch(IList<JToken> tokens)
 			{
-				var strings = nestedPropertySegmentsList.Where(segments =>
-				{
-					if (segments == null || segments.Length == 0)
-					{
-						return false;
-					}
+				var strings = tokens.Select(d => d.Value<string>()).ToArray();
 
-					var jsonNode = FindValueNode(jsonObject, segments);
-					if (jsonNode == null)
-					{
-						return false;
-					}
-
-					if (jsonNode is not JsonValue)
-					{
-						return false;
-					}
-
-					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
-					if (string.IsNullOrWhiteSpace(nodeText))
-					{
-						return false;
-					}
-
-					return true;
-				}).Select(segments =>
-				{
-					var jsonNode = FindValueNode(jsonObject, segments);
-					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
-					return nodeText;
-				}).ToList();
-
-				if (strings.Count == 0)
+				if (strings.Length == 0)
 				{
 					return 0;
 				}
 
 				var translatedStrings = await translator.Translate(strings).ConfigureAwait(false);
 				int translatedIndex = 0;
-				foreach (var segments in nestedPropertySegmentsList)
+				foreach (var jt in tokens)
 				{
-					if (segments == null || segments.Length == 0)
-					{
-						continue;
-					}
-
-					var jsonNode = FindValueNode(jsonObject, segments);
-					if (jsonNode == null)
-					{
-						continue;
-					}
-
-					if (jsonNode is not JsonValue)
-					{
-						continue;
-					}
-
-					var nodeText = jsonNode.GetValue<string>(); // only text node worth of translation.
-					if (string.IsNullOrWhiteSpace(nodeText))
-					{
-						continue;
-					}
-
-					jsonNode.ReplaceWith(translatedStrings[translatedIndex]);
+					(jt as JValue).Value = translatedStrings[translatedIndex];
 					translatedIndex++;
 					translatedCount++;
 				}
@@ -202,32 +154,6 @@ namespace Fonlow.JsonTranslate
 			}
 
 
-		}
-
-		/// <summary>
-		/// Find the valueNode. Null if not found.
-		/// </summary>
-		/// <param name="jsonObject"></param>
-		/// <param name="nestedPropertySegments"></param>
-		/// <returns></returns>
-		static JsonNode FindValueNode(JsonNode jsonObject, string[] nestedPropertySegments)
-		{
-			Debug.Assert(nestedPropertySegments.Length > 0);
-			var n = jsonObject[nestedPropertySegments[0]];
-			if (n == null)
-			{
-				return null;
-			}
-			for (int i = 1; i < nestedPropertySegments.Length; i++)
-			{
-				n = n[nestedPropertySegments[i]];
-				if (n == null)
-				{
-					return null;
-				}
-			}
-
-			return n;
 		}
 
 	}

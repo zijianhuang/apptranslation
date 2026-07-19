@@ -3,8 +3,7 @@ using Fonlow.JsonTranslate;
 using Google.Cloud.Translation.V2;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Json.Nodes;
+using Newtonsoft.Json.Linq;
 
 namespace TestJson
 {
@@ -42,52 +41,53 @@ namespace TestJson
 		public void TestJsonBasic()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"John Doe\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var n = jsonObject["data"]["user"]["name"];
-			Assert.Equal("$.data.user.name", n.GetPath());
-			Assert.Equal("John Doe", n.GetValue<string>());
-			n = "AAA";
-			Assert.Equal("AAA", n.GetValue<string>());
+			Assert.Equal("data.user.name", n.Path);
+			Assert.Equal("John Doe", (n as JValue).Value<string>());
 
-			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("John Doe", n2.GetValue<string>());
+			n = "AAA";
+			Assert.Equal("AAA", (n as JValue).Value<string>());
+
+			var n2 = jsonObject.SelectToken("data.user.name");
+			Assert.Equal("John Doe", (n2 as JValue).Value<string>());
 		}
 
 		[Fact]
 		public void TestJsonBasic2()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"John Doe\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var n = jsonObject["data"]["user"]["name"];
-			Assert.Equal("$.data.user.name", n.GetPath());
-			jsonObject["data"]["user"]["name"].ReplaceWith("BBB");
+			Assert.Equal("data.user.name", n.Path);
+			jsonObject["data"]["user"]["name"].Replace("BBB");
 
-			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("BBB", n2.GetValue<string>());
+			var n2s = jsonObject.SelectTokens("data.user.name").ToArray();
+			Assert.Equal("BBB", (n2s[0] as JValue).Value<string>());
 		}
 
 		[Fact]
 		public void TestJsonBasic3()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"John Doe\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var n = jsonObject["data"]["user"]["name"];
-			Assert.Equal("$.data.user.name", n.GetPath());
-			n.ReplaceWith("BBB");
+			Assert.Equal("data.user.name", n.Path);
+			n.Replace("BBB");
 
 			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("BBB", n2.GetValue<string>());
+			Assert.Equal("BBB", (n2 as JValue).Value<string>());
 		}
 
 		[Fact]
 		public async Task TestJsonTranslate()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("有人愛你", n2.GetValue<string>());
+			Assert.Equal("有人愛你", (n2 as JValue).Value<string>());
 
 		}
 
@@ -95,11 +95,11 @@ namespace TestJson
 		public async Task TestJsonTranslateWithRubbish()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name", "data.user", "", null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("有人愛你", n2.GetValue<string>());
+			Assert.Equal("有人愛你", (n2 as JValue).Value<string>());
 
 		}
 
@@ -107,7 +107,7 @@ namespace TestJson
 		public async Task TestJsonTranslateWithWrongPath()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.something.name"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
@@ -116,7 +116,7 @@ namespace TestJson
 		public async Task TestJsonTranslateWithEmptyPath()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, [], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
@@ -125,7 +125,7 @@ namespace TestJson
 		public async Task TestJsonTranslateWithNullPath()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, [null], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, false);
 			Assert.Equal(0, c);
 		}
@@ -134,28 +134,33 @@ namespace TestJson
 		public async Task TestJsonTranslateWithBathMode()
 		{
 			string jsonString = "{\"data\": {\"user\": {\"name\": \"Someone loves you\", \"age\": 30}}}";
-			JsonObject jsonObject = JsonNode.Parse(jsonString).AsObject();
+			JObject jsonObject = JObject.Parse(jsonString);
 			var c = await JsonObjectHandler.TranslateJsonObject(jsonObject, ["data.user.name", "1234", "data.user"], new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null, true);
 			Assert.Equal(1, c);
 			var n2 = jsonObject["data"]["user"]["name"];
-			Assert.Equal("有人愛你", n2.GetValue<string>());
+			Assert.Equal("有人愛你", (n2 as JValue).Value<string>());
 		}
 
 		[Fact]
 		public async Task TestGoogleTranslateFileZh()
 		{
-			var options = new JsonSerializerOptions
-			{
-				WriteIndented = true,
-				Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-			};
-
 			var g = new JsonObjectTranslation();
-			g.SetJsonSerializerOptions(options);
+			//g.SetJsonSerializerOptions(options);
 			g.SetSourceFile("json/jsonld.json");
 			g.SetTargetFile("jsonld.zh-hant.json");
 			g.SetProperties(["name", "description", "author.description"]);
 			Assert.Equal(3, await g.Translate(new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null));
+		}
+
+		[Fact]
+		public async Task TestGoogleTranslateColorBlindZh()
+		{
+			var g = new JsonObjectTranslation();
+			g.SetBatchMode(true);
+			g.SetSourceFile("json/indexColorBlind.json");
+			g.SetTargetFile("indexColorBlind.zh-hant.json");
+			g.SetProperties(["title", "description", "testContents..test.title", "testContents..test.description", "testContents..test.plates..description"]);
+			Assert.True(await g.Translate(new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseTraditional, apiKey), NullLogger.Instance, null)>10);
 		}
 
 	}

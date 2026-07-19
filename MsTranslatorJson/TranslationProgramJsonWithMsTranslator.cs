@@ -83,7 +83,7 @@ namespace Fonlow.TranslationProgram
 					break;
 			}
 
-			d.SetJsonSerializerOptions(serializerOptions);
+			//d.SetJsonSerializerOptions(serializerOptions);
 
 			return d;
 		}

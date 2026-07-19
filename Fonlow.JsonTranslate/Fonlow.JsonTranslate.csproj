@@ -3,7 +3,12 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>2</Version>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Fonlow.Translate.Abstract\Fonlow.Translate.Abstract.csproj" />

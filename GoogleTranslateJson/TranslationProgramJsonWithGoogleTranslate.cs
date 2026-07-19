@@ -12,10 +12,10 @@ namespace Fonlow.TranslationProgram
 	[CliManager(Description = "Use Google Translate v2 or v3 to translate selected string value properties of JSON object", OptionSeparator = "/", Assignment = ":")]
 	internal sealed class OptionsForJsonWithGoogleTranslate : OptionsWithGoogleTranslate
 	{
-		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated represented by JSONPath/JMESPath, e.g., /PS=\"parent.folder.name\" \"parent.folder.address\"")]
+		[CommandLineOption(Aliases = "PS", Description = "JSON object properties to be translated represented by JSONPath, e.g., /PS=\"parent.folder.name\" \"parent.folder.address\"")]
 		public string[] Properties { get; set; } = [];
 
-		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated represented by JSONPath/JMESPath and JSON Pointer is accepted, e.g., /PSF=JsonProperties.txt")]
+		[CommandLineOption(Aliases = "PSF", Description = "Each line declares a JSON object property to be translated represented by JSONPath is accepted, e.g., /PSF=JsonProperties.txt")]
 		public string PropertiesFile { get; set; }
 
 		[CommandLineOption(Aliases = "SC", Description = "0: JsonSerializerOptions.Default, 1: JsonSerializerOptions.Web, 3: Custom with option Indented and UnsafeRelaxedJsonEscaping.")]
@@ -83,7 +83,7 @@ namespace Fonlow.TranslationProgram
 					break;
 			}
 
-			d.SetJsonSerializerOptions(serializerOptions);
+			//d.SetJsonSerializerOptions(serializerOptions);
 
 			return d;
 		}
