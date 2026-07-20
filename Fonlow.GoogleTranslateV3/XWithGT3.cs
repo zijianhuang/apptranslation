@@ -2,6 +2,7 @@
 using Google.Api.Gax.ResourceNames;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Translate.V3;
+using Microsoft.VisualBasic;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Fonlow.GoogleTranslate
@@ -64,6 +65,16 @@ namespace Fonlow.GoogleTranslate
 
 		public async Task<string[]> Translate(IList<string> strings)
 		{
+			return await Translate(strings, "text/plain").ConfigureAwait(false);
+		}
+
+		public async Task<string[]> TranslateHtmlItems(IList<string> htmlItems)
+		{
+			return await Translate(htmlItems, "text/html").ConfigureAwait(false);
+		}
+
+		async Task<string[]> Translate(IList<string> strings, string mimeType)
+		{
 			ArgumentNullException.ThrowIfNull(strings);
 
 			if (strings.Count > 1024)
@@ -77,7 +88,7 @@ namespace Fonlow.GoogleTranslate
 				SourceLanguageCode = this.SourceLang,
 				TargetLanguageCode = this.TargetLang,
 				Parent = new ProjectName(projectId).ToString(),
-				MimeType = "text/plain",
+				MimeType = mimeType,
 			};
 			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
 			var translatedStrings = response.Translations.Select(d => d.TranslatedText).ToArray();

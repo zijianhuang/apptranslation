@@ -7,7 +7,7 @@
 		<Version>1.0</Version>
 		<Authors>Zijian Huang</Authors>
 		<Copyright>Copyright © Zijian Huang 2011-$([System.DateTime]::Now.Year)</Copyright>
-		<Product>JSON Translator using Microsoft Translator</Product>
+		<Product>XML Translator using Microsoft Translator</Product>
 		<Description>CLI to translate text nodes of XML nominated by XPaths using Microsoft Translator</Description>
 		<PackageProjectUrl>https://github.com/zijianhuang/apptranslation</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>

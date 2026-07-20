@@ -39,6 +39,12 @@ namespace Fonlow.GoogleTranslate
 			return r.TranslatedText;
 		}
 
+		public async Task<string[]> TranslateHtmlItems(IList<string> htmlItems)
+		{
+			var r = await translationClient.TranslateHtmlAsync(htmlItems, TargetLang, SourceLang).ConfigureAwait(false);
+			return r.Select(d=>d.TranslatedText).ToArray();
+		}
+
 
 	}
 }

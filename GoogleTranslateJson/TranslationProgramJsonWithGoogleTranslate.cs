@@ -19,7 +19,7 @@ namespace Fonlow.TranslationProgram
 
 	internal sealed class TranslationProgramJsonWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
-		public TranslationProgramJsonWithGoogleTranslate(OptionsForJsonWithGoogleTranslate options, ILogger logger) : base(CreateJsonProcessor(options), options, logger)
+		public TranslationProgramJsonWithGoogleTranslate(OptionsForJsonWithGoogleTranslate options, ILogger logger) : base(CreateMetaProcessor(options), options, logger)
 		{
 		}
 
@@ -36,7 +36,7 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static JsonObjectTranslation CreateJsonProcessor(OptionsForJsonWithGoogleTranslate options)
+		static JsonObjectTranslation CreateMetaProcessor(OptionsForJsonWithGoogleTranslate options)
 		{
 			var d = new JsonObjectTranslation();
 			if (string.IsNullOrEmpty(options.PropertiesFile))

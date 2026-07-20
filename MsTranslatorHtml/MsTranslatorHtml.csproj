@@ -4,11 +4,11 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>1.1</Version>
+		<Version>1.0</Version>
 		<Authors>Zijian Huang</Authors>
 		<Copyright>Copyright © Zijian Huang 2011-$([System.DateTime]::Now.Year)</Copyright>
-		<Product>XML Translator using Google Translate v2 or v3</Product>
-		<Description>CLI to translate text nodes of XML nominated by XPaths using Google Translate</Description>
+		<Product>HTML Translator using Microsoft Translator</Product>
+		<Description>CLI to translate HTML document or nodes nominated by XPaths using Microsoft Translator</Description>
 		<PackageProjectUrl>https://github.com/zijianhuang/apptranslation</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
@@ -20,8 +20,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Fonlow.XmlTranslate\Fonlow.XmlTranslate.csproj" />
-		<ProjectReference Include="..\Fonlow.TranslationProgram.GoogleTranslate\Fonlow.TranslationProgram.GoogleTranslate.csproj" />
+		<ProjectReference Include="..\Fonlow.TranslationProgram.MsTranslator\Fonlow.TranslationProgram.MsTranslator.csproj" />
+		<ProjectReference Include="..\Fonlow.HtmlTranslate\Fonlow.HtmlTranslate.csproj" />
 	</ItemGroup>
 
 </Project>

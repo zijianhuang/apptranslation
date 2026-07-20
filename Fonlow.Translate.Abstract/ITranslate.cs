@@ -19,5 +19,8 @@ namespace Fonlow.Translate
 		Task<string[]> Translate(IList<string> strings);
 
 		Task<string> TranslateHtml(string htmlText);
+
+		Task<string[]> TranslateHtmlItems(IList<string> htmlItems);
+
 	}
 }

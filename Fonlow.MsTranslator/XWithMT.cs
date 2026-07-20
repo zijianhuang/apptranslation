@@ -23,14 +23,17 @@ namespace Fonlow.MsTranslator
 
 		public async Task<string> Translate(string text)
 		{
-			var response = await translationClient.TranslateAsync(TargetLang, text, SourceLang); //Azure AI Translator API not supporting category in single text.
-			var translationTextItem = response.Value.FirstOrDefault();
-			return translationTextItem.Translations?.FirstOrDefault()?.Text;
+			return await TranslateText(text, TextType.Plain);
 		}
 
 		public async Task<string> TranslateHtml(string text)
 		{
-			var item = new TranslateInputItem(text, new TranslationTarget(TargetLang), SourceLang, textType: TextType.Html);
+			return await TranslateText(text, TextType.Html);
+		}
+
+		public async Task<string> TranslateText(string text, TextType textType)
+		{
+			var item = new TranslateInputItem(text, new TranslationTarget(TargetLang), SourceLang, textType: textType);
 			var response = await translationClient.TranslateAsync(item); //Azure AI Translator API not supporting category in single text.
 			var translationTextItem = response.Value;
 			return translationTextItem.Translations?.FirstOrDefault()?.Text;
@@ -38,8 +41,18 @@ namespace Fonlow.MsTranslator
 
 		public async Task<string[]> Translate(IList<string> strings)
 		{
+			return await TranslateItems(strings, TextType.Plain);
+		}
+
+		public async Task<string[]> TranslateHtmlItems(IList<string> strings)
+		{
+			return await TranslateItems(strings, TextType.Html);
+		}
+
+		async Task<string[]> TranslateItems(IList<string> strings, TextType textType)
+		{
 			string[] targetLanguanges = { TargetLang };
-			var items = strings.Select(d => new TranslateInputItem(d, new TranslationTarget(TargetLang), SourceLang, textType: TextType.Plain));
+			var items = strings.Select(d => new TranslateInputItem(d, new TranslationTarget(TargetLang), SourceLang, textType: textType));
 			var response = await translationClient.TranslateAsync(items);
 			return response.Value.Select(item => item.Translations?.FirstOrDefault()?.Text).ToArray();
 		}

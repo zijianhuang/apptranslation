@@ -19,7 +19,7 @@ namespace Fonlow.TranslationProgram
 
 	sealed internal class TranslationProgramJsonWithMsTranslator : TranslationProgramWithMsTranslator
 	{
-		public TranslationProgramJsonWithMsTranslator(OptionsForJsonWithMsTranslator options, ILogger logger) : base(CreateJsonProcessor(options), options, logger)
+		public TranslationProgramJsonWithMsTranslator(OptionsForJsonWithMsTranslator options, ILogger logger) : base(CreateMetaProcessor(options), options, logger)
 		{
 		}
 
@@ -36,7 +36,7 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static JsonObjectTranslation CreateJsonProcessor(OptionsForJsonWithMsTranslator options)
+		static JsonObjectTranslation CreateMetaProcessor(OptionsForJsonWithMsTranslator options)
 		{
 			var d = new JsonObjectTranslation();
 			if (string.IsNullOrEmpty(options.PropertiesFile))

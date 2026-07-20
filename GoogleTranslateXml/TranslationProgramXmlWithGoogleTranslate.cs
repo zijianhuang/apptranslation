@@ -19,7 +19,7 @@ namespace Fonlow.TranslationProgram
 
 	internal sealed class TranslationProgramXmlTextWithGoogleTranslate : TranslationProgramWithGoogleTranslate
 	{
-		public TranslationProgramXmlTextWithGoogleTranslate(OptionsForXmlWithGoogleTranslate options, ILogger logger) : base(CreateJsonProcessor(options), options, logger)
+		public TranslationProgramXmlTextWithGoogleTranslate(OptionsForXmlWithGoogleTranslate options, ILogger logger) : base(CreateMetaProcessor(options), options, logger)
 		{
 		}
 
@@ -36,18 +36,16 @@ namespace Fonlow.TranslationProgram
 			resourceTranslation.SetTargetFile(targetFile);
 		}
 
-		static Fonlow.XmlTranslate.XmlTextTranslation CreateJsonProcessor(OptionsForXmlWithGoogleTranslate options)
+		static Fonlow.XmlTranslate.XmlTextTranslation CreateMetaProcessor(OptionsForXmlWithGoogleTranslate options)
 		{
 			var d = new Fonlow.XmlTranslate.XmlTextTranslation();
 			if (string.IsNullOrEmpty(options.XPathsFile))
 			{
 				d.SetXPaths(options.XPaths);
-				Console.WriteLine("Xpaths first: " + options.XPaths[0]);
 			}
 			else
 			{
 				d.SetXPaths(File.ReadAllLines(options.XPathsFile));
-				//Console.WriteLine("XPathsFile: " + options.XPathsFile);
 			}
 
 			return d;
