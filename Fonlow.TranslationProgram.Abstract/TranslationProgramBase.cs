@@ -30,6 +30,13 @@ namespace Fonlow.TranslationProgram.Abstract
 		/// <returns></returns>
 		public async Task<int> Execute()
 		{
+			if (optionsBase.SourceLang == optionsBase.TargetLang)
+			{
+				File.Copy(optionsBase.SourceFile, optionsBase.TargetFile, true);
+				logger.LogInformation($"SourceLang and TargetLang are the same: {optionsBase.SourceLang}, {optionsBase.SourceFile} is copied to {optionsBase.TargetFile} without translation.");
+				return 0;
+			}
+
 			try
 			{
 				ITranslate translator = CreateTranslator(out int errorCode);
@@ -57,8 +64,6 @@ namespace Fonlow.TranslationProgram.Abstract
 		}
 
 		protected abstract int HandleTranslationEngineException(Exception ex);
-
-
 	}
 
 	public static class CliOptionsParser

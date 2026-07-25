@@ -13,10 +13,13 @@ namespace Fonlow.TranslationProgram.Abstract
 		[CommandLineOption(Aliases = "TF", Description = "Target file path. Without this, the source file is also the target file.")]
 		public string TargetFile { get; set; }
 
-		[CommandLineOption(Aliases = "SL", Description = "Source language. e.g., /SL=fr")]
-		public string SourceLang { get; set; }
+		/// <summary>
+		/// Default en
+		/// </summary>
+		[CommandLineOption(Aliases = "SL", Description = "Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.")]
+		public string SourceLang { get; set; } = "en";
 
-		[CommandLineOption(Aliases = "TL", Description = "Target language. e.g., /TL=zh")]
+		[CommandLineOption(Aliases = "TL", Description = "Target language. e.g., /TL=zh.")]
 		public string TargetLang { get; set; }
 
 		[CommandLineOption(Aliases = "B", Description = "Batch processing of string array to improve overall speed.")]
