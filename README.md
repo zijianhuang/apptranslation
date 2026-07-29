@@ -1,3 +1,4 @@
+
 - [Overview](#overview)
 - [Core Value Proposition](#core-value-proposition)
   - [Background](#background)
@@ -7,16 +8,13 @@
   - [GoogleTranslateStrings.exe](#googletranslatestringsexe)
   - [GoogleTranslateXml.exe](#googletranslatexmlexe)
   - [GoogleTranslateJson.exe](#googletranslatejsonexe)
-    - [SerializationConfig](#serializationconfig)
-      - [JsonSerializerOptions.Default vs Web](#jsonserializeroptionsdefault-vs-web)
-    - [When to Use Which?](#when-to-use-which)
-    - [When Is It Safe to Use UnsafeRelaxedJsonEscaping?](#when-is-it-safe-to-use-unsaferelaxedjsonescaping)
-    - [Summary](#summary)
+  - [GoogleTranslateHtml.exe](#googletranslatehtmlexe)
   - [MsTranslatorXliff.exe](#mstranslatorxliffexe)
   - [MsTranslatorResx.exe](#mstranslatorresxexe)
   - [MsTranslatorStrings.exe](#mstranslatorstringsexe)
   - [MsTranslatorXml.exe](#mstranslatorxmlexe)
   - [MsTranslatorJson.exe](#mstranslatorjsonexe)
+  - [MsTranslatorHtml.exe](#mstranslatorhtmlexe)
   - [XliffResXConverter.exe](#xliffresxconverterexe)
 - [Build and Deployment](#build-and-deployment)
   - [Microsoft Translator](#microsoft-translator)
@@ -27,11 +25,11 @@
 - [Artificial Intelligence](#artificial-intelligence)
 
 
-# Overview
-
 Batch translation of app translation resource files through CLI tools with machine translation engines.
 
-AppTranslation is a collection of developer-focused CLI tools and libraries designed to automate batch translation of application resources (UI text, localization files) using Google Translate APIs and Microsoft Translators. 
+# Overview
+
+AppTranslation is a collection of developer-focused CLI tools and libraries designed to automate batch translation of application resources (UI text, localization files, and data artifacts) using Google Translate APIs and Microsoft Translators. 
 
 It’s essentially a local-first alternative to SaaS localization platforms, built for developers who want:
 
@@ -40,8 +38,7 @@ It’s essentially a local-first alternative to SaaS localization platforms, bui
 * Fast batch processing of files
 
 **Hints:**
-* This repos has started for app translation resource files like XLIFF and RESX etc, and now it also supports arbitrary meta file like JSON and SVG Text Nodes.
-* Support for XML Text nodes are pending.
+* This repos has started for app translation resource files like XLIFF and RESX etc, and now it also supports arbitrary meta file like JSON, XML and HTML.
 
 AppTranslation includes a [framework through a set of interfaces and shared libraries](CONTRIBUTING.md) for extending supports for other meta formats and translation engines.
 
@@ -63,9 +60,9 @@ Key differentiators:
 * Android String Resource
 
 **Supported Generic Formats:**
-* JSON, like `.xcstrings` of XCode 15+
-* XML, like SVG text, and HTML of `application/xhtml+xml`.
-* HTML, (pending #15)
+* JSON, text leafs of nodes selected by JsonPaths. For example, `.xcstrings` of XCode 15+
+* XML,  text leafs of nodes selected by XPaths. For example, SVG text, and HTML text nodes of `application/xhtml+xml`
+* HTML, document or nodes selected by XPaths
 
 **Supported Translation Engines:**
 * Google Translate v2 (Cloud Translation - Basic API)
@@ -292,6 +289,41 @@ GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /F:jsonld.json /TF:jsonl
 GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B /Ind /NUE /SC=2 /SL=en /TL=es /F:jsonld.es.json /PS:data.user.name ---- Use Google Cloud Translate V3 and batch mode.
 ```
 
+## GoogleTranslateHtml.exe
+```
+Use Google Translate v2 or v3 to translate HTML document or nodes based on XPaths
+HTML Translator using Google Translate v2 or v3  version 1.0.0.0
+Copyright © Zijian Huang 2011-2026
+
+
+   /XPaths, /XPS       HTML nodes to be translated represented by Xpaths, e.g., /XPS=`//h2` `ul` in Windows CMD, and
+                       add --% after the command in PowerShell 5.1, and for running in PowerShell 7 or using complex
+                       XPath queries, utilize XPathsFile
+   /XPathsFile, /XPSF  Each line declares a XPath for HTML nodes to be translated, e.g., /XPSF=XPaths.txt
+   /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g.,
+                       /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app
+   /CSF                uses client secret JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so
+   /ReversedTranslation, you can compare. Both SourceFile and TargetFile must be defined.
+   /Reversed
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
+   /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target
+                       file.
+   /TargetLang, /TL    Target language. e.g., /TL=zh.
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+GoogleTranslateHtml.exe /AKF=apikey.txt /SL=en /TL="zh-hant" /F=../Tests/template1.html /TF=../Tests/template1.zh-Hant.html -- HTML document
+GoogleTranslateHtml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL="de" /XPaths=`//body/h1` /B /F=../Tests/template1.html /TF=../Tests/template1.de.html -- HTML nodes
+```
+
 ## MsTranslatorXliff.exe
 
 ```
@@ -417,7 +449,6 @@ MsTranslatorXml.exe /AK=abcdefg /RG=uswest /SL=en /TL="zh-hant" /XPaths=`//svg:t
 ## MsTranslatorJson.exe
 
 ```
-MsTranslatorJson.exe
 Use Microsoft Azure AI Translator to translate JSON object
 JSON Translator using Microsoft Translator  version 1.5.0.0
 Copyright © Zijian Huang 2011-2026
@@ -433,8 +464,8 @@ Copyright © Zijian Huang 2011-2026
                        while the default is general . e.g., /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
-   /SourceLang, /SL    Source language. e.g., /SL=fr
-   /TargetLang, /TL    Target language. e.g., /TL=zh
+   /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
+   /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
 
@@ -444,6 +475,35 @@ Examples:
 MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=zh-hant /F:jsonld.zh-hant.json /PS:data.user.name data.user.address ---- For in-place translation when jsonld.zh-hant.json is not yet translated
 MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /SL=en /TL=ja /F:jsonld.json /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
 MsTranslatorteJson.exe /AK=YourMsTranslatorteApiKey /RG=australiaeast /Ind /NUE /SC=2 /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
+```
+
+## MsTranslatorHtml.exe
+
+```
+Use MS Translator to translate HTML document or nodes based on XPaths
+HTML Translator using Microsoft Translator  version 1.0.0.0
+Copyright © Zijian Huang 2011-2026
+
+
+   /XPaths, /XPS       HTML nodes to be translated represented by Xpaths, e.g., /XPS=`//body/h1` `//body/ul` in Windows CMD, and add --% after
+                       the command in PowerShell 5.1, and for running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
+   /XPathsFile, /XPSF  Each line declares a XPath for HTML nodes to be translated, e.g., /XPSF=XPaths.txt
+   /ApiKey, /AK        Microsoft Translator API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
+   /ApiKeyFile, /AKF   MS Translator API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
+   /Region, /RG        Region associated with the key. Always required. e.g., /RG=australiaeast
+   /CategoryId, /CA    Category ID from one of your custom translator's projects in the form of WorkspaceID+CategoryCode, used by Batch mode,
+                       while the default is general . e.g., /CA=a3a1eeb1-7e2b-4098-b293-da762fe3bb79-INTERNT
+   /SourceFile, /F     Source file path
+   /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
+   /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
+   /TargetLang, /TL    Target language. e.g., /TL=zh.
+   /Batch, /B          Batch processing of string array to improve overall speed.
+   /Help, /h, /?       Shows this help text
+
+
+
+Examples:
+MsTranslatorHtml.exe /AK=abcdefg /RG=uswest /SL=en /TL="zh-hant" /XPaths=`//body/h1` /B /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
 ```
 
 ## XliffResXConverter.exe
@@ -456,7 +516,7 @@ This program can merge what in ResX to XLIFF, and merge XLIFF back to ResX. Toge
 * .NET 10 SDK for development and build
 * .NET 10 Runtime for execution
 
-This repository does not release binary builds generally. You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, [MacOS](https://learn.microsoft.com/en-us/dotnet/core/install/macos) or [Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux).
+You may check-out the source codes of master or a latest tag like v1_stable, and then use respective PS1 scripts to build each CLI app for Windows, [MacOS](https://learn.microsoft.com/en-us/dotnet/core/install/macos) or [Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux).
 
 ![Build Scripts](Docs/Articles/Screenshots/BuildScripts.png)
 
