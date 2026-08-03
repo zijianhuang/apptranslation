@@ -12,7 +12,7 @@ namespace TestXliff
 	{
 		string googleTranslateV3ClientSecretJsonFile = Environment.GetEnvironmentVariable("GoogleTranslateV3ClientSecretJsonFileForTest", EnvironmentVariableTarget.User);
 
-		[Fact]
+		[Fact(Skip = "V3 auth is troublesome")]
 		public async Task TestReadAndTranslateWithV3()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
@@ -48,7 +48,7 @@ namespace TestXliff
 			}
 		}
 
-		[Fact]
+		[Fact(Skip = "V3 auth is troublesome")]
 		public async Task TestReadAndTranslateWithV3Batch()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))

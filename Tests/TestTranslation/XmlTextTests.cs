@@ -11,6 +11,7 @@ using System.Xml.XPath;
 namespace TestXmlText
 {
 	[Collection("ServicesLaunch")]
+	[TestClass(DisableParallelization = true)] //some test cases write to the same file, so disable parallelization
 	public class XmlTextTests
 	{
 		string apiKey = System.Environment.GetEnvironmentVariable("GoogleTranslateApiKey", EnvironmentVariableTarget.User);

@@ -1,0 +1,53 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="GoogleTranslateHtml/GoogleTranslateHtml.csproj" />
+    <Project Path="GoogleTranslateJson/GoogleTranslateJson.csproj" />
+    <Project Path="GoogleTranslateResx/GoogleTranslateResx.csproj" />
+    <Project Path="GoogleTranslateStrings/GoogleTranslateStrings.csproj" />
+    <Project Path="GoogleTranslateSvgText/GoogleTranslateSvgText.csproj" />
+    <Project Path="GoogleTranslateXliff/GoogleTranslateXliff.csproj" />
+    <Project Path="GoogleTranslateXml/GoogleTranslateXml.csproj" />
+    <Project Path="MsTranslatorHtml/MsTranslatorHtml.csproj" />
+    <Project Path="MsTranslatorJson/MsTranslatorJson.csproj" />
+    <Project Path="MsTranslatorResx/MsTranslatorResx.csproj" />
+    <Project Path="MsTranslatorStrings/MsTranslatorStrings.csproj" />
+    <Project Path="MsTranslatorXliff/MsTranslatorXliff.csproj" />
+    <Project Path="MsTranslatorXml/MsTranslatorXml.csproj" />
+    <Project Path="PackDummy/PackDummy.csproj" />
+    <Project Path="XliffResXConverter/XliffResXConverter.csproj" />
+  </Folder>
+  <Folder Name="/AppShared/">
+    <Project Path="Fonlow.TranslationProgram.GoogleTranslate/Fonlow.TranslationProgram.GoogleTranslate.csproj" />
+    <Project Path="Fonlow.TranslationProgram.MsTranslator/Fonlow.TranslationProgram.MsTranslator.csproj" />
+  </Folder>
+  <Folder Name="/Converters/">
+    <Project Path="Fonlow.XliffResX/Fonlow.XliffResX.csproj" />
+  </Folder>
+  <Folder Name="/ForMetaFormat/">
+    <Project Path="Fonlow.AndroidStrings/Fonlow.AndroidStrings.csproj" />
+    <Project Path="Fonlow.HtmlTranslate/Fonlow.HtmlTranslate.csproj" />
+    <Project Path="Fonlow.JsonTranslate/Fonlow.JsonTranslate.csproj" />
+    <Project Path="Fonlow.ResxTranslate/Fonlow.ResxTranslate.csproj" />
+    <Project Path="Fonlow.StringsTranslation/Fonlow.StringsTranslate.csproj" />
+    <Project Path="Fonlow.SvgTextTranslate/Fonlow.SvgTextTranslate.csproj" />
+    <Project Path="Fonlow.XliffTranslate/Fonlow.XliffTranslate.csproj" />
+    <Project Path="Fonlow.XmlTranslate/Fonlow.XmlTranslate.csproj" />
+  </Folder>
+  <Folder Name="/LibAbstract/">
+    <Project Path="Fonlow.Translate.Abstract/Fonlow.Translate.Abstract.csproj" />
+    <Project Path="Fonlow.TranslationProgram.Abstract/Fonlow.TranslationProgram.Abstract.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="CONTRIBUTING.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/TestResxXliffConvert/TestResxXliffConvert.csproj" />
+    <Project Path="Tests/TestTranslation/TestTranslation.csproj" />
+  </Folder>
+  <Folder Name="/TranslationEngineWrappers/">
+    <Project Path="Fonlow.GoogleTranslate/Fonlow.GoogleTranslateV2.csproj" />
+    <Project Path="Fonlow.GoogleTranslateV3/Fonlow.GoogleTranslateV3.csproj" />
+    <Project Path="Fonlow.MsTranslator/Fonlow.MsTranslator.csproj" />
+  </Folder>
+</Solution>

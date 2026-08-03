@@ -23,6 +23,7 @@
 - [Articles](#articles)
 - [Contributing](#contributing)
 - [Artificial Intelligence](#artificial-intelligence)
+- [Examples](#examples)
 
 
 Batch translation of app translation resource files through CLI tools with machine translation engines.
@@ -629,3 +630,9 @@ And you may try to use Copilot or alike to see if AI could replace the tools int
 Keep this in mind: when AI does the initial analysis, a lot tokens will be consumed before doing the translation. Also the performance of ad-hoc analysis of meta structure along with the translation will be inherently slower than dediciated tools with:
 1. Built-in dedicated parser and writer.
 2. Direct hooks on dedicated translation engines.
+
+# Examples
+
+* [Eye Charts app](https://visualacuity.info/)for [Android](https://play.google.com/store/apps/details?id=com.fonlow.VAC) and [iOS](https://apps.apple.com/au/app/eye-charts/id1442509969). Native smartphone app built on Xamarin/MAUI.
+* [Ishihara Color Blind Test](https://visualacuity.info/color-blind-test). Static site PWA built on Angular.
+* [PowerShell scripts for real world development](https://zijianhuang.github.io/articles/Use%20AppTranslation%20in%20PWA%20Localized/) and [Mirror site at dev.to](https://dev.to/zijianhuang/speedup-localization-work-when-delivering-an-angular-pwa-2f0l).
