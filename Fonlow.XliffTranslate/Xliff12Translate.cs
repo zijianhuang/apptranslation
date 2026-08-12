@@ -19,6 +19,7 @@ namespace Fonlow.XliffTranslate
 		string[] forStates;
 		bool unchangeState;
 		bool reversed;
+		bool asHtml;
 
 		public void SetBatchMode(bool batchMode)
 		{
@@ -48,6 +49,11 @@ namespace Fonlow.XliffTranslate
 		public void SetReversed(bool reversed)
 		{
 			this.reversed = reversed;
+		}
+
+		public void SetAsHtml(bool asHtml)
+		{
+			this.asHtml = asHtml;
 		}
 
 		public async Task<int> TranslateXliffElement(XElement xliffRoot, string[] forStates, bool unchangeState, ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation)
@@ -215,25 +221,43 @@ namespace Fonlow.XliffTranslate
 							unitTarget.Nodes().Remove(); // so keep the attributes
 						}
 
-						foreach (var n in unitSource.Nodes())
+						if (asHtml)
 						{
-							if (n.NodeType == System.Xml.XmlNodeType.Text)
+							try
 							{
-								var textNode = n as XText;
-								try
-								{
-									var tr = await translator.Translate(textNode.Value).ConfigureAwait(false);
-									unitTarget.Add(new XText(tr));
-								}
-								catch (HttpRequestException ex)
-								{
-									logger?.LogError(ex.Message);
-									return countForUnit;
-								}
+								var nodeText = unitSource.GetInnerXml();
+								var tr = await translator.TranslateHtml(nodeText).ConfigureAwait(false);
+								unitTarget.SetInnerXml(tr);
 							}
-							else if (n.NodeType == System.Xml.XmlNodeType.Element)
+							catch (HttpRequestException ex)
 							{
-								unitTarget.Add(new XElement(n as XElement));
+								logger?.LogError(ex.Message);
+								return countForUnit;
+							}
+
+						}
+						else
+						{
+							foreach (var n in unitSource.Nodes())
+							{
+								if (n.NodeType == System.Xml.XmlNodeType.Text)
+								{
+									var textNode = n as XText;
+									try
+									{
+										var tr = await translator.Translate(textNode.Value).ConfigureAwait(false);
+										unitTarget.Add(new XText(tr));
+									}
+									catch (HttpRequestException ex)
+									{
+										logger?.LogError(ex.Message);
+										return countForUnit;
+									}
+								}
+								else if (n.NodeType == System.Xml.XmlNodeType.Element)
+								{
+									unitTarget.Add(new XElement(n as XElement));
+								}
 							}
 						}
 
@@ -272,12 +296,19 @@ namespace Fonlow.XliffTranslate
 							continue;
 						}
 
-						foreach (var n in unitSource.Nodes())
+						if (asHtml)
 						{
-							if (n.NodeType == System.Xml.XmlNodeType.Text)
+							strings.Add(unitSource.Value);
+						}
+						else
+						{
+							foreach (var n in unitSource.Nodes())
 							{
-								var textNode = n as XText;
-								strings.Add(textNode.Value);
+								if (n.NodeType == System.Xml.XmlNodeType.Text)
+								{
+									var textNode = n as XText;
+									strings.Add(textNode.Value);
+								}
 							}
 						}
 					}
@@ -288,7 +319,7 @@ namespace Fonlow.XliffTranslate
 					return 0;
 				}
 
-				var translatedStrings = await translator.Translate(strings).ConfigureAwait(false); //batch translation
+				var translatedStrings = asHtml ? await translator.TranslateHtmlItems(strings).ConfigureAwait(false) : await translator.Translate(strings).ConfigureAwait(false); //batch translation
 
 				int translatedIndex = 0;
 				foreach (var unit in someUnits)
@@ -314,26 +345,43 @@ namespace Fonlow.XliffTranslate
 							unitTarget.Nodes().Remove(); // so keep the attributes
 						}
 
-						foreach (var n in unitSource.Nodes())
+						if (asHtml)
 						{
-							if (n.NodeType == System.Xml.XmlNodeType.Text)
+							try
 							{
-								var textNode = n as XText;
-								try
-								{
-									var tr = translatedStrings[translatedIndex];
-									translatedIndex++;
-									unitTarget.Add(new XText(tr));
-								}
-								catch (HttpRequestException ex)
-								{
-									logger?.LogError(ex.Message);
-									return countForUnit;
-								}
+								var tr = translatedStrings[translatedIndex];
+								translatedIndex++;
+								unitTarget.Add(new XText(tr));
 							}
-							else if (n.NodeType == System.Xml.XmlNodeType.Element)
+							catch (HttpRequestException ex)
 							{
-								unitTarget.Add(new XElement(n as XElement));
+								logger?.LogError(ex.Message);
+								return countForUnit;
+							}
+						}
+						else
+						{
+							foreach (var n in unitSource.Nodes())
+							{
+								if (n.NodeType == System.Xml.XmlNodeType.Text)
+								{
+									var textNode = n as XText;
+									try
+									{
+										var tr = translatedStrings[translatedIndex];
+										translatedIndex++;
+										unitTarget.Add(new XText(tr));
+									}
+									catch (HttpRequestException ex)
+									{
+										logger?.LogError(ex.Message);
+										return countForUnit;
+									}
+								}
+								else if (n.NodeType == System.Xml.XmlNodeType.Element)
+								{
+									unitTarget.Add(new XElement(n as XElement));
+								}
 							}
 						}
 

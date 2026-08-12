@@ -23,6 +23,14 @@ namespace TestXliff
 		}
 
 		[Fact]
+		public async Task TestGoogleTranslateSpecial()
+		{
+			var g = new XWithGT2("en", "zh-hans", apiKey);
+			var t2 = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <span id=\"0\"></span>. Do you want to remove them?");
+			Assert.Equal("诗中已不再包含一些已登记编号的注释：<span id=\"0\"></span>你想删除它们吗？", t2); // noted that GT2 does not give back dot and space, clearly a bug in GT2.
+		}
+
+		[Fact]
 		public async Task TestMsTranslator()
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
@@ -136,6 +144,49 @@ namespace TestXliff
 				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
 				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
 
+				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
+
+		[Fact]
+		public void TestReadInnerXml(){
+			var xDoc = XElement.Parse("<source>There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?</source>");
+			var r = xDoc.GetInnerXml();
+			Assert.Equal("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\" />. Do you want to remove them?", r);
+		}
+
+		[Fact]
+		public async Task TestReadAndTranslateAsHtml()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf12/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff12Translate();
+				wg.SetAsHtml(true);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["new"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
+				Assert.Equal(1, c);
+
+				var ns = xliffRoot.GetDefaultNamespace();
+				var firstFile = xliffRoot.Element(ns + "file");
+				Assert.Equal("en-US", firstFile.Attribute("source-language").Value);
+				var body = firstFile.Element(ns + "body");
+				Assert.NotNull(body);
+
+				var units = body.Elements(ns + "trans-unit").ToArray();
+				Assert.NotNull(units);
+
+				var unit = units[1];
+				var target = unit.Element(ns + "target");
+				var nodes = target.Nodes().ToArray();
+				Assert.Equal(3, nodes.Length);
+				Assert.Equal(XmlNodeType.Text, nodes[0].NodeType);
+				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
+				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
+
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：<x id=\"PH\" equiv-text=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
 				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
 			}
 		}
