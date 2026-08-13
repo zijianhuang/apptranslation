@@ -26,7 +26,7 @@ namespace Fonlow.GoogleTranslate
 			this.SourceLang = sourceLang;
 			this.TargetLang = targetLang;
 			this.projectId = projectId;
-			this.v3Model= $"projects/{projectId}/locations/global/models/{modelId}";
+			this.v3Model= $"projects/{projectId}/locations/{location}/models/{modelId}";
 			var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
 				clientSecrets.Secrets,
 				scopes, // https://developers.google.com/identity/protocols/oauth2/scopes
@@ -44,6 +44,7 @@ namespace Fonlow.GoogleTranslate
 		readonly TranslationServiceClient translationClient;
 		readonly string projectId;
 		readonly string v3Model;
+		readonly string location= "global";
 		private static readonly string[] scopes = ["https://www.googleapis.com/auth/cloud-translation"];
 
 		public async Task<string> Translate(string text)
@@ -63,7 +64,7 @@ namespace Fonlow.GoogleTranslate
 				Contents = { text },
 				SourceLanguageCode = this.SourceLang,
 				TargetLanguageCode = this.TargetLang,
-				Parent = new ProjectName(projectId).ToString(),
+				Parent = new LocationName(projectId, location).ToString(),
 				MimeType = mimeType,
 				Model = this.v3Model,
 			};
@@ -96,7 +97,7 @@ namespace Fonlow.GoogleTranslate
 				Contents = { strings },
 				SourceLanguageCode = this.SourceLang,
 				TargetLanguageCode = this.TargetLang,
-				Parent = new ProjectName(projectId).ToString(),
+				Parent = new LocationName(projectId, location).ToString(),
 				MimeType = mimeType,
 				Model= this.v3Model,
 			};
