@@ -10,9 +10,9 @@ namespace TestXliff
 	[Collection("ServicesLaunch")]
 	public class Xliff20GT3Tests
 	{
-		string googleTranslateV3ClientSecretJsonFile = Environment.GetEnvironmentVariable("GoogleTranslateV3ClientSecretJsonFileForTest", EnvironmentVariableTarget.User);
+		string googleTranslateV3ClientSecretJsonFile = Environment.GetEnvironmentVariable("GoogleTranslateV3ClientSecretJsonFileForTest", EnvironmentVariableTarget.User); //Secrets\GoogleTranslate\client_secret_OpenSourceTest.json with project OpenSourceTest in Z account
 
-		[Fact(Skip = "V3 auth is troublesome")]
+		[Fact]
 		public async Task TestReadAndTranslateWithV3()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
@@ -48,7 +48,45 @@ namespace TestXliff
 			}
 		}
 
-		[Fact(Skip = "V3 auth is troublesome")]
+		[Fact]
+		public async Task TestReadAndTranslateWithV3AsHtml()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff20Translate();
+				wg.SetAsHtml(true);
+				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
+				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null, false);
+				Assert.Equal(2, c);
+
+				var ns = xliffRoot.GetDefaultNamespace();
+				Assert.Equal("en", xliffRoot.Attribute("srcLang").Value);
+				var firstFile = xliffRoot.Element(ns + "file");
+
+				var units = firstFile.Elements(ns + "unit").ToArray();
+				Assert.NotNull(units);
+
+				var unit = units[1];
+				var segment = unit.Element(ns + "segment");
+				var target = segment.Element(ns + "target");
+				var nodes = target.Nodes().ToArray();
+				Assert.Equal(3, nodes.Length);
+				Assert.Equal(XmlNodeType.Text, nodes[0].NodeType);
+				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
+				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
+
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
+
+				xDoc.Save("XdocumentTranslated20V3.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
+
+		[Fact]
 		public async Task TestReadAndTranslateWithV3Batch()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
@@ -80,6 +118,45 @@ namespace TestXliff
 
 				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value); //one less space with GT3 in batch. What happened to Google Translate v3?
 				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
+
+				xDoc.Save("XdocumentTranslated20V3.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
+
+		[Fact]
+		public async Task TestReadAndTranslateWithV3BatchAsHtml()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff20Translate();
+				wg.SetBatchMode(true);
+				wg.SetAsHtml(true);
+				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
+				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null, false);
+				Assert.Equal(2, c);
+
+				var ns = xliffRoot.GetDefaultNamespace();
+				Assert.Equal("en", xliffRoot.Attribute("srcLang").Value);
+				var firstFile = xliffRoot.Element(ns + "file");
+
+				var units = firstFile.Elements(ns + "unit").ToArray();
+				Assert.NotNull(units);
+
+				var unit = units[1];
+				var segment = unit.Element(ns + "segment");
+				var target = segment.Element(ns + "target");
+				var nodes = target.Nodes().ToArray();
+				Assert.Equal(3, nodes.Length);
+				Assert.Equal(XmlNodeType.Text, nodes[0].NodeType);
+				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
+				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
+
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value); //one less space with GT3 in batch. What happened to Google Translate v3?
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
 
 				xDoc.Save("XdocumentTranslated20V3.xlf"); // check to ensure the order of nodes not changed.
 			}

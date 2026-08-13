@@ -80,6 +80,42 @@ namespace TestXliff
 		}
 
 		[Fact]
+		public async Task TestReadAndTranslateAsHtml()
+		{
+			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+			{
+				var xDoc = XDocument.Load(fs);
+				var xliffRoot = xDoc.Root;
+				var wg = new Xliff20Translate();
+				wg.SetAsHtml(true);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT2(LanguageCodes.English, LanguageCodes.ChineseSimplified, apiKey), null, null, false);
+				Assert.Equal(2, c);
+
+				var ns = xliffRoot.GetDefaultNamespace();
+				Assert.Equal("en", xliffRoot.Attribute("srcLang").Value);
+				var firstFile = xliffRoot.Element(ns + "file");
+
+				var units = firstFile.Elements(ns + "unit").ToArray();
+				Assert.NotNull(units);
+
+				var unit = units[1];
+				var segment = unit.Element(ns + "segment");
+				var target = segment.Element(ns + "target");
+				var nodes = target.Nodes().ToArray();
+				Assert.Equal(3, nodes.Length);
+				Assert.Equal(XmlNodeType.Text, nodes[0].NodeType);
+				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
+				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
+
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
+				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
+				Assert.Equal("诗中已不再包含一些已登记编号的注释：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
+
+				xDoc.Save("XdocumentTranslated20.xlf"); // check to ensure the order of nodes not changed.
+			}
+		}
+
+		[Fact]
 		public async Task TestReadAndTranslateBatch()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))

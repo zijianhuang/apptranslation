@@ -76,6 +76,7 @@ namespace Fonlow.TranslationProgram
 		protected override void InitializeResourceTranslation()
 		{
 			resourceTranslation.SetBatchMode(optionsBase.Batch);
+			//resourceTranslation.SetAsHtml(optionsBase.AsHtml);
 			resourceTranslation.SetSourceFile(optionsBase.SourceFile);
 			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
 			resourceTranslation.SetTargetFile(targetFile);

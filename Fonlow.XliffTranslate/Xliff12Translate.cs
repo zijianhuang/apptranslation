@@ -298,7 +298,7 @@ namespace Fonlow.XliffTranslate
 
 						if (asHtml)
 						{
-							strings.Add(unitSource.Value);
+							strings.Add(unitSource.GetInnerXml());
 						}
 						else
 						{
@@ -351,7 +351,7 @@ namespace Fonlow.XliffTranslate
 							{
 								var tr = translatedStrings[translatedIndex];
 								translatedIndex++;
-								unitTarget.Add(new XText(tr));
+								unitTarget.SetInnerXml(tr);
 							}
 							catch (HttpRequestException ex)
 							{

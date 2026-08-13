@@ -25,6 +25,9 @@ namespace Fonlow.TranslationProgram.Abstract
 		[CommandLineOption(Aliases = "B", Description = "Batch processing of string array to improve overall speed.")]
 		public bool Batch { get; set; }
 
+		[CommandLineOption(Aliases = "AH", Description = "Translate source including inline elements as HTML. Otherwise, translate text nodes separately.")]
+		public bool AsHtml { get; set; }
+
 		[CommandLineOption(Aliases = "h ?", Name = "Help", Description = "Shows this help text")]
 		public bool Help
 		{
