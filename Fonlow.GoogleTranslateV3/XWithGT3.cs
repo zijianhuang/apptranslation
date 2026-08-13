@@ -2,8 +2,6 @@
 using Google.Api.Gax.ResourceNames;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Translate.V3;
-using Microsoft.VisualBasic;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Fonlow.GoogleTranslate
 {
@@ -12,7 +10,15 @@ namespace Fonlow.GoogleTranslate
 	/// </summary>
 	public class XWithGT3 : ITranslate
 	{
-		public XWithGT3(string sourceLang, string targetLang, GoogleClientSecrets clientSecrets, string projectId)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sourceLang"></param>
+		/// <param name="targetLang"></param>
+		/// <param name="clientSecrets"></param>
+		/// <param name="projectId"></param>
+		/// <param name="modelId">also general/translation-llm, and translation-llm-custom/{model-id} as well</param>
+		public XWithGT3(string sourceLang, string targetLang, GoogleClientSecrets clientSecrets, string projectId, string modelId= "general/nmt")
 		{
 			ArgumentNullException.ThrowIfNullOrEmpty(projectId);
 			ArgumentNullException.ThrowIfNull(clientSecrets);
@@ -20,6 +26,7 @@ namespace Fonlow.GoogleTranslate
 			this.SourceLang = sourceLang;
 			this.TargetLang = targetLang;
 			this.projectId = projectId;
+			this.v3Model= $"projects/{projectId}/locations/global/models/{modelId}";
 			var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
 				clientSecrets.Secrets,
 				scopes, // https://developers.google.com/identity/protocols/oauth2/scopes
@@ -36,6 +43,7 @@ namespace Fonlow.GoogleTranslate
 		public string TargetLang { get; set; }
 		readonly TranslationServiceClient translationClient;
 		readonly string projectId;
+		readonly string v3Model;
 		private static readonly string[] scopes = ["https://www.googleapis.com/auth/cloud-translation"];
 
 		public async Task<string> Translate(string text)
@@ -57,6 +65,7 @@ namespace Fonlow.GoogleTranslate
 				TargetLanguageCode = this.TargetLang,
 				Parent = new ProjectName(projectId).ToString(),
 				MimeType = mimeType,
+				Model = this.v3Model,
 			};
 			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
 			var translation = response.Translations[0];
@@ -89,6 +98,7 @@ namespace Fonlow.GoogleTranslate
 				TargetLanguageCode = this.TargetLang,
 				Parent = new ProjectName(projectId).ToString(),
 				MimeType = mimeType,
+				Model= this.v3Model,
 			};
 			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
 			var translatedStrings = response.Translations.Select(d => d.TranslatedText).ToArray();

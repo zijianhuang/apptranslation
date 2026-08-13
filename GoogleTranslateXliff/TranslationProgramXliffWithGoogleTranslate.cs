@@ -18,6 +18,7 @@ namespace Fonlow.TranslationProgram
 
 		[CommandLineOption(Aliases = "AH", Description = "Translate source including inline elements as HTML. Otherwise, translate text nodes of source separately.")]
 		public bool AsHtml { get; set; }
+
 	}
 
 	sealed internal class TranslationProgramXliffWithGoogleTranslate : TranslationProgramWithGoogleTranslate

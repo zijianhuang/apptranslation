@@ -20,5 +20,11 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 		[CommandLineOption(Aliases = "Reversed", Description = "Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and TargetFile must be defined.")]
 		public bool ReversedTranslation { get; set; }
 
+		/// <summary>
+		/// As described on https://docs.cloud.google.com/translate/docs/translate-text
+		/// </summary>
+		[CommandLineOption(Aliases = "V3M", Description = "V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}")]
+		public string V3ModelId { get; set; } = "general/nmt";
+
 	}
 }

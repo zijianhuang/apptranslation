@@ -67,7 +67,7 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 
 				var clientSecrets = GoogleClientSecrets.FromFile(options.ClientSecretFile);
 				var projectId = ClientSecretReader.ReadProjectId(options.ClientSecretFile);
-				translator = new XWithGT3(options.SourceLang, options.TargetLang, clientSecrets, projectId);
+				translator = new XWithGT3(options.SourceLang, options.TargetLang, clientSecrets, projectId, options.V3ModelId);
 				Console.WriteLine("Using Google Cloud Translate V3 ...");
 			}
 			else

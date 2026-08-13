@@ -7,6 +7,7 @@ using Fonlow.XliffTranslate;
 
 namespace TestXliff
 {
+	[TestClass(DisableParallelization = true)] // GT V3 does not so support parallel
 	[Collection("ServicesLaunch")]
 	public class Xliff20GT3Tests
 	{
@@ -49,7 +50,7 @@ namespace TestXliff
 		}
 
 		[Fact]
-		public async Task TestReadAndTranslateWithV3AsHtml()
+		public async Task TestReadAndTranslateWithV3AsHtmlLLM()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
@@ -59,7 +60,7 @@ namespace TestXliff
 				wg.SetAsHtml(true);
 				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null, false);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId, "general/translation-llm"), null, null, false);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -78,9 +79,10 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value);
-				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
-				Assert.Equal("诗中已不再包含一些已登记编号的注释：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
+				Assert.Equal("有些已登记的编号注释在诗中已不复存在：", (nodes[0] as XText).Value);
+				Assert.Equal(" . 你想移除它们吗？", (nodes[2] as XText).Value);
+				var s = target.GetInnerXml();
+				Assert.Equal("有些已登记的编号注释在诗中已不复存在：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" /> . 你想移除它们吗？", s);
 
 				xDoc.Save("XdocumentTranslated20V3.xlf"); // check to ensure the order of nodes not changed.
 			}
@@ -124,7 +126,7 @@ namespace TestXliff
 		}
 
 		[Fact]
-		public async Task TestReadAndTranslateWithV3BatchAsHtml()
+		public async Task TestReadAndTranslateWithV3BatchAsHtmlLLM()
 		{
 			using (FileStream fs = new System.IO.FileStream("xlf20/messages.zh-hans.xlf", System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
@@ -135,7 +137,7 @@ namespace TestXliff
 				wg.SetAsHtml(true);
 				var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 				var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
-				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId), null, null, false);
+				var c = await wg.TranslateXliffElement(xliffRoot, ["initial"], false, new XWithGT3("en", "zh-hans", clientSecrets, projectId, "general/translation-llm"), null, null, false);
 				Assert.Equal(2, c);
 
 				var ns = xliffRoot.GetDefaultNamespace();
@@ -154,9 +156,10 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("诗中已不再包含一些已登记编号的注释：", (nodes[0] as XText).Value); //one less space with GT3 in batch. What happened to Google Translate v3?
-				Assert.Equal("你想删除它们吗？", (nodes[2] as XText).Value);
-				Assert.Equal("诗中已不再包含一些已登记编号的注释：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" />你想删除它们吗？", target.GetInnerXml());
+				Assert.Equal("有些已登记的编号注释在诗中已不复存在：", (nodes[0] as XText).Value);
+				Assert.Equal(" . 你想移除它们吗？", (nodes[2] as XText).Value);
+				var s = target.GetInnerXml();
+				Assert.Equal("有些已登记的编号注释在诗中已不复存在：<ph id=\"0\" equiv=\"PH\" disp=\"numberList\" /> . 你想移除它们吗？", s);
 
 				xDoc.Save("XdocumentTranslated20V3.xlf"); // check to ensure the order of nodes not changed.
 			}
