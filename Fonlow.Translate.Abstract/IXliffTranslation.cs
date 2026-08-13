@@ -10,6 +10,7 @@ namespace Fonlow.Translate
 		void SetForStates(string[] forStates);
 		void SetUnchangeState(bool unchangeState);
 		void SetReversed(bool reversed);
+		void SetAsHtml(bool asHtml);
 		Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay, bool reversedTranslation);
 	}
 }

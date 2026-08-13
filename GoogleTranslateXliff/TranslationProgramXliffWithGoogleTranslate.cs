@@ -16,6 +16,8 @@ namespace Fonlow.TranslationProgram
 		[CommandLineOption(Aliases = "NCS", Description = "Not to change the state of translation unit to translated after translation.")]
 		public bool NotChangeState { get; set; }
 
+		[CommandLineOption(Aliases = "AH", Description = "Translate source including inline elements as HTML. Otherwise, translate text nodes of source separately.")]
+		public bool AsHtml { get; set; }
 	}
 
 	sealed internal class TranslationProgramXliffWithGoogleTranslate : TranslationProgramWithGoogleTranslate
@@ -64,6 +66,7 @@ namespace Fonlow.TranslationProgram
 				Console.WriteLine($"Processing XLIFF v{v}...");
 			});
 
+			xliffProcessor.SetAsHtml(options.AsHtml);
 			return xliffProcessor;
 
 		}
@@ -76,7 +79,7 @@ namespace Fonlow.TranslationProgram
 		protected override void InitializeResourceTranslation()
 		{
 			resourceTranslation.SetBatchMode(optionsBase.Batch);
-			//resourceTranslation.SetAsHtml(optionsBase.AsHtml);
+
 			resourceTranslation.SetSourceFile(optionsBase.SourceFile);
 			var targetFile = string.IsNullOrEmpty(optionsBase.TargetFile) ? optionsBase.SourceFile : optionsBase.TargetFile;
 			resourceTranslation.SetTargetFile(targetFile);

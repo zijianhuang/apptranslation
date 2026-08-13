@@ -1,1 +1,1 @@
-﻿dotnet build TranslationUtil.sln  --configuration Release --no-incremental
+﻿dotnet build TranslationUtil.slnx  --configuration Release --no-incremental

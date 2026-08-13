@@ -14,7 +14,6 @@ namespace Fonlow.Translate
 		//Task<int> Translate(ResourceTranslationFactory resourceTranslationFactory, ILogger logger, IProgressDisplay progressDisplay);
 		Task<int> Translate(ITranslate translator, ILogger logger, IProgressDisplay progressDisplay);
 		void SetBatchMode(bool batchMode);
-		//void SetAsHtml(bool asHtml);
 		void SetSourceFile(string sourceFile);
 		void SetTargetFile(string targetFile);
 
