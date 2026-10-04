@@ -43,6 +43,7 @@ These tools provide interactive ways of managing translation:
 * Visual Studio's Resource Explorer
 * [ResX Resource Manager](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager) provides some [complementary features](https://github.com/dotnet/ResXResourceManager/tree/master/Documentation), including [synchronisation between ResX and Xliff resource files](https://github.com/dotnet/ResXResourceManager/blob/master/Documentation/Topics/Xliff.md) .
 * [PO Editor](https://poeditor.com/)
+* [Translate Toolkit](https://github.com/translate/translate)
 
 The tools in this open source project provide the least user interaction through CLI and scripting, and such approach may be more beneficial in some scenarios for the sake of Continuous Integration. And software developers should be able to use these CLI tools along with those interactive tools above.
 
