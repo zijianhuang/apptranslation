@@ -12,5 +12,11 @@
 				<target>There are some registered numbered annotations not existing in poem anymore: <ph id="0" equiv="PH" disp="numberList"/>. Do you want to remove them?</target>
 			</segment>
 		</unit>
+		<unit id="4937523942964397381">
+			<segment state="initial">
+				<source>Home</source>
+				<target>Home</target>
+			</segment>
+		</unit>
 	</file>
 </xliff>

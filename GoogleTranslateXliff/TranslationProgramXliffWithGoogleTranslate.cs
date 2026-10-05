@@ -16,7 +16,7 @@ namespace Fonlow.TranslationProgram
 		[CommandLineOption(Aliases = "NCS", Description = "Not to change the state of translation unit to translated after translation.")]
 		public bool NotChangeState { get; set; }
 
-		[CommandLineOption(Aliases = "AH", Description = "Translate source including inline elements as HTML. Otherwise, translate text nodes of source separately.")]
+		[CommandLineOption(Aliases = "AH", Description = "Translate source containing inline elements as HTML. Otherwise, translate text nodes of source separately.")]
 		public bool AsHtml { get; set; }
 
 	}
