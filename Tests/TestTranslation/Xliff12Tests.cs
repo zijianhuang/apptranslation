@@ -34,8 +34,8 @@ namespace TestXliff
 		public async Task TestMsTranslator()
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
-			var t = await g.Translate("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
-			Assert.Equal("有些已注册的编号注释已不再出现在诗中：<x id=“PH” 等文=“numberList”/>。你想把它们拆掉吗？", t);
+			var t = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
+			Assert.Equal("有些已注册的编号注释已不再存在于诗中： <x id=\"PH\" equiv-text=\"numberList\"/>。你想去除它们吗？", t);
 		}
 
 		[Fact]
@@ -43,7 +43,7 @@ namespace TestXliff
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion);
 			var t = await g.TranslateHtml("There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?");
-			Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 <x id=\"PH\" equiv-text=\"numberList\"/>你想把它们拆掉吗？", t); 
+			Assert.Equal("有些已注册的编号注释已不再存在于诗中： <x id=\"PH\" equiv-text=\"numberList\"/>。你想去除它们吗？", t); 
 		}
 
 		[Fact]
@@ -51,9 +51,9 @@ namespace TestXliff
 		{
 			var g = new XWithMT("en", "zh-hans", msApiKey, msRegion, "general");
 			string[] ss = { "There are some registered numbered annotations not existing in poem anymore: <x id=\"PH\" equiv-text=\"numberList\"/>. Do you want to remove them?", "About" };
-			var t = await g.Translate(ss);
-			Assert.Equal("有些已注册的编号注释已不再出现在诗中：<x id=“PH” 等文=“numberList”/>。你想把它们拆掉吗？", t[0]);
-			Assert.Equal("关于", t[1]); //not good
+			var t = await g.TranslateHtmlItems(ss);
+			Assert.Equal("有些已注册的编号注释已不再存在于诗中： <x id=\"PH\" equiv-text=\"numberList\"/>。你想去除它们吗？", t[0]);
+			Assert.Equal("关于", t[1]);
 		}
 
 		[Fact]
@@ -220,10 +220,10 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 ", (nodes[0] as XText).Value);
-				Assert.Equal("你想把它们拆掉吗？", (nodes[2] as XText).Value);
+				Assert.Equal("有些已注册的编号注释已不再存在于诗中： ", (nodes[0] as XText).Value);
+				Assert.Equal("。你想去除它们吗？", (nodes[2] as XText).Value);
 				var s = target.GetInnerXml();
-				Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 <x id=\"PH\" equiv-text=\"numberList\" />你想把它们拆掉吗？", s); // noted misplacement of period.
+				Assert.Equal("有些已注册的编号注释已不再存在于诗中： <x id=\"PH\" equiv-text=\"numberList\" />。你想去除它们吗？", s);
 				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
 			}
 		}
@@ -347,10 +347,10 @@ namespace TestXliff
 				Assert.Equal(XmlNodeType.Element, nodes[1].NodeType);
 				Assert.Equal(XmlNodeType.Text, nodes[2].NodeType);
 
-				Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 ", (nodes[0] as XText).Value);
-				Assert.Equal("你想把它们拆掉吗？", (nodes[2] as XText).Value);
+				Assert.Equal("有些已注册的编号注释已不再存在于诗中： ", (nodes[0] as XText).Value);
+				Assert.Equal("。你想去除它们吗？", (nodes[2] as XText).Value);
 				var s = target.GetInnerXml();
-				Assert.Equal("有些已注册的编号注释已不再出现在诗中：。 <x id=\"PH\" equiv-text=\"numberList\" />你想把它们拆掉吗？", s); // noted misplacement of period.
+				Assert.Equal("有些已注册的编号注释已不再存在于诗中： <x id=\"PH\" equiv-text=\"numberList\" />。你想去除它们吗？", s); 
 
 				xDoc.Save("XdocumentTranslated.xlf"); // check to ensure the order of nodes not changed.
 			}

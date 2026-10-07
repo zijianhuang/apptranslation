@@ -37,7 +37,7 @@ namespace GoogleTranslateHtml
 @"Examples:
 GoogleTranslateHtml.exe /AKF=apikey.txt /SL=en /TL=""zh-hant"" /F=../Tests/template1.html /TF=../Tests/template1.zh-Hant.html -- HTML document
 GoogleTranslateHtml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL=""de"" /XPaths=`//body/h1` /B /F=../Tests/template1.html /TF=../Tests/template1.de.html -- HTML nodes
-GoogleTranslateHtml.exe /CSF=client_secret.json /LG ---- List glossaires
+GoogleTranslateHtml.exe /CSF=client_secret.json /LG ---- List glossaries
 "
 			);
 		}

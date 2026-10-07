@@ -118,31 +118,34 @@ For the detailed features, just run the CLI tool without parameters you will see
 ## GoogleTranslateXliff.exe
 
 ```
-Use Google Translate v2 or v3 to translate XLIFF v1.2 or v2.0 file.
-XLIFF Translator with Google Translate  version 1.8.0.0
+XLIFF Translator with Google Translate  version 2.0.0.0
 Copyright © Zijian Huang 2018-2026
 
 
-   /ForStates, /SS     For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS="initial"
-                       "translated"
+   /ForStates, /SS     For translation unit of states. Default to new for v1.2 and initial for v2.0, e.g., /SS="initial" "translated"
    /NotChangeState,    Not to change the state of translation unit to translated after translation.
    /NCS
-   /AsHtml, /AH        Translate source including inline elements as HTML. Otherwise, translate text nodes of source separately.
+   /AsHtml, /AH        Translate source containing inline elements as HTML. Otherwise, translate text nodes of source separately.
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client
-   /CSF                secret JSON file you could download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can
-   /ReversedTranslation, compare. Both SourceFile and TargetFile must be defined.
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
@@ -151,6 +154,7 @@ GoogleTranslateXliff.exe /AK=YourGoogleTranslateV2ApiKey /F=myUiMessages.es.xlf 
 GoogleTranslateXliff.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.ja.xlf /TF:myUiMessagesTranslated.ja.xlf ---- from the source locale file to a new target file in Japanese
 GoogleTranslateXliff.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xlf /TF:myUiMessages.es.xlf /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xlf ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateXliff.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 **Hints:**
@@ -163,25 +167,30 @@ GoogleTranslateXliff.exe /AV=v3 /CSF=client_secret.json /B /F:myUiMessages.es.xl
 
 ```
 Use Google Translate v2 or v3 to translate Microsoft ResX
-ResX Translator with Google Translate  version 1.4.0.0
+ResX Translator with Google Translate  version 1.5.0.0
 Copyright © Zijian Huang 2011-2026
 
 
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could
-   /CSF                download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and
-   /ReversedTranslation, TargetFile must be defined.                                                                                                           
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
@@ -190,31 +199,37 @@ GoogleTranslateResx.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:Ap
 GoogleTranslateResx.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:strings.xml /TF:AppResources.ja.resx ---- from the source locale file to a new target file in Japanese
 GoogleTranslateResx.exe /AK=YourGoogleTranslateV2ApiKey /F:AppResources.resx /TF:AppResources.es.resx /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateResx.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:AppResources.es.resx ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateResx.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 ## GoogleTranslateStrings.exe
 
 ```
 Use Google Translate v2 or v3 to translate Android String Resource
-Android String Resource Translator with Google Translate  version 1.3.0.0
+Android String Resource Translator with Google Translate  version 1.4.0.0
 Copyright © Zijian Huang 2018-2026
 
 
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could
-   /CSF                download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and
-   /ReversedTranslation, TargetFile must be defined.                                                                                                           
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
@@ -223,39 +238,47 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:strings.xml /TF:strings.ja.xml ---- from the source locale file to a new target file in Japanese
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /TF:myUiMessages.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateStrings.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 ## GoogleTranslateXml.exe
 ```
 Use Google Translate v2 or v3 to translate XML Text based on XPaths
-XML Translator using Google Translate v2 or v3  version 1.1.0.0
+XML Translator using Google Translate v2 or v3  version 1.2.0.0
 Copyright © Zijian Huang 2011-2026
 
 
-   /XPaths, /XPS       XML text nodes to be translated represented by Xpaths, e.g., /XPS=`//svg:text/svg:tspan` `//ns:pp/ns:span` in Windows CMD, and add
-                       --% after the command in PowerShell 5.1, and for running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
+   /XPaths, /XPS       XML text nodes to be translated represented by Xpaths, e.g., /XPS=`//svg:text/svg:tspan` `//ns:pp/ns:span` in
+                       Windows CMD, and add --% after the command in PowerShell 5.1, and for running in PowerShell 7 or using complex
+                       XPath queries, utilize XPathsFile
    /XPathsFile, /XPSF  Each line declares a XPath for text nodes to be translated, e.g., /XPSF=XPaths.txt
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could
-   /CSF                download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and
-   /ReversedTranslation, TargetFile must be defined.                                                                                                           
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
 Examples:
 GoogleTranslateXml.exe /AKF=apikey.txt /SL=en /TL="zh-hant" /XPaths=`//svg:text/svg:tspan` /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
 GoogleTranslateXml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL="zh-hant" /XPaths=`//svg:text/svg:tspan` /B /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
+GoogleTranslateXml.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 **Hints:**
@@ -265,28 +288,34 @@ GoogleTranslateXml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL="zh-hant" /XPaths=`//
 ## GoogleTranslateJson.exe
 ```
 Use Google Translate v2 or v3 to translate selected string value properties of JSON object
-JSON translation using Google Translate  version 1.2.0.0
+JSON translation using Google Translate  version 1.3.0.0
 Copyright © Zijian Huang 2011-2026
 
 
-   /Properties, /PS    JSON object properties to be translated represented by JSONPath, e.g., /PS="parent.folder.name" "parent.folder.address"
-   /PropertiesFile,    Each line declares a JSON object property to be translated represented by JSONPath is accepted, e.g., /PSF=JsonProperties.txt
-   /PSF
+   /Properties, /PS    JSON object properties to be translated represented by JSONPath, e.g., /PS="parent.folder.name"
+                       "parent.folder.address"
+   /PropertiesFile,    Each line declares a JSON object property to be translated represented by JSONPath is accepted, e.g.,
+   /PSF                /PSF=JsonProperties.txt
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could
-   /CSF                download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and
-   /ReversedTranslation, TargetFile must be defined.                                                                                                           
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
@@ -295,39 +324,46 @@ GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:js
 GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:jsonld.json /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
 GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
 GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B /Ind /NUE /SC=2 /SL=en /TL=es /F:jsonld.es.json /PS:data.user.name ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateJson.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 ## GoogleTranslateHtml.exe
 ```
 Use Google Translate v2 or v3 to translate HTML document or nodes based on XPaths
-HTML Translator using Google Translate v2 or v3  version 1.0.0.0
+HTML Translator using Google Translate v2 or v3  version 1.1.0.0
 Copyright © Zijian Huang 2011-2026
 
 
-   /XPaths, /XPS       HTML nodes to be translated represented by Xpaths, e.g., /XPS=`//h2` `ul` in Windows CMD, and add --% after the command in PowerShell
-                       5.1, and for running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
+   /XPaths, /XPS       HTML nodes to be translated represented by Xpaths, e.g., /XPS=`//h2` `ul` in Windows CMD, and add --% after the
+                       command in PowerShell 5.1, and for running in PowerShell 7 or using complex XPath queries, utilize XPathsFile
    /XPathsFile, /XPSF  Each line declares a XPath for HTML nodes to be translated, e.g., /XPSF=XPaths.txt
    /ApiKey, /AK        Google Translate API key. e.g., /AK=zasdfSDFSDfsdfdsfs234sdsfki
    /ApiKeyFile, /AKF   Google Translate API key stored in a text file. e.g., /AKF=C:/Users/Public/DevApps/GtApiKey.txt
    /ApiVersion, /AV    Google Translate API version. Default to V2. If V3, a client secret JSON file is expected.
-   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret JSON file you could
-   /CSF                download from your Google Cloud Service account.
-                       Translate from target language to source language and save the result to the target file so you can compare. Both SourceFile and
-   /ReversedTranslation, TargetFile must be defined.                                                                                                           
+   /ClientSecretFile,  Google Cloud Translate V3 does not support API key but rich ways of authentications. This app uses client secret
+   /CSF                JSON file you could download from your Google Cloud Service account.
+                       Translate from target language to source language and save the result to the target file so you can compare. Both
+   /ReversedTranslation, SourceFile and TargetFile must be defined.                                                                        
    /Reversed
    /V3ModelId, /V3M    V3 Model ID like general/nmt (default) or general/translation-llm or translation-llm-custom/{model-id}
+   /LocationId, /L     LocationId for V3 translation, like us-central1. Default to us-central1.
    /SourceFile, /F     Source file path
    /TargetFile, /TF    Target file path. Without this, the source file is also the target file.
    /SourceLang, /SL    Source language. e.g., /SL=fr. Default en. If SL==TL, source file is simply copied to target file.
    /TargetLang, /TL    Target language. e.g., /TL=zh.
    /Batch, /B          Batch processing of string array to improve overall speed.
    /Help, /h, /?       Shows this help text
+   /GlossaryId, /GL    GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in
+                       projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl
+   /ListGlossaries,    List all available glossaries. For V3.
+   /LG
 
 
 
 Examples:
 GoogleTranslateHtml.exe /AKF=apikey.txt /SL=en /TL="zh-hant" /F=../Tests/template1.html /TF=../Tests/template1.zh-Hant.html -- HTML document
 GoogleTranslateHtml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL="de" /XPaths=`//body/h1` /B /F=../Tests/template1.html /TF=../Tests/template1.de.html -- HTML nodes
+GoogleTranslateHtml.exe /CSF=client_secret.json /LG ---- List glossaries
 ```
 
 ## MsTranslatorXliff.exe

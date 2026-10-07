@@ -3,6 +3,7 @@
   - [Upload TSV Files to Google Cloud Buckets](#upload-tsv-files-to-google-cloud-buckets)
     - [Clean up the TSV Files then Import](#clean-up-the-tsv-files-then-import)
     - [Maintenance of Glossaries](#maintenance-of-glossaries)
+  - [With or without Glossaries](#with-or-without-glossaries)
 - [Similar GUI-oriented terminology and translation sources](#similar-gui-oriented-terminology-and-translation-sources)
   - [Terminology and translation data](#terminology-and-translation-data)
   - [Reference and tooling](#reference-and-tooling)
@@ -391,6 +392,10 @@ Basically 3 ways:
 2. For glossary level update, either patch or replace.
 
 For detailed operations, check Google API docs, or ask AI, or search free / open source / commercial tools.
+
+## With or without Glossaries
+
+In my own experiences, with default V3 model `general/nmt`, with the MS Term Glossary in place, around 
 
 # Similar GUI-oriented terminology and translation sources
 
