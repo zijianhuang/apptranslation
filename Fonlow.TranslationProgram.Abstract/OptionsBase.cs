@@ -31,5 +31,12 @@ namespace Fonlow.TranslationProgram.Abstract
 			get;
 			set;
 		}
+
+		[CommandLineOption(Aliases = "GL", Description = "GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl")]
+		public string GlossaryId { get; set; }
+
+		[CommandLineOption(Aliases = "LG", Description = "List all available glossaries. For V3.")]
+		public bool ListGlossaries { get; set; }
+
 	}
 }

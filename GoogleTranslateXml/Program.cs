@@ -1,5 +1,6 @@
 ﻿using Fonlow.TranslationProgram;
 using Fonlow.TranslationProgram.Abstract;
+using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
 namespace GoogleTranslateXml
@@ -13,6 +14,12 @@ namespace GoogleTranslateXml
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new OptionsForXmlWithGoogleTranslate();
 			var errorCode = CliOptionsParser.Parse(args, options, DisplayExamples, logger);
+			if (options.ListGlossaries)
+			{
+				await ListGlossariesHelper.ListGlossaries(options).ConfigureAwait(false);
+				return 0;
+			}
+
 			if (errorCode == 0)
 			{
 				var translationProgram = new TranslationProgramXmlTextWithGoogleTranslate(options, logger);
@@ -30,6 +37,7 @@ namespace GoogleTranslateXml
 @"Examples:
 GoogleTranslateXml.exe /AKF=apikey.txt /SL=en /TL=""zh-hant"" /XPaths=`//svg:text/svg:tspan` /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
 GoogleTranslateXml.exe /CSF=$GTV3KeyFile /AV=V3 /SL=en /TL=""zh-hant"" /XPaths=`//svg:text/svg:tspan` /B /F=../Tests/template1.svg /TF=../Tests/template1.zh-Hant.svg
+GoogleTranslateXml.exe /CSF=client_secret.json /LG ---- List glossaries
 "
 			);
 		}

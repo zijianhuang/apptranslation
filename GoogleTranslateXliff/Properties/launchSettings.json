@@ -2,7 +2,7 @@
   "profiles": {
     "GoogleTranslateXliff": {
       "commandName": "Project",
-      "commandLineArgs": " /AKF=C:/VsProjects/OpenSource/Secrets/GoogleTranslate/apikey.txt /F=Fonlow.VA.Languages.ja.xlf /SS=needs-review-translation translated /NCS /Reversed /TF=Fonlow.VA.Languages.ja_Reversed.xlf /B"
+      "commandLineArgs": " /AV=v3 /CSF=C:/VsProjects/OpenSource/Secrets/GoogleTranslate/client_secret_termatracau.json /LG"
     }
   }
 }

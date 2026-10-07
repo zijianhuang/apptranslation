@@ -28,12 +28,5 @@ namespace Fonlow.TranslationProgram.GoogleTranslate
 
 		[CommandLineOption(Aliases = "L", Description = "LocationId for V3 translation, like us-central1. Default to us-central1.")]
 		public string LocationId { get; set; } = "us-central1";
-
-		[CommandLineOption(Aliases = "GL", Description = "GlossaryId for V3 translation, like mstc-dutch-en-nl, for example, this will result in projects/api-project-1234567890/locations/us-central1/glossaries/mstc-dutch-en-nl")]
-		public string GlossaryId { get; set; }
-
-		[CommandLineOption(Aliases = "LG", Description = "List all available glossaries.")]
-		public bool ListGlossaries { get; set; }
-
 	}
 }

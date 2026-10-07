@@ -44,7 +44,5 @@ namespace Fonlow.GoogleTranslate
 			var r = await translationClient.TranslateHtmlAsync(htmlItems, TargetLang, SourceLang).ConfigureAwait(false);
 			return r.Select(d=>d.TranslatedText).ToArray();
 		}
-
-
 	}
 }

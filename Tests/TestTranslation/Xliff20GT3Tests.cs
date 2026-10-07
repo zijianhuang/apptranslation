@@ -175,53 +175,75 @@ namespace TestXliff
 		public async Task ListGlossariesAndGet(){
 			var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 			var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
-			var gt = new XWithGT3("en", "zh-hans", clientSecrets, projectId);
-			var glossaries = await gt.ListGlossaries();
+			var ggt = new GlossariesWithGT3(clientSecrets, projectId, "us-central1");
+			var glossaries = await ggt.ListGlossaries();
 			Assert.NotEmpty(glossaries);
 			Assert.Equal("mstc-arabic-en-ar", glossaries[0].GlossaryName.GlossaryId);
 
-			var glossary = await gt.GetGlossary("mstc-chinese-simplified-en-zh-hans");
+			var glossary = await ggt.GetGlossary("mstc-chinese-simplified-en-zh-hans");
 			Assert.NotNull(glossary);
 		}
 
 		[Fact]
-		public async Task ListGlossaryEntries(){
+		public async Task ListGlossaryEntriesAndTranslate()
+		{
 			var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
 			var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
 			var gt = new XWithGT3("en", "zh-Hans", clientSecrets, projectId, locationId: "us-central1", glossaryId: "mstc-chinese-simplified-en-zh-hans"); //zh-CN works too, while the glossary may be with zh-CN. The translation engine is smart enough to handle the difference, and fall back to the closest match.
-			var entries = await gt.ListGlossaryEntries("mstc-chinese-simplified-en-zh-hans", 100);
+			var ggt = new GlossariesWithGT3(clientSecrets, projectId, "us-central1");
+			var entries = await ggt.ListGlossaryEntries("mstc-chinese-simplified-en-zh-hans", 100);
 			Assert.NotEmpty(entries);
 
 			var rt = await gt.Translate("key roaming");
-			Assert.Equal("关键漫游", rt);
-
-			var rtg = await gt.TranslateWithGlossary("key roaming", "text/plain");
-			Assert.Equal("密钥漫游", rtg);
+			Assert.Equal("密钥漫游", rt);
 
 			var rt2 = await gt.Translate("logging");
-			Assert.Equal("日志记录", rt2);
-			var rtg2 = await gt.TranslateWithGlossary("logging", "text/plain");
-			Assert.Equal("事件日志", rtg2);
+			Assert.Equal("事件日志", rt2);
 
 			var rt3 = await gt.Translate("Grab");
-			Assert.Equal("抓住", rt3);
-			var rtg3 = await gt.TranslateWithGlossary("Grab", "text/plain");
-			Assert.Equal("抓取按钮", rtg3);
+			Assert.Equal("抓取按钮", rt3);
 
 			var rt4 = await gt.Translate("Home");
-			Assert.Equal("家", rt4);
-			var rtg4 = await gt.TranslateWithGlossary("Home", "text/plain");
-			Assert.Equal("主文件夹", rtg4);
+			Assert.Equal("主文件夹", rt4);
 
-			var rtg5 = await gt.TranslateWithGlossary("home", "text/plain");
+			var rtg5 = await gt.Translate("home", "text/plain");
 			Assert.Equal("家", rtg5);
+		}
 
-			//foreach (var s in new[] { "Home", "home", "HOME", "Home folder", "Open the Home folder.", "Home page", "Go Home" })
-			//{
-			//	var plain = await gt.Translate(s);
-			//	var withGlossary = await gt.TranslateWithGlossary(s, "text/plain");
-			//	Console.WriteLine($"{s,-24} plain={plain,-10} glossary={withGlossary}");   // or ITestOutputHelper in xUnit
-			//}
+		[Fact]
+		public async Task ListGlossaryEntriesAndTranslateWithLLM()
+		{
+			var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
+			var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
+			var gt = new XWithGT3("en", "zh-Hans", clientSecrets, projectId, "general/translation-llm", locationId: "us-central1", glossaryId: "mstc-chinese-simplified-en-zh-hans"); //zh-CN works too, while the glossary may be with zh-CN. The translation engine is smart enough to handle the difference, and fall back to the closest match.
+			var ggt = new GlossariesWithGT3(clientSecrets, projectId, "us-central1");
+			var entries = await ggt.ListGlossaryEntries("mstc-chinese-simplified-en-zh-hans", 100);
+			Assert.NotEmpty(entries);
+
+			var rt = await gt.Translate("key roaming");
+			Assert.Equal("密钥漫游", rt);
+
+			var rt2 = await gt.Translate("logging");
+			Assert.Equal("事件日志", rt2);
+
+			var rt3 = await gt.Translate("Grab");
+			Assert.Equal("抓取按钮", rt3);
+
+			var rt4 = await gt.Translate("Home");
+			Assert.Equal("主文件夹", rt4);
+
+			var rtg5 = await gt.Translate("home", "text/plain");
+			Assert.Equal("家", rtg5);
+		}
+
+		[Fact]
+		public async Task TestSingleTermMultipleAlternatives()
+		{
+			var clientSecrets = GoogleClientSecrets.FromFile(googleTranslateV3ClientSecretJsonFile);
+			var projectId = ClientSecretReader.ReadProjectId(googleTranslateV3ClientSecretJsonFile);
+			var gt = new XWithGT3("en", "zh-Hans", clientSecrets, projectId, "general/translation-llm");
+			var rt = await gt.Translate("Deficiency");
+			Assert.Equal("缺乏", rt); // the first candidate in the glossary
 		}
 
 	}

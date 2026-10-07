@@ -69,7 +69,6 @@ namespace Fonlow.TranslationProgram
 
 			xliffProcessor.SetAsHtml(options.AsHtml);
 			return xliffProcessor;
-
 		}
 
 		protected override IProgressDisplay CreateProgressDisplay()

@@ -1,24 +1,24 @@
 
 - [Overview](#overview)
 - [Core Value Proposition](#core-value-proposition)
-	- [Background](#background)
+  - [Background](#background)
 - [Tools](#tools)
-	- [GoogleTranslateXliff.exe](#googletranslatexliffexe)
-	- [GoogleTranslateResx.exe](#googletranslateresxexe)
-	- [GoogleTranslateStrings.exe](#googletranslatestringsexe)
-	- [GoogleTranslateXml.exe](#googletranslatexmlexe)
-	- [GoogleTranslateJson.exe](#googletranslatejsonexe)
-	- [GoogleTranslateHtml.exe](#googletranslatehtmlexe)
-	- [MsTranslatorXliff.exe](#mstranslatorxliffexe)
-	- [MsTranslatorResx.exe](#mstranslatorresxexe)
-	- [MsTranslatorStrings.exe](#mstranslatorstringsexe)
-	- [MsTranslatorXml.exe](#mstranslatorxmlexe)
-	- [MsTranslatorJson.exe](#mstranslatorjsonexe)
-	- [MsTranslatorHtml.exe](#mstranslatorhtmlexe)
-	- [XliffResXConverter.exe](#xliffresxconverterexe)
+  - [GoogleTranslateXliff.exe](#googletranslatexliffexe)
+  - [GoogleTranslateResx.exe](#googletranslateresxexe)
+  - [GoogleTranslateStrings.exe](#googletranslatestringsexe)
+  - [GoogleTranslateXml.exe](#googletranslatexmlexe)
+  - [GoogleTranslateJson.exe](#googletranslatejsonexe)
+  - [GoogleTranslateHtml.exe](#googletranslatehtmlexe)
+  - [MsTranslatorXliff.exe](#mstranslatorxliffexe)
+  - [MsTranslatorResx.exe](#mstranslatorresxexe)
+  - [MsTranslatorStrings.exe](#mstranslatorstringsexe)
+  - [MsTranslatorXml.exe](#mstranslatorxmlexe)
+  - [MsTranslatorJson.exe](#mstranslatorjsonexe)
+  - [MsTranslatorHtml.exe](#mstranslatorhtmlexe)
+  - [XliffResXConverter.exe](#xliffresxconverterexe)
 - [Build and Deployment](#build-and-deployment)
-	- [Microsoft Translator](#microsoft-translator)
-	- [Google Translate](#google-translate)
+  - [Microsoft Translator](#microsoft-translator)
+  - [Google Translate](#google-translate)
 - [Continuous Integration](#continuous-integration)
 - [Articles](#articles)
 - [Contributing](#contributing)
@@ -51,7 +51,7 @@ Key differentiators:
 
 * Fully **CLI-driven (automation-ready)**
 * Works with **industry-standard formats** (XLIFF, ResX, Android XML)
-* Avoids unnecessary API costs by sending only text (not markup)
+* For XLIFF, avoids unnecessary API costs by sending only text (not inline elements).
 * Extensible architectural design for adapting new file formats and new translation engines
 
 **Supported Translation Resource Formats:**
@@ -67,7 +67,7 @@ Key differentiators:
 
 **Supported Translation Engines:**
 * Google Translate v2 (Cloud Translation - Basic API)
-* [Google Cloud Translation v3 (Advanced API)](https://docs.cloud.google.com/translate/docs/overview) with models general/nmt (default), general/translation-llm and translation-llm-custom/{model-id}
+* [Google Cloud Translation v3 (Advanced API)](https://docs.cloud.google.com/translate/docs/overview) with models `general/nmt` (default), `general/translation-llm` and `translation-llm-custom/{model-id}`
 * Microsoft Azure AI Translator
 
 You should setup your own accounts and API credentials of these engines.

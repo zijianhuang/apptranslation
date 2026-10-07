@@ -21,6 +21,10 @@ namespace Fonlow.Translate
 		Task<string> TranslateHtml(string htmlText);
 
 		Task<string[]> TranslateHtmlItems(IList<string> htmlItems);
+	}
 
+	public interface IGlossarySupport
+	{
+		Task<IReadOnlyList<string>> ListNamesOfGlossaries();
 	}
 }

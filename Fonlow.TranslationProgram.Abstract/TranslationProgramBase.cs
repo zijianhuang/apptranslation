@@ -45,6 +45,17 @@ namespace Fonlow.TranslationProgram.Abstract
 					return errorCode;
 				}
 
+				//if (optionsBase.ListGlossaries)
+				//{
+				//	var glossaries = await translator.ListNamesOfGlossaries().ConfigureAwait(false);
+				//	Console.WriteLine("Glossaries:");
+				//	foreach (var g in glossaries)
+				//	{
+				//		Console.WriteLine(g);
+				//	}
+				//	return 0;
+				//}
+
 				InitializeResourceTranslation();
 				var c = await resourceTranslation.Translate(translator, logger, CreateProgressDisplay()).ConfigureAwait(false);
 				Console.WriteLine();
@@ -89,16 +100,19 @@ namespace Fonlow.TranslationProgram.Abstract
 				return 2;
 			}
 
-			if (string.IsNullOrEmpty(optionsBase.SourceFile))
+			if (!optionsBase.ListGlossaries)
 			{
-				logger.LogWarning("Need SoureFile");
-				return 10;
-			}
+				if (string.IsNullOrEmpty(optionsBase.SourceFile))
+				{
+					logger.LogWarning("Need SoureFile");
+					return 10;
+				}
 
-			if (!Path.Exists(optionsBase.SourceFile))
-			{
-				logger.LogWarning($"{optionsBase.SourceFile} NOT exists");
-				return 11;
+				if (!Path.Exists(optionsBase.SourceFile))
+				{
+					logger.LogWarning($"{optionsBase.SourceFile} NOT exists");
+					return 11;
+				}
 			}
 
 			return 0;

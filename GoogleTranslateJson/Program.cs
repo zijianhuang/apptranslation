@@ -1,5 +1,6 @@
 ﻿using Fonlow.TranslationProgram;
 using Fonlow.TranslationProgram.Abstract;
+using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
 namespace GoogleTranslateJson
@@ -13,6 +14,12 @@ namespace GoogleTranslateJson
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new OptionsForJsonWithGoogleTranslate();
 			var errorCode = CliOptionsParser.Parse(args, options, DisplayExamples, logger);
+			if (options.ListGlossaries)
+			{
+				await ListGlossariesHelper.ListGlossaries(options).ConfigureAwait(false);
+				return 0;
+			}
+
 			if (errorCode == 0)
 			{
 
@@ -32,6 +39,7 @@ GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F:js
 GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:jsonld.json /TF:jsonld.ja.json /PS:data.user.name ---- from the source locale file to a new target file in Japanese
 GoogleTranslateJson.exe /AK=YourGoogleTranslateV2ApiKey /F:jsonld.json /TF:jsonld.es.json /TL=es /PS:data.user.name ---- From the source template file to a new target file in Spanish.
 GoogleTranslateJson.exe /AV=v3 /CSF=client_secret.json /B /Ind /NUE /SC=2 /SL=en /TL=es /F:jsonld.es.json /PS:data.user.name ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateJson.exe /CSF=client_secret.json /LG ---- List glossaries
 "
 			);
 		}

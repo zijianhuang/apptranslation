@@ -1,5 +1,6 @@
 ﻿using Fonlow.TranslationProgram;
 using Fonlow.TranslationProgram.Abstract;
+using Fonlow.TranslationProgram.GoogleTranslate;
 using Microsoft.Extensions.Logging;
 
 namespace GoogleTranslateStrings
@@ -13,6 +14,12 @@ namespace GoogleTranslateStrings
 			var logger = loggerFactory.CreateLogger("program");
 			var options = new Options();
 			var errorCode = CliOptionsParser.Parse(args, options, DisplayExamples, logger);
+			if (options.ListGlossaries)
+			{
+				await ListGlossariesHelper.ListGlossaries(options).ConfigureAwait(false);
+				return 0;
+			}
+
 			if (errorCode == 0)
 			{
 				var translationProgram = new TranslationProgramStringsWithGoogleTranslate(options, logger);
@@ -32,6 +39,7 @@ GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=zh-hant /F
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /SL=en /TL=ja /F:strings.xml /TF:strings.ja.xml ---- from the source locale file to a new target file in Japanese
 GoogleTranslateStrings.exe /AK=YourGoogleTranslateV2ApiKey /F:myUiMessages.xml /TF:myUiMessages.es.xml /TL=es ---- From the source template file to a new target file in Spanish.
 GoogleTranslateStrings.exe /AV=v3 /CSF=client_secret.json /B  /SL=en /TL=es /F:myUiMessages.es.xml ---- Use Google Cloud Translate V3 and batch mode.
+GoogleTranslateStrings.exe /CSF=client_secret.json /LG ---- List glossaries
 "
 			);
 		}

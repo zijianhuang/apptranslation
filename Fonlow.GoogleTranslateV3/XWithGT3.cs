@@ -2,33 +2,16 @@
 using Google.Api.Gax.ResourceNames;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Translate.V3;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Fonlow.GoogleTranslate
 {
-	/// <summary>
-	/// Wrapper of Google Translate v3 API
-	/// </summary>
-	public class XWithGT3 : ITranslate
+	public class GlossariesWithGT3 : IGlossarySupport
 	{
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="sourceLang"></param>
-		/// <param name="targetLang"></param>
-		/// <param name="clientSecrets"></param>
-		/// <param name="projectId"></param>
-		/// <param name="modelId">also general/translation-llm, and translation-llm-custom/{model-id} as well</param>
-		public XWithGT3(string sourceLang, string targetLang, GoogleClientSecrets clientSecrets, string projectId, string modelId = "general/nmt", string locationId= "us-central1", string glossaryId = null)
+		public GlossariesWithGT3(GoogleClientSecrets clientSecrets, string projectId, string locationId)
 		{
-			ArgumentNullException.ThrowIfNullOrEmpty(projectId);
-			ArgumentNullException.ThrowIfNull(clientSecrets);
-
-			this.SourceLang = sourceLang;
-			this.TargetLang = targetLang;
 			this.projectId = projectId;
 			this.locationId = locationId;
-			this.v3Model = $"projects/{projectId}/locations/{locationId}/models/{modelId}"; // new ModelName(projectId, locationId, modelId).ToString(); throw exception
-			this.glossaryId = glossaryId;
 			var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
 				clientSecrets.Secrets,
 				scopes, // https://developers.google.com/identity/protocols/oauth2/scopes
@@ -37,97 +20,22 @@ namespace Fonlow.GoogleTranslate
 			translationClient = new TranslationServiceClientBuilder()
 			{
 				Credential = credential,
-				//JsonCredentials= clientSecretJsonText,
 			}.Build();
-		}
 
-		public string SourceLang { get; set; }
-		public string TargetLang { get; set; }
-		readonly TranslationServiceClient translationClient;
+		}
 		readonly string projectId;
-		readonly string v3Model;
-		readonly string locationId;
-		readonly string glossaryId;
 		private static readonly string[] scopes = ["https://www.googleapis.com/auth/cloud-translation"];
+		readonly string locationId;
+		readonly TranslationServiceClient translationClient;
 
-		public async Task<string> Translate(string text)
+		/// <summary>
+		/// Glossary Ids.
+		/// </summary>
+		/// <returns></returns>
+		public async Task<IReadOnlyList<string>> ListNamesOfGlossaries()
 		{
-			return await Translate(text, "text/plain").ConfigureAwait(false);
-		}
-
-		public async Task<string> TranslateHtml(string htmlText)
-		{
-			return await Translate(htmlText, "text/html").ConfigureAwait(false);
-		}
-
-		public async Task<string> Translate(string text, string mimeType)
-		{
-			var request = new TranslateTextRequest
-			{
-				Contents = { text },
-				SourceLanguageCode = this.SourceLang,
-				TargetLanguageCode = this.TargetLang,
-				Parent = new LocationName(projectId, locationId).ToString(),
-				MimeType = mimeType,
-				Model = this.v3Model
-			};
-			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
-			var translation = response.Translations[0];
-			return translation.TranslatedText;
-		}
-
-		public async Task<string> TranslateWithGlossary(string text, string mimeType)
-		{
-			var request = new TranslateTextRequest
-			{
-				Contents = { text },
-				SourceLanguageCode = this.SourceLang,
-				TargetLanguageCode = this.TargetLang,
-				Parent = new LocationName(projectId, locationId).ToString(),
-				MimeType = mimeType,
-				Model = this.v3Model,
-				GlossaryConfig = new TranslateTextGlossaryConfig
-				{
-					Glossary = new GlossaryName(projectId, locationId, glossaryId).ToString(), // $"projects/{projectId}/locations/{location}/glossaries/{this.glossary}",
-					IgnoreCase = false
-				}
-			};
-			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
-			var translation = response.GlossaryTranslations[0];
-			return translation.TranslatedText;
-		}
-
-		public async Task<string[]> Translate(IList<string> strings)
-		{
-			return await Translate(strings, "text/plain").ConfigureAwait(false);
-		}
-
-		public async Task<string[]> TranslateHtmlItems(IList<string> htmlItems)
-		{
-			return await Translate(htmlItems, "text/html").ConfigureAwait(false);
-		}
-
-		async Task<string[]> Translate(IList<string> strings, string mimeType)
-		{
-			ArgumentNullException.ThrowIfNull(strings);
-
-			if (strings.Count > 1024)
-			{
-				throw new ArgumentException("The API supports up to 1024. Otherwise, use batch API.");
-			}
-
-			var request = new TranslateTextRequest
-			{
-				Contents = { strings },
-				SourceLanguageCode = this.SourceLang,
-				TargetLanguageCode = this.TargetLang,
-				Parent = new LocationName(projectId, locationId).ToString(),
-				MimeType = mimeType,
-				Model = this.v3Model,
-			};
-			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
-			var translatedStrings = response.Translations.Select(d => d.TranslatedText).ToArray();
-			return translatedStrings;
+			var glossaries = await ListGlossaries().ConfigureAwait(false);
+			return glossaries.Select(g => $"{g.GlossaryName.GlossaryId} ~ {g.LanguagePair.SourceLanguageCode} -> {g.LanguagePair.TargetLanguageCode} ({g.EntryCount})").ToList();
 		}
 
 		/// <summary>
@@ -181,46 +89,144 @@ namespace Fonlow.GoogleTranslate
 
 			return result;
 		}
+	}
 
+	/// <summary>
+	/// Wrapper of Google Translate v3 API
+	/// </summary>
+	public class XWithGT3 : ITranslate
+	{
 		/// <summary>
-		/// Prints glossaries and (optionally) their entries to the console.
+		/// 
 		/// </summary>
-		public async Task DumpGlossaries(bool includeEntries = true, int maxEntriesPerGlossary = 50)
+		/// <param name="sourceLang"></param>
+		/// <param name="targetLang"></param>
+		/// <param name="clientSecrets"></param>
+		/// <param name="projectId"></param>
+		/// <param name="modelId">also general/translation-llm, and translation-llm-custom/{model-id} as well</param>
+		public XWithGT3(string sourceLang, string targetLang, GoogleClientSecrets clientSecrets, string projectId, string modelId = "general/nmt", string locationId = "us-central1", string glossaryId = null)
 		{
-			var glossaries = await ListGlossaries().ConfigureAwait(false);
-			Console.WriteLine($"Found {glossaries.Count} glossaries in {projectId}/{locationId}");
+			ArgumentNullException.ThrowIfNullOrEmpty(projectId);
+			ArgumentNullException.ThrowIfNull(clientSecrets);
 
-			foreach (var g in glossaries)
+			this.SourceLang = sourceLang;
+			this.TargetLang = targetLang;
+			this.projectId = projectId;
+			this.locationId = locationId;
+			this.v3Model = $"projects/{projectId}/locations/{locationId}/models/{modelId}"; // new ModelName(projectId, locationId, modelId).ToString(); throw exception
+			this.glossaryId = glossaryId;
+			var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+				clientSecrets.Secrets,
+				scopes, // https://developers.google.com/identity/protocols/oauth2/scopes
+				"user",
+				CancellationToken.None).Result;
+			translationClient = new TranslationServiceClientBuilder()
 			{
-				var langs = g.LanguagePair != null
-					? $"{g.LanguagePair.SourceLanguageCode} -> {g.LanguagePair.TargetLanguageCode}"
-					: $"set: {string.Join(", ", g.LanguageCodesSet?.LanguageCodes ?? new())}";
+				Credential = credential,
+				//JsonCredentials= clientSecretJsonText,
+			}.Build();
+		}
 
-				Console.WriteLine($"\n{g.Name}");
-				Console.WriteLine($"  Languages : {langs}");
-				Console.WriteLine($"  EntryCount: {g.EntryCount}");
-				Console.WriteLine($"  Source    : {g.InputConfig?.GcsSource?.InputUri}");
-				Console.WriteLine($"  Submitted : {g.SubmitTime?.ToDateTime():u}");
+		public string SourceLang { get; set; }
+		public string TargetLang { get; set; }
+		readonly TranslationServiceClient translationClient;
+		readonly string projectId;
+		readonly string v3Model;
+		readonly string locationId;
+		readonly string glossaryId;
+		private static readonly string[] scopes = ["https://www.googleapis.com/auth/cloud-translation"];
 
-				if (!includeEntries)
+		public async Task<string> Translate(string text)
+		{
+			return await Translate(text, "text/plain").ConfigureAwait(false);
+		}
+
+		public async Task<string> TranslateHtml(string htmlText)
+		{
+			return await Translate(htmlText, "text/html").ConfigureAwait(false);
+		}
+
+		public async Task<string> Translate(string text, string mimeType)
+		{
+			var request = new TranslateTextRequest
+			{
+				Contents = { text },
+				SourceLanguageCode = this.SourceLang,
+				TargetLanguageCode = this.TargetLang,
+				Parent = new LocationName(projectId, locationId).ToString(),
+				MimeType = mimeType,
+				Model = this.v3Model,
+				GlossaryConfig = string.IsNullOrEmpty(glossaryId) ? null : new TranslateTextGlossaryConfig
 				{
-					continue;
+					Glossary = new GlossaryName(projectId, locationId, glossaryId).ToString(), // $"projects/{projectId}/locations/{location}/glossaries/{this.glossary}",
+					IgnoreCase = false // case sensitive is good for almost all scenarios, except for some cases like "Home" vs "home", and "CARD" vs "card". The glossary should be built with the right case.
 				}
-
-				var glossaryId = g.GlossaryName.GlossaryId;
-				var entries = await ListGlossaryEntries(glossaryId, maxEntriesPerGlossary).ConfigureAwait(false);
-				foreach (var e in entries)
+			};
+			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
+			var translation = string.IsNullOrEmpty(glossaryId) ? response.Translations[0] : response.GlossaryTranslations[0];
+			var translatedText = translation.TranslatedText;
+			if (v3Model.Contains("translation-llm"))
+			{
+				var firstPick = SingleTermHelper.Normalize(text, translatedText, TargetLang); // for LLM model, normalize the translation to remove the extra explanation text.
+				if (firstPick != translatedText)
 				{
-					if (e.TermsPair != null)
+					Console.WriteLine($"Normalized: {translatedText} => {firstPick}");
+					translatedText = firstPick;
+				}
+			}
+
+			return translatedText;
+		}
+
+		public async Task<string[]> Translate(IList<string> strings)
+		{
+			return await Translate(strings, "text/plain").ConfigureAwait(false);
+		}
+
+		public async Task<string[]> TranslateHtmlItems(IList<string> htmlItems)
+		{
+			return await Translate(htmlItems, "text/html").ConfigureAwait(false);
+		}
+
+		async Task<string[]> Translate(IList<string> strings, string mimeType)
+		{
+			ArgumentNullException.ThrowIfNull(strings);
+
+			if (strings.Count > 1024)
+			{
+				throw new ArgumentException("The API supports up to 1024. Otherwise, use batch API.");
+			}
+
+			var request = new TranslateTextRequest
+			{
+				Contents = { strings },
+				SourceLanguageCode = this.SourceLang,
+				TargetLanguageCode = this.TargetLang,
+				Parent = new LocationName(projectId, locationId).ToString(),
+				MimeType = mimeType,
+				Model = this.v3Model,
+				GlossaryConfig = string.IsNullOrEmpty(glossaryId) ? null : new TranslateTextGlossaryConfig
+				{
+					Glossary = new GlossaryName(projectId, locationId, glossaryId).ToString(),
+				}
+			};
+			var response = await translationClient.TranslateTextAsync(request).ConfigureAwait(false);
+			var translatedStrings = response.Translations.Select(d => d.TranslatedText).ToArray();
+			if (v3Model.Contains("translation-llm"))
+			{
+				for (int i = 0; i < strings.Count; i++)
+				{
+					var firstPick = SingleTermHelper.Normalize(strings[i], translatedStrings[i], TargetLang); // for LLM model, normalize the translation to remove the extra explanation text.
+					if (firstPick != translatedStrings[i])
 					{
-						Console.WriteLine($"    {e.TermsPair.SourceTerm.Text}\t{e.TermsPair.TargetTerm.Text}");
-					}
-					else if (e.TermsSet != null)
-					{
-						Console.WriteLine("    " + string.Join("\t", e.TermsSet.Terms.Select(t => $"{t.LanguageCode}:{t.Text}")));
+						Console.WriteLine($"Normalized: {translatedStrings[i]} => {firstPick}");
+						translatedStrings[i] = firstPick;
 					}
 				}
 			}
+
+			return translatedStrings;
 		}
+
 	}
 }

@@ -1,6 +1,17 @@
+- [Glossary in Google Translate v3](#glossary-in-google-translate-v3)
+  - [Prepare for TSV Files](#prepare-for-tsv-files)
+  - [Upload TSV Files to Google Cloud Buckets](#upload-tsv-files-to-google-cloud-buckets)
+    - [Clean up the TSV Files then Import](#clean-up-the-tsv-files-then-import)
+    - [Maintenance of Glossaries](#maintenance-of-glossaries)
+- [Similar GUI-oriented terminology and translation sources](#similar-gui-oriented-terminology-and-translation-sources)
+  - [Terminology and translation data](#terminology-and-translation-data)
+  - [Reference and tooling](#reference-and-tooling)
+
 # Glossary in Google Translate v3
 
-There are many ways to prepare glossaries of various business domains for Google Translate API v3. This article is focused on using the TBX files of Microsoft Term Collection, for translating app UI.
+This article is for software developers who are translating app UI to other languages using Google Translate v3. The whole purpose is to utilize existing resources as much as possible thus reduce the overhead of constructing machine translations while delivering decent translation quality.
+
+There are many ways to prepare glossaries of various business domains for Google Translate API v3. This article is focused on using the TBX files of [Microsoft Term Collection](https://learn.microsoft.com/en-us/globalization/reference/microsoft-terminology) (168MB), for translating app UI.
 
 ## Prepare for TSV Files
 
@@ -169,7 +180,7 @@ In your Web UI API Project in https://console.cloud.google.com/apis/api/translat
 
 There are many ways to upload, and here I would just use The Cloud Storage UI to upload: https://console.cloud.google.com/storage/browser and create a bucket like my_glossaries, then drag all the TSV files to the bucket.
 
-### Clean up the TSV files.
+### Clean up the TSV Files then Import
 
 The glossary API requires every source term to appear only once. My Dutch file has 13,615 entries (about 29%) where the same English term maps to several Dutch terms, because Microsoft lists different translations for different products and contexts. Google rejected the file, so nothing will be created. The fix is to reduce each source term to a single translation before import.
 
@@ -360,11 +371,30 @@ for g in client.list_glossaries(parent=parent, timeout=60):
           g.language_pair.target_language_code,
           "entries:", g.entry_count)
 ```
+Remarks: 
+* The script is crafted by Claude. If you are using different glossaries or different naming convention, you may either modify the script or just ask AI to craft one for you.
 
+In Cloud Shell terminal, run for basic test or for adding new one later:
+```
+python3 import_glossaries.py DUTCH
+```
+
+Then run for all glossaries in different languages:
+```
+python3 import_glossaries.py
+```
+This may take over 10 minutes.
+
+### Maintenance of Glossaries
+Basically 3 ways:
+1. For entry level edits, using v3 API.
+2. For glossary level update, either patch or replace.
+
+For detailed operations, check Google API docs, or ask AI, or search free / open source / commercial tools.
 
 # Similar GUI-oriented terminology and translation sources
 
-Here are the links. I'm giving them from memory rather than checking each one, so a few pages may have moved.
+These are mostly the translation resources of each applications, rather than terminology/glossary.
 
 ## Terminology and translation data
 - OPUS (TMX/Moses downloads of GNOME, KDE, Ubuntu, Mozilla and other software UI corpora): https://opus.nlpl.eu/ . Huge.
